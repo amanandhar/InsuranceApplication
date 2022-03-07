@@ -62,7 +62,7 @@ namespace InsuranceApplication.Forms
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label15.Location = new System.Drawing.Point(12, 53);
+            this.label15.Location = new System.Drawing.Point(9, 53);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(133, 18);
@@ -72,12 +72,11 @@ namespace InsuranceApplication.Forms
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox8.Location = new System.Drawing.Point(179, 49);
+            this.textBox8.Location = new System.Drawing.Point(178, 49);
             this.textBox8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(340, 26);
             this.textBox8.TabIndex = 36;
-            this.textBox8.Text = "JYOTI LIFE INSURANCE";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
@@ -85,7 +84,7 @@ namespace InsuranceApplication.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(13, 111);
+            this.label1.Location = new System.Drawing.Point(10, 111);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(153, 18);
@@ -95,12 +94,11 @@ namespace InsuranceApplication.Forms
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(179, 107);
+            this.textBox1.Location = new System.Drawing.Point(178, 107);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(340, 26);
             this.textBox1.TabIndex = 39;
-            this.textBox1.Text = "GYANESHWOR-01,KATHMANDU";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
@@ -108,7 +106,7 @@ namespace InsuranceApplication.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(13, 141);
+            this.label2.Location = new System.Drawing.Point(10, 140);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 18);
@@ -118,23 +116,21 @@ namespace InsuranceApplication.Forms
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(179, 137);
+            this.textBox2.Location = new System.Drawing.Point(178, 136);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(340, 26);
             this.textBox2.TabIndex = 41;
-            this.textBox2.Text = "NAXAL-02,KATHMANDU";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(179, 78);
+            this.textBox3.Location = new System.Drawing.Point(178, 78);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(340, 26);
             this.textBox3.TabIndex = 43;
-            this.textBox3.Text = "BS : 2031";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
@@ -142,7 +138,7 @@ namespace InsuranceApplication.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(12, 82);
+            this.label3.Location = new System.Drawing.Point(9, 81);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(168, 18);
@@ -152,12 +148,11 @@ namespace InsuranceApplication.Forms
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(179, 167);
+            this.textBox4.Location = new System.Drawing.Point(178, 165);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(340, 26);
             this.textBox4.TabIndex = 45;
-            this.textBox4.Text = "JIBESH PRADHAN";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
@@ -165,7 +160,7 @@ namespace InsuranceApplication.Forms
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(13, 172);
+            this.label4.Location = new System.Drawing.Point(10, 168);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(145, 18);
@@ -175,12 +170,11 @@ namespace InsuranceApplication.Forms
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.Location = new System.Drawing.Point(179, 197);
+            this.textBox5.Location = new System.Drawing.Point(178, 194);
             this.textBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(340, 26);
             this.textBox5.TabIndex = 47;
-            this.textBox5.Text = "BRANCH MANAGER";
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
@@ -188,7 +182,7 @@ namespace InsuranceApplication.Forms
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(14, 202);
+            this.label5.Location = new System.Drawing.Point(11, 199);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 18);
@@ -242,12 +236,11 @@ namespace InsuranceApplication.Forms
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox7.Location = new System.Drawing.Point(179, 227);
+            this.textBox7.Location = new System.Drawing.Point(178, 223);
             this.textBox7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(340, 26);
             this.textBox7.TabIndex = 52;
-            this.textBox7.Text = "2077-10-11";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
@@ -255,7 +248,7 @@ namespace InsuranceApplication.Forms
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(13, 232);
+            this.label7.Location = new System.Drawing.Point(11, 225);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(131, 18);
@@ -267,7 +260,7 @@ namespace InsuranceApplication.Forms
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(13, 24);
+            this.label6.Location = new System.Drawing.Point(10, 24);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(154, 18);
@@ -277,12 +270,11 @@ namespace InsuranceApplication.Forms
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.Location = new System.Drawing.Point(179, 20);
+            this.textBox6.Location = new System.Drawing.Point(178, 20);
             this.textBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(270, 26);
             this.textBox6.TabIndex = 49;
-            this.textBox6.Text = "INS-001";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox2
@@ -302,7 +294,7 @@ namespace InsuranceApplication.Forms
             this.customButton4.BackColor = System.Drawing.Color.DodgerBlue;
             this.customButton4.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.customButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton4.BorderRadius = 35;
+            this.customButton4.BorderRadius = 34;
             this.customButton4.BorderSize = 0;
             this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -321,7 +313,7 @@ namespace InsuranceApplication.Forms
             this.customButton2.BackColor = System.Drawing.Color.Red;
             this.customButton2.BackgroundColor = System.Drawing.Color.Red;
             this.customButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton2.BorderRadius = 35;
+            this.customButton2.BorderRadius = 36;
             this.customButton2.BorderSize = 0;
             this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -340,7 +332,7 @@ namespace InsuranceApplication.Forms
             this.customButton3.BackColor = System.Drawing.Color.DodgerBlue;
             this.customButton3.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.customButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton3.BorderRadius = 35;
+            this.customButton3.BorderRadius = 36;
             this.customButton3.BorderSize = 0;
             this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -359,7 +351,7 @@ namespace InsuranceApplication.Forms
             this.customButton1.BackColor = System.Drawing.Color.DodgerBlue;
             this.customButton1.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton1.BorderRadius = 35;
+            this.customButton1.BorderRadius = 36;
             this.customButton1.BorderSize = 0;
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -378,7 +370,7 @@ namespace InsuranceApplication.Forms
             this.textBox9.BackColor = System.Drawing.SystemColors.Highlight;
             this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox9.ForeColor = System.Drawing.Color.White;
-            this.textBox9.Location = new System.Drawing.Point(-3, 0);
+            this.textBox9.Location = new System.Drawing.Point(-2, 0);
             this.textBox9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(561, 26);
@@ -390,6 +382,7 @@ namespace InsuranceApplication.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(559, 351);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.groupBox2);

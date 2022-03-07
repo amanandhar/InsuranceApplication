@@ -47,7 +47,7 @@ namespace InsuranceApplication.Forms
             this.customButton3.BackColor = System.Drawing.Color.DodgerBlue;
             this.customButton3.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.customButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton3.BorderRadius = 30;
+            this.customButton3.BorderRadius = 34;
             this.customButton3.BorderSize = 0;
             this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -66,7 +66,7 @@ namespace InsuranceApplication.Forms
             this.customButton1.BackColor = System.Drawing.Color.DodgerBlue;
             this.customButton1.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton1.BorderRadius = 30;
+            this.customButton1.BorderRadius = 34;
             this.customButton1.BorderSize = 0;
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -105,7 +105,6 @@ namespace InsuranceApplication.Forms
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(125, 26);
             this.textBox3.TabIndex = 52;
-            this.textBox3.Text = "35000.00";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
@@ -117,7 +116,6 @@ namespace InsuranceApplication.Forms
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(125, 26);
             this.textBox2.TabIndex = 51;
-            this.textBox2.Text = "65000.00";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox6
@@ -129,7 +127,6 @@ namespace InsuranceApplication.Forms
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(125, 26);
             this.textBox6.TabIndex = 50;
-            this.textBox6.Text = "100000.00";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
@@ -183,6 +180,7 @@ namespace InsuranceApplication.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(456, 181);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
