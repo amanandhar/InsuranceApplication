@@ -1,7 +1,7 @@
 ﻿
 namespace InsuranceApplication.Forms
 {
-    partial class DashboardForm
+    partial class LoanDetailForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,51 +31,51 @@ namespace InsuranceApplication.Forms
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.MaskStartingDate = new System.Windows.Forms.MaskedTextBox();
             this.BtnAddInsurance = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.TxtMaturatedAmount = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.TxtMemberBenificiary = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.customButton6 = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.customButton9 = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.MaskRenewDate = new System.Windows.Forms.MaskedTextBox();
+            this.TxtInsuranceCompanyName = new System.Windows.Forms.TextBox();
+            this.BtnSearchMember = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnSearchInsuranceCompany = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.TxtInsuranceCompanyId = new System.Windows.Forms.TextBox();
+            this.ComboMemberGender = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.RichPeriodInMonth = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.MaskMaturatedDate = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtPremium = new System.Windows.Forms.TextBox();
+            this.TxtMemberAddress = new System.Windows.Forms.TextBox();
+            this.TxtLoanAmount = new System.Windows.Forms.TextBox();
+            this.TxtInsuranceAmount = new System.Windows.Forms.TextBox();
+            this.TxtMemberName = new System.Windows.Forms.TextBox();
+            this.TxtMemberNo = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnRenewInsurance = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnShow = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnShowLoanDetail = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.BtnDistributedAmount = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.BtnDocumentDetails = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.customButton7 = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.customButton5 = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.customButton3 = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.customButton2 = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.customButton1 = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.customButton4 = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BtnSaveLoanDetail = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnUpdateLoanDetail = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnClearLoanDetail = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnDeleteLoanDetail = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnLoadDetailEdit = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnAddMember = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.DataGridLoadDetailList = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.customButton10 = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.ComboAction = new System.Windows.Forms.ComboBox();
@@ -86,13 +86,13 @@ namespace InsuranceApplication.Forms
             this.label10 = new System.Windows.Forms.Label();
             this.MaskEndOfDayFrom = new System.Windows.Forms.MaskedTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PicMember = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridLoadDetailList)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicMember)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -110,39 +110,39 @@ namespace InsuranceApplication.Forms
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Controls.Add(this.MaskStartingDate);
             this.groupBox1.Controls.Add(this.BtnAddInsurance);
-            this.groupBox1.Controls.Add(this.textBox11);
+            this.groupBox1.Controls.Add(this.TxtMaturatedAmount);
             this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.TxtMemberBenificiary);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.maskedTextBox3);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.customButton6);
-            this.groupBox1.Controls.Add(this.customButton9);
+            this.groupBox1.Controls.Add(this.MaskRenewDate);
+            this.groupBox1.Controls.Add(this.TxtInsuranceCompanyName);
+            this.groupBox1.Controls.Add(this.BtnSearchMember);
+            this.groupBox1.Controls.Add(this.BtnSearchInsuranceCompany);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.TxtInsuranceCompanyId);
+            this.groupBox1.Controls.Add(this.ComboMemberGender);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.richTextBox2);
+            this.groupBox1.Controls.Add(this.RichPeriodInMonth);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.maskedTextBox2);
+            this.groupBox1.Controls.Add(this.MaskMaturatedDate);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.TxtPremium);
+            this.groupBox1.Controls.Add(this.TxtMemberAddress);
+            this.groupBox1.Controls.Add(this.TxtLoanAmount);
+            this.groupBox1.Controls.Add(this.TxtInsuranceAmount);
+            this.groupBox1.Controls.Add(this.TxtMemberName);
+            this.groupBox1.Controls.Add(this.TxtMemberNo);
             this.groupBox1.Location = new System.Drawing.Point(13, 39);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
@@ -151,15 +151,15 @@ namespace InsuranceApplication.Forms
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // maskedTextBox1
+            // MaskStartingDate
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.maskedTextBox1.Location = new System.Drawing.Point(389, 84);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.maskedTextBox1.Mask = "   0000-00-00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(105, 24);
-            this.maskedTextBox1.TabIndex = 48;
+            this.MaskStartingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MaskStartingDate.Location = new System.Drawing.Point(389, 84);
+            this.MaskStartingDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaskStartingDate.Mask = "   0000-00-00";
+            this.MaskStartingDate.Name = "MaskStartingDate";
+            this.MaskStartingDate.Size = new System.Drawing.Size(105, 24);
+            this.MaskStartingDate.TabIndex = 48;
             // 
             // BtnAddInsurance
             // 
@@ -181,16 +181,16 @@ namespace InsuranceApplication.Forms
             this.BtnAddInsurance.UseVisualStyleBackColor = false;
             this.BtnAddInsurance.Click += new System.EventHandler(this.BtnAddInsurance_Click);
             // 
-            // textBox11
+            // TxtMaturatedAmount
             // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox11.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox11.Location = new System.Drawing.Point(1027, 112);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox11.Size = new System.Drawing.Size(110, 26);
-            this.textBox11.TabIndex = 47;
+            this.TxtMaturatedAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TxtMaturatedAmount.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.TxtMaturatedAmount.Location = new System.Drawing.Point(1027, 112);
+            this.TxtMaturatedAmount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TxtMaturatedAmount.Name = "TxtMaturatedAmount";
+            this.TxtMaturatedAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtMaturatedAmount.Size = new System.Drawing.Size(110, 26);
+            this.TxtMaturatedAmount.TabIndex = 47;
             // 
             // comboBox2
             // 
@@ -212,14 +212,14 @@ namespace InsuranceApplication.Forms
             this.comboBox2.Size = new System.Drawing.Size(110, 26);
             this.comboBox2.TabIndex = 46;
             // 
-            // textBox10
+            // TxtMemberBenificiary
             // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox10.Location = new System.Drawing.Point(789, 52);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(235, 26);
-            this.textBox10.TabIndex = 43;
+            this.TxtMemberBenificiary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxtMemberBenificiary.Location = new System.Drawing.Point(789, 52);
+            this.TxtMemberBenificiary.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TxtMemberBenificiary.Name = "TxtMemberBenificiary";
+            this.TxtMemberBenificiary.Size = new System.Drawing.Size(235, 26);
+            this.TxtMemberBenificiary.TabIndex = 43;
             // 
             // label17
             // 
@@ -245,62 +245,63 @@ namespace InsuranceApplication.Forms
             this.label16.TabIndex = 44;
             this.label16.Text = "Renew";
             // 
-            // maskedTextBox3
+            // MaskRenewDate
             // 
-            this.maskedTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.maskedTextBox3.Location = new System.Drawing.Point(575, 83);
-            this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.maskedTextBox3.Mask = "   0000-00-00";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(105, 24);
-            this.maskedTextBox3.TabIndex = 43;
+            this.MaskRenewDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MaskRenewDate.Location = new System.Drawing.Point(575, 83);
+            this.MaskRenewDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaskRenewDate.Mask = "   0000-00-00";
+            this.MaskRenewDate.Name = "MaskRenewDate";
+            this.MaskRenewDate.Size = new System.Drawing.Size(105, 24);
+            this.MaskRenewDate.TabIndex = 43;
             // 
-            // textBox9
+            // TxtInsuranceCompanyName
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox9.Location = new System.Drawing.Point(258, 21);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(305, 26);
-            this.textBox9.TabIndex = 42;
+            this.TxtInsuranceCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TxtInsuranceCompanyName.Location = new System.Drawing.Point(258, 21);
+            this.TxtInsuranceCompanyName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TxtInsuranceCompanyName.Name = "TxtInsuranceCompanyName";
+            this.TxtInsuranceCompanyName.Size = new System.Drawing.Size(305, 26);
+            this.TxtInsuranceCompanyName.TabIndex = 42;
             // 
-            // customButton6
+            // BtnSearchMember
             // 
-            this.customButton6.BackColor = System.Drawing.Color.DodgerBlue;
-            this.customButton6.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.customButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton6.BorderRadius = 15;
-            this.customButton6.BorderSize = 0;
-            this.customButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.customButton6.ForeColor = System.Drawing.Color.White;
-            this.customButton6.Location = new System.Drawing.Point(921, 20);
-            this.customButton6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.customButton6.Name = "customButton6";
-            this.customButton6.Size = new System.Drawing.Size(70, 27);
-            this.customButton6.TabIndex = 41;
-            this.customButton6.Text = "Search";
-            this.customButton6.TextColor = System.Drawing.Color.White;
-            this.customButton6.UseVisualStyleBackColor = false;
+            this.BtnSearchMember.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSearchMember.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSearchMember.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnSearchMember.BorderRadius = 15;
+            this.BtnSearchMember.BorderSize = 0;
+            this.BtnSearchMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSearchMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnSearchMember.ForeColor = System.Drawing.Color.White;
+            this.BtnSearchMember.Location = new System.Drawing.Point(921, 20);
+            this.BtnSearchMember.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnSearchMember.Name = "BtnSearchMember";
+            this.BtnSearchMember.Size = new System.Drawing.Size(70, 27);
+            this.BtnSearchMember.TabIndex = 41;
+            this.BtnSearchMember.Text = "Search";
+            this.BtnSearchMember.TextColor = System.Drawing.Color.White;
+            this.BtnSearchMember.UseVisualStyleBackColor = false;
             // 
-            // customButton9
+            // BtnSearchInsuranceCompany
             // 
-            this.customButton9.BackColor = System.Drawing.Color.DodgerBlue;
-            this.customButton9.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.customButton9.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton9.BorderRadius = 15;
-            this.customButton9.BorderSize = 0;
-            this.customButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.customButton9.ForeColor = System.Drawing.Color.White;
-            this.customButton9.Location = new System.Drawing.Point(565, 20);
-            this.customButton9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.customButton9.Name = "customButton9";
-            this.customButton9.Size = new System.Drawing.Size(70, 27);
-            this.customButton9.TabIndex = 40;
-            this.customButton9.Text = "Search";
-            this.customButton9.TextColor = System.Drawing.Color.White;
-            this.customButton9.UseVisualStyleBackColor = false;
+            this.BtnSearchInsuranceCompany.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSearchInsuranceCompany.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSearchInsuranceCompany.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnSearchInsuranceCompany.BorderRadius = 15;
+            this.BtnSearchInsuranceCompany.BorderSize = 0;
+            this.BtnSearchInsuranceCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSearchInsuranceCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnSearchInsuranceCompany.ForeColor = System.Drawing.Color.White;
+            this.BtnSearchInsuranceCompany.Location = new System.Drawing.Point(565, 20);
+            this.BtnSearchInsuranceCompany.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnSearchInsuranceCompany.Name = "BtnSearchInsuranceCompany";
+            this.BtnSearchInsuranceCompany.Size = new System.Drawing.Size(70, 27);
+            this.BtnSearchInsuranceCompany.TabIndex = 40;
+            this.BtnSearchInsuranceCompany.Text = "Search";
+            this.BtnSearchInsuranceCompany.TextColor = System.Drawing.Color.White;
+            this.BtnSearchInsuranceCompany.UseVisualStyleBackColor = false;
+            this.BtnSearchInsuranceCompany.Click += new System.EventHandler(this.BtnSearchInsuranceCompany_Click);
             // 
             // label15
             // 
@@ -314,28 +315,28 @@ namespace InsuranceApplication.Forms
             this.label15.TabIndex = 35;
             this.label15.Text = "Insurance ID";
             // 
-            // textBox8
+            // TxtInsuranceCompanyId
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox8.Location = new System.Drawing.Point(125, 21);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(130, 26);
-            this.textBox8.TabIndex = 34;
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtInsuranceCompanyId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TxtInsuranceCompanyId.Location = new System.Drawing.Point(125, 21);
+            this.TxtInsuranceCompanyId.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TxtInsuranceCompanyId.Name = "TxtInsuranceCompanyId";
+            this.TxtInsuranceCompanyId.Size = new System.Drawing.Size(130, 26);
+            this.TxtInsuranceCompanyId.TabIndex = 34;
+            this.TxtInsuranceCompanyId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // comboBox1
+            // ComboMemberGender
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.ComboMemberGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComboMemberGender.FormattingEnabled = true;
+            this.ComboMemberGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox1.Location = new System.Drawing.Point(125, 83);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(130, 26);
-            this.comboBox1.TabIndex = 33;
+            this.ComboMemberGender.Location = new System.Drawing.Point(125, 83);
+            this.ComboMemberGender.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboMemberGender.Name = "ComboMemberGender";
+            this.ComboMemberGender.Size = new System.Drawing.Size(130, 26);
+            this.ComboMemberGender.TabIndex = 33;
             // 
             // label14
             // 
@@ -373,17 +374,17 @@ namespace InsuranceApplication.Forms
             this.label12.TabIndex = 28;
             this.label12.Text = "Matured Amount";
             // 
-            // richTextBox2
+            // RichPeriodInMonth
             // 
-            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox2.ForeColor = System.Drawing.Color.Black;
-            this.richTextBox2.Location = new System.Drawing.Point(833, 83);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.richTextBox2.Size = new System.Drawing.Size(40, 26);
-            this.richTextBox2.TabIndex = 30;
-            this.richTextBox2.Text = "";
+            this.RichPeriodInMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RichPeriodInMonth.ForeColor = System.Drawing.Color.Black;
+            this.RichPeriodInMonth.Location = new System.Drawing.Point(833, 83);
+            this.RichPeriodInMonth.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.RichPeriodInMonth.Name = "RichPeriodInMonth";
+            this.RichPeriodInMonth.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.RichPeriodInMonth.Size = new System.Drawing.Size(40, 26);
+            this.RichPeriodInMonth.TabIndex = 30;
+            this.RichPeriodInMonth.Text = "";
             // 
             // label8
             // 
@@ -433,15 +434,15 @@ namespace InsuranceApplication.Forms
             this.label9.TabIndex = 12;
             this.label9.Text = "Starting Date";
             // 
-            // maskedTextBox2
+            // MaskMaturatedDate
             // 
-            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.maskedTextBox2.Location = new System.Drawing.Point(1027, 83);
-            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.maskedTextBox2.Mask = "   0000-00-00";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(110, 24);
-            this.maskedTextBox2.TabIndex = 27;
+            this.MaskMaturatedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MaskMaturatedDate.Location = new System.Drawing.Point(1027, 83);
+            this.MaskMaturatedDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaskMaturatedDate.Mask = "   0000-00-00";
+            this.MaskMaturatedDate.Name = "MaskMaturatedDate";
+            this.MaskMaturatedDate.Size = new System.Drawing.Size(110, 24);
+            this.MaskMaturatedDate.TabIndex = 27;
             // 
             // label5
             // 
@@ -491,76 +492,76 @@ namespace InsuranceApplication.Forms
             this.label1.TabIndex = 6;
             this.label1.Text = "Membership No.";
             // 
-            // textBox7
+            // TxtPremium
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox7.Location = new System.Drawing.Point(389, 113);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox7.Size = new System.Drawing.Size(105, 26);
-            this.textBox7.TabIndex = 5;
+            this.TxtPremium.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxtPremium.Location = new System.Drawing.Point(389, 113);
+            this.TxtPremium.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TxtPremium.Name = "TxtPremium";
+            this.TxtPremium.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtPremium.Size = new System.Drawing.Size(105, 26);
+            this.TxtPremium.TabIndex = 5;
             // 
-            // textBox6
+            // TxtMemberAddress
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.Location = new System.Drawing.Point(455, 52);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(225, 26);
-            this.textBox6.TabIndex = 4;
+            this.TxtMemberAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxtMemberAddress.Location = new System.Drawing.Point(455, 52);
+            this.TxtMemberAddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TxtMemberAddress.Name = "TxtMemberAddress";
+            this.TxtMemberAddress.Size = new System.Drawing.Size(225, 26);
+            this.TxtMemberAddress.TabIndex = 4;
             // 
-            // textBox5
+            // TxtLoanAmount
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.Location = new System.Drawing.Point(125, 114);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox5.Size = new System.Drawing.Size(130, 26);
-            this.textBox5.TabIndex = 3;
+            this.TxtLoanAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxtLoanAmount.Location = new System.Drawing.Point(125, 114);
+            this.TxtLoanAmount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TxtLoanAmount.Name = "TxtLoanAmount";
+            this.TxtLoanAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtLoanAmount.Size = new System.Drawing.Size(130, 26);
+            this.TxtLoanAmount.TabIndex = 3;
             // 
-            // textBox4
+            // TxtInsuranceAmount
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(706, 113);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox4.Size = new System.Drawing.Size(125, 26);
-            this.textBox4.TabIndex = 2;
+            this.TxtInsuranceAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxtInsuranceAmount.Location = new System.Drawing.Point(706, 113);
+            this.TxtInsuranceAmount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TxtInsuranceAmount.Name = "TxtInsuranceAmount";
+            this.TxtInsuranceAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TxtInsuranceAmount.Size = new System.Drawing.Size(125, 26);
+            this.TxtInsuranceAmount.TabIndex = 2;
             // 
-            // textBox3
+            // TxtMemberName
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(125, 52);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(235, 26);
-            this.textBox3.TabIndex = 1;
+            this.TxtMemberName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxtMemberName.Location = new System.Drawing.Point(125, 52);
+            this.TxtMemberName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TxtMemberName.Name = "TxtMemberName";
+            this.TxtMemberName.Size = new System.Drawing.Size(235, 26);
+            this.TxtMemberName.TabIndex = 1;
             // 
-            // textBox2
+            // TxtMemberNo
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(789, 21);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(130, 26);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtMemberNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TxtMemberNo.Location = new System.Drawing.Point(789, 21);
+            this.TxtMemberNo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TxtMemberNo.Name = "TxtMemberNo";
+            this.TxtMemberNo.Size = new System.Drawing.Size(130, 26);
+            this.TxtMemberNo.TabIndex = 0;
+            this.TxtMemberNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.BtnRenewInsurance);
-            this.groupBox2.Controls.Add(this.BtnShow);
+            this.groupBox2.Controls.Add(this.BtnShowLoanDetail);
             this.groupBox2.Controls.Add(this.BtnDistributedAmount);
             this.groupBox2.Controls.Add(this.BtnDocumentDetails);
-            this.groupBox2.Controls.Add(this.customButton7);
-            this.groupBox2.Controls.Add(this.customButton5);
-            this.groupBox2.Controls.Add(this.customButton3);
-            this.groupBox2.Controls.Add(this.customButton2);
-            this.groupBox2.Controls.Add(this.customButton1);
-            this.groupBox2.Controls.Add(this.customButton4);
+            this.groupBox2.Controls.Add(this.BtnSaveLoanDetail);
+            this.groupBox2.Controls.Add(this.BtnUpdateLoanDetail);
+            this.groupBox2.Controls.Add(this.BtnClearLoanDetail);
+            this.groupBox2.Controls.Add(this.BtnDeleteLoanDetail);
+            this.groupBox2.Controls.Add(this.BtnLoadDetailEdit);
+            this.groupBox2.Controls.Add(this.BtnAddMember);
             this.groupBox2.Location = new System.Drawing.Point(1190, 188);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox2.Name = "groupBox2";
@@ -587,25 +588,27 @@ namespace InsuranceApplication.Forms
             this.BtnRenewInsurance.Text = "Renew Insurance";
             this.BtnRenewInsurance.TextColor = System.Drawing.Color.White;
             this.BtnRenewInsurance.UseVisualStyleBackColor = false;
+            this.BtnRenewInsurance.Click += new System.EventHandler(this.BtnRenewInsurance_Click);
             // 
-            // BtnShow
+            // BtnShowLoanDetail
             // 
-            this.BtnShow.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnShow.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.BtnShow.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnShow.BorderRadius = 35;
-            this.BtnShow.BorderSize = 0;
-            this.BtnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnShow.ForeColor = System.Drawing.Color.White;
-            this.BtnShow.Location = new System.Drawing.Point(11, 14);
-            this.BtnShow.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnShow.Name = "BtnShow";
-            this.BtnShow.Size = new System.Drawing.Size(130, 35);
-            this.BtnShow.TabIndex = 30;
-            this.BtnShow.Text = "Show Details";
-            this.BtnShow.TextColor = System.Drawing.Color.White;
-            this.BtnShow.UseVisualStyleBackColor = false;
+            this.BtnShowLoanDetail.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnShowLoanDetail.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnShowLoanDetail.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnShowLoanDetail.BorderRadius = 35;
+            this.BtnShowLoanDetail.BorderSize = 0;
+            this.BtnShowLoanDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnShowLoanDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnShowLoanDetail.ForeColor = System.Drawing.Color.White;
+            this.BtnShowLoanDetail.Location = new System.Drawing.Point(11, 14);
+            this.BtnShowLoanDetail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnShowLoanDetail.Name = "BtnShowLoanDetail";
+            this.BtnShowLoanDetail.Size = new System.Drawing.Size(130, 35);
+            this.BtnShowLoanDetail.TabIndex = 30;
+            this.BtnShowLoanDetail.Text = "Show Details";
+            this.BtnShowLoanDetail.TextColor = System.Drawing.Color.White;
+            this.BtnShowLoanDetail.UseVisualStyleBackColor = false;
+            this.BtnShowLoanDetail.Click += new System.EventHandler(this.BtnShowLoanDetail_Click);
             // 
             // BtnDistributedAmount
             // 
@@ -647,130 +650,137 @@ namespace InsuranceApplication.Forms
             this.BtnDocumentDetails.UseVisualStyleBackColor = false;
             this.BtnDocumentDetails.Click += new System.EventHandler(this.BtnDocumentDetails_Click);
             // 
-            // customButton7
+            // BtnSaveLoanDetail
             // 
-            this.customButton7.BackColor = System.Drawing.Color.DodgerBlue;
-            this.customButton7.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.customButton7.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton7.BorderRadius = 35;
-            this.customButton7.BorderSize = 0;
-            this.customButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.customButton7.ForeColor = System.Drawing.Color.White;
-            this.customButton7.Location = new System.Drawing.Point(11, 84);
-            this.customButton7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.customButton7.Name = "customButton7";
-            this.customButton7.Size = new System.Drawing.Size(130, 35);
-            this.customButton7.TabIndex = 40;
-            this.customButton7.Text = "Save";
-            this.customButton7.TextColor = System.Drawing.Color.White;
-            this.customButton7.UseVisualStyleBackColor = false;
+            this.BtnSaveLoanDetail.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSaveLoanDetail.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSaveLoanDetail.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnSaveLoanDetail.BorderRadius = 35;
+            this.BtnSaveLoanDetail.BorderSize = 0;
+            this.BtnSaveLoanDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSaveLoanDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnSaveLoanDetail.ForeColor = System.Drawing.Color.White;
+            this.BtnSaveLoanDetail.Location = new System.Drawing.Point(11, 84);
+            this.BtnSaveLoanDetail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnSaveLoanDetail.Name = "BtnSaveLoanDetail";
+            this.BtnSaveLoanDetail.Size = new System.Drawing.Size(130, 35);
+            this.BtnSaveLoanDetail.TabIndex = 40;
+            this.BtnSaveLoanDetail.Text = "Save";
+            this.BtnSaveLoanDetail.TextColor = System.Drawing.Color.White;
+            this.BtnSaveLoanDetail.UseVisualStyleBackColor = false;
+            this.BtnSaveLoanDetail.Click += new System.EventHandler(this.BtnSaveLoanDetail_Click);
             // 
-            // customButton5
+            // BtnUpdateLoanDetail
             // 
-            this.customButton5.BackColor = System.Drawing.Color.DodgerBlue;
-            this.customButton5.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.customButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton5.BorderRadius = 35;
-            this.customButton5.BorderSize = 0;
-            this.customButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.customButton5.ForeColor = System.Drawing.Color.White;
-            this.customButton5.Location = new System.Drawing.Point(11, 154);
-            this.customButton5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.customButton5.Name = "customButton5";
-            this.customButton5.Size = new System.Drawing.Size(130, 35);
-            this.customButton5.TabIndex = 38;
-            this.customButton5.Text = "Update";
-            this.customButton5.TextColor = System.Drawing.Color.White;
-            this.customButton5.UseVisualStyleBackColor = false;
+            this.BtnUpdateLoanDetail.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnUpdateLoanDetail.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnUpdateLoanDetail.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnUpdateLoanDetail.BorderRadius = 35;
+            this.BtnUpdateLoanDetail.BorderSize = 0;
+            this.BtnUpdateLoanDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUpdateLoanDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnUpdateLoanDetail.ForeColor = System.Drawing.Color.White;
+            this.BtnUpdateLoanDetail.Location = new System.Drawing.Point(11, 154);
+            this.BtnUpdateLoanDetail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnUpdateLoanDetail.Name = "BtnUpdateLoanDetail";
+            this.BtnUpdateLoanDetail.Size = new System.Drawing.Size(130, 35);
+            this.BtnUpdateLoanDetail.TabIndex = 38;
+            this.BtnUpdateLoanDetail.Text = "Update";
+            this.BtnUpdateLoanDetail.TextColor = System.Drawing.Color.White;
+            this.BtnUpdateLoanDetail.UseVisualStyleBackColor = false;
+            this.BtnUpdateLoanDetail.Click += new System.EventHandler(this.BtnUpdateLoanDetail_Click);
             // 
-            // customButton3
+            // BtnClearLoanDetail
             // 
-            this.customButton3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.customButton3.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.customButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton3.BorderRadius = 35;
-            this.customButton3.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.customButton3.ForeColor = System.Drawing.Color.White;
-            this.customButton3.Location = new System.Drawing.Point(11, 189);
-            this.customButton3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Size = new System.Drawing.Size(130, 35);
-            this.customButton3.TabIndex = 37;
-            this.customButton3.Text = "Clear";
-            this.customButton3.TextColor = System.Drawing.Color.White;
-            this.customButton3.UseVisualStyleBackColor = false;
+            this.BtnClearLoanDetail.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnClearLoanDetail.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnClearLoanDetail.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnClearLoanDetail.BorderRadius = 35;
+            this.BtnClearLoanDetail.BorderSize = 0;
+            this.BtnClearLoanDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnClearLoanDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnClearLoanDetail.ForeColor = System.Drawing.Color.White;
+            this.BtnClearLoanDetail.Location = new System.Drawing.Point(11, 189);
+            this.BtnClearLoanDetail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnClearLoanDetail.Name = "BtnClearLoanDetail";
+            this.BtnClearLoanDetail.Size = new System.Drawing.Size(130, 35);
+            this.BtnClearLoanDetail.TabIndex = 37;
+            this.BtnClearLoanDetail.Text = "Clear";
+            this.BtnClearLoanDetail.TextColor = System.Drawing.Color.White;
+            this.BtnClearLoanDetail.UseVisualStyleBackColor = false;
+            this.BtnClearLoanDetail.Click += new System.EventHandler(this.BtnClearLoanDetail_Click);
             // 
-            // customButton2
+            // BtnDeleteLoanDetail
             // 
-            this.customButton2.BackColor = System.Drawing.Color.Red;
-            this.customButton2.BackgroundColor = System.Drawing.Color.Red;
-            this.customButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton2.BorderRadius = 35;
-            this.customButton2.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(11, 223);
-            this.customButton2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(130, 35);
-            this.customButton2.TabIndex = 36;
-            this.customButton2.Text = "Delete";
-            this.customButton2.TextColor = System.Drawing.Color.White;
-            this.customButton2.UseVisualStyleBackColor = false;
+            this.BtnDeleteLoanDetail.BackColor = System.Drawing.Color.Red;
+            this.BtnDeleteLoanDetail.BackgroundColor = System.Drawing.Color.Red;
+            this.BtnDeleteLoanDetail.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnDeleteLoanDetail.BorderRadius = 35;
+            this.BtnDeleteLoanDetail.BorderSize = 0;
+            this.BtnDeleteLoanDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeleteLoanDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnDeleteLoanDetail.ForeColor = System.Drawing.Color.White;
+            this.BtnDeleteLoanDetail.Location = new System.Drawing.Point(11, 223);
+            this.BtnDeleteLoanDetail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnDeleteLoanDetail.Name = "BtnDeleteLoanDetail";
+            this.BtnDeleteLoanDetail.Size = new System.Drawing.Size(130, 35);
+            this.BtnDeleteLoanDetail.TabIndex = 36;
+            this.BtnDeleteLoanDetail.Text = "Delete";
+            this.BtnDeleteLoanDetail.TextColor = System.Drawing.Color.White;
+            this.BtnDeleteLoanDetail.UseVisualStyleBackColor = false;
+            this.BtnDeleteLoanDetail.Click += new System.EventHandler(this.BtnDeleteLoanDetail_Click);
             // 
-            // customButton1
+            // BtnLoadDetailEdit
             // 
-            this.customButton1.BackColor = System.Drawing.Color.Red;
-            this.customButton1.BackgroundColor = System.Drawing.Color.Red;
-            this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton1.BorderRadius = 35;
-            this.customButton1.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(11, 119);
-            this.customButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(130, 35);
-            this.customButton1.TabIndex = 35;
-            this.customButton1.Text = "Edit";
-            this.customButton1.TextColor = System.Drawing.Color.White;
-            this.customButton1.UseVisualStyleBackColor = false;
+            this.BtnLoadDetailEdit.BackColor = System.Drawing.Color.Red;
+            this.BtnLoadDetailEdit.BackgroundColor = System.Drawing.Color.Red;
+            this.BtnLoadDetailEdit.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnLoadDetailEdit.BorderRadius = 35;
+            this.BtnLoadDetailEdit.BorderSize = 0;
+            this.BtnLoadDetailEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLoadDetailEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnLoadDetailEdit.ForeColor = System.Drawing.Color.White;
+            this.BtnLoadDetailEdit.Location = new System.Drawing.Point(11, 119);
+            this.BtnLoadDetailEdit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnLoadDetailEdit.Name = "BtnLoadDetailEdit";
+            this.BtnLoadDetailEdit.Size = new System.Drawing.Size(130, 35);
+            this.BtnLoadDetailEdit.TabIndex = 35;
+            this.BtnLoadDetailEdit.Text = "Edit";
+            this.BtnLoadDetailEdit.TextColor = System.Drawing.Color.White;
+            this.BtnLoadDetailEdit.UseVisualStyleBackColor = false;
+            this.BtnLoadDetailEdit.Click += new System.EventHandler(this.BtnLoadDetailEdit_Click);
             // 
-            // customButton4
+            // BtnAddMember
             // 
-            this.customButton4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.customButton4.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.customButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton4.BorderRadius = 35;
-            this.customButton4.BorderSize = 0;
-            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.customButton4.ForeColor = System.Drawing.Color.White;
-            this.customButton4.Location = new System.Drawing.Point(11, 49);
-            this.customButton4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.customButton4.Name = "customButton4";
-            this.customButton4.Size = new System.Drawing.Size(130, 35);
-            this.customButton4.TabIndex = 34;
-            this.customButton4.Text = "Add Member";
-            this.customButton4.TextColor = System.Drawing.Color.White;
-            this.customButton4.UseVisualStyleBackColor = false;
+            this.BtnAddMember.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnAddMember.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnAddMember.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnAddMember.BorderRadius = 35;
+            this.BtnAddMember.BorderSize = 0;
+            this.BtnAddMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnAddMember.ForeColor = System.Drawing.Color.White;
+            this.BtnAddMember.Location = new System.Drawing.Point(11, 49);
+            this.BtnAddMember.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnAddMember.Name = "BtnAddMember";
+            this.BtnAddMember.Size = new System.Drawing.Size(130, 35);
+            this.BtnAddMember.TabIndex = 34;
+            this.BtnAddMember.Text = "Add Member";
+            this.BtnAddMember.TextColor = System.Drawing.Color.White;
+            this.BtnAddMember.UseVisualStyleBackColor = false;
+            this.BtnAddMember.Click += new System.EventHandler(this.BtnAddMember_Click);
             // 
-            // dataGridView1
+            // DataGridLoadDetailList
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 197);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1170, 415);
-            this.dataGridView1.TabIndex = 3;
+            this.DataGridLoadDetailList.BackgroundColor = System.Drawing.Color.White;
+            this.DataGridLoadDetailList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridLoadDetailList.GridColor = System.Drawing.SystemColors.Control;
+            this.DataGridLoadDetailList.Location = new System.Drawing.Point(12, 197);
+            this.DataGridLoadDetailList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.DataGridLoadDetailList.Name = "DataGridLoadDetailList";
+            this.DataGridLoadDetailList.Size = new System.Drawing.Size(1170, 415);
+            this.DataGridLoadDetailList.TabIndex = 3;
+            this.DataGridLoadDetailList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridLoadDetailList_DataBindingComplete);
             // 
             // groupBox3
             // 
@@ -896,22 +906,22 @@ namespace InsuranceApplication.Forms
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.pictureBox1);
+            this.groupBox4.Controls.Add(this.PicMember);
             this.groupBox4.Location = new System.Drawing.Point(1190, 39);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(153, 150);
             this.groupBox4.TabIndex = 42;
             this.groupBox4.TabStop = false;
             // 
-            // pictureBox1
+            // PicMember
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 132);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.PicMember.Location = new System.Drawing.Point(6, 12);
+            this.PicMember.Name = "PicMember";
+            this.PicMember.Size = new System.Drawing.Size(141, 132);
+            this.PicMember.TabIndex = 0;
+            this.PicMember.TabStop = false;
             // 
-            // DashboardForm
+            // LoanDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -919,12 +929,12 @@ namespace InsuranceApplication.Forms
             this.ClientSize = new System.Drawing.Size(1354, 688);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DataGridLoadDetailList);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "DashboardForm";
+            this.Name = "LoanDetailForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Samyukta Manab Saving & Credit Co-operative Ltd.";
@@ -932,11 +942,11 @@ namespace InsuranceApplication.Forms
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridLoadDetailList)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicMember)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -947,17 +957,17 @@ namespace InsuranceApplication.Forms
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private CustomControls.Button.CustomButton customButton5;
-        private CustomControls.Button.CustomButton customButton3;
-        private CustomControls.Button.CustomButton customButton2;
-        private CustomControls.Button.CustomButton customButton1;
-        private CustomControls.Button.CustomButton BtnShow;
-        private CustomControls.Button.CustomButton customButton4;
+        private System.Windows.Forms.DataGridView DataGridLoadDetailList;
+        private CustomControls.Button.CustomButton BtnUpdateLoanDetail;
+        private CustomControls.Button.CustomButton BtnClearLoanDetail;
+        private CustomControls.Button.CustomButton BtnDeleteLoanDetail;
+        private CustomControls.Button.CustomButton BtnLoadDetailEdit;
+        private CustomControls.Button.CustomButton BtnShowLoanDetail;
+        private CustomControls.Button.CustomButton BtnAddMember;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox RichPeriodInMonth;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox MaskMaturatedDate;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -966,13 +976,13 @@ namespace InsuranceApplication.Forms
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private CustomControls.Button.CustomButton customButton7;
+        private System.Windows.Forms.TextBox TxtPremium;
+        private System.Windows.Forms.TextBox TxtMemberAddress;
+        private System.Windows.Forms.TextBox TxtLoanAmount;
+        private System.Windows.Forms.TextBox TxtInsuranceAmount;
+        private System.Windows.Forms.TextBox TxtMemberName;
+        private System.Windows.Forms.TextBox TxtMemberNo;
+        private CustomControls.Button.CustomButton BtnSaveLoanDetail;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox ComboAction;
         private System.Windows.Forms.Label label3;
@@ -982,25 +992,25 @@ namespace InsuranceApplication.Forms
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox MaskEndOfDayFrom;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ComboMemberGender;
         private CustomControls.Button.CustomButton BtnDocumentDetails;
-        private CustomControls.Button.CustomButton customButton6;
-        private CustomControls.Button.CustomButton customButton9;
+        private CustomControls.Button.CustomButton BtnSearchMember;
+        private CustomControls.Button.CustomButton BtnSearchInsuranceCompany;
         private CustomControls.Button.CustomButton BtnDistributedAmount;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox TxtInsuranceCompanyId;
+        private System.Windows.Forms.TextBox TxtInsuranceCompanyName;
         private CustomControls.Button.CustomButton BtnRenewInsurance;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.MaskedTextBox MaskRenewDate;
+        private System.Windows.Forms.TextBox TxtMaturatedAmount;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox TxtMemberBenificiary;
         private System.Windows.Forms.Label label17;
         private CustomControls.Button.CustomButton customButton10;
         private CustomControls.Button.CustomButton BtnAddInsurance;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MaskedTextBox MaskStartingDate;
+        private System.Windows.Forms.PictureBox PicMember;
     }
 }
