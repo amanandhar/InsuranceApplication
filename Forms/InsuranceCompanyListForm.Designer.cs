@@ -39,6 +39,7 @@ namespace InsuranceApplication.Forms
             this.DataGridInsuranceCompanyList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridInsuranceCompanyList.Location = new System.Drawing.Point(12, 10);
             this.DataGridInsuranceCompanyList.Name = "DataGridInsuranceCompanyList";
+            this.DataGridInsuranceCompanyList.ReadOnly = true;
             this.DataGridInsuranceCompanyList.RowTemplate.Height = 25;
             this.DataGridInsuranceCompanyList.Size = new System.Drawing.Size(510, 240);
             this.DataGridInsuranceCompanyList.TabIndex = 0;
@@ -51,6 +52,7 @@ namespace InsuranceApplication.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 261);
             this.Controls.Add(this.DataGridInsuranceCompanyList);
+            this.MaximizeBox = false;
             this.Name = "InsuranceCompanyListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Insurance Company List Form";

@@ -57,24 +57,24 @@ namespace InsuranceApplication.Forms
         private void DataGridInsuranceCompanyList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             DataGridInsuranceCompanyList.Columns["Id"].Visible = false;
-            DataGridInsuranceCompanyList.Columns["SerialNumber"].Visible = false;
             DataGridInsuranceCompanyList.Columns["HeadOfficeAddress"].Visible = false;
             DataGridInsuranceCompanyList.Columns["BranchOfficeAddress"].Visible = false;
             DataGridInsuranceCompanyList.Columns["HeadOfDepartment"].Visible = false;
             DataGridInsuranceCompanyList.Columns["Position"].Visible = false;
             DataGridInsuranceCompanyList.Columns["AgreementDate"].Visible = false;
+            DataGridInsuranceCompanyList.Columns["EstablishedDate"].Visible = false;
             DataGridInsuranceCompanyList.Columns["AddedBy"].Visible = false;
             DataGridInsuranceCompanyList.Columns["AddedDate"].Visible = false;
             DataGridInsuranceCompanyList.Columns["UpdatedBy"].Visible = false;
             DataGridInsuranceCompanyList.Columns["UpdatedDate"].Visible = false;
 
-            DataGridInsuranceCompanyList.Columns["Name"].HeaderText = "Name";
-            DataGridInsuranceCompanyList.Columns["Name"].Width = 180;
-            DataGridInsuranceCompanyList.Columns["Name"].DisplayIndex = 0;
+            DataGridInsuranceCompanyList.Columns["SerialNumber"].HeaderText = "Serial Number";
+            DataGridInsuranceCompanyList.Columns["SerialNumber"].Width = 180;
+            DataGridInsuranceCompanyList.Columns["SerialNumber"].DisplayIndex = 0;
 
-            DataGridInsuranceCompanyList.Columns["EstablishedDate"].HeaderText = "Established Date";
-            DataGridInsuranceCompanyList.Columns["EstablishedDate"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            DataGridInsuranceCompanyList.Columns["EstablishedDate"].DisplayIndex = 1;
+            DataGridInsuranceCompanyList.Columns["Name"].HeaderText = "Name";
+            DataGridInsuranceCompanyList.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DataGridInsuranceCompanyList.Columns["Name"].DisplayIndex = 1;
 
             foreach (DataGridViewRow row in DataGridInsuranceCompanyList.Rows)
             {

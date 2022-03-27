@@ -48,6 +48,7 @@ namespace InsuranceApplication.Forms
             this.label6 = new System.Windows.Forms.Label();
             this.TxtSerialNumber = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BtnEdit = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.BtnAdd = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.BtnDelete = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.BtnClear = new InsuranceApplication.CustomControls.Button.CustomButton();
@@ -62,7 +63,7 @@ namespace InsuranceApplication.Forms
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label15.Location = new System.Drawing.Point(9, 53);
+            this.label15.Location = new System.Drawing.Point(19, 57);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(133, 18);
@@ -72,11 +73,11 @@ namespace InsuranceApplication.Forms
             // TxtName
             // 
             this.TxtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtName.Location = new System.Drawing.Point(178, 49);
+            this.TxtName.Location = new System.Drawing.Point(197, 49);
             this.TxtName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(340, 26);
-            this.TxtName.TabIndex = 36;
+            this.TxtName.TabIndex = 2;
             this.TxtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
@@ -84,21 +85,21 @@ namespace InsuranceApplication.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(10, 111);
+            this.label1.Location = new System.Drawing.Point(19, 87);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 18);
+            this.label1.Size = new System.Drawing.Size(161, 18);
             this.label1.TabIndex = 38;
-            this.label1.Text = "Adress of Head Office";
+            this.label1.Text = "Address of Head Office";
             // 
             // TxtHeadOfficeAddress
             // 
             this.TxtHeadOfficeAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtHeadOfficeAddress.Location = new System.Drawing.Point(178, 107);
+            this.TxtHeadOfficeAddress.Location = new System.Drawing.Point(197, 79);
             this.TxtHeadOfficeAddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtHeadOfficeAddress.Name = "TxtHeadOfficeAddress";
             this.TxtHeadOfficeAddress.Size = new System.Drawing.Size(340, 26);
-            this.TxtHeadOfficeAddress.TabIndex = 39;
+            this.TxtHeadOfficeAddress.TabIndex = 3;
             this.TxtHeadOfficeAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
@@ -106,21 +107,21 @@ namespace InsuranceApplication.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(10, 140);
+            this.label2.Location = new System.Drawing.Point(19, 114);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 18);
+            this.label2.Size = new System.Drawing.Size(173, 18);
             this.label2.TabIndex = 40;
-            this.label2.Text = "Adress of Branch Office";
+            this.label2.Text = "Address of Branch Office";
             // 
             // TxtBranchOfficeAddress
             // 
             this.TxtBranchOfficeAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtBranchOfficeAddress.Location = new System.Drawing.Point(178, 136);
+            this.TxtBranchOfficeAddress.Location = new System.Drawing.Point(197, 110);
             this.TxtBranchOfficeAddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtBranchOfficeAddress.Name = "TxtBranchOfficeAddress";
             this.TxtBranchOfficeAddress.Size = new System.Drawing.Size(340, 26);
-            this.TxtBranchOfficeAddress.TabIndex = 41;
+            this.TxtBranchOfficeAddress.TabIndex = 4;
             this.TxtBranchOfficeAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
@@ -128,7 +129,7 @@ namespace InsuranceApplication.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(9, 81);
+            this.label3.Location = new System.Drawing.Point(19, 227);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(168, 18);
@@ -138,11 +139,11 @@ namespace InsuranceApplication.Forms
             // TxtHeadOfDepartment
             // 
             this.TxtHeadOfDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtHeadOfDepartment.Location = new System.Drawing.Point(178, 165);
+            this.TxtHeadOfDepartment.Location = new System.Drawing.Point(197, 139);
             this.TxtHeadOfDepartment.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtHeadOfDepartment.Name = "TxtHeadOfDepartment";
             this.TxtHeadOfDepartment.Size = new System.Drawing.Size(340, 26);
-            this.TxtHeadOfDepartment.TabIndex = 45;
+            this.TxtHeadOfDepartment.TabIndex = 5;
             this.TxtHeadOfDepartment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
@@ -150,7 +151,7 @@ namespace InsuranceApplication.Forms
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(10, 168);
+            this.label4.Location = new System.Drawing.Point(20, 143);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(145, 18);
@@ -160,11 +161,11 @@ namespace InsuranceApplication.Forms
             // TxtPosition
             // 
             this.TxtPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtPosition.Location = new System.Drawing.Point(178, 194);
+            this.TxtPosition.Location = new System.Drawing.Point(197, 168);
             this.TxtPosition.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtPosition.Name = "TxtPosition";
             this.TxtPosition.Size = new System.Drawing.Size(340, 26);
-            this.TxtPosition.TabIndex = 47;
+            this.TxtPosition.TabIndex = 6;
             this.TxtPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
@@ -172,7 +173,7 @@ namespace InsuranceApplication.Forms
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(11, 199);
+            this.label5.Location = new System.Drawing.Point(19, 172);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 18);
@@ -200,25 +201,27 @@ namespace InsuranceApplication.Forms
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(537, 262);
+            this.groupBox1.Size = new System.Drawing.Size(561, 262);
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
             // 
             // MaskAgreementDate
             // 
-            this.MaskAgreementDate.Location = new System.Drawing.Point(178, 226);
+            this.MaskAgreementDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MaskAgreementDate.Location = new System.Drawing.Point(197, 200);
             this.MaskAgreementDate.Mask = "0000-00-00";
             this.MaskAgreementDate.Name = "MaskAgreementDate";
-            this.MaskAgreementDate.Size = new System.Drawing.Size(151, 23);
-            this.MaskAgreementDate.TabIndex = 55;
+            this.MaskAgreementDate.Size = new System.Drawing.Size(151, 26);
+            this.MaskAgreementDate.TabIndex = 7;
             // 
             // MaskEstablishedDate
             // 
-            this.MaskEstablishedDate.Location = new System.Drawing.Point(178, 80);
+            this.MaskEstablishedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MaskEstablishedDate.Location = new System.Drawing.Point(197, 227);
             this.MaskEstablishedDate.Mask = "0000-00-00";
             this.MaskEstablishedDate.Name = "MaskEstablishedDate";
-            this.MaskEstablishedDate.Size = new System.Drawing.Size(151, 23);
-            this.MaskEstablishedDate.TabIndex = 54;
+            this.MaskEstablishedDate.Size = new System.Drawing.Size(151, 26);
+            this.MaskEstablishedDate.TabIndex = 8;
             // 
             // BtnSearch
             // 
@@ -230,11 +233,11 @@ namespace InsuranceApplication.Forms
             this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnSearch.ForeColor = System.Drawing.Color.White;
-            this.BtnSearch.Location = new System.Drawing.Point(450, 19);
+            this.BtnSearch.Location = new System.Drawing.Point(469, 19);
             this.BtnSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.Size = new System.Drawing.Size(70, 27);
-            this.BtnSearch.TabIndex = 53;
+            this.BtnSearch.TabIndex = 0;
             this.BtnSearch.Text = "Search";
             this.BtnSearch.TextColor = System.Drawing.Color.White;
             this.BtnSearch.UseVisualStyleBackColor = false;
@@ -245,7 +248,7 @@ namespace InsuranceApplication.Forms
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(11, 225);
+            this.label7.Location = new System.Drawing.Point(19, 200);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(131, 18);
@@ -257,7 +260,7 @@ namespace InsuranceApplication.Forms
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(10, 24);
+            this.label6.Location = new System.Drawing.Point(19, 24);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(154, 18);
@@ -267,24 +270,45 @@ namespace InsuranceApplication.Forms
             // TxtSerialNumber
             // 
             this.TxtSerialNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtSerialNumber.Location = new System.Drawing.Point(178, 20);
+            this.TxtSerialNumber.Location = new System.Drawing.Point(197, 20);
             this.TxtSerialNumber.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtSerialNumber.Name = "TxtSerialNumber";
             this.TxtSerialNumber.Size = new System.Drawing.Size(270, 26);
-            this.TxtSerialNumber.TabIndex = 49;
+            this.TxtSerialNumber.TabIndex = 1;
             this.TxtSerialNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.BtnEdit);
             this.groupBox2.Controls.Add(this.BtnAdd);
             this.groupBox2.Controls.Add(this.BtnDelete);
             this.groupBox2.Controls.Add(this.BtnClear);
             this.groupBox2.Controls.Add(this.BtnSave);
             this.groupBox2.Location = new System.Drawing.Point(12, 288);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(537, 53);
+            this.groupBox2.Size = new System.Drawing.Size(561, 53);
             this.groupBox2.TabIndex = 49;
             this.groupBox2.TabStop = false;
+            // 
+            // BtnEdit
+            // 
+            this.BtnEdit.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnEdit.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnEdit.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnEdit.BorderRadius = 34;
+            this.BtnEdit.BorderSize = 0;
+            this.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnEdit.ForeColor = System.Drawing.Color.White;
+            this.BtnEdit.Location = new System.Drawing.Point(334, 12);
+            this.BtnEdit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnEdit.Name = "BtnEdit";
+            this.BtnEdit.Size = new System.Drawing.Size(110, 35);
+            this.BtnEdit.TabIndex = 12;
+            this.BtnEdit.Text = "Edit";
+            this.BtnEdit.TextColor = System.Drawing.Color.White;
+            this.BtnEdit.UseVisualStyleBackColor = false;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // BtnAdd
             // 
@@ -296,11 +320,11 @@ namespace InsuranceApplication.Forms
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAdd.ForeColor = System.Drawing.Color.White;
-            this.BtnAdd.Location = new System.Drawing.Point(381, 12);
+            this.BtnAdd.Location = new System.Drawing.Point(224, 12);
             this.BtnAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(110, 35);
-            this.BtnAdd.TabIndex = 45;
+            this.BtnAdd.TabIndex = 11;
             this.BtnAdd.Text = "Add";
             this.BtnAdd.TextColor = System.Drawing.Color.White;
             this.BtnAdd.UseVisualStyleBackColor = false;
@@ -316,11 +340,11 @@ namespace InsuranceApplication.Forms
             this.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDelete.ForeColor = System.Drawing.Color.White;
-            this.BtnDelete.Location = new System.Drawing.Point(48, 12);
+            this.BtnDelete.Location = new System.Drawing.Point(2, 12);
             this.BtnDelete.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(110, 35);
-            this.BtnDelete.TabIndex = 44;
+            this.BtnDelete.TabIndex = 9;
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.TextColor = System.Drawing.Color.White;
             this.BtnDelete.UseVisualStyleBackColor = false;
@@ -336,11 +360,11 @@ namespace InsuranceApplication.Forms
             this.BtnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnClear.ForeColor = System.Drawing.Color.White;
-            this.BtnClear.Location = new System.Drawing.Point(159, 12);
+            this.BtnClear.Location = new System.Drawing.Point(113, 12);
             this.BtnClear.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(110, 35);
-            this.BtnClear.TabIndex = 43;
+            this.BtnClear.TabIndex = 10;
             this.BtnClear.Text = "Clear";
             this.BtnClear.TextColor = System.Drawing.Color.White;
             this.BtnClear.UseVisualStyleBackColor = false;
@@ -356,11 +380,11 @@ namespace InsuranceApplication.Forms
             this.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnSave.ForeColor = System.Drawing.Color.White;
-            this.BtnSave.Location = new System.Drawing.Point(270, 12);
+            this.BtnSave.Location = new System.Drawing.Point(444, 12);
             this.BtnSave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(110, 35);
-            this.BtnSave.TabIndex = 42;
+            this.BtnSave.TabIndex = 13;
             this.BtnSave.Text = "Save";
             this.BtnSave.TextColor = System.Drawing.Color.White;
             this.BtnSave.UseVisualStyleBackColor = false;
@@ -374,7 +398,7 @@ namespace InsuranceApplication.Forms
             this.textBox9.Location = new System.Drawing.Point(-2, 0);
             this.textBox9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(561, 26);
+            this.textBox9.Size = new System.Drawing.Size(589, 26);
             this.textBox9.TabIndex = 50;
             this.textBox9.Text = "Insurance Company Details";
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -384,7 +408,7 @@ namespace InsuranceApplication.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(559, 351);
+            this.ClientSize = new System.Drawing.Size(585, 351);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -422,9 +446,10 @@ namespace InsuranceApplication.Forms
         private CustomControls.Button.CustomButton BtnClear;
         private CustomControls.Button.CustomButton BtnDelete;
         private CustomControls.Button.CustomButton BtnAdd;
-        private System.Windows.Forms.TextBox textBox9;
         private CustomControls.Button.CustomButton BtnSearch;
         private System.Windows.Forms.MaskedTextBox MaskAgreementDate;
         private System.Windows.Forms.MaskedTextBox MaskEstablishedDate;
+        private CustomControls.Button.CustomButton BtnEdit;
+        private System.Windows.Forms.TextBox textBox9;
     }
 }

@@ -3,6 +3,7 @@ using InsuranceApplication.Forms.Interfaces;
 using InsuranceApplication.Services.Interfaces;
 using InsuranceApplication.Shared;
 using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace InsuranceApplication.Forms
@@ -21,8 +22,9 @@ namespace InsuranceApplication.Forms
             Search,
             Delete,
             Clear,
-            Save,
             Add,
+            Edit,
+            Save,
             PopulateInsuranceCompany,
             None
         }
@@ -37,7 +39,7 @@ namespace InsuranceApplication.Forms
 
         private void InsuranceForm_Load(object sender, EventArgs e)
         {
-            EnableFields(Action.None);
+            EnableFields();
             EnableFields(Action.Load);
         }
 
@@ -79,35 +81,64 @@ namespace InsuranceApplication.Forms
             ClearInputFields();
         }
 
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            EnableFields();
+            EnableFields(Action.Add);
+            _selectedInsuranceCompanyId = 0;
+            TxtSerialNumber.Focus();
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            EnableFields();
+            EnableFields(Action.Edit);
+            TxtSerialNumber.Focus();
+        }
+
         private void BtnSave_Click(object sender, EventArgs e)
         {
             var serialNumber = TxtSerialNumber.Text.Trim();
             var name = TxtName.Text.Trim();
-            var establishedDate = UtilityService.GetDate(MaskEstablishedDate.Text.Trim());
             var headOfficeAddress = TxtHeadOfficeAddress.Text.Trim();
             var branchOfficeAddress = TxtBranchOfficeAddress.Text.Trim();
             var headOfDepartment = TxtHeadOfDepartment.Text.Trim();
             var position = TxtPosition.Text.Trim();
             var agreementDate = UtilityService.GetDate(MaskAgreementDate.Text.Trim());
-
-            var insuranceCompany = new InsuranceCompany()
-            {
-                SerialNumber = serialNumber,
-                Name = name,
-                EstablishedDate = Convert.ToDateTime(establishedDate),
-                HeadOfficeAddress = headOfficeAddress,
-                BranchOfficeAddress = branchOfficeAddress,
-                HeadOfDepartment = headOfDepartment,
-                Position = position,
-                AgreementDate = Convert.ToDateTime(agreementDate),
-                AddedBy = "TestUser",
-                AddedDate = DateTime.Now
-            };
+            var establishedDate = UtilityService.GetDate(MaskEstablishedDate.Text.Trim());
 
             try
             {
-                _insuranceCompanyService.AddInsuranceCompany(insuranceCompany);
+                var insuranceCompany = new InsuranceCompany
+                {
+                    Id = _selectedInsuranceCompanyId,
+                    SerialNumber = serialNumber,
+                    Name = name,
+                    HeadOfficeAddress = headOfficeAddress,
+                    BranchOfficeAddress = branchOfficeAddress,
+                    HeadOfDepartment = headOfDepartment,
+                    Position = position,
+                    AgreementDate = Convert.ToDateTime(agreementDate),
+                    EstablishedDate = string.IsNullOrWhiteSpace(establishedDate) ? (DateTime?)null : Convert.ToDateTime(establishedDate)
+                };
 
+                if (_selectedInsuranceCompanyId > 0)
+                {
+                    insuranceCompany.UpdatedBy = "TestUser";
+                    insuranceCompany.UpdatedDate = DateTime.Now;
+
+                    _insuranceCompanyService.UpdateInsuranceCompany(_selectedInsuranceCompanyId, insuranceCompany);
+                    DialogResult result = MessageBox.Show("Insurance Company has been updated successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    insuranceCompany.AddedBy = "TestUser";
+                    insuranceCompany.AddedDate = DateTime.Now;
+
+                    _insuranceCompanyService.AddInsuranceCompany(insuranceCompany);
+                    DialogResult result = MessageBox.Show("Insurance Company has been added successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
                 ClearInputFields();
                 EnableFields();
                 EnableFields(Action.Save);
@@ -118,17 +149,13 @@ namespace InsuranceApplication.Forms
                 UtilityService.ShowExceptionMessageBox();
             }
         }
-
-        private void BtnAdd_Click(object sender, EventArgs e)
-        {
-            EnableFields();
-            EnableFields(Action.Add);
-        }
         #endregion
 
         #region Helper Methods
         private void ClearInputFields()
         {
+            _selectedInsuranceCompanyId = 0;
+
             TxtSerialNumber.Clear();
             TxtName.Clear();
             MaskEstablishedDate.Clear();
@@ -157,8 +184,25 @@ namespace InsuranceApplication.Forms
                 BtnSearch.Enabled = true;
                 BtnDelete.Enabled = true;
                 BtnAdd.Enabled = true;
+                BtnEdit.Enabled = true;
             }
             else if (action == Action.Add)
+            {
+                TxtSerialNumber.Enabled = true;
+                TxtName.Enabled = true;
+                MaskEstablishedDate.Enabled = true;
+                TxtHeadOfficeAddress.Enabled = true;
+                TxtBranchOfficeAddress.Enabled = true;
+                TxtHeadOfDepartment.Enabled = true;
+                TxtPosition.Enabled = true;
+                MaskAgreementDate.Enabled = true;
+
+                BtnSearch.Enabled = true;
+                BtnDelete.Enabled = true;
+                BtnClear.Enabled = true;
+                BtnSave.Enabled = true;
+            }
+            else if (action == Action.Edit)
             {
                 TxtSerialNumber.Enabled = true;
                 TxtName.Enabled = true;
@@ -188,8 +232,9 @@ namespace InsuranceApplication.Forms
                 BtnSearch.Enabled = false;
                 BtnDelete.Enabled = false;
                 BtnClear.Enabled = false;
-                BtnSave.Enabled = false;
                 BtnAdd.Enabled = false;
+                BtnEdit.Enabled = false;
+                BtnSave.Enabled = false;
             }
         }
 
@@ -199,15 +244,17 @@ namespace InsuranceApplication.Forms
 
             if(insuranceCompany != null)
             {
+                IFormatProvider culture = new CultureInfo("en-US", true);
+
                 _selectedInsuranceCompanyId = insuranceCompany.Id;
                 TxtSerialNumber.Text = insuranceCompany.SerialNumber;
                 TxtName.Text = insuranceCompany.Name;
-                MaskEstablishedDate.Text = insuranceCompany.EstablishedDate.ToString();
                 TxtHeadOfficeAddress.Text = insuranceCompany.HeadOfficeAddress;
                 TxtBranchOfficeAddress.Text = insuranceCompany.BranchOfficeAddress;
                 TxtHeadOfDepartment.Text = insuranceCompany.HeadOfDepartment;
                 TxtPosition.Text = insuranceCompany.Position;
-                MaskAgreementDate.Text = insuranceCompany.AgreementDate.ToString();
+                MaskAgreementDate.Text = insuranceCompany.AgreementDate.ToString("yyyy-MM-dd");
+                MaskEstablishedDate.Text = insuranceCompany.EstablishedDate == null ? "" : insuranceCompany.EstablishedDate?.ToString("yyyy-MM-dd");
             }
             
             EnableFields();

@@ -21,13 +21,14 @@ namespace InsuranceApplication.Repositories
         {
             var loanDetails = new List<LoanDetail>();
             var query = @"SELECT " +
-                "[Id], [MemberName], [MemberAddress], [MemberBeneficiary], [MemberGender], " +
+                "[Id], [InsuranceCompanyId], [MembershipNo], " +
+                "[MemberName], [MemberAddress], [MemberBeneficiary], [MemberRelationship], [MemberGender], " +
                 "[StartingDate], [RenewDate], [PeriodInMonth], [MaturedDate], " +
                 "[LoanAmount], [Premium], [InsuranceAmount], [MaturedAmount], " +
-                "[ImagePath], [InsuranceCompanyId], [MemberId], " +
+                "[ImagePath], " +
                 "[AddedBy], [AddedDate], [UpdatedBy], [UpdatedDate] " +
-                "FROM " + Constants.TABLE_INSURANCE_COMPANY + " " +
-                "ORDER BY [Name] ";
+                "FROM " + Constants.TABLE_LOAN_DETAIL + " " +
+                "ORDER BY [MemberName] ";
 
             try
             {
@@ -43,9 +44,12 @@ namespace InsuranceApplication.Repositories
                                 var loanDetail = new LoanDetail
                                 {
                                     Id = Convert.ToInt64(reader["Id"].ToString()),
+                                    InsuranceCompanyId = Convert.ToInt64(reader["InsuranceCompanyId"].ToString()),
+                                    MembershipNo = reader["MembershipNo"].ToString(),
                                     MemberName = reader["MemberName"].ToString(),
                                     MemberAddress = reader["MemberAddress"].ToString(),
                                     MemberBeneficiary = reader["MemberBeneficiary"].ToString(),
+                                    MemberRelationship = reader["MemberRelationship"].ToString(),
                                     MemberGender = reader["MemberGender"].ToString(),
                                     StartingDate = Convert.ToDateTime(reader["StartingDate"].ToString()),
                                     RenewDate = Convert.ToDateTime(reader["RenewDate"].ToString()),
@@ -56,12 +60,10 @@ namespace InsuranceApplication.Repositories
                                     InsuranceAmount = Convert.ToDecimal(reader["InsuranceAmount"].ToString()),
                                     MaturedAmount = Convert.ToDecimal(reader["MaturedAmount"].ToString()),
                                     ImagePath = reader["ImagePath"].ToString(),
-                                    InsuranceCompanyId = Convert.ToInt64(reader["InsuranceCompanyId"].ToString()),
-                                    MemberId = Convert.ToInt64(reader["MemberId"].ToString()),
                                     AddedBy = reader["AddedBy"].ToString(),
                                     AddedDate = Convert.ToDateTime(reader["AddedDate"].ToString()),
                                     UpdatedBy = reader["UpdatedBy"].ToString(),
-                                    UpdatedDate = Convert.ToDateTime(reader["UpdatedDate"].ToString())
+                                    UpdatedDate = reader.IsDBNull(20) ? (DateTime?)null : Convert.ToDateTime(reader["UpdatedDate"].ToString())
                                 };
 
                                 loanDetails.Add(loanDetail);
@@ -83,12 +85,13 @@ namespace InsuranceApplication.Repositories
         {
             LoanDetail loanDetail = null;
             var query = @"SELECT " +
-                "[Id], [MemberName], [MemberAddress], [MemberBeneficiary], [MemberGender], " +
+                "[Id], [InsuranceCompanyId], [MembershipNo], " +
+                "[MemberName], [MemberAddress], [MemberBeneficiary], [MemberRelationship], [MemberGender], " +
                 "[StartingDate], [RenewDate], [PeriodInMonth], [MaturedDate], " +
                 "[LoanAmount], [Premium], [InsuranceAmount], [MaturedAmount], " +
-                "[ImagePath], [InsuranceCompanyId], [MemberId], " +
+                "[ImagePath], " +
                 "[AddedBy], [AddedDate], [UpdatedBy], [UpdatedDate] " +
-                "FROM " + Constants.TABLE_INSURANCE_COMPANY + " " +
+                "FROM " + Constants.TABLE_LOAN_DETAIL + " " +
                 "WHERE 1 = 1 " +
                 "AND Id = @Id";
 
@@ -108,9 +111,12 @@ namespace InsuranceApplication.Repositories
                                 while (reader.Read())
                                 {
                                     loanDetail.Id = Convert.ToInt64(reader["Id"].ToString());
+                                    loanDetail.InsuranceCompanyId = Convert.ToInt64(reader["InsuranceCompanyId"].ToString());
+                                    loanDetail.MembershipNo = reader["MembershipNo"].ToString();
                                     loanDetail.MemberName = reader["MemberName"].ToString();
                                     loanDetail.MemberAddress = reader["MemberAddress"].ToString();
                                     loanDetail.MemberBeneficiary = reader["MemberBeneficiary"].ToString();
+                                    loanDetail.MemberRelationship = reader["MemberRelationship"].ToString();
                                     loanDetail.MemberGender = reader["MemberGender"].ToString();
                                     loanDetail.StartingDate = Convert.ToDateTime(reader["StartingDate"].ToString());
                                     loanDetail.RenewDate = Convert.ToDateTime(reader["RenewDate"].ToString());
@@ -120,13 +126,11 @@ namespace InsuranceApplication.Repositories
                                     loanDetail.Premium = Convert.ToDecimal(reader["Premium"].ToString());
                                     loanDetail.InsuranceAmount = Convert.ToDecimal(reader["InsuranceAmount"].ToString());
                                     loanDetail.MaturedAmount = Convert.ToDecimal(reader["MaturedAmount"].ToString());
-                                    loanDetail.ImagePath = reader["ImagePath"].ToString();
-                                    loanDetail.InsuranceCompanyId = Convert.ToInt64(reader["InsuranceCompanyId"].ToString());
-                                    loanDetail.MemberId = Convert.ToInt64(reader["MemberId"].ToString());
+                                    loanDetail.ImagePath = reader["ImagePath"].ToString(); 
                                     loanDetail.AddedBy = reader["AddedBy"].ToString();
                                     loanDetail.AddedDate = Convert.ToDateTime(reader["AddedDate"].ToString());
                                     loanDetail.UpdatedBy = reader["UpdatedBy"].ToString();
-                                    loanDetail.UpdatedDate = Convert.ToDateTime(reader["UpdatedDate"].ToString());
+                                    loanDetail.UpdatedDate = reader.IsDBNull(20) ? (DateTime?)null : Convert.ToDateTime(reader["UpdatedDate"].ToString());
                                 }
                             }
                         }
@@ -145,20 +149,22 @@ namespace InsuranceApplication.Repositories
         public LoanDetail AddLoanDetail(LoanDetail loanDetail)
         {
             string query = @"INSERT INTO " +
-                    " " + Constants.TABLE_INSURANCE_COMPANY + " " +
+                    " " + Constants.TABLE_LOAN_DETAIL + " " +
                     "( " +
-                        "[MemberName], [MemberAddress], [MemberBeneficiary], [MemberGender], " +
+                        "[InsuranceCompanyId], [MembershipNo], " +
+                        "[MemberName], [MemberAddress], [MemberBeneficiary], [MemberRelationship], [MemberGender], " +
                         "[StartingDate], [RenewDate], [PeriodInMonth], [MaturedDate], " +
                         "[LoanAmount], [Premium], [InsuranceAmount], [MaturedAmount], " +
-                        "[ImagePath], [InsuranceCompanyId], [MemberId], " +
+                        "[ImagePath], " +
                         "[AddedBy], [AddedDate] " +
                     ") " +
                     "VALUES " +
                     "( " +
-                        "@MemberName, @MemberAddress, @MemberBeneficiary, @MemberGender, " +
+                        "@InsuranceCompanyId, @MembershipNo, " +
+                        "@MemberName, @MemberAddress, @MemberBeneficiary, @MemberRelationship, @MemberGender, " +
                         "@StartingDate, @RenewDate, @PeriodInMonth, @MaturedDate, " +
                         "@LoanAmount, @Premium, @InsuranceAmount, @MaturedAmount, " +
-                        "@ImagePath, @InsuranceCompanyId, @MemberId, " +
+                        "@ImagePath, " +
                         "@AddedBy, @AddedDate " +
                     ") ";
             try
@@ -168,9 +174,12 @@ namespace InsuranceApplication.Repositories
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
+                        command.Parameters.AddWithValue("@InsuranceCompanyId", ((object)loanDetail.InsuranceCompanyId) ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MembershipNo", ((object)loanDetail.MembershipNo) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MemberName", ((object)loanDetail.MemberName) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MemberAddress", ((object)loanDetail.MemberAddress) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MemberBeneficiary", ((object)loanDetail.MemberBeneficiary) ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MemberRelationship", ((object)loanDetail.MemberRelationship) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MemberGender", ((object)loanDetail.MemberGender) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@StartingDate", ((object)loanDetail.StartingDate) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@RenewDate", ((object)loanDetail.RenewDate) ?? DBNull.Value);
@@ -181,8 +190,6 @@ namespace InsuranceApplication.Repositories
                         command.Parameters.AddWithValue("@InsuranceAmount", ((object)loanDetail.InsuranceAmount) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MaturedAmount", ((object)loanDetail.MaturedAmount) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@ImagePath", ((object)loanDetail.ImagePath) ?? DBNull.Value);
-                        command.Parameters.AddWithValue("@InsuranceCompanyId", ((object)loanDetail.InsuranceCompanyId) ?? DBNull.Value);
-                        command.Parameters.AddWithValue("@MemberId", ((object)loanDetail.MemberId) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@AddedBy", ((object)loanDetail.AddedBy) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@AddedDate", ((object)loanDetail.AddedDate) ?? DBNull.Value);
                         command.ExecuteNonQuery();
@@ -200,22 +207,24 @@ namespace InsuranceApplication.Repositories
 
         public LoanDetail UpdateLoanDetail(long id, LoanDetail loanDetail)
         {
-            string query = @"UPDATE " + Constants.TABLE_INSURANCE_COMPANY + " " +
+            string query = @"UPDATE " + Constants.TABLE_LOAN_DETAIL + " " +
                     "SET " +
+                    "[InsuranceCompanyId] = @InsuranceCompanyId, " +
+                    "[MembershipNo] = @MembershipNo, " +
                     "[MemberName] = @MemberName, " +
                     "[MemberAddress] = @MemberAddress, " +
                     "[MemberBeneficiary] = @MemberBeneficiary, " +
+                    "[MemberRelationship] = @MemberRelationship, " +
                     "[MemberGender] = @MemberGender, " +
                     "[StartingDate] = @StartingDate, " +
                     "[RenewDate] = @RenewDate, " +
+                    "[PeriodInMonth] = @PeriodInMonth, " +
                     "[MaturedDate] = @MaturedDate, " +
                     "[LoanAmount] = @LoanAmount, " +
                     "[Premium] = @Premium, " +
                     "[InsuranceAmount] = @InsuranceAmount, " +
                     "[MaturedAmount] = @MaturedAmount, " +
                     "[ImagePath] = @ImagePath, " +
-                    "[InsuranceCompanyId] = @InsuranceCompanyId, " +
-                    "[MemberId] = @MemberId, " +
                     "[UpdatedBy] = @UpdatedBy, " +
                     "[UpdatedDate] = @UpdatedDate " +
                     "WHERE 1 = 1 " +
@@ -228,9 +237,12 @@ namespace InsuranceApplication.Repositories
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Id", ((object)id) ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@InsuranceCompanyId", ((object)loanDetail.InsuranceCompanyId) ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MembershipNo", ((object)loanDetail.MembershipNo) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MemberName", ((object)loanDetail.MemberName) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MemberAddress", ((object)loanDetail.MemberAddress) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MemberBeneficiary", ((object)loanDetail.MemberBeneficiary) ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@MemberRelationship", ((object)loanDetail.MemberRelationship) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MemberGender", ((object)loanDetail.MemberGender) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@StartingDate", ((object)loanDetail.StartingDate) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@RenewDate", ((object)loanDetail.RenewDate) ?? DBNull.Value);
@@ -241,8 +253,6 @@ namespace InsuranceApplication.Repositories
                         command.Parameters.AddWithValue("@InsuranceAmount", ((object)loanDetail.InsuranceAmount) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MaturedAmount", ((object)loanDetail.MaturedAmount) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@ImagePath", ((object)loanDetail.ImagePath) ?? DBNull.Value);
-                        command.Parameters.AddWithValue("@InsuranceCompanyId", ((object)loanDetail.InsuranceCompanyId) ?? DBNull.Value);
-                        command.Parameters.AddWithValue("@MemberId", ((object)loanDetail.MaturedAmount) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@UpdatedBy", ((object)loanDetail.UpdatedBy) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@UpdatedDate", ((object)loanDetail.UpdatedDate) ?? DBNull.Value);
                         command.ExecuteNonQuery();
@@ -262,7 +272,7 @@ namespace InsuranceApplication.Repositories
         {
             bool result = false;
             string query = @"DELETE " +
-                    "FROM " + Constants.TABLE_INSURANCE_COMPANY + " " +
+                    "FROM " + Constants.TABLE_LOAN_DETAIL + " " +
                     "WHERE 1 = 1 " +
                     "AND [Id] = @Id";
             try
