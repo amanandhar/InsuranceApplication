@@ -23,7 +23,7 @@ namespace InsuranceApplication.Repositories
             var query = @"SELECT " +
                 "[Id], [InsuranceCompanyId], [MembershipNo], " +
                 "[MemberName], [MemberAddress], [MemberBeneficiary], [MemberRelationship], [MemberGender], " +
-                "[StartingDate], [RenewDate], [PeriodInMonth], [MaturedDate], " +
+                "[StartingDate], [PeriodInMonth], [MaturedDate], [RenewDate], " +
                 "[LoanAmount], [Premium], [InsuranceAmount], [MaturedAmount], " +
                 "[ImagePath], " +
                 "[AddedBy], [AddedDate], [UpdatedBy], [UpdatedDate] " +
@@ -52,9 +52,9 @@ namespace InsuranceApplication.Repositories
                                     MemberRelationship = reader["MemberRelationship"].ToString(),
                                     MemberGender = reader["MemberGender"].ToString(),
                                     StartingDate = Convert.ToDateTime(reader["StartingDate"].ToString()),
-                                    RenewDate = Convert.ToDateTime(reader["RenewDate"].ToString()),
                                     PeriodInMonth = Convert.ToInt32(reader["PeriodInMonth"].ToString()),
                                     MaturedDate = Convert.ToDateTime(reader["MaturedDate"].ToString()),
+                                    RenewDate = Convert.ToDateTime(reader["RenewDate"].ToString()),
                                     LoanAmount = Convert.ToDecimal(reader["LoanAmount"].ToString()),
                                     Premium = Convert.ToDecimal(reader["Premium"].ToString()),
                                     InsuranceAmount = Convert.ToDecimal(reader["InsuranceAmount"].ToString()),
@@ -87,7 +87,7 @@ namespace InsuranceApplication.Repositories
             var query = @"SELECT " +
                 "[Id], [InsuranceCompanyId], [MembershipNo], " +
                 "[MemberName], [MemberAddress], [MemberBeneficiary], [MemberRelationship], [MemberGender], " +
-                "[StartingDate], [RenewDate], [PeriodInMonth], [MaturedDate], " +
+                "[StartingDate], [PeriodInMonth], [MaturedDate], [RenewDate], " +
                 "[LoanAmount], [Premium], [InsuranceAmount], [MaturedAmount], " +
                 "[ImagePath], " +
                 "[AddedBy], [AddedDate], [UpdatedBy], [UpdatedDate] " +
@@ -119,9 +119,9 @@ namespace InsuranceApplication.Repositories
                                     loanDetail.MemberRelationship = reader["MemberRelationship"].ToString();
                                     loanDetail.MemberGender = reader["MemberGender"].ToString();
                                     loanDetail.StartingDate = Convert.ToDateTime(reader["StartingDate"].ToString());
-                                    loanDetail.RenewDate = Convert.ToDateTime(reader["RenewDate"].ToString());
                                     loanDetail.PeriodInMonth = Convert.ToInt32(reader["PeriodInMonth"].ToString());
                                     loanDetail.MaturedDate = Convert.ToDateTime(reader["MaturedDate"].ToString());
+                                    loanDetail.RenewDate = Convert.ToDateTime(reader["RenewDate"].ToString());
                                     loanDetail.LoanAmount = Convert.ToDecimal(reader["LoanAmount"].ToString());
                                     loanDetail.Premium = Convert.ToDecimal(reader["Premium"].ToString());
                                     loanDetail.InsuranceAmount = Convert.ToDecimal(reader["InsuranceAmount"].ToString());
@@ -153,7 +153,7 @@ namespace InsuranceApplication.Repositories
                     "( " +
                         "[InsuranceCompanyId], [MembershipNo], " +
                         "[MemberName], [MemberAddress], [MemberBeneficiary], [MemberRelationship], [MemberGender], " +
-                        "[StartingDate], [RenewDate], [PeriodInMonth], [MaturedDate], " +
+                        "[StartingDate], [PeriodInMonth], [MaturedDate], [RenewDate], " +
                         "[LoanAmount], [Premium], [InsuranceAmount], [MaturedAmount], " +
                         "[ImagePath], " +
                         "[AddedBy], [AddedDate] " +
@@ -162,7 +162,7 @@ namespace InsuranceApplication.Repositories
                     "( " +
                         "@InsuranceCompanyId, @MembershipNo, " +
                         "@MemberName, @MemberAddress, @MemberBeneficiary, @MemberRelationship, @MemberGender, " +
-                        "@StartingDate, @RenewDate, @PeriodInMonth, @MaturedDate, " +
+                        "@StartingDate, @PeriodInMonth, @MaturedDate, @RenewDate, " +
                         "@LoanAmount, @Premium, @InsuranceAmount, @MaturedAmount, " +
                         "@ImagePath, " +
                         "@AddedBy, @AddedDate " +
@@ -182,9 +182,9 @@ namespace InsuranceApplication.Repositories
                         command.Parameters.AddWithValue("@MemberRelationship", ((object)loanDetail.MemberRelationship) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MemberGender", ((object)loanDetail.MemberGender) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@StartingDate", ((object)loanDetail.StartingDate) ?? DBNull.Value);
-                        command.Parameters.AddWithValue("@RenewDate", ((object)loanDetail.RenewDate) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@PeriodInMonth", ((object)loanDetail.PeriodInMonth) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MaturedDate", ((object)loanDetail.MaturedDate) ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@RenewDate", ((object)loanDetail.RenewDate) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@LoanAmount", ((object)loanDetail.LoanAmount) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@Premium", ((object)loanDetail.Premium) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@InsuranceAmount", ((object)loanDetail.InsuranceAmount) ?? DBNull.Value);
@@ -217,9 +217,9 @@ namespace InsuranceApplication.Repositories
                     "[MemberRelationship] = @MemberRelationship, " +
                     "[MemberGender] = @MemberGender, " +
                     "[StartingDate] = @StartingDate, " +
-                    "[RenewDate] = @RenewDate, " +
                     "[PeriodInMonth] = @PeriodInMonth, " +
                     "[MaturedDate] = @MaturedDate, " +
+                    "[RenewDate] = @RenewDate, " +
                     "[LoanAmount] = @LoanAmount, " +
                     "[Premium] = @Premium, " +
                     "[InsuranceAmount] = @InsuranceAmount, " +
@@ -245,9 +245,9 @@ namespace InsuranceApplication.Repositories
                         command.Parameters.AddWithValue("@MemberRelationship", ((object)loanDetail.MemberRelationship) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MemberGender", ((object)loanDetail.MemberGender) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@StartingDate", ((object)loanDetail.StartingDate) ?? DBNull.Value);
-                        command.Parameters.AddWithValue("@RenewDate", ((object)loanDetail.RenewDate) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@PeriodInMonth", ((object)loanDetail.PeriodInMonth) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@MaturedDate", ((object)loanDetail.MaturedDate) ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@RenewDate", ((object)loanDetail.RenewDate) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@LoanAmount", ((object)loanDetail.LoanAmount) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@Premium", ((object)loanDetail.Premium) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@InsuranceAmount", ((object)loanDetail.InsuranceAmount) ?? DBNull.Value);

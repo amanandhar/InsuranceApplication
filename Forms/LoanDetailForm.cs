@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -22,6 +24,8 @@ namespace InsuranceApplication.Forms
         private long _selectedLoanDetailId = 0;
         private long _selectedInsuranceCompanyId = 0;
         private string _baseImageFolder;
+        private string _memberImageFolder;
+        private string _uploadedImagePath = string.Empty;
 
         #region Enum
         private enum Action
@@ -58,6 +62,8 @@ namespace InsuranceApplication.Forms
         private void DashboardForm_Load(object sender, System.EventArgs e)
         {
             _baseImageFolder = ConfigurationManager.AppSettings[Constants.BASE_DOCUMENT_FOLDER].ToString();
+            _memberImageFolder = ConfigurationManager.AppSettings[Constants.MEMBER_IMAGE_FOLDER].ToString();
+
             LoadRelationships();
             LoadGenders();
 
@@ -67,7 +73,6 @@ namespace InsuranceApplication.Forms
         #endregion
 
         #region Button Click Event
-
         private void BtnSearchInsuranceCompany_Click(object sender, System.EventArgs e)
         {
             var insuranceCompanyListForm = new InsuranceCompanyListForm(_insuranceCompanyService, this);
@@ -86,6 +91,19 @@ namespace InsuranceApplication.Forms
         {
             InsuranceCompanyForm insuranceForm = new InsuranceCompanyForm(_insuranceCompanyService);
             insuranceForm.ShowDialog();
+        }
+
+        private void BtnImageAdd_Click(object sender, EventArgs e)
+        {
+            OpenMemberImageDialog.InitialDirectory = _baseImageFolder;
+            OpenMemberImageDialog.Filter = "All files |*.*";
+            OpenMemberImageDialog.ShowDialog();
+        }
+
+        private void BtnImageDelete_Click(object sender, EventArgs e)
+        {
+            PicBoxMemberImage.Image = PicBoxMemberImage.InitialImage;
+            _uploadedImagePath = string.Empty;
         }
 
         private void BtnShowLoanDetail_Click(object sender, System.EventArgs e)
@@ -107,15 +125,44 @@ namespace InsuranceApplication.Forms
         {
             try
             {
-                var loanDetail = GetLoanDetail();
-                _loanDetailService.AddLoanDetail(loanDetail);
-                DialogResult result = MessageBox.Show("Loan detail has been saved successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (result == DialogResult.OK)
+                if (ValidateLoanDetailInfo())
                 {
-                    ClearInputFields();
-                    EnableFields();
-                    EnableFields(Action.SaveLoanDetail);
-                }
+                    string relativeImagePath = null;
+                    if (!string.IsNullOrWhiteSpace(_uploadedImagePath))
+                    {
+                        if (!Directory.Exists(_baseImageFolder))
+                        {
+                            MessageBox.Show("Base image folder is set correctly. Please check.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else
+                        {
+                            if (!Directory.Exists(Path.Combine(_baseImageFolder, _memberImageFolder)))
+                            {
+                                UtilityService.CreateFolder(_baseImageFolder, _memberImageFolder);
+                            }
+
+                            relativeImagePath = TxtMembershipNo.Text + ".jpg";
+                            var destinationFilePath = Path.Combine(_baseImageFolder, _memberImageFolder, relativeImagePath);
+                            File.Copy(_uploadedImagePath, destinationFilePath, true);
+                        }
+                    }
+
+                    var loanDetail = GetLoanDetail(relativeImagePath);
+                    _loanDetailService.AddLoanDetail(loanDetail);
+                    DialogResult result = MessageBox.Show("Loan detail has been saved successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        ClearInputFields();
+
+                        var loanDetails = GetLoanDetails();
+                        LoadLoanDetails(loanDetails);
+
+                        EnableFields();
+                        EnableFields(Action.SaveLoanDetail);
+                    }
+                }   
             }
             catch (Exception ex)
             {
@@ -134,14 +181,48 @@ namespace InsuranceApplication.Forms
         {
             try
             {
-                var loanDetail = GetLoanDetail();
-                _loanDetailService.UpdateLoanDetail(_selectedLoanDetailId, loanDetail);
-                DialogResult result = MessageBox.Show("Loan detail has been updated successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (result == DialogResult.OK)
+                if(ValidateLoanDetailInfo())
                 {
-                    ClearInputFields();
-                    EnableFields();
-                    EnableFields(Action.UpdateLoanDetail);
+                    string relativeImagePath = null;
+                    if (!string.IsNullOrWhiteSpace(_uploadedImagePath))
+                    {
+                        if (!Directory.Exists(_baseImageFolder))
+                        {
+                            DialogResult errorResult = MessageBox.Show("Base image folder is set correctly. Please check.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            if (errorResult == DialogResult.OK)
+                            {
+                                return;
+                            }
+
+                            return;
+                        }
+                        else
+                        {
+                            if (!Directory.Exists(Path.Combine(_baseImageFolder, _memberImageFolder)))
+                            {
+                                UtilityService.CreateFolder(_baseImageFolder, _memberImageFolder);
+                            }
+
+                            relativeImagePath = TxtMembershipNo.Text + ".jpg";
+                            var destinationFilePath = Path.Combine(_baseImageFolder, _memberImageFolder, relativeImagePath);
+                            File.Copy(_uploadedImagePath, destinationFilePath, true);
+                        }
+                    }
+
+                    var loanDetail = GetLoanDetail(relativeImagePath);
+                    _loanDetailService.UpdateLoanDetail(_selectedLoanDetailId, loanDetail);
+                    DialogResult result = MessageBox.Show("Loan detail has been updated successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        ClearInputFields();
+                        
+                        var loanDetails = GetLoanDetails();
+                        LoadLoanDetails(loanDetails);
+
+                        EnableFields();
+                        EnableFields(Action.UpdateLoanDetail);
+                    }
                 }
             }
             catch (Exception ex)
@@ -160,52 +241,28 @@ namespace InsuranceApplication.Forms
         {
             try
             {
-                if (DataGridLoanDetailList.SelectedCells.Count == 1
-                    || DataGridLoanDetailList.SelectedRows.Count == 1)
-                {
-                    DataGridViewRow selectedRow;
-                    if (DataGridLoanDetailList.SelectedCells.Count == 1)
-                    {
-                        var selectedCell = DataGridLoanDetailList.SelectedCells[0];
-                        selectedRow = DataGridLoanDetailList.Rows[selectedCell.RowIndex];
-                    }
-                    else
-                    {
-                        selectedRow = DataGridLoanDetailList.SelectedRows[0];
-                    }
-
-                    var selectedId = selectedRow?.Cells["Id"]?.Value?.ToString();
-                    if (!string.IsNullOrWhiteSpace(selectedId))
-                    {
-                        DialogResult deleteResult = MessageBox.Show(Constants.MESSAGE_BOX_DELETE_MESSAGE, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (deleteResult == DialogResult.Yes)
-                        {
-                            var id = Convert.ToInt64(selectedId);
-                            if (_loanDetailService.DeleteLoanDetail(id))
-                            {
-                                DialogResult result = MessageBox.Show("Loan detail has been deleted successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                if (result == DialogResult.OK)
-                                {
-                                    ClearInputFields();
-                                    var loanDetails = GetLoanDetails();
-                                    LoadLoanDetails(loanDetails);
-                                }
-                            }
-                        }
-                    }
-                }
-                else if (_selectedLoanDetailId != 0)
+                if (_selectedLoanDetailId != 0)
                 {
                     DialogResult deleteResult = MessageBox.Show(Constants.MESSAGE_BOX_DELETE_MESSAGE, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (deleteResult == DialogResult.Yes)
                     {
                         var id = Convert.ToInt64(_selectedLoanDetailId);
+
+                        var loanDetail = _loanDetailService.GetLoanDetail(_selectedLoanDetailId);
+                        var relativeImagePath = loanDetail.ImagePath;
+                        var absoluteImagePath = Path.Combine(_baseImageFolder, _memberImageFolder, relativeImagePath);
+                        if (!string.IsNullOrWhiteSpace(absoluteImagePath) && File.Exists(absoluteImagePath))
+                        {
+                            UtilityService.DeleteImage(absoluteImagePath);
+                        }
+
                         if (_loanDetailService.DeleteLoanDetail(id))
                         {
                             DialogResult result = MessageBox.Show("Loan detail has been deleted successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             if (result == DialogResult.OK)
                             {
                                 ClearInputFields();
+
                                 var loanDetails = GetLoanDetails();
                                 LoadLoanDetails(loanDetails);
                             }
@@ -248,6 +305,11 @@ namespace InsuranceApplication.Forms
             {
                 e.Handled = true;
             }
+        }
+
+        private void TxtPeriodInMonth_KeyUp(object sender, KeyEventArgs e)
+        {
+            PopulateMaturatedDate();
         }
 
         private void TxtLoanAmount_KeyPress(object sender, KeyPressEventArgs e)
@@ -298,15 +360,24 @@ namespace InsuranceApplication.Forms
         #region MaskedTextbox Event
         private void MaskStartingDate_KeyUp(object sender, KeyEventArgs e)
         {
-            var startingDate = MaskStartingDate.Text.Trim();
-            if (DateTime.TryParse(startingDate, out _))
+            PopulateMaturatedDate();
+        }
+        #endregion
+
+        #region OpenFileDialog Event
+        private void OpenMemberImageDialog_FileOk(object sender, CancelEventArgs e)
+        {
+            try
             {
-                var date = DateTime.Parse(startingDate);
-                MaskRenewDate.Text = date.AddYears(1).ToString("yyyy-MM-dd");
+                Activate();
+                string[] files = OpenMemberImageDialog.FileNames;
+                _uploadedImagePath = files[0];
+                PicBoxMemberImage.Image = Image.FromFile(_uploadedImagePath);
             }
-            else
+            catch (Exception ex)
             {
-                MaskRenewDate.Text = string.Empty;
+                logger.Error(ex);
+                UtilityService.ShowExceptionMessageBox();
             }
         }
         #endregion
@@ -410,7 +481,7 @@ namespace InsuranceApplication.Forms
                 ComboRelationship.Text = loanDetail.MemberRelationship;
                 ComboMemberGender.Text = loanDetail.MemberGender;
                 MaskStartingDate.Text = loanDetail.StartingDate.ToString("yyyy-MM-dd");
-                MaskRenewDate.Text = loanDetail.RenewDate.ToString("yyyy-MM-dd");
+                MaskRenewDate.Text = DateTime.TryParse(loanDetail.RenewDate.ToString(), out _) ? loanDetail.RenewDate?.ToString("yyyy-MM-dd") : "";
                 TxtPeriodInMonth.Text = loanDetail.PeriodInMonth.ToString();
                 MaskMaturatedDate.Text = loanDetail.MaturedDate.ToString("yyyy-MM-dd");
                 TxtLoanAmount.Text = loanDetail.LoanAmount.ToString();
@@ -566,7 +637,7 @@ namespace InsuranceApplication.Forms
             }
         }
 
-        private LoanDetail GetLoanDetail()
+        private LoanDetail GetLoanDetail(string memberImagePath)
         {
             var id = _selectedLoanDetailId;
             var insuranceCompanyId = _selectedInsuranceCompanyId;
@@ -577,14 +648,14 @@ namespace InsuranceApplication.Forms
             var memberRelationship = ComboRelationship.Text.Trim();
             var memberGender = ComboMemberGender.Text.Trim();
             var startingDate = UtilityService.GetDate(MaskStartingDate.Text.Trim());
-            var renewDate = UtilityService.GetDate(MaskRenewDate.Text.Trim());
             var periodInMonth = TxtPeriodInMonth.Text.Trim();
             var maturatedDate = UtilityService.GetDate(MaskMaturatedDate.Text.Trim());
+            var renewDate = UtilityService.GetDate(MaskRenewDate.Text.Trim());
             var loanAmount = TxtLoanAmount.Text.Trim();
             var premium = TxtPremium.Text.Trim();
             var insuranceAmount = TxtInsuranceAmount.Text.Trim();
             var maturatedAmount = TxtMaturatedAmount.Text.Trim();
-            var imagePath = "";
+            var imagePath = memberImagePath;
 
             var loanDetail = new LoanDetail()
             {
@@ -597,13 +668,13 @@ namespace InsuranceApplication.Forms
                 MemberRelationship = memberRelationship,
                 MemberGender = memberGender,
                 StartingDate = Convert.ToDateTime(startingDate),
-                RenewDate = Convert.ToDateTime(renewDate),
                 PeriodInMonth = Convert.ToInt32(periodInMonth),
                 MaturedDate = Convert.ToDateTime(maturatedDate),
+                RenewDate = string.IsNullOrWhiteSpace(renewDate) ? (DateTime?)null : Convert.ToDateTime(renewDate),
                 LoanAmount = Convert.ToDecimal(loanAmount),
                 Premium = Convert.ToDecimal(premium),
                 InsuranceAmount = Convert.ToDecimal(insuranceAmount),
-                MaturedAmount = Convert.ToDecimal(maturatedAmount),
+                MaturedAmount = string.IsNullOrWhiteSpace(maturatedAmount) ? Constants.DEFAULT_DECIMAL_VALUE : Convert.ToDecimal(maturatedAmount),
                 ImagePath = imagePath,
                 AddedBy = "TestUser",
                 AddedDate = DateTime.Now
@@ -637,6 +708,82 @@ namespace InsuranceApplication.Forms
 
             ComboMemberGender.Items.Add(new ComboBoxItem { Id = Constants.MALE, Value = Constants.MALE });
             ComboMemberGender.Items.Add(new ComboBoxItem { Id = Constants.FEMALE, Value = Constants.FEMALE });
+        }
+
+        private void PopulateMaturatedDate()
+        {
+            var startingDate = MaskStartingDate.Text.Trim();
+            var periodInMonth = TxtPeriodInMonth.Text.Trim();
+            if (DateTime.TryParse(startingDate, out _) && int.TryParse(periodInMonth, out _))
+            {
+                var date = DateTime.Parse(startingDate);
+                var month = int.Parse(periodInMonth);
+                MaskMaturatedDate.Text = date.AddMonths(month).ToString("yyyy-MM-dd");
+            }
+            else
+            {
+                MaskRenewDate.Text = string.Empty;
+            }
+        }
+        #endregion
+
+        #region Validation
+        private bool ValidateLoanDetailInfo()
+        {
+            var isValidated = false;
+
+            var insuranceCompanySerialNo = TxtInsuranceCompanySerialNo.Text.Trim();
+            var insuranceCompanyName = TxtInsuranceCompanyName.Text.Trim();
+            var membershipNo = TxtMembershipNo.Text.Trim();
+            var memberName = TxtMemberName.Text.Trim();
+            var memberAddress = TxtMemberAddress.Text.Trim();
+            var memberBenificiary = TxtMemberBenificiary.Text.Trim();
+            var memberRelationship = ComboRelationship.Text.Trim();
+            var memberGender = ComboMemberGender.Text.Trim();
+            var startingDate = UtilityService.GetDate(MaskStartingDate.Text.Trim());
+            var periodInMonth = TxtPeriodInMonth.Text.Trim();
+            var maturatedDate = UtilityService.GetDate(MaskMaturatedDate.Text.Trim());
+            var loanAmount = TxtLoanAmount.Text.Trim();
+            var premium = TxtPremium.Text.Trim();
+            var insuranceAmount = TxtInsuranceAmount.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(insuranceCompanySerialNo)
+                || string.IsNullOrWhiteSpace(insuranceCompanyName)
+                || string.IsNullOrWhiteSpace(membershipNo)
+                || string.IsNullOrWhiteSpace(memberName)
+                || string.IsNullOrWhiteSpace(memberAddress)
+                || string.IsNullOrWhiteSpace(memberBenificiary)
+                || string.IsNullOrWhiteSpace(memberRelationship)
+                || string.IsNullOrWhiteSpace(memberGender)
+                || string.IsNullOrWhiteSpace(startingDate)
+                || string.IsNullOrWhiteSpace(periodInMonth)
+                || string.IsNullOrWhiteSpace(maturatedDate)
+                || string.IsNullOrWhiteSpace(loanAmount)
+                || string.IsNullOrWhiteSpace(premium)
+                || string.IsNullOrWhiteSpace(insuranceAmount))
+            {
+                MessageBox.Show("Please enter following fields: " +
+                    "\n * Insurance Company Serial No " +
+                    "\n * Insurance Company Name " +
+                    "\n * Membership No " +
+                    "\n * Name " +
+                    "\n * Address " +
+                    "\n * Benificiary " +
+                    "\n * Relationship " +
+                    "\n * Gender " +
+                    "\n * Starting Date " +
+                    "\n * Period In Month " +
+                    "\n * Maturated Date " +
+                    "\n * Loan Amount " +
+                    "\n * Premium " +
+                    "\n * Insurance Amount", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                isValidated = true;
+            }
+
+            return isValidated;
         }
         #endregion
     }

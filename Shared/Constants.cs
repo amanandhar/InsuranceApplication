@@ -2,7 +2,11 @@
 {
     public class Constants
     {
+        // Default Value
+        public const decimal DEFAULT_DECIMAL_VALUE = 0.00m;
+
         public const string BASE_DOCUMENT_FOLDER = "BaseDocumentFolder";
+        public const string MEMBER_IMAGE_FOLDER = "MemberImageFolder";
 
         // Database
         public const string DB_CONNECTION_STRING = "DBConnectionString";

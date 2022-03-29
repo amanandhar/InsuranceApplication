@@ -29,6 +29,7 @@ namespace InsuranceApplication.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanDetailForm));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TxtPeriodInMonth = new System.Windows.Forms.TextBox();
@@ -86,13 +87,16 @@ namespace InsuranceApplication.Forms
             this.label10 = new System.Windows.Forms.Label();
             this.MaskEndOfDayFrom = new System.Windows.Forms.MaskedTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.PicMember = new System.Windows.Forms.PictureBox();
+            this.BtnImageDelete = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnImageAdd = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.PicBoxMemberImage = new System.Windows.Forms.PictureBox();
+            this.OpenMemberImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridLoanDetailList)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicMember)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxMemberImage)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -154,12 +158,13 @@ namespace InsuranceApplication.Forms
             // TxtPeriodInMonth
             // 
             this.TxtPeriodInMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtPeriodInMonth.Location = new System.Drawing.Point(828, 83);
+            this.TxtPeriodInMonth.Location = new System.Drawing.Point(622, 84);
             this.TxtPeriodInMonth.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtPeriodInMonth.Name = "TxtPeriodInMonth";
-            this.TxtPeriodInMonth.Size = new System.Drawing.Size(85, 26);
+            this.TxtPeriodInMonth.Size = new System.Drawing.Size(58, 26);
             this.TxtPeriodInMonth.TabIndex = 11;
             this.TxtPeriodInMonth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPeriodInMonth_KeyPress);
+            this.TxtPeriodInMonth.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtPeriodInMonth_KeyUp);
             // 
             // MaskStartingDate
             // 
@@ -241,7 +246,7 @@ namespace InsuranceApplication.Forms
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label16.Location = new System.Drawing.Point(515, 86);
+            this.label16.Location = new System.Drawing.Point(970, 86);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(54, 18);
@@ -251,12 +256,11 @@ namespace InsuranceApplication.Forms
             // MaskRenewDate
             // 
             this.MaskRenewDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MaskRenewDate.Location = new System.Drawing.Point(575, 83);
+            this.MaskRenewDate.Location = new System.Drawing.Point(1027, 84);
             this.MaskRenewDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaskRenewDate.Mask = "   0000-00-00";
             this.MaskRenewDate.Name = "MaskRenewDate";
-            this.MaskRenewDate.ReadOnly = true;
-            this.MaskRenewDate.Size = new System.Drawing.Size(105, 24);
+            this.MaskRenewDate.Size = new System.Drawing.Size(110, 24);
             this.MaskRenewDate.TabIndex = 10;
             // 
             // TxtInsuranceCompanyName
@@ -359,7 +363,7 @@ namespace InsuranceApplication.Forms
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label13.Location = new System.Drawing.Point(708, 86);
+            this.label13.Location = new System.Drawing.Point(502, 86);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(112, 18);
@@ -429,10 +433,11 @@ namespace InsuranceApplication.Forms
             // MaskMaturatedDate
             // 
             this.MaskMaturatedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MaskMaturatedDate.Location = new System.Drawing.Point(1027, 83);
+            this.MaskMaturatedDate.Location = new System.Drawing.Point(813, 84);
             this.MaskMaturatedDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaskMaturatedDate.Mask = "   0000-00-00";
             this.MaskMaturatedDate.Name = "MaskMaturatedDate";
+            this.MaskMaturatedDate.ReadOnly = true;
             this.MaskMaturatedDate.Size = new System.Drawing.Size(110, 24);
             this.MaskMaturatedDate.TabIndex = 12;
             // 
@@ -465,7 +470,7 @@ namespace InsuranceApplication.Forms
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label11.Location = new System.Drawing.Point(921, 86);
+            this.label11.Location = new System.Drawing.Point(708, 84);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(97, 18);
@@ -901,20 +906,68 @@ namespace InsuranceApplication.Forms
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.PicMember);
+            this.groupBox4.Controls.Add(this.BtnImageDelete);
+            this.groupBox4.Controls.Add(this.BtnImageAdd);
+            this.groupBox4.Controls.Add(this.PicBoxMemberImage);
             this.groupBox4.Location = new System.Drawing.Point(1190, 39);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(153, 150);
             this.groupBox4.TabIndex = 42;
             this.groupBox4.TabStop = false;
             // 
-            // PicMember
+            // BtnImageDelete
             // 
-            this.PicMember.Location = new System.Drawing.Point(6, 12);
-            this.PicMember.Name = "PicMember";
-            this.PicMember.Size = new System.Drawing.Size(141, 132);
-            this.PicMember.TabIndex = 0;
-            this.PicMember.TabStop = false;
+            this.BtnImageDelete.BackColor = System.Drawing.Color.Red;
+            this.BtnImageDelete.BackgroundColor = System.Drawing.Color.Red;
+            this.BtnImageDelete.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnImageDelete.BorderRadius = 27;
+            this.BtnImageDelete.BorderSize = 0;
+            this.BtnImageDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnImageDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnImageDelete.ForeColor = System.Drawing.Color.White;
+            this.BtnImageDelete.Location = new System.Drawing.Point(76, 119);
+            this.BtnImageDelete.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnImageDelete.Name = "BtnImageDelete";
+            this.BtnImageDelete.Size = new System.Drawing.Size(65, 27);
+            this.BtnImageDelete.TabIndex = 40;
+            this.BtnImageDelete.Text = "Delete";
+            this.BtnImageDelete.TextColor = System.Drawing.Color.White;
+            this.BtnImageDelete.UseVisualStyleBackColor = false;
+            this.BtnImageDelete.Click += new System.EventHandler(this.BtnImageDelete_Click);
+            // 
+            // BtnImageAdd
+            // 
+            this.BtnImageAdd.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnImageAdd.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnImageAdd.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnImageAdd.BorderRadius = 22;
+            this.BtnImageAdd.BorderSize = 0;
+            this.BtnImageAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnImageAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnImageAdd.ForeColor = System.Drawing.Color.White;
+            this.BtnImageAdd.Location = new System.Drawing.Point(11, 119);
+            this.BtnImageAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnImageAdd.Name = "BtnImageAdd";
+            this.BtnImageAdd.Size = new System.Drawing.Size(57, 28);
+            this.BtnImageAdd.TabIndex = 40;
+            this.BtnImageAdd.Text = "Add";
+            this.BtnImageAdd.TextColor = System.Drawing.Color.White;
+            this.BtnImageAdd.UseVisualStyleBackColor = false;
+            this.BtnImageAdd.Click += new System.EventHandler(this.BtnImageAdd_Click);
+            // 
+            // PicBoxMemberImage
+            // 
+            this.PicBoxMemberImage.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxMemberImage.Image")));
+            this.PicBoxMemberImage.Location = new System.Drawing.Point(12, 12);
+            this.PicBoxMemberImage.Name = "PicBoxMemberImage";
+            this.PicBoxMemberImage.Size = new System.Drawing.Size(130, 104);
+            this.PicBoxMemberImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PicBoxMemberImage.TabIndex = 0;
+            this.PicBoxMemberImage.TabStop = false;
+            // 
+            // OpenMemberImageDialog
+            // 
+            this.OpenMemberImageDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenMemberImageDialog_FileOk);
             // 
             // LoanDetailForm
             // 
@@ -941,7 +994,7 @@ namespace InsuranceApplication.Forms
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PicMember)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxMemberImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1005,7 +1058,10 @@ namespace InsuranceApplication.Forms
         private CustomControls.Button.CustomButton BtnTransaction;
         private CustomControls.Button.CustomButton BtnAddInsuranceCompany;
         private System.Windows.Forms.MaskedTextBox MaskStartingDate;
-        private System.Windows.Forms.PictureBox PicMember;
+        private System.Windows.Forms.PictureBox PicBoxMemberImage;
         private System.Windows.Forms.TextBox TxtPeriodInMonth;
+        private CustomControls.Button.CustomButton BtnImageDelete;
+        private CustomControls.Button.CustomButton BtnImageAdd;
+        private System.Windows.Forms.OpenFileDialog OpenMemberImageDialog;
     }
 }

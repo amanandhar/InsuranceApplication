@@ -13,9 +13,9 @@ namespace InsuranceApplication.Entities
         public string MemberRelationship { get; set; }
         public string MemberGender { get; set; }
         public DateTime StartingDate { get; set; }
-        public DateTime RenewDate { get; set; }
         public int PeriodInMonth { get; set; }
         public DateTime MaturedDate { get; set; }
+        public DateTime? RenewDate { get; set; }
         public decimal LoanAmount { get; set; }
         public decimal Premium { get; set; }
         public decimal InsuranceAmount { get; set; }

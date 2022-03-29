@@ -98,50 +98,52 @@ namespace InsuranceApplication.Forms
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            var serialNumber = TxtSerialNumber.Text.Trim();
-            var name = TxtName.Text.Trim();
-            var headOfficeAddress = TxtHeadOfficeAddress.Text.Trim();
-            var branchOfficeAddress = TxtBranchOfficeAddress.Text.Trim();
-            var headOfDepartment = TxtHeadOfDepartment.Text.Trim();
-            var position = TxtPosition.Text.Trim();
-            var agreementDate = UtilityService.GetDate(MaskAgreementDate.Text.Trim());
-            var establishedDate = UtilityService.GetDate(MaskEstablishedDate.Text.Trim());
-
             try
             {
-                var insuranceCompany = new InsuranceCompany
+                if (ValidateInsuranceCompanyInfo())
                 {
-                    Id = _selectedInsuranceCompanyId,
-                    SerialNumber = serialNumber,
-                    Name = name,
-                    HeadOfficeAddress = headOfficeAddress,
-                    BranchOfficeAddress = branchOfficeAddress,
-                    HeadOfDepartment = headOfDepartment,
-                    Position = position,
-                    AgreementDate = Convert.ToDateTime(agreementDate),
-                    EstablishedDate = string.IsNullOrWhiteSpace(establishedDate) ? (DateTime?)null : Convert.ToDateTime(establishedDate)
-                };
+                    var serialNumber = TxtSerialNumber.Text.Trim();
+                    var name = TxtName.Text.Trim();
+                    var headOfficeAddress = TxtHeadOfficeAddress.Text.Trim();
+                    var branchOfficeAddress = TxtBranchOfficeAddress.Text.Trim();
+                    var headOfDepartment = TxtHeadOfDepartment.Text.Trim();
+                    var position = TxtPosition.Text.Trim();
+                    var agreementDate = UtilityService.GetDate(MaskAgreementDate.Text.Trim());
+                    var establishedDate = UtilityService.GetDate(MaskEstablishedDate.Text.Trim());
+                    var insuranceCompany = new InsuranceCompany
+                    {
+                        Id = _selectedInsuranceCompanyId,
+                        SerialNumber = serialNumber,
+                        Name = name,
+                        HeadOfficeAddress = headOfficeAddress,
+                        BranchOfficeAddress = branchOfficeAddress,
+                        HeadOfDepartment = headOfDepartment,
+                        Position = position,
+                        AgreementDate = Convert.ToDateTime(agreementDate),
+                        EstablishedDate = string.IsNullOrWhiteSpace(establishedDate) ? (DateTime?)null : Convert.ToDateTime(establishedDate)
+                    };
 
-                if (_selectedInsuranceCompanyId > 0)
-                {
-                    insuranceCompany.UpdatedBy = "TestUser";
-                    insuranceCompany.UpdatedDate = DateTime.Now;
+                    if (_selectedInsuranceCompanyId > 0)
+                    {
+                        insuranceCompany.UpdatedBy = "TestUser";
+                        insuranceCompany.UpdatedDate = DateTime.Now;
 
-                    _insuranceCompanyService.UpdateInsuranceCompany(_selectedInsuranceCompanyId, insuranceCompany);
-                    DialogResult result = MessageBox.Show("Insurance Company has been updated successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _insuranceCompanyService.UpdateInsuranceCompany(_selectedInsuranceCompanyId, insuranceCompany);
+                        DialogResult result = MessageBox.Show("Insurance Company has been updated successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        insuranceCompany.AddedBy = "TestUser";
+                        insuranceCompany.AddedDate = DateTime.Now;
+
+                        _insuranceCompanyService.AddInsuranceCompany(insuranceCompany);
+                        DialogResult result = MessageBox.Show("Insurance Company has been added successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    ClearInputFields();
+                    EnableFields();
+                    EnableFields(Action.Save);
                 }
-                else
-                {
-                    insuranceCompany.AddedBy = "TestUser";
-                    insuranceCompany.AddedDate = DateTime.Now;
-
-                    _insuranceCompanyService.AddInsuranceCompany(insuranceCompany);
-                    DialogResult result = MessageBox.Show("Insurance Company has been added successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                
-                ClearInputFields();
-                EnableFields();
-                EnableFields(Action.Save);
             }
             catch(Exception ex)
             {
@@ -259,6 +261,45 @@ namespace InsuranceApplication.Forms
             
             EnableFields();
             EnableFields(Action.PopulateInsuranceCompany);
+        }
+        #endregion
+
+        #region Validation
+        private bool ValidateInsuranceCompanyInfo()
+        {
+            var isValidated = false;
+
+            var serialNumber = TxtSerialNumber.Text.Trim();
+            var name = TxtName.Text.Trim();
+            var headOfficeAddress = TxtHeadOfficeAddress.Text.Trim();
+            var branchOfficeAddress = TxtBranchOfficeAddress.Text.Trim();
+            var headOfDepartment = TxtHeadOfDepartment.Text.Trim();
+            var position = TxtPosition.Text.Trim();
+            var agreementDate = UtilityService.GetDate(MaskAgreementDate.Text.Trim());
+
+            if (string.IsNullOrWhiteSpace(serialNumber)
+                || string.IsNullOrWhiteSpace(name)
+                || string.IsNullOrWhiteSpace(headOfficeAddress)
+                || string.IsNullOrWhiteSpace(branchOfficeAddress)
+                || string.IsNullOrWhiteSpace(headOfDepartment)
+                || string.IsNullOrWhiteSpace(position)
+                || string.IsNullOrWhiteSpace(agreementDate))
+            {
+                MessageBox.Show("Please enter following fields: " +
+                    "\n * Serial No " +
+                    "\n * Name " +
+                    "\n * Head Office Address " +
+                    "\n * Branch Office Address " +
+                    "\n * Head Of Department " +
+                    "\n * Position " +
+                    "\n * Agreement Date ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                isValidated = true;
+            }
+
+            return isValidated;
         }
         #endregion
     }
