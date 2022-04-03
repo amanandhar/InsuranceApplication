@@ -54,7 +54,7 @@ namespace InsuranceApplication.Repositories
                                     StartingDate = Convert.ToDateTime(reader["StartingDate"].ToString()),
                                     PeriodInMonth = Convert.ToInt32(reader["PeriodInMonth"].ToString()),
                                     MaturedDate = Convert.ToDateTime(reader["MaturedDate"].ToString()),
-                                    RenewDate = Convert.ToDateTime(reader["RenewDate"].ToString()),
+                                    RenewDate = reader.IsDBNull(11) ? (DateTime?)null : Convert.ToDateTime(reader["RenewDate"].ToString()),
                                     LoanAmount = Convert.ToDecimal(reader["LoanAmount"].ToString()),
                                     Premium = Convert.ToDecimal(reader["Premium"].ToString()),
                                     InsuranceAmount = Convert.ToDecimal(reader["InsuranceAmount"].ToString()),
@@ -121,7 +121,7 @@ namespace InsuranceApplication.Repositories
                                     loanDetail.StartingDate = Convert.ToDateTime(reader["StartingDate"].ToString());
                                     loanDetail.PeriodInMonth = Convert.ToInt32(reader["PeriodInMonth"].ToString());
                                     loanDetail.MaturedDate = Convert.ToDateTime(reader["MaturedDate"].ToString());
-                                    loanDetail.RenewDate = Convert.ToDateTime(reader["RenewDate"].ToString());
+                                    loanDetail.RenewDate = reader.IsDBNull(11) ? (DateTime?)null : Convert.ToDateTime(reader["RenewDate"].ToString());
                                     loanDetail.LoanAmount = Convert.ToDecimal(reader["LoanAmount"].ToString());
                                     loanDetail.Premium = Convert.ToDecimal(reader["Premium"].ToString());
                                     loanDetail.InsuranceAmount = Convert.ToDecimal(reader["InsuranceAmount"].ToString());

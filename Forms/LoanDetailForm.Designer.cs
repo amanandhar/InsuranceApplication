@@ -771,7 +771,7 @@ namespace InsuranceApplication.Forms
             // 
             // DataGridLoanDetailList
             // 
-            this.DataGridLoanDetailList.BackgroundColor = System.Drawing.Color.White;
+            this.DataGridLoanDetailList.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.DataGridLoanDetailList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridLoanDetailList.GridColor = System.Drawing.SystemColors.Control;
             this.DataGridLoanDetailList.Location = new System.Drawing.Point(12, 197);
@@ -794,7 +794,7 @@ namespace InsuranceApplication.Forms
             this.groupBox3.Controls.Add(this.MaskEndOfDayFrom);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.ForeColor = System.Drawing.Color.Red;
-            this.groupBox3.Location = new System.Drawing.Point(14, 617);
+            this.groupBox3.Location = new System.Drawing.Point(14, 613);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);

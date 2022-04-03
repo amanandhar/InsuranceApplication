@@ -28,10 +28,7 @@ namespace InsuranceApplication
                 Application.SetHighDpiMode(HighDpiMode.SystemAware);
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new LoanDetailForm(
-                            container.Resolve<IInsuranceCompanyService>(),
-                            container.Resolve<ILoanDetailService>()
-                ));
+                Application.Run(new Dashboard());
             }
             catch(Exception ex)
             {

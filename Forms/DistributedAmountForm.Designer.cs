@@ -47,7 +47,7 @@ namespace InsuranceApplication.Forms
             this.customButton3.BackColor = System.Drawing.Color.DodgerBlue;
             this.customButton3.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.customButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton3.BorderRadius = 34;
+            this.customButton3.BorderRadius = 30;
             this.customButton3.BorderSize = 0;
             this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -66,7 +66,7 @@ namespace InsuranceApplication.Forms
             this.customButton1.BackColor = System.Drawing.Color.DodgerBlue;
             this.customButton1.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton1.BorderRadius = 34;
+            this.customButton1.BorderRadius = 30;
             this.customButton1.BorderSize = 0;
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);

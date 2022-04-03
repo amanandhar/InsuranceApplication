@@ -59,5 +59,15 @@ namespace InsuranceApplication.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap viber_image_2021_01_20_16_36_38 {
+            get {
+                object obj = ResourceManager.GetObject("viber_image_2021-01-20_16-36-38", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
