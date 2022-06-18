@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace InsuranceApplication.Forms
 {
-    public partial class SettingForm : Form
+    public partial class EmployeeDetails : Form
     {
-        public SettingForm()
+        public EmployeeDetails()
         {
             InitializeComponent();
         }

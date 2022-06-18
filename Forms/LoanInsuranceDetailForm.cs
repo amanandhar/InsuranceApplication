@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace InsuranceApplication.Forms
 {
-    public partial class LoanDetailForm : Form, IInsuranceCompanyListForm, ILoanDetailListForm
+    public partial class LoanInsuranceDetailForm : Form, IInsuranceCompanyListForm, ILoanDetailListForm
     {
         private static readonly log4net.ILog logger = LogHelper.GetLogger();
 
@@ -49,7 +49,7 @@ namespace InsuranceApplication.Forms
         #endregion
 
         #region Constructor
-        public LoanDetailForm(IInsuranceCompanyService insuranceCompanyService,
+        public LoanInsuranceDetailForm(IInsuranceCompanyService insuranceCompanyService,
             ILoanDetailService loanDetailService)
         {
             InitializeComponent();
@@ -396,44 +396,44 @@ namespace InsuranceApplication.Forms
             DataGridLoanDetailList.Columns["UpdatedBy"].Visible = false;
             DataGridLoanDetailList.Columns["UpdatedDate"].Visible = false;
 
-            DataGridLoanDetailList.Columns["MembershipNo"].HeaderText = "Membership No";
-            DataGridLoanDetailList.Columns["MembershipNo"].Width = 150;
+            DataGridLoanDetailList.Columns["MembershipNo"].HeaderText = "Member No";
+            DataGridLoanDetailList.Columns["MembershipNo"].Width = 80;
             DataGridLoanDetailList.Columns["MembershipNo"].DisplayIndex = 0;
 
             DataGridLoanDetailList.Columns["MemberName"].HeaderText = "Name";
-            DataGridLoanDetailList.Columns["MemberName"].Width = 100;
+            DataGridLoanDetailList.Columns["MemberName"].Width = 175;
             DataGridLoanDetailList.Columns["MemberName"].DisplayIndex = 1;
 
             DataGridLoanDetailList.Columns["MemberAddress"].HeaderText = "Address";
-            DataGridLoanDetailList.Columns["MemberAddress"].Width = 100;
+            DataGridLoanDetailList.Columns["MemberAddress"].Width = 195;
             DataGridLoanDetailList.Columns["MemberAddress"].DisplayIndex = 2;
 
             DataGridLoanDetailList.Columns["StartingDate"].HeaderText = "Starting Date";
-            DataGridLoanDetailList.Columns["StartingDate"].Width = 100;
+            DataGridLoanDetailList.Columns["StartingDate"].Width = 95;
             DataGridLoanDetailList.Columns["StartingDate"].DisplayIndex = 3;
 
             DataGridLoanDetailList.Columns["RenewDate"].HeaderText = "Renew Date";
-            DataGridLoanDetailList.Columns["RenewDate"].Width = 100;
+            DataGridLoanDetailList.Columns["RenewDate"].Width = 95;
             DataGridLoanDetailList.Columns["RenewDate"].DisplayIndex = 4;
 
             DataGridLoanDetailList.Columns["PeriodInMonth"].HeaderText = "Period";
-            DataGridLoanDetailList.Columns["PeriodInMonth"].Width = 50;
+            DataGridLoanDetailList.Columns["PeriodInMonth"].Width = 55;
             DataGridLoanDetailList.Columns["PeriodInMonth"].DisplayIndex = 5;
 
             DataGridLoanDetailList.Columns["MaturedDate"].HeaderText = "Matured Date";
-            DataGridLoanDetailList.Columns["MaturedDate"].Width = 100;
+            DataGridLoanDetailList.Columns["MaturedDate"].Width = 95;
             DataGridLoanDetailList.Columns["MaturedDate"].DisplayIndex = 6;
 
             DataGridLoanDetailList.Columns["LoanAmount"].HeaderText = "Loan";
-            DataGridLoanDetailList.Columns["LoanAmount"].Width = 100;
+            DataGridLoanDetailList.Columns["LoanAmount"].Width = 80;
             DataGridLoanDetailList.Columns["LoanAmount"].DisplayIndex = 7;
 
             DataGridLoanDetailList.Columns["Premium"].HeaderText = "Premium";
-            DataGridLoanDetailList.Columns["Premium"].Width = 100;
+            DataGridLoanDetailList.Columns["Premium"].Width = 70;
             DataGridLoanDetailList.Columns["Premium"].DisplayIndex = 8;
 
             DataGridLoanDetailList.Columns["InsuranceAmount"].HeaderText = "Insurance";
-            DataGridLoanDetailList.Columns["InsuranceAmount"].Width = 100;
+            DataGridLoanDetailList.Columns["InsuranceAmount"].Width = 80;
             DataGridLoanDetailList.Columns["InsuranceAmount"].DisplayIndex = 9;
 
             DataGridLoanDetailList.Columns["MaturedAmount"].HeaderText = "Matured Amount";

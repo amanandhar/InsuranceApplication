@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InsuranceApplication.Services.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,21 @@ namespace InsuranceApplication.Forms
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        private readonly IInsuranceCompanyService _insuranceCompanyService;
+        private readonly ILoanDetailService _loanDetailService;
+
+        public Dashboard(IInsuranceCompanyService insuranceCompanyService, ILoanDetailService loanDetailService)
         {
             InitializeComponent();
+
+            _insuranceCompanyService = insuranceCompanyService;
+            _loanDetailService = loanDetailService;
+        }
+
+        private void BtnInsurance_Click(object sender, EventArgs e)
+        {
+            LoanInsuranceDetailForm loanDetailForm = new LoanInsuranceDetailForm(_insuranceCompanyService, _loanDetailService);
+            loanDetailForm.Show();
         }
     }
 }

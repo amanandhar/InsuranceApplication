@@ -1,7 +1,7 @@
 ﻿
 namespace InsuranceApplication.Forms
 {
-    partial class LoanDetailForm
+    partial class LoanInsuranceDetailForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,10 @@ namespace InsuranceApplication.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanDetailForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanInsuranceDetailForm));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TxtPeriodInMonth = new System.Windows.Forms.TextBox();
@@ -78,6 +81,8 @@ namespace InsuranceApplication.Forms
             this.BtnAddLoanDetail = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.DataGridLoanDetailList = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.BtnTransaction = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.ComboAction = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -158,7 +163,7 @@ namespace InsuranceApplication.Forms
             // TxtPeriodInMonth
             // 
             this.TxtPeriodInMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtPeriodInMonth.Location = new System.Drawing.Point(622, 84);
+            this.TxtPeriodInMonth.Location = new System.Drawing.Point(645, 84);
             this.TxtPeriodInMonth.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtPeriodInMonth.Name = "TxtPeriodInMonth";
             this.TxtPeriodInMonth.Size = new System.Drawing.Size(58, 26);
@@ -173,7 +178,7 @@ namespace InsuranceApplication.Forms
             this.MaskStartingDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaskStartingDate.Mask = "   0000-00-00";
             this.MaskStartingDate.Name = "MaskStartingDate";
-            this.MaskStartingDate.Size = new System.Drawing.Size(105, 24);
+            this.MaskStartingDate.Size = new System.Drawing.Size(110, 24);
             this.MaskStartingDate.TabIndex = 9;
             this.MaskStartingDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MaskStartingDate_KeyUp);
             // 
@@ -187,10 +192,10 @@ namespace InsuranceApplication.Forms
             this.BtnAddInsuranceCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAddInsuranceCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAddInsuranceCompany.ForeColor = System.Drawing.Color.White;
-            this.BtnAddInsuranceCompany.Location = new System.Drawing.Point(1009, 12);
+            this.BtnAddInsuranceCompany.Location = new System.Drawing.Point(1016, 13);
             this.BtnAddInsuranceCompany.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnAddInsuranceCompany.Name = "BtnAddInsuranceCompany";
-            this.BtnAddInsuranceCompany.Size = new System.Drawing.Size(130, 36);
+            this.BtnAddInsuranceCompany.Size = new System.Drawing.Size(130, 35);
             this.BtnAddInsuranceCompany.TabIndex = 44;
             this.BtnAddInsuranceCompany.Text = "Add Insurance";
             this.BtnAddInsuranceCompany.TextColor = System.Drawing.Color.White;
@@ -234,7 +239,7 @@ namespace InsuranceApplication.Forms
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label17.Location = new System.Drawing.Point(707, 56);
+            this.label17.Location = new System.Drawing.Point(709, 56);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(75, 18);
@@ -246,7 +251,7 @@ namespace InsuranceApplication.Forms
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label16.Location = new System.Drawing.Point(970, 86);
+            this.label16.Location = new System.Drawing.Point(968, 87);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(54, 18);
@@ -363,7 +368,7 @@ namespace InsuranceApplication.Forms
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label13.Location = new System.Drawing.Point(502, 86);
+            this.label13.Location = new System.Drawing.Point(528, 88);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(112, 18);
@@ -375,7 +380,7 @@ namespace InsuranceApplication.Forms
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label12.Location = new System.Drawing.Point(885, 116);
+            this.label12.Location = new System.Drawing.Point(892, 116);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(131, 18);
@@ -399,7 +404,7 @@ namespace InsuranceApplication.Forms
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(572, 117);
+            this.label7.Location = new System.Drawing.Point(571, 118);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 18);
@@ -411,7 +416,7 @@ namespace InsuranceApplication.Forms
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(25, 117);
+            this.label6.Location = new System.Drawing.Point(26, 117);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 18);
@@ -423,7 +428,7 @@ namespace InsuranceApplication.Forms
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label9.Location = new System.Drawing.Point(291, 86);
+            this.label9.Location = new System.Drawing.Point(292, 87);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 18);
@@ -433,7 +438,7 @@ namespace InsuranceApplication.Forms
             // MaskMaturatedDate
             // 
             this.MaskMaturatedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MaskMaturatedDate.Location = new System.Drawing.Point(813, 84);
+            this.MaskMaturatedDate.Location = new System.Drawing.Point(810, 84);
             this.MaskMaturatedDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaskMaturatedDate.Mask = "   0000-00-00";
             this.MaskMaturatedDate.Name = "MaskMaturatedDate";
@@ -446,7 +451,7 @@ namespace InsuranceApplication.Forms
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(389, 56);
+            this.label5.Location = new System.Drawing.Point(363, 56);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 18);
@@ -470,7 +475,7 @@ namespace InsuranceApplication.Forms
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label11.Location = new System.Drawing.Point(708, 84);
+            this.label11.Location = new System.Drawing.Point(709, 87);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(97, 18);
@@ -495,7 +500,7 @@ namespace InsuranceApplication.Forms
             this.TxtPremium.Location = new System.Drawing.Point(389, 113);
             this.TxtPremium.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtPremium.Name = "TxtPremium";
-            this.TxtPremium.Size = new System.Drawing.Size(105, 26);
+            this.TxtPremium.Size = new System.Drawing.Size(110, 26);
             this.TxtPremium.TabIndex = 14;
             this.TxtPremium.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtPremium.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPremium_KeyPress);
@@ -503,10 +508,10 @@ namespace InsuranceApplication.Forms
             // TxtMemberAddress
             // 
             this.TxtMemberAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtMemberAddress.Location = new System.Drawing.Point(455, 52);
+            this.TxtMemberAddress.Location = new System.Drawing.Point(428, 52);
             this.TxtMemberAddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtMemberAddress.Name = "TxtMemberAddress";
-            this.TxtMemberAddress.Size = new System.Drawing.Size(225, 26);
+            this.TxtMemberAddress.Size = new System.Drawing.Size(275, 26);
             this.TxtMemberAddress.TabIndex = 5;
             // 
             // TxtLoanAmount
@@ -523,10 +528,10 @@ namespace InsuranceApplication.Forms
             // TxtInsuranceAmount
             // 
             this.TxtInsuranceAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtInsuranceAmount.Location = new System.Drawing.Point(706, 113);
+            this.TxtInsuranceAmount.Location = new System.Drawing.Point(702, 114);
             this.TxtInsuranceAmount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtInsuranceAmount.Name = "TxtInsuranceAmount";
-            this.TxtInsuranceAmount.Size = new System.Drawing.Size(125, 26);
+            this.TxtInsuranceAmount.Size = new System.Drawing.Size(110, 26);
             this.TxtInsuranceAmount.TabIndex = 15;
             this.TxtInsuranceAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtInsuranceAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtInsuranceAmount_KeyPress);
@@ -561,11 +566,11 @@ namespace InsuranceApplication.Forms
             this.groupBox2.Controls.Add(this.BtnDeleteLoanDetail);
             this.groupBox2.Controls.Add(this.BtnEditLoadDetail);
             this.groupBox2.Controls.Add(this.BtnAddLoanDetail);
-            this.groupBox2.Location = new System.Drawing.Point(1190, 188);
+            this.groupBox2.Location = new System.Drawing.Point(1192, 205);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox2.Size = new System.Drawing.Size(153, 425);
+            this.groupBox2.Size = new System.Drawing.Size(145, 407);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
@@ -579,7 +584,7 @@ namespace InsuranceApplication.Forms
             this.BtnRenewInsurance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRenewInsurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnRenewInsurance.ForeColor = System.Drawing.Color.White;
-            this.BtnRenewInsurance.Location = new System.Drawing.Point(11, 269);
+            this.BtnRenewInsurance.Location = new System.Drawing.Point(8, 258);
             this.BtnRenewInsurance.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnRenewInsurance.Name = "BtnRenewInsurance";
             this.BtnRenewInsurance.Size = new System.Drawing.Size(130, 48);
@@ -599,7 +604,7 @@ namespace InsuranceApplication.Forms
             this.BtnShowLoanDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnShowLoanDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnShowLoanDetail.ForeColor = System.Drawing.Color.White;
-            this.BtnShowLoanDetail.Location = new System.Drawing.Point(11, 14);
+            this.BtnShowLoanDetail.Location = new System.Drawing.Point(8, 12);
             this.BtnShowLoanDetail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnShowLoanDetail.Name = "BtnShowLoanDetail";
             this.BtnShowLoanDetail.Size = new System.Drawing.Size(130, 35);
@@ -619,7 +624,7 @@ namespace InsuranceApplication.Forms
             this.BtnDistributedAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDistributedAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDistributedAmount.ForeColor = System.Drawing.Color.White;
-            this.BtnDistributedAmount.Location = new System.Drawing.Point(11, 366);
+            this.BtnDistributedAmount.Location = new System.Drawing.Point(8, 354);
             this.BtnDistributedAmount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnDistributedAmount.Name = "BtnDistributedAmount";
             this.BtnDistributedAmount.Size = new System.Drawing.Size(130, 48);
@@ -639,7 +644,7 @@ namespace InsuranceApplication.Forms
             this.BtnDocumentDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDocumentDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDocumentDetails.ForeColor = System.Drawing.Color.White;
-            this.BtnDocumentDetails.Location = new System.Drawing.Point(11, 317);
+            this.BtnDocumentDetails.Location = new System.Drawing.Point(8, 306);
             this.BtnDocumentDetails.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnDocumentDetails.Name = "BtnDocumentDetails";
             this.BtnDocumentDetails.Size = new System.Drawing.Size(130, 48);
@@ -659,7 +664,7 @@ namespace InsuranceApplication.Forms
             this.BtnSaveLoanDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSaveLoanDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnSaveLoanDetail.ForeColor = System.Drawing.Color.White;
-            this.BtnSaveLoanDetail.Location = new System.Drawing.Point(11, 84);
+            this.BtnSaveLoanDetail.Location = new System.Drawing.Point(8, 82);
             this.BtnSaveLoanDetail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnSaveLoanDetail.Name = "BtnSaveLoanDetail";
             this.BtnSaveLoanDetail.Size = new System.Drawing.Size(130, 35);
@@ -679,7 +684,7 @@ namespace InsuranceApplication.Forms
             this.BtnUpdateLoanDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUpdateLoanDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnUpdateLoanDetail.ForeColor = System.Drawing.Color.White;
-            this.BtnUpdateLoanDetail.Location = new System.Drawing.Point(11, 154);
+            this.BtnUpdateLoanDetail.Location = new System.Drawing.Point(8, 152);
             this.BtnUpdateLoanDetail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnUpdateLoanDetail.Name = "BtnUpdateLoanDetail";
             this.BtnUpdateLoanDetail.Size = new System.Drawing.Size(130, 35);
@@ -699,7 +704,7 @@ namespace InsuranceApplication.Forms
             this.BtnClearLoanDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClearLoanDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnClearLoanDetail.ForeColor = System.Drawing.Color.White;
-            this.BtnClearLoanDetail.Location = new System.Drawing.Point(11, 189);
+            this.BtnClearLoanDetail.Location = new System.Drawing.Point(8, 187);
             this.BtnClearLoanDetail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnClearLoanDetail.Name = "BtnClearLoanDetail";
             this.BtnClearLoanDetail.Size = new System.Drawing.Size(130, 35);
@@ -719,7 +724,7 @@ namespace InsuranceApplication.Forms
             this.BtnDeleteLoanDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDeleteLoanDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDeleteLoanDetail.ForeColor = System.Drawing.Color.White;
-            this.BtnDeleteLoanDetail.Location = new System.Drawing.Point(11, 223);
+            this.BtnDeleteLoanDetail.Location = new System.Drawing.Point(8, 222);
             this.BtnDeleteLoanDetail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnDeleteLoanDetail.Name = "BtnDeleteLoanDetail";
             this.BtnDeleteLoanDetail.Size = new System.Drawing.Size(130, 35);
@@ -739,7 +744,7 @@ namespace InsuranceApplication.Forms
             this.BtnEditLoadDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditLoadDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnEditLoadDetail.ForeColor = System.Drawing.Color.White;
-            this.BtnEditLoadDetail.Location = new System.Drawing.Point(11, 119);
+            this.BtnEditLoadDetail.Location = new System.Drawing.Point(8, 117);
             this.BtnEditLoadDetail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnEditLoadDetail.Name = "BtnEditLoadDetail";
             this.BtnEditLoadDetail.Size = new System.Drawing.Size(130, 35);
@@ -759,7 +764,7 @@ namespace InsuranceApplication.Forms
             this.BtnAddLoanDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAddLoanDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAddLoanDetail.ForeColor = System.Drawing.Color.White;
-            this.BtnAddLoanDetail.Location = new System.Drawing.Point(11, 49);
+            this.BtnAddLoanDetail.Location = new System.Drawing.Point(9, 47);
             this.BtnAddLoanDetail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnAddLoanDetail.Name = "BtnAddLoanDetail";
             this.BtnAddLoanDetail.Size = new System.Drawing.Size(130, 35);
@@ -772,18 +777,44 @@ namespace InsuranceApplication.Forms
             // DataGridLoanDetailList
             // 
             this.DataGridLoanDetailList.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridLoanDetailList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DataGridLoanDetailList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridLoanDetailList.DefaultCellStyle = dataGridViewCellStyle8;
             this.DataGridLoanDetailList.GridColor = System.Drawing.SystemColors.Control;
             this.DataGridLoanDetailList.Location = new System.Drawing.Point(12, 197);
             this.DataGridLoanDetailList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DataGridLoanDetailList.Name = "DataGridLoanDetailList";
             this.DataGridLoanDetailList.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridLoanDetailList.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DataGridLoanDetailList.Size = new System.Drawing.Size(1170, 415);
             this.DataGridLoanDetailList.TabIndex = 3;
             this.DataGridLoanDetailList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridLoanDetailList_DataBindingComplete);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.BtnTransaction);
             this.groupBox3.Controls.Add(this.ComboAction);
             this.groupBox3.Controls.Add(this.label3);
@@ -794,7 +825,7 @@ namespace InsuranceApplication.Forms
             this.groupBox3.Controls.Add(this.MaskEndOfDayFrom);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.ForeColor = System.Drawing.Color.Red;
-            this.groupBox3.Location = new System.Drawing.Point(14, 613);
+            this.groupBox3.Location = new System.Drawing.Point(14, 616);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -802,6 +833,30 @@ namespace InsuranceApplication.Forms
             this.groupBox3.TabIndex = 41;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Transaction";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label19.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label19.Location = new System.Drawing.Point(1001, 25);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(49, 18);
+            this.label19.TabIndex = 42;
+            this.label19.Text = "Time :";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label18.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label18.Location = new System.Drawing.Point(21, 25);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(47, 18);
+            this.label18.TabIndex = 41;
+            this.label18.Text = "Date :";
             // 
             // BtnTransaction
             // 
@@ -830,7 +885,7 @@ namespace InsuranceApplication.Forms
             this.ComboAction.Items.AddRange(new object[] {
             "Matured",
             "Running"});
-            this.ComboAction.Location = new System.Drawing.Point(588, 22);
+            this.ComboAction.Location = new System.Drawing.Point(600, 22);
             this.ComboAction.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboAction.Name = "ComboAction";
             this.ComboAction.Size = new System.Drawing.Size(135, 24);
@@ -841,7 +896,7 @@ namespace InsuranceApplication.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(398, 24);
+            this.label3.Location = new System.Drawing.Point(414, 25);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 18);
@@ -853,7 +908,7 @@ namespace InsuranceApplication.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(164, 24);
+            this.label2.Location = new System.Drawing.Point(211, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 18);
@@ -865,7 +920,7 @@ namespace InsuranceApplication.Forms
             this.TxtAmount.BackColor = System.Drawing.Color.WhiteSmoke;
             this.TxtAmount.Enabled = false;
             this.TxtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtAmount.Location = new System.Drawing.Point(868, 21);
+            this.TxtAmount.Location = new System.Drawing.Point(843, 22);
             this.TxtAmount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtAmount.Name = "TxtAmount";
             this.TxtAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -875,7 +930,7 @@ namespace InsuranceApplication.Forms
             // MaskEndOfDayTo
             // 
             this.MaskEndOfDayTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MaskEndOfDayTo.Location = new System.Drawing.Point(468, 21);
+            this.MaskEndOfDayTo.Location = new System.Drawing.Point(482, 22);
             this.MaskEndOfDayTo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaskEndOfDayTo.Mask = "   0000-00-00";
             this.MaskEndOfDayTo.Name = "MaskEndOfDayTo";
@@ -887,7 +942,7 @@ namespace InsuranceApplication.Forms
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label10.Location = new System.Drawing.Point(764, 25);
+            this.label10.Location = new System.Drawing.Point(740, 26);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 18);
@@ -897,7 +952,7 @@ namespace InsuranceApplication.Forms
             // MaskEndOfDayFrom
             // 
             this.MaskEndOfDayFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MaskEndOfDayFrom.Location = new System.Drawing.Point(251, 21);
+            this.MaskEndOfDayFrom.Location = new System.Drawing.Point(297, 22);
             this.MaskEndOfDayFrom.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaskEndOfDayFrom.Mask = "   0000-00-00";
             this.MaskEndOfDayFrom.Name = "MaskEndOfDayFrom";
@@ -909,9 +964,9 @@ namespace InsuranceApplication.Forms
             this.groupBox4.Controls.Add(this.BtnImageDelete);
             this.groupBox4.Controls.Add(this.BtnImageAdd);
             this.groupBox4.Controls.Add(this.PicBoxMemberImage);
-            this.groupBox4.Location = new System.Drawing.Point(1190, 39);
+            this.groupBox4.Location = new System.Drawing.Point(1193, 39);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(153, 150);
+            this.groupBox4.Size = new System.Drawing.Size(145, 170);
             this.groupBox4.TabIndex = 42;
             this.groupBox4.TabStop = false;
             // 
@@ -925,10 +980,10 @@ namespace InsuranceApplication.Forms
             this.BtnImageDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnImageDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnImageDelete.ForeColor = System.Drawing.Color.White;
-            this.BtnImageDelete.Location = new System.Drawing.Point(76, 119);
+            this.BtnImageDelete.Location = new System.Drawing.Point(73, 140);
             this.BtnImageDelete.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnImageDelete.Name = "BtnImageDelete";
-            this.BtnImageDelete.Size = new System.Drawing.Size(65, 27);
+            this.BtnImageDelete.Size = new System.Drawing.Size(60, 27);
             this.BtnImageDelete.TabIndex = 40;
             this.BtnImageDelete.Text = "Delete";
             this.BtnImageDelete.TextColor = System.Drawing.Color.White;
@@ -940,15 +995,15 @@ namespace InsuranceApplication.Forms
             this.BtnImageAdd.BackColor = System.Drawing.Color.DodgerBlue;
             this.BtnImageAdd.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.BtnImageAdd.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnImageAdd.BorderRadius = 22;
+            this.BtnImageAdd.BorderRadius = 27;
             this.BtnImageAdd.BorderSize = 0;
             this.BtnImageAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnImageAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnImageAdd.ForeColor = System.Drawing.Color.White;
-            this.BtnImageAdd.Location = new System.Drawing.Point(11, 119);
+            this.BtnImageAdd.Location = new System.Drawing.Point(13, 140);
             this.BtnImageAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnImageAdd.Name = "BtnImageAdd";
-            this.BtnImageAdd.Size = new System.Drawing.Size(57, 28);
+            this.BtnImageAdd.Size = new System.Drawing.Size(60, 27);
             this.BtnImageAdd.TabIndex = 40;
             this.BtnImageAdd.Text = "Add";
             this.BtnImageAdd.TextColor = System.Drawing.Color.White;
@@ -958,9 +1013,9 @@ namespace InsuranceApplication.Forms
             // PicBoxMemberImage
             // 
             this.PicBoxMemberImage.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxMemberImage.Image")));
-            this.PicBoxMemberImage.Location = new System.Drawing.Point(12, 12);
+            this.PicBoxMemberImage.Location = new System.Drawing.Point(11, 12);
             this.PicBoxMemberImage.Name = "PicBoxMemberImage";
-            this.PicBoxMemberImage.Size = new System.Drawing.Size(130, 104);
+            this.PicBoxMemberImage.Size = new System.Drawing.Size(123, 125);
             this.PicBoxMemberImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PicBoxMemberImage.TabIndex = 0;
             this.PicBoxMemberImage.TabStop = false;
@@ -969,7 +1024,7 @@ namespace InsuranceApplication.Forms
             // 
             this.OpenMemberImageDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenMemberImageDialog_FileOk);
             // 
-            // LoanDetailForm
+            // LoanInsuranceDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -982,10 +1037,10 @@ namespace InsuranceApplication.Forms
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "LoanDetailForm";
+            this.Name = "LoanInsuranceDetailForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Samyukta Manab Saving & Credit Co-operative Ltd.";
+            this.Text = " Samyukta Manab Saving & Credit Co-operative Ltd.";
             this.Load += new System.EventHandler(this.DashboardForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1063,5 +1118,7 @@ namespace InsuranceApplication.Forms
         private CustomControls.Button.CustomButton BtnImageDelete;
         private CustomControls.Button.CustomButton BtnImageAdd;
         private System.Windows.Forms.OpenFileDialog OpenMemberImageDialog;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
     }
 }

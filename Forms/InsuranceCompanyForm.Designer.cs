@@ -35,7 +35,6 @@ namespace InsuranceApplication.Forms
             this.TxtHeadOfficeAddress = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtBranchOfficeAddress = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.TxtHeadOfDepartment = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TxtPosition = new System.Windows.Forms.TextBox();
@@ -47,6 +46,7 @@ namespace InsuranceApplication.Forms
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.TxtSerialNumber = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnEdit = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.BtnAdd = new InsuranceApplication.CustomControls.Button.CustomButton();
@@ -63,7 +63,7 @@ namespace InsuranceApplication.Forms
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label15.Location = new System.Drawing.Point(19, 57);
+            this.label15.Location = new System.Drawing.Point(14, 54);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(133, 18);
@@ -78,14 +78,13 @@ namespace InsuranceApplication.Forms
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(340, 26);
             this.TxtName.TabIndex = 2;
-            this.TxtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(19, 87);
+            this.label1.Location = new System.Drawing.Point(14, 83);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 18);
@@ -95,19 +94,18 @@ namespace InsuranceApplication.Forms
             // TxtHeadOfficeAddress
             // 
             this.TxtHeadOfficeAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtHeadOfficeAddress.Location = new System.Drawing.Point(197, 79);
+            this.TxtHeadOfficeAddress.Location = new System.Drawing.Point(197, 78);
             this.TxtHeadOfficeAddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtHeadOfficeAddress.Name = "TxtHeadOfficeAddress";
             this.TxtHeadOfficeAddress.Size = new System.Drawing.Size(340, 26);
             this.TxtHeadOfficeAddress.TabIndex = 3;
-            this.TxtHeadOfficeAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(19, 114);
+            this.label2.Location = new System.Drawing.Point(14, 113);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 18);
@@ -117,41 +115,27 @@ namespace InsuranceApplication.Forms
             // TxtBranchOfficeAddress
             // 
             this.TxtBranchOfficeAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtBranchOfficeAddress.Location = new System.Drawing.Point(197, 110);
+            this.TxtBranchOfficeAddress.Location = new System.Drawing.Point(197, 108);
             this.TxtBranchOfficeAddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtBranchOfficeAddress.Name = "TxtBranchOfficeAddress";
             this.TxtBranchOfficeAddress.Size = new System.Drawing.Size(340, 26);
             this.TxtBranchOfficeAddress.TabIndex = 4;
-            this.TxtBranchOfficeAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(19, 227);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 18);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "Comp. Established Date";
             // 
             // TxtHeadOfDepartment
             // 
             this.TxtHeadOfDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtHeadOfDepartment.Location = new System.Drawing.Point(197, 139);
+            this.TxtHeadOfDepartment.Location = new System.Drawing.Point(197, 138);
             this.TxtHeadOfDepartment.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtHeadOfDepartment.Name = "TxtHeadOfDepartment";
             this.TxtHeadOfDepartment.Size = new System.Drawing.Size(340, 26);
             this.TxtHeadOfDepartment.TabIndex = 5;
-            this.TxtHeadOfDepartment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(20, 143);
+            this.label4.Location = new System.Drawing.Point(15, 143);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(145, 18);
@@ -166,14 +150,13 @@ namespace InsuranceApplication.Forms
             this.TxtPosition.Name = "TxtPosition";
             this.TxtPosition.Size = new System.Drawing.Size(340, 26);
             this.TxtPosition.TabIndex = 6;
-            this.TxtPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(19, 172);
+            this.label5.Location = new System.Drawing.Point(14, 173);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 18);
@@ -208,7 +191,7 @@ namespace InsuranceApplication.Forms
             // MaskAgreementDate
             // 
             this.MaskAgreementDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MaskAgreementDate.Location = new System.Drawing.Point(197, 200);
+            this.MaskAgreementDate.Location = new System.Drawing.Point(197, 198);
             this.MaskAgreementDate.Mask = "0000-00-00";
             this.MaskAgreementDate.Name = "MaskAgreementDate";
             this.MaskAgreementDate.Size = new System.Drawing.Size(151, 26);
@@ -217,7 +200,7 @@ namespace InsuranceApplication.Forms
             // MaskEstablishedDate
             // 
             this.MaskEstablishedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MaskEstablishedDate.Location = new System.Drawing.Point(197, 227);
+            this.MaskEstablishedDate.Location = new System.Drawing.Point(197, 228);
             this.MaskEstablishedDate.Mask = "0000-00-00";
             this.MaskEstablishedDate.Name = "MaskEstablishedDate";
             this.MaskEstablishedDate.Size = new System.Drawing.Size(151, 26);
@@ -248,7 +231,7 @@ namespace InsuranceApplication.Forms
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(19, 200);
+            this.label7.Location = new System.Drawing.Point(14, 202);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(131, 18);
@@ -260,7 +243,7 @@ namespace InsuranceApplication.Forms
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(19, 24);
+            this.label6.Location = new System.Drawing.Point(14, 23);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(154, 18);
@@ -270,12 +253,23 @@ namespace InsuranceApplication.Forms
             // TxtSerialNumber
             // 
             this.TxtSerialNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtSerialNumber.Location = new System.Drawing.Point(197, 20);
+            this.TxtSerialNumber.Location = new System.Drawing.Point(197, 19);
             this.TxtSerialNumber.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtSerialNumber.Name = "TxtSerialNumber";
             this.TxtSerialNumber.Size = new System.Drawing.Size(270, 26);
             this.TxtSerialNumber.TabIndex = 1;
-            this.TxtSerialNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label3.Location = new System.Drawing.Point(14, 232);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(168, 18);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "Comp. Established Date";
             // 
             // groupBox2
             // 
@@ -408,7 +402,7 @@ namespace InsuranceApplication.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(585, 351);
+            this.ClientSize = new System.Drawing.Size(584, 351);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -432,7 +426,6 @@ namespace InsuranceApplication.Forms
         private System.Windows.Forms.TextBox TxtHeadOfficeAddress;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtBranchOfficeAddress;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtHeadOfDepartment;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TxtPosition;
@@ -448,8 +441,9 @@ namespace InsuranceApplication.Forms
         private CustomControls.Button.CustomButton BtnAdd;
         private CustomControls.Button.CustomButton BtnSearch;
         private System.Windows.Forms.MaskedTextBox MaskAgreementDate;
-        private System.Windows.Forms.MaskedTextBox MaskEstablishedDate;
         private CustomControls.Button.CustomButton BtnEdit;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.MaskedTextBox MaskEstablishedDate;
+        private System.Windows.Forms.Label label3;
     }
 }

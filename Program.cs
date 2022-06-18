@@ -28,7 +28,11 @@ namespace InsuranceApplication
                 Application.SetHighDpiMode(HighDpiMode.SystemAware);
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Dashboard());
+                Application.Run(new Dashboard(
+                    container.Resolve<IInsuranceCompanyService>(),
+                    container.Resolve<ILoanDetailService>()
+                    )
+                );
             }
             catch(Exception ex)
             {
