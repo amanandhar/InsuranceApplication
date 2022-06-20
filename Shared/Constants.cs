@@ -10,8 +10,11 @@
 
         // Database
         public const string DB_CONNECTION_STRING = "DBConnectionString";
+        public const string TABLE_EMPLOYEE = "Employee";
+        public const string TABLE_END_OF_DAY = "EndOfDay";
         public const string TABLE_INSURANCE_COMPANY = "InsuranceCompany";
         public const string TABLE_LOAN_DETAIL = "LoanDetail";
+        public const string TABLE_SETTING = "Setting";
 
         // MessageBox Message
         public const string MESSAGE_BOX_DELETE_MESSAGE = "Do you want to delete?";

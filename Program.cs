@@ -30,7 +30,8 @@ namespace InsuranceApplication
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Dashboard(
                     container.Resolve<IInsuranceCompanyService>(),
-                    container.Resolve<ILoanDetailService>()
+                    container.Resolve<ILoanDetailService>(),
+                    container.Resolve<IEmployeeService>()
                     )
                 );
             }
@@ -47,10 +48,12 @@ namespace InsuranceApplication
             var container = new UnityContainer();
             container.RegisterType<IInsuranceCompanyService, InsuranceCompanyService>();
             container.RegisterType<ILoanDetailService, LoanDetailService>();
+            container.RegisterType<IEmployeeService, EmployeeService>();
 
             container.RegisterType<IInsuranceCompanyRepository, MSSqlInsuranceCompanyRepository>();
             container.RegisterType<ILoanDetailRepository, MSSqlLoanDetailRepository>();
-            
+            container.RegisterType<IEmployeeRepository, MSSqlEmployeeRepository>();
+
             return container;
         }
     }

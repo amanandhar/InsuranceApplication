@@ -30,9 +30,9 @@ namespace InsuranceApplication.Forms
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.BtnExit = new System.Windows.Forms.Button();
             this.BtnInsurance = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnEmployee = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -45,30 +45,31 @@ namespace InsuranceApplication.Forms
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button6);
+            this.groupBox2.Controls.Add(this.BtnExit);
             this.groupBox2.Controls.Add(this.BtnInsurance);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.BtnEmployee);
             this.groupBox2.Location = new System.Drawing.Point(14, 57);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(175, 460);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             // 
-            // button6
+            // BtnExit
             // 
-            this.button6.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(9, 136);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(155, 41);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Exit";
-            this.button6.UseVisualStyleBackColor = false;
+            this.BtnExit.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BtnExit.FlatAppearance.BorderSize = 0;
+            this.BtnExit.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
+            this.BtnExit.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnExit.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnExit.ForeColor = System.Drawing.Color.White;
+            this.BtnExit.Location = new System.Drawing.Point(9, 136);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(155, 41);
+            this.BtnExit.TabIndex = 5;
+            this.BtnExit.Text = "Exit";
+            this.BtnExit.UseVisualStyleBackColor = false;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // BtnInsurance
             // 
@@ -87,20 +88,21 @@ namespace InsuranceApplication.Forms
             this.BtnInsurance.UseVisualStyleBackColor = false;
             this.BtnInsurance.Click += new System.EventHandler(this.BtnInsurance_Click);
             // 
-            // button2
+            // BtnEmployee
             // 
-            this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(9, 29);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 41);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Employee";
-            this.button2.UseVisualStyleBackColor = false;
+            this.BtnEmployee.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BtnEmployee.FlatAppearance.BorderSize = 0;
+            this.BtnEmployee.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.BtnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEmployee.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnEmployee.ForeColor = System.Drawing.Color.White;
+            this.BtnEmployee.Location = new System.Drawing.Point(9, 29);
+            this.BtnEmployee.Name = "BtnEmployee";
+            this.BtnEmployee.Size = new System.Drawing.Size(155, 41);
+            this.BtnEmployee.TabIndex = 1;
+            this.BtnEmployee.Text = "Employee";
+            this.BtnEmployee.UseVisualStyleBackColor = false;
+            this.BtnEmployee.Click += new System.EventHandler(this.BtnEmployee_Click);
             // 
             // groupBox3
             // 
@@ -168,11 +170,11 @@ namespace InsuranceApplication.Forms
 
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button BtnInsurance;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnEmployee;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button BtnExit;
     }
 }
