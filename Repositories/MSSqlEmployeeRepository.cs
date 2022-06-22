@@ -20,7 +20,14 @@ namespace InsuranceApplication.Repositories
         public IEnumerable<Employee> GetEmployees()
         {
             var employees = new List<Employee>();
-            var query = "SELECT * FROM Employee order by EmployeeId";
+            var query = "SELECT " +
+                "[EmployeeId], [EmployeeName], [TempAddress], [PermAddress], [ContactNumber], " +
+                "[Email], [CitizenshipNumber], [Education], [DateOfBirth], [Age], " +
+                "[BloodGroup], [AppointmentDate], [FatherName], [MotherName], [Gender], " +
+                "[MaritalStatus], [SpouseName], [Post], [PostStatus], [ResignationDate], " +
+                "[ImageLocation] " +
+                "FROM " + Constants.TABLE_EMPLOYEE + " " +
+                "ORDER BY [EmployeeId]";
             try
             {
                 using (var connection = new SqlConnection(connectionString))
@@ -74,7 +81,15 @@ namespace InsuranceApplication.Repositories
         public Employee GetEmployee(string employeeId)
         {
             var employee = new Employee();
-            var query = "SELECT * FROM Employee WHERE EmployeeId = @EmployeeId";
+            var query = "SELECT " +
+                "[EmployeeId], [EmployeeName], [TempAddress], [PermAddress], [ContactNumber], " +
+                "[Email], [CitizenshipNumber], [Education], [DateOfBirth], [Age], " +
+                "[BloodGroup], [AppointmentDate], [FatherName], [MotherName], [Gender], " +
+                "[MaritalStatus], [SpouseName], [Post], [PostStatus], [ResignationDate], " +
+                "[ImageLocation] " + 
+                "FROM " + Constants.TABLE_EMPLOYEE + " " +
+                "WHERE 1 = 1 " +
+                "AND [EmployeeId] = @EmployeeId";
 
             try
             {
@@ -127,17 +142,17 @@ namespace InsuranceApplication.Repositories
 
         public Employee AddEmployee(Employee employee)
         {
-            var query = "INSERT INTO Employee " +
+            var query = "INSERT INTO " + Constants.TABLE_EMPLOYEE + " " +
                     "(" +
-                    "EmpId, EmployeeId, EmployeeName, TempAddress, PermAddress, ContactNumber, Email, CitizenshipNumber, Education, " +
-                    "DateOfBirth, Age, BloodGroup, AppointmentDate, FatherName, MotherName, Gender, MaritalStatus, SpouseName, " +
-                    "Post, PostStatus, ResignationDate, ImageLocation" +
+                    "[Counter], [EmployeeId], [EmployeeName], [TempAddress], [PermAddress], [ContactNumber], [Email], [CitizenshipNumber], " +
+                    "[Education], [DateOfBirth], [Age], [BloodGroup], [AppointmentDate], [FatherName], [MotherName], [Gender], [MaritalStatus], [SpouseName], " +
+                    "[Post], [PostStatus], [ResignationDate], [ImageLocation], [AddedBy], [AddedDate] " +
                     ") " +
                     "VALUES " +
                     "(" +
-                    "@EmpId, @EmployeeId, @EmployeeName, @TempAddress, @PermAddress, @ContactNumber, @Email, @CitizenshipNumber, @Education, " +
-                    "@DateOfBirth, @Age, @BloodGroup, @AppointmentDate, @FatherName, @MotherName, @Gender, @MaritalStatus, @SpouseName, " +
-                    "@Post, @PostStatus, @ResignationDate, @ImageLocation" +
+                    "@Counter, @EmployeeId, @EmployeeName, @TempAddress, @PermAddress, @ContactNumber, @Email, @CitizenshipNumber, " +
+                    "@Education, @DateOfBirth, @Age, @BloodGroup, @AppointmentDate, @FatherName, @MotherName, @Gender, @MaritalStatus, @SpouseName, " +
+                    "@Post, @PostStatus, @ResignationDate, @ImageLocation, @AddedBy, @AddedDate " +
                     ")";
 
             try
@@ -147,7 +162,7 @@ namespace InsuranceApplication.Repositories
                     connection.Open();
                     using (var command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@EmpId", employee.EmpId);
+                        command.Parameters.AddWithValue("@Counter", employee.Counter);
                         command.Parameters.AddWithValue("@EmployeeId", employee.EmployeeId);
                         command.Parameters.AddWithValue("@EmployeeName", employee.EmployeeName);
                         command.Parameters.AddWithValue("@TempAddress", employee.TempAddress);
@@ -169,6 +184,8 @@ namespace InsuranceApplication.Repositories
                         command.Parameters.AddWithValue("@PostStatus", employee.PostStatus);
                         command.Parameters.AddWithValue("@ResignationDate", employee.ResignationDate);
                         command.Parameters.AddWithValue("@ImageLocation", employee.ImageLocation);
+                        command.Parameters.AddWithValue("@AddedBy", employee.AddedBy);
+                        command.Parameters.AddWithValue("@AddedDate", employee.AddedDate);
 
                         command.ExecuteNonQuery();
                     }
@@ -186,30 +203,33 @@ namespace InsuranceApplication.Repositories
 
         public Employee UpdateEmployee(string employeeId, Employee employee)
         {
-            var query = "UPDATE Employee SET " +
-                    "EmployeeId = @EmployeeId, " +
-                    "EmployeeName = @EmployeeName, " +
-                    "TempAddress = @TempAddress, " +
-                    "PermAddress = @PermAddress, " +
-                    "ContactNumber = @ContactNumber, " +
-                    "Email = @Email, " +
-                    "CitizenshipNumber = @CitizenshipNumber, " +
-                    "Education = @Education, " +
-                    "DateOfBirth = @DateOfBirth, " +
-                    "Age = @Age, " +
-                    "BloodGroup = @BloodGroup, " +
-                    "AppointmentDate = @AppointmentDate, " +
-                    "FatherName = @FatherName, " +
-                    "MotherName = @MotherName, " +
-                    "Gender = @Gender, " +
-                    "MaritalStatus = @MaritalStatus, " +
-                    "SpouseName = @SpouseName, " +
-                    "Post = @Post, " +
-                    "PostStatus = @PostStatus, " +
-                    "ResignationDate = @ResignationDate, " +
-                    "ImageLocation = @ImageLocation " +
+            var query = "UPDATE " + Constants.TABLE_EMPLOYEE + " SET " +
+                    "[EmployeeId] = @EmployeeId, " +
+                    "[EmployeeName] = @EmployeeName, " +
+                    "[TempAddress] = @TempAddress, " +
+                    "[PermAddress] = @PermAddress, " +
+                    "[ContactNumber] = @ContactNumber, " +
+                    "[Email] = @Email, " +
+                    "[CitizenshipNumber] = @CitizenshipNumber, " +
+                    "[Education] = @Education, " +
+                    "[DateOfBirth] = @DateOfBirth, " +
+                    "[Age] = @Age, " +
+                    "[BloodGroup] = @BloodGroup, " +
+                    "[AppointmentDate] = @AppointmentDate, " +
+                    "[FatherName] = @FatherName, " +
+                    "[MotherName] = @MotherName, " +
+                    "[Gender] = @Gender, " +
+                    "[MaritalStatus] = @MaritalStatus, " +
+                    "[SpouseName] = @SpouseName, " +
+                    "[Post] = @Post, " +
+                    "[PostStatus] = @PostStatus, " +
+                    "[ResignationDate] = @ResignationDate, " +
+                    "[ImageLocation] = @ImageLocation " +
+                    "[UpdatedBy] = @UpdatedBy " + 
+                    "[UpdatedDate] = @UpdatedDate " +
                     "WHERE " +
-                    "EmployeeId = @EmployeeId";
+                    "1 = 1 " +
+                    "AND [EmployeeId] = @EmployeeId";
 
             try
             {
@@ -239,6 +259,8 @@ namespace InsuranceApplication.Repositories
                         command.Parameters.AddWithValue("@PostStatus", employee.PostStatus);
                         command.Parameters.AddWithValue("@ResignationDate", employee.ResignationDate);
                         command.Parameters.AddWithValue("@ImageLocation", employee.ImageLocation);
+                        command.Parameters.AddWithValue("@UpdatedBy", employee.UpdatedBy);
+                        command.Parameters.AddWithValue("@UpdatedDate", employee.UpdatedDate);
 
                         command.ExecuteNonQuery();
                     }
@@ -256,9 +278,10 @@ namespace InsuranceApplication.Repositories
 
         public string DeleteEmployee(string employeeId)
         {
-            string query = "DELETE FROM Employee " +
+            string query = "DELETE FROM " + Constants.TABLE_EMPLOYEE + " " +
                 "WHERE " +
-                "EmployeeId = @EmployeeId";
+                "1 = 1 " + 
+                "AND [EmployeeId] = @EmployeeId";
 
             try
             {
@@ -285,8 +308,8 @@ namespace InsuranceApplication.Repositories
 
         public int GetLastEmployeeId()
         {
-            int employeeId;
-            var query = "SELECT Top 1 EmpId FROM Employee ORDER BY EmpId DESC";
+            int employeeId = 0;
+            var query = "SELECT Top 1 [Counter] FROM " + Constants.TABLE_EMPLOYEE + " ORDER BY [Counter] DESC";
 
             try
             {
@@ -295,8 +318,11 @@ namespace InsuranceApplication.Repositories
                     connection.Open();
                     using (var command = new SqlCommand(query, connection))
                     {
-                        employeeId = Convert.ToInt32(command.ExecuteScalar());
-
+                        var result = command.ExecuteScalar();
+                        if (result != null && DBNull.Value != result)
+                        {
+                            employeeId = Convert.ToInt32(result);
+                        };
                     }
                     connection.Close();
                 }

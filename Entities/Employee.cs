@@ -5,7 +5,7 @@ namespace InsuranceApplication.Entities
     public class Employee
     {
         public int Id { get; set; }
-        public int EmpId { get; set; }
+        public int Counter { get; set; }
         public string EmployeeId { get; set; }
         public string EmployeeName { get; set; }
         public string TempAddress { get; set; }

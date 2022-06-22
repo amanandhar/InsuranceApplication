@@ -6,6 +6,7 @@
         public const decimal DEFAULT_DECIMAL_VALUE = 0.00m;
 
         public const string BASE_DOCUMENT_FOLDER = "BaseDocumentFolder";
+        public const string EMPLOYEE_IMAGE_FOLDER = "EmployeeImageFolder";
         public const string MEMBER_IMAGE_FOLDER = "MemberImageFolder";
 
         // Database

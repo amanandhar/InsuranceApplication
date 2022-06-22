@@ -18,12 +18,15 @@ namespace InsuranceApplication.Forms
         #region Enum
         public enum Action
         {
-            AddNew,
-            Save,
-            Edit,
-            Update,
+            Add,
+            ClearAll,
             Delete,
-            ClearAll
+            Edit,
+            Load,
+            None,
+            Populate,
+            Save,
+            Update
         }
         #endregion
 
@@ -41,8 +44,9 @@ namespace InsuranceApplication.Forms
         #region Form Load Event
         private void EmployeeDetails_Load(object sender, EventArgs e)
         {
-            AutoPopulateControls();
             _documentsDirectory = ConfigurationManager.AppSettings["DocumentsDirectory"].ToString();
+            EnableControls();
+            EnableControls(Action.Load);
         }
         #endregion
 
@@ -67,7 +71,8 @@ namespace InsuranceApplication.Forms
 
         private void BtnDeleteImage_Click(object sender, EventArgs e)
         {
-            PicBoxPhoto.Image = null;
+            PicBoxPhoto.Image = PicBoxPhoto.InitialImage;
+            _uploadedImagePath = string.Empty;
         }
 
         private void BtnAddEmployee_Click(object sender, EventArgs e)
@@ -75,8 +80,11 @@ namespace InsuranceApplication.Forms
             var employeeId = _employeeService.GetLastEmployeeId();
             TxtBoxEmployeeId.Text = employeeId;
 
-            ClearAll(Action.AddNew);
-            EnableControls(Action.AddNew);
+            ClearAll(Action.Add);
+            EnableControls();
+            EnableControls(Action.Add);
+            ErrorProvider.Clear();
+            TxtBoxEmployeeName.Focus();
         }
 
         private void BtnSaveEmployee_Click(object sender, EventArgs e)
@@ -84,7 +92,7 @@ namespace InsuranceApplication.Forms
             if (ValidateFields())
             {
                 string destinationFileName = string.Empty;
-                if (UtilityService.CreateFolder(_documentsDirectory, TxtBoxEmployeeId.Text))
+                if (!string.IsNullOrEmpty(_uploadedImagePath) && UtilityService.CreateFolder(_documentsDirectory, TxtBoxEmployeeId.Text))
                 {
                     if (UtilityService.CreateFolder(_documentsDirectory + TxtBoxEmployeeId.Text, IMAGE_FOLDER))
                     {
@@ -98,25 +106,27 @@ namespace InsuranceApplication.Forms
                 {
                     EmployeeId = TxtBoxEmployeeId.Text,
                     EmployeeName = TxtBoxEmployeeName.Text,
-                    TempAddress = TxtBoxTempAddress.Text,
-                    PermAddress = TxtBoxPermAddress.Text,
                     ContactNumber = Convert.ToInt64(TxtBoxContactNo.Text),
-                    Email = TxtBoxEmail.Text,
                     CitizenshipNumber = TxtBoxCitizenshipNo.Text,
+                    Gender = ComboGender.Text,
                     Education = TxtBoxEducation.Text,
                     DateOfBirth = MaskDOB.Text,
                     Age = Convert.ToInt32(TxtBoxAge.Text),
-                    BloodGroup = TxtBoxBloodGroup.Text,
-                    AppointmentDate = MaskAppointedDate.Text,
+                    Email = TxtBoxEmail.Text,
+                    TempAddress = TxtBoxTempAddress.Text,
+                    PermAddress = TxtBoxPermAddress.Text,
                     FatherName = TxtBoxFatherName.Text,
                     MotherName = TxtBoxMotherName.Text,
-                    Gender = ComboGender.Text,
                     MaritalStatus = ComboMaritalStatus.Text,
                     SpouseName = TxtBoxMotherName.Text,
+                    BloodGroup = TxtBoxBloodGroup.Text,
                     Post = TxtBoxPost.Text,
                     PostStatus = ComboPostStatus.Text,
+                    AppointmentDate = MaskAppointedDate.Text,
                     ResignationDate = MaskResignationDate.Text,
-                    ImageLocation = destinationFileName
+                    ImageLocation = destinationFileName,
+                    AddedBy = "Test User",
+                    AddedDate = DateTime.Now
 
                 });
 
@@ -124,13 +134,18 @@ namespace InsuranceApplication.Forms
                 if (result == DialogResult.OK)
                 {
                     ClearAll(Action.Save);
+                    EnableControls();
+                    EnableControls(Action.Save);
+                    ErrorProvider.Clear();
                 }
             }
         }
 
         private void BtnEditEmployee_Click(object sender, EventArgs e)
         {
+            EnableControls();
             EnableControls(Action.Edit);
+            ErrorProvider.Clear();
         }
 
         private void BtnUpdateEmployee_Click(object sender, EventArgs e)
@@ -141,34 +156,36 @@ namespace InsuranceApplication.Forms
                 {
                     EmployeeId = TxtBoxEmployeeId.Text,
                     EmployeeName = TxtBoxEmployeeName.Text,
-                    TempAddress = TxtBoxTempAddress.Text,
-                    PermAddress = TxtBoxPermAddress.Text,
                     ContactNumber = Convert.ToInt64(TxtBoxContactNo.Text),
-                    Email = TxtBoxEmail.Text,
                     CitizenshipNumber = TxtBoxCitizenshipNo.Text,
+                    Gender = ComboGender.Text,
                     Education = TxtBoxEducation.Text,
                     DateOfBirth = MaskDOB.Text,
                     Age = Convert.ToInt32(TxtBoxAge.Text),
-                    BloodGroup = TxtBoxBloodGroup.Text,
-                    AppointmentDate = MaskAppointedDate.Text,
+                    Email = TxtBoxEmail.Text,
+                    TempAddress = TxtBoxTempAddress.Text,
+                    PermAddress = TxtBoxPermAddress.Text,
                     FatherName = TxtBoxFatherName.Text,
                     MotherName = TxtBoxMotherName.Text,
-                    Gender = ComboGender.Text,
                     MaritalStatus = ComboMaritalStatus.Text,
                     SpouseName = TxtBoxSpouseName.Text,
+                    BloodGroup = TxtBoxBloodGroup.Text,
                     Post = TxtBoxPost.Text,
                     PostStatus = ComboPostStatus.Text,
+                    AppointmentDate = MaskAppointedDate.Text,
                     ResignationDate = MaskResignationDate.Text,
-                    ImageLocation = _uploadedImagePath
-
+                    ImageLocation = _uploadedImagePath,
+                    UpdatedBy = "Test User",
+                    UpdatedDate = DateTime.Now
                 }); ;
 
                 DialogResult result = MessageBox.Show(employee.EmployeeId + " has been updated successfully.", "Message", MessageBoxButtons.OK);
                 if (result == DialogResult.OK)
                 {
                     ClearAll(Action.Update);
+                    EnableControls();
                     EnableControls(Action.Update);
-
+                    ErrorProvider.Clear();
                 }
             }
         }
@@ -185,6 +202,9 @@ namespace InsuranceApplication.Forms
                     if (result == DialogResult.OK)
                     {
                         ClearAll(Action.Delete);
+                        EnableControls();
+                        EnableControls(Action.Save);
+                        ErrorProvider.Clear();
                     }
                 }
             }
@@ -192,7 +212,7 @@ namespace InsuranceApplication.Forms
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
-
+            ClearAll(Action.ClearAll);
         }
 
         private void BtnShowDetails_Click(object sender, EventArgs e)
@@ -207,7 +227,6 @@ namespace InsuranceApplication.Forms
             LblCurrentNepaliDate.Text = DateMapper.MapEnglishToNepali(DateTime.Now.ToString("yyyy/MM/dd"));
             LblCurrentTime.Text = DateTime.Now.ToString("hh:mm:ss");
         }
-
         #endregion
 
         #region OpenFileDialog Events
@@ -225,29 +244,27 @@ namespace InsuranceApplication.Forms
 
         public void PopulateEmployee(string employeeId)
         {
-            ErrorProvider.Clear();
-
             var employee = _employeeService.GetEmployee(employeeId);
 
             TxtBoxEmployeeId.Text = employeeId;
             TxtBoxEmployeeName.Text = employee.EmployeeName;
-            TxtBoxTempAddress.Text = employee.TempAddress;
-            TxtBoxPermAddress.Text = employee.PermAddress;
             TxtBoxContactNo.Text = employee.ContactNumber.ToString();
-            TxtBoxEmail.Text = employee.Email;
-            TxtBoxCitizenshipNo.Text = employee.CitizenshipNumber.ToString();
+            TxtBoxCitizenshipNo.Text = employee.CitizenshipNumber;
+            ComboGender.Text = employee.Gender;
             TxtBoxEducation.Text = employee.Education;
             MaskDOB.Text = employee.DateOfBirth;
             TxtBoxAge.Text = employee.Age.ToString();
-            TxtBoxBloodGroup.Text = employee.BloodGroup;
-            MaskAppointedDate.Text = employee.AppointmentDate;
+            TxtBoxEmail.Text = employee.Email;
+            TxtBoxTempAddress.Text = employee.TempAddress;
+            TxtBoxPermAddress.Text = employee.PermAddress;
             TxtBoxFatherName.Text = employee.FatherName;
             TxtBoxMotherName.Text = employee.MotherName;
-            ComboGender.SelectedIndex = employee.Gender.ToLower() == "male" ? 1 : (employee.MaritalStatus.ToLower() == "single" ? 2 : 0);
-            ComboMaritalStatus.SelectedIndex = employee.MaritalStatus.ToLower() == "single" ? 1 : (employee.MaritalStatus.ToLower() == "married" ? 2 : 0);
+            ComboMaritalStatus.Text = employee.MaritalStatus;
             TxtBoxSpouseName.Text = employee.SpouseName;
+            TxtBoxBloodGroup.Text = employee.BloodGroup;
             TxtBoxPost.Text = employee.Post;
             ComboPostStatus.Text = employee.PostStatus;
+            MaskAppointedDate.Text = employee.AppointmentDate;
             MaskResignationDate.Text = employee.ResignationDate;
 
             if (File.Exists(employee.ImageLocation))
@@ -256,50 +273,13 @@ namespace InsuranceApplication.Forms
             }
             else
             {
-                PicBoxPhoto.Image = null;
+                PicBoxPhoto.Image = PicBoxPhoto.InitialImage;
+                _uploadedImagePath = string.Empty;
             }
 
-            _uploadedImagePath = employee.ImageLocation; //ToDo Change this
-
-            TxtBoxEmployeeName.Enabled = false;
-            TxtBoxTempAddress.Enabled = false;
-            TxtBoxPermAddress.Enabled = false;
-            TxtBoxContactNo.Enabled = false;
-            TxtBoxEmail.Enabled = false;
-            TxtBoxCitizenshipNo.Enabled = false;
-            TxtBoxEducation.Enabled = false;
-            MaskDOB.Enabled = false;
-            TxtBoxBloodGroup.Enabled = false;
-            MaskAppointedDate.Enabled = false;
-            TxtBoxFatherName.Enabled = false;
-            TxtBoxMotherName.Enabled = false;
-            ComboGender.Enabled = false;
-            ComboMaritalStatus.Enabled = false;
-            TxtBoxSpouseName.Enabled = false;
-            TxtBoxPost.Enabled = false;
-            ComboPostStatus.Enabled = false;
-            MaskResignationDate.Enabled = false;
-
-            BtnSaveEmployee.Enabled = false;
-            BtnEditEmployee.Enabled = true;
-            BtnUpdateEmployee.Enabled = false;
-            BtnDeleteEmployee.Enabled = true;
-            BtnAddImage.Enabled = false;
-            BtnDeleteImage.Enabled = false;
-        }
-
-        private void AutoPopulateControls()
-        {
-            this.ActiveControl = TxtBoxEmployeeName;
-
-            ComboGender.SelectedIndex = 0;
-            ComboMaritalStatus.SelectedIndex = 0;
-            ComboPostStatus.SelectedIndex = 0;
-
-            BtnSaveEmployee.Enabled = false;
-            BtnEditEmployee.Enabled = false;
-            BtnUpdateEmployee.Enabled = false;
-            BtnDeleteEmployee.Enabled = false;
+            EnableControls();
+            EnableControls(Action.Populate);
+            ErrorProvider.Clear();
         }
 
         private void ClearAll(Action action)
@@ -308,91 +288,143 @@ namespace InsuranceApplication.Forms
             {
                 TxtBoxEmployeeId.Clear();
             }
+
             TxtBoxEmployeeName.Clear();
-            TxtBoxTempAddress.Clear();
-            TxtBoxPermAddress.Clear();
             TxtBoxContactNo.Clear();
-            TxtBoxEmail.Clear();
             TxtBoxCitizenshipNo.Clear();
+            ComboGender.Text = string.Empty;
             TxtBoxEducation.Clear();
             MaskDOB.Clear();
-            TxtBoxBloodGroup.Clear();
             TxtBoxAge.Clear();
-            MaskAppointedDate.Clear();
+            TxtBoxEmail.Clear();
+            TxtBoxTempAddress.Clear();
+            TxtBoxPermAddress.Clear();
             TxtBoxFatherName.Clear();
             TxtBoxMotherName.Clear();
-            ComboGender.SelectedIndex = 0;
-            ComboMaritalStatus.SelectedIndex = 0;
+            ComboMaritalStatus.Text = string.Empty;
             TxtBoxSpouseName.Clear();
+            TxtBoxBloodGroup.Clear();
             TxtBoxPost.Clear();
-            ComboPostStatus.SelectedIndex = 0;
+            ComboPostStatus.Text = string.Empty;
+            MaskAppointedDate.Clear();
             MaskResignationDate.Clear();
-            PicBoxPhoto.Image = null;
+            PicBoxPhoto.Image = PicBoxPhoto.InitialImage;
         }
 
-        private void EnableControls(Action action)
+        private void EnableControls(Action action = Action.None)
         {
-            TxtBoxEmployeeName.Enabled = true;
-            TxtBoxTempAddress.Enabled = true;
-            TxtBoxPermAddress.Enabled = true;
-            TxtBoxContactNo.Enabled = true;
-            TxtBoxEmail.Enabled = true;
-            TxtBoxCitizenshipNo.Enabled = true;
-            TxtBoxEducation.Enabled = true;
-            MaskDOB.Enabled = true;
-            TxtBoxBloodGroup.Enabled = true;
-            MaskAppointedDate.Enabled = true;
-            TxtBoxFatherName.Enabled = true;
-            TxtBoxMotherName.Enabled = true;
-            ComboGender.Enabled = true;
-            ComboMaritalStatus.Enabled = true;
-            TxtBoxSpouseName.Enabled = true;
-            TxtBoxPost.Enabled = true;
-            ComboPostStatus.Enabled = true;
-
-            if (action == Action.AddNew)
+            if (action == Action.Add)
             {
-                ComboGender.SelectedIndex = 0;
-                ComboMaritalStatus.SelectedIndex = 0;
-                ComboPostStatus.SelectedIndex = 0;
-
-                BtnAddEmployee.Enabled = false;
-                BtnSaveEmployee.Enabled = true;
-                BtnEditEmployee.Enabled = false;
-                BtnUpdateEmployee.Enabled = false;
-                BtnDeleteEmployee.Enabled = false;
-                BtnClearAll.Enabled = true;
-                BtnAddImage.Enabled = true;
-                BtnDeleteImage.Enabled = true;
-            }
-
-            else if (action == Action.Edit)
-            {
+                TxtBoxEmployeeName.Enabled = true;
+                TxtBoxContactNo.Enabled = true;
+                TxtBoxCitizenshipNo.Enabled = true;
+                ComboGender.Enabled = true;
+                TxtBoxEducation.Enabled = true;
+                MaskDOB.Enabled = true;
+                TxtBoxAge.Enabled = true;
+                TxtBoxEmail.Enabled = true;
+                TxtBoxTempAddress.Enabled = true;
+                TxtBoxPermAddress.Enabled = true;
+                TxtBoxFatherName.Enabled = true;
+                TxtBoxMotherName.Enabled = true;
+                ComboMaritalStatus.Enabled = true;
+                TxtBoxSpouseName.Enabled = true;
+                TxtBoxBloodGroup.Enabled = true;
+                TxtBoxPost.Enabled = true;
+                ComboPostStatus.Enabled = true;
+                MaskAppointedDate.Enabled = true;
                 MaskResignationDate.Enabled = true;
 
-                BtnSaveEmployee.Enabled = false;
-                BtnUpdateEmployee.Enabled = true;
-                BtnClearAll.Enabled = false;
+                BtnAddImage.Enabled = true;
+                BtnDeleteImage.Enabled = true;
+                BtnSaveEmployee.Enabled = true;
+                BtnClearAll.Enabled = true;
+            }
+            else if (action == Action.Edit)
+            {
+                TxtBoxEmployeeName.Enabled = true;
+                TxtBoxContactNo.Enabled = true;
+                TxtBoxCitizenshipNo.Enabled = true;
+                ComboGender.Enabled = true;
+                TxtBoxEducation.Enabled = true;
+                MaskDOB.Enabled = true;
+                TxtBoxAge.Enabled = true;
+                TxtBoxEmail.Enabled = true;
+                TxtBoxTempAddress.Enabled = true;
+                TxtBoxPermAddress.Enabled = true;
+                TxtBoxFatherName.Enabled = true;
+                TxtBoxMotherName.Enabled = true;
+                ComboMaritalStatus.Enabled = true;
+                TxtBoxSpouseName.Enabled = true;
+                TxtBoxBloodGroup.Enabled = true;
+                TxtBoxPost.Enabled = true;
+                ComboPostStatus.Enabled = true;
+                MaskAppointedDate.Enabled = true;
+                MaskResignationDate.Enabled = true;
 
                 BtnAddImage.Enabled = true;
                 BtnDeleteImage.Enabled = true;
-            }
 
+                BtnAddEmployee.Enabled = true;
+                BtnUpdateEmployee.Enabled = true;
+                BtnClearAll.Enabled = true;
+                BtnDeleteEmployee.Enabled = true;
+            }
+            else if(action == Action.Load)
+            {
+                BtnAddEmployee.Enabled = true;
+            }
+            else if (action == Action.Populate)
+            {
+                BtnAddEmployee.Enabled = true;
+                BtnEditEmployee.Enabled = true;
+                BtnDeleteEmployee.Enabled = true;
+            }
+            else if (action == Action.Save)
+            {
+                BtnAddEmployee.Enabled = true;
+            }
             else if (action == Action.Update)
             {
                 BtnAddEmployee.Enabled = true;
+            }
+            else
+            {
+                TxtBoxEmployeeId.Enabled = false;
+                TxtBoxEmployeeName.Enabled = false;
+                TxtBoxContactNo.Enabled = false;
+                TxtBoxCitizenshipNo.Enabled = false;
+                ComboGender.Enabled = false;
+                TxtBoxEducation.Enabled = false;
+                MaskDOB.Enabled = false;
+                TxtBoxAge.Enabled = false;
+                TxtBoxEmail.Enabled = false;
+                TxtBoxTempAddress.Enabled = false;
+                TxtBoxPermAddress.Enabled = false;
+                TxtBoxFatherName.Enabled = false;
+                TxtBoxMotherName.Enabled = false;
+                ComboMaritalStatus.Enabled = false;
+                TxtBoxSpouseName.Enabled = false;
+                TxtBoxBloodGroup.Enabled = false;
+                TxtBoxPost.Enabled = false;
+                ComboPostStatus.Enabled = false;
+                MaskAppointedDate.Enabled = false;
+                MaskResignationDate.Enabled = false;
+
+                BtnAddImage.Enabled = false;
+                BtnDeleteImage.Enabled = false;
+                BtnAddEmployee.Enabled = false;
                 BtnEditEmployee.Enabled = false;
                 BtnUpdateEmployee.Enabled = false;
                 BtnDeleteEmployee.Enabled = false;
-                BtnClearAll.Enabled = true;
+                BtnClearAll.Enabled = false;
                 BtnSaveEmployee.Enabled = false;
             }
-
         }
 
         private bool IsValidDate(string input)
         {
-            string format = "yyyy/MM/dd";
+            string format = "yyyy-MM-dd";
             DateTime dateTime;
             if (DateTime.TryParseExact(input, format, CultureInfo.InvariantCulture,
                 DateTimeStyles.None, out dateTime))
@@ -418,29 +450,19 @@ namespace InsuranceApplication.Forms
                 ErrorProvider.SetError(TxtBoxEmployeeName, "Please Enter Employee Name");
                 status = false;
             }
-            if (string.IsNullOrEmpty(TxtBoxTempAddress.Text))
-            {
-                ErrorProvider.SetError(TxtBoxTempAddress, "Please Enter Temp Address");
-                status = false;
-            }
-            if (string.IsNullOrEmpty(TxtBoxPermAddress.Text))
-            {
-                ErrorProvider.SetError(TxtBoxPermAddress, "Please Enter Perm Address");
-                status = false;
-            }
             if (string.IsNullOrEmpty(TxtBoxContactNo.Text))
             {
                 ErrorProvider.SetError(TxtBoxContactNo, "Please Enter Contact No");
                 status = false;
             }
-            if (string.IsNullOrEmpty(TxtBoxEmail.Text))
-            {
-                ErrorProvider.SetError(TxtBoxEmail, "Please Enter Email Id");
-                status = false;
-            }
             if (string.IsNullOrEmpty(TxtBoxCitizenshipNo.Text))
             {
                 ErrorProvider.SetError(TxtBoxCitizenshipNo, "Please Enter Citizenship No");
+                status = false;
+            }
+            if (string.IsNullOrEmpty(ComboGender.Text))
+            {
+                ErrorProvider.SetError(ComboGender, "Please Choose Gender");
                 status = false;
             }
             if (string.IsNullOrEmpty(TxtBoxEducation.Text))
@@ -458,9 +480,19 @@ namespace InsuranceApplication.Forms
                 ErrorProvider.SetError(TxtBoxAge, "Please Enter Age");
                 status = false;
             }
-            if (string.IsNullOrEmpty(TxtBoxBloodGroup.Text))
+            if (string.IsNullOrEmpty(TxtBoxEmail.Text))
             {
-                ErrorProvider.SetError(TxtBoxBloodGroup, "Please Choose Blood Group");
+                ErrorProvider.SetError(TxtBoxEmail, "Please Enter Email Id");
+                status = false;
+            }
+            if (string.IsNullOrEmpty(TxtBoxTempAddress.Text))
+            {
+                ErrorProvider.SetError(TxtBoxTempAddress, "Please Enter Temp Address");
+                status = false;
+            }
+            if (string.IsNullOrEmpty(TxtBoxPermAddress.Text))
+            {
+                ErrorProvider.SetError(TxtBoxPermAddress, "Please Enter Perm Address");
                 status = false;
             }
             if (string.IsNullOrEmpty(TxtBoxFatherName.Text))
@@ -473,12 +505,7 @@ namespace InsuranceApplication.Forms
                 ErrorProvider.SetError(TxtBoxMotherName, "Please Enter Mother Name");
                 status = false;
             }
-            if (ComboGender.SelectedIndex == 0)
-            {
-                ErrorProvider.SetError(ComboGender, "Please Choose Gender");
-                status = false;
-            }
-            if (ComboMaritalStatus.SelectedIndex == 0)
+            if (string.IsNullOrEmpty(ComboMaritalStatus.Text))
             {
                 ErrorProvider.SetError(ComboMaritalStatus, "Please Choose Marital Status");
                 status = false;
@@ -488,12 +515,17 @@ namespace InsuranceApplication.Forms
                 ErrorProvider.SetError(TxtBoxSpouseName, "Please Enter Spouse Name");
                 status = false;
             }
+            if (string.IsNullOrEmpty(TxtBoxBloodGroup.Text))
+            {
+                ErrorProvider.SetError(TxtBoxBloodGroup, "Please Choose Blood Group");
+                status = false;
+            }
             if (string.IsNullOrEmpty(TxtBoxPost.Text))
             {
                 ErrorProvider.SetError(TxtBoxPost, "Please Enter Post");
                 status = false;
             }
-            if (ComboPostStatus.SelectedIndex == 0)
+            if (string.IsNullOrEmpty(ComboPostStatus.Text))
             {
                 ErrorProvider.SetError(ComboPostStatus, "Please Choose Post Status");
                 status = false;
@@ -501,6 +533,11 @@ namespace InsuranceApplication.Forms
             if (!IsValidDate(MaskAppointedDate.Text))
             {
                 ErrorProvider.SetError(MaskAppointedDate, "Please Enter Appointment Date");
+                status = false;
+            }
+            if (!IsValidDate(MaskResignationDate.Text))
+            {
+                ErrorProvider.SetError(MaskResignationDate, "Please Enter Resignation Date");
                 status = false;
             }
 

@@ -30,7 +30,7 @@ namespace InsuranceApplication.Services
             string empId = employee.EmployeeId;
             empId = empId.Replace("E", "");
             empId = empId.TrimStart(new char[] { '0' });
-            employee.EmpId = Convert.ToInt32(empId);
+            employee.Counter = Convert.ToInt32(empId);
             return _employeeRepository.AddEmployee(employee);
         }
 
