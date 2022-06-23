@@ -125,7 +125,7 @@ namespace InsuranceApplication.Forms
 
                     if (_selectedInsuranceCompanyId > 0)
                     {
-                        insuranceCompany.UpdatedBy = "TestUser";
+                        insuranceCompany.UpdatedBy = Constants.TEST_USER;
                         insuranceCompany.UpdatedDate = DateTime.Now;
 
                         _insuranceCompanyService.UpdateInsuranceCompany(_selectedInsuranceCompanyId, insuranceCompany);
@@ -133,7 +133,7 @@ namespace InsuranceApplication.Forms
                     }
                     else
                     {
-                        insuranceCompany.AddedBy = "TestUser";
+                        insuranceCompany.AddedBy = Constants.TEST_USER;
                         insuranceCompany.AddedDate = DateTime.Now;
 
                         _insuranceCompanyService.AddInsuranceCompany(insuranceCompany);

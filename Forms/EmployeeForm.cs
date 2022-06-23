@@ -4,11 +4,12 @@ using InsuranceApplication.Mapper;
 using InsuranceApplication.Services.Interfaces;
 using InsuranceApplication.Shared;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace InsuranceApplication.Forms
@@ -31,8 +32,9 @@ namespace InsuranceApplication.Forms
         #endregion
 
         private readonly IEmployeeService _employeeService;
-        private string _documentsDirectory;
-        private const string IMAGE_FOLDER = "Image";
+        private string _baseDocumentFolder;
+        private string _baseImageFolder;
+        private string _employeeImageFolder;
         private string _uploadedImagePath = string.Empty;
 
         public EmployeeForm(IEmployeeService employeeService)
@@ -44,7 +46,10 @@ namespace InsuranceApplication.Forms
         #region Form Load Event
         private void EmployeeDetails_Load(object sender, EventArgs e)
         {
-            _documentsDirectory = ConfigurationManager.AppSettings["DocumentsDirectory"].ToString();
+            _baseDocumentFolder = ConfigurationManager.AppSettings[Constants.BASE_DOCUMENT_FOLDER].ToString();
+            _baseImageFolder = ConfigurationManager.AppSettings[Constants.BASE_IMAGE_FOLDER].ToString();
+            _employeeImageFolder = ConfigurationManager.AppSettings[Constants.EMPLOYEE_IMAGE_FOLDER].ToString();
+
             EnableControls();
             EnableControls(Action.Load);
         }
@@ -59,13 +64,24 @@ namespace InsuranceApplication.Forms
 
         private void BtnSalaryDetails_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(_documentsDirectory);
+            try
+            {
+                if(Directory.Exists(_baseDocumentFolder))
+                {
+                    System.Diagnostics.Process.Start("explorer.exe", _baseDocumentFolder);
+                }
+            }
+            catch(Exception ex)
+            {
+                UtilityService.ShowExceptionMessageBox();
+            }
         }
 
         private void BtnAddImage_Click(object sender, EventArgs e)
         {
-            OpenFileDialog.InitialDirectory = _documentsDirectory;
+            OpenFileDialog.InitialDirectory = _baseImageFolder;
             OpenFileDialog.Filter = "All files |*.*";
+            OpenFileDialog.FileName = string.Empty;
             OpenFileDialog.ShowDialog();
         }
 
@@ -84,6 +100,7 @@ namespace InsuranceApplication.Forms
             EnableControls();
             EnableControls(Action.Add);
             ErrorProvider.Clear();
+            DataGridEmployeeList.DataSource = null;
             TxtBoxEmployeeName.Focus();
         }
 
@@ -91,52 +108,73 @@ namespace InsuranceApplication.Forms
         {
             if (ValidateFields())
             {
-                string destinationFileName = string.Empty;
-                if (!string.IsNullOrEmpty(_uploadedImagePath) && UtilityService.CreateFolder(_documentsDirectory, TxtBoxEmployeeId.Text))
+                string relativeImagePath = null;
+                string destinationFilePath = null;
+
+                try
                 {
-                    if (UtilityService.CreateFolder(_documentsDirectory + TxtBoxEmployeeId.Text, IMAGE_FOLDER))
+                    if (!string.IsNullOrEmpty(_uploadedImagePath))
                     {
-                        var sourceFileName = _uploadedImagePath;
-                        destinationFileName = Path.Combine(Path.Combine(_documentsDirectory, TxtBoxEmployeeId.Text), IMAGE_FOLDER) + "\\" + Path.GetFileName(sourceFileName);
-                        File.Copy(sourceFileName, destinationFileName);
+                        if (!Directory.Exists(_baseImageFolder))
+                        {
+                            MessageBox.Show("Base image folder is set correctly. Please check.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else
+                        {
+                            if (!Directory.Exists(Path.Combine(_baseImageFolder, _employeeImageFolder)))
+                            {
+                                UtilityService.CreateFolder(_baseImageFolder, _employeeImageFolder);
+                            }
+
+                            relativeImagePath = TxtBoxEmployeeId.Text + ".jpg";
+                            destinationFilePath = Path.Combine(_baseImageFolder, _employeeImageFolder, relativeImagePath);
+                            File.Copy(_uploadedImagePath, destinationFilePath, true);
+                        }
+                    }
+
+                    var employee = _employeeService.AddEmployee(new Employee
+                    {
+                        EmployeeId = TxtBoxEmployeeId.Text,
+                        EmployeeName = TxtBoxEmployeeName.Text,
+                        ContactNumber = Convert.ToInt64(TxtBoxContactNo.Text),
+                        CitizenshipNumber = TxtBoxCitizenshipNo.Text,
+                        Gender = ComboGender.Text,
+                        Education = TxtBoxEducation.Text,
+                        DateOfBirth = UtilityService.GetDate(MaskDOB.Text.Trim()),
+                        Age = Convert.ToInt32(TxtBoxAge.Text),
+                        Email = TxtBoxEmail.Text,
+                        TempAddress = TxtBoxTempAddress.Text,
+                        PermAddress = TxtBoxPermAddress.Text,
+                        FatherName = TxtBoxFatherName.Text,
+                        MotherName = TxtBoxMotherName.Text,
+                        MaritalStatus = ComboMaritalStatus.Text,
+                        SpouseName = TxtBoxMotherName.Text,
+                        BloodGroup = TxtBoxBloodGroup.Text,
+                        Post = TxtBoxPost.Text,
+                        PostStatus = ComboPostStatus.Text,
+                        AppointmentDate = UtilityService.GetDate(MaskAppointedDate.Text.Trim()),
+                        ResignationDate = UtilityService.GetDate(MaskResignationDate.Text.Trim()),
+                        ImageLocation = relativeImagePath,
+                        AddedBy = Constants.TEST_USER,
+                        AddedDate = DateTime.Now
+
+                    });
+
+                    DialogResult result = MessageBox.Show(employee.EmployeeId + " has been added successfully.", "Message", MessageBoxButtons.OK);
+                    if (result == DialogResult.OK)
+                    {
+                        ClearAll(Action.Save);
+                        EnableControls();
+                        EnableControls(Action.Save);
+                        ErrorProvider.Clear();
+                        DataGridEmployeeList.DataSource = null;
                     }
                 }
-
-                var employee = _employeeService.AddEmployee(new Employee
+                catch(Exception ex)
                 {
-                    EmployeeId = TxtBoxEmployeeId.Text,
-                    EmployeeName = TxtBoxEmployeeName.Text,
-                    ContactNumber = Convert.ToInt64(TxtBoxContactNo.Text),
-                    CitizenshipNumber = TxtBoxCitizenshipNo.Text,
-                    Gender = ComboGender.Text,
-                    Education = TxtBoxEducation.Text,
-                    DateOfBirth = MaskDOB.Text,
-                    Age = Convert.ToInt32(TxtBoxAge.Text),
-                    Email = TxtBoxEmail.Text,
-                    TempAddress = TxtBoxTempAddress.Text,
-                    PermAddress = TxtBoxPermAddress.Text,
-                    FatherName = TxtBoxFatherName.Text,
-                    MotherName = TxtBoxMotherName.Text,
-                    MaritalStatus = ComboMaritalStatus.Text,
-                    SpouseName = TxtBoxMotherName.Text,
-                    BloodGroup = TxtBoxBloodGroup.Text,
-                    Post = TxtBoxPost.Text,
-                    PostStatus = ComboPostStatus.Text,
-                    AppointmentDate = MaskAppointedDate.Text,
-                    ResignationDate = MaskResignationDate.Text,
-                    ImageLocation = destinationFileName,
-                    AddedBy = "Test User",
-                    AddedDate = DateTime.Now
-
-                });
-
-                DialogResult result = MessageBox.Show(employee.EmployeeId + " has been added successfully.", "Message", MessageBoxButtons.OK);
-                if (result == DialogResult.OK)
-                {
-                    ClearAll(Action.Save);
-                    EnableControls();
-                    EnableControls(Action.Save);
-                    ErrorProvider.Clear();
+                    UtilityService.ShowExceptionMessageBox();
                 }
             }
         }
@@ -146,66 +184,123 @@ namespace InsuranceApplication.Forms
             EnableControls();
             EnableControls(Action.Edit);
             ErrorProvider.Clear();
+            DataGridEmployeeList.DataSource = null;
         }
 
         private void BtnUpdateEmployee_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(TxtBoxEmployeeId.Text))
+            var employeeId = TxtBoxEmployeeId.Text.Trim();
+            try
             {
-                var employee = _employeeService.UpdateEmployee(TxtBoxEmployeeId.Text, new Employee
+                if (!string.IsNullOrEmpty(employeeId) && ValidateFields())
                 {
-                    EmployeeId = TxtBoxEmployeeId.Text,
-                    EmployeeName = TxtBoxEmployeeName.Text,
-                    ContactNumber = Convert.ToInt64(TxtBoxContactNo.Text),
-                    CitizenshipNumber = TxtBoxCitizenshipNo.Text,
-                    Gender = ComboGender.Text,
-                    Education = TxtBoxEducation.Text,
-                    DateOfBirth = MaskDOB.Text,
-                    Age = Convert.ToInt32(TxtBoxAge.Text),
-                    Email = TxtBoxEmail.Text,
-                    TempAddress = TxtBoxTempAddress.Text,
-                    PermAddress = TxtBoxPermAddress.Text,
-                    FatherName = TxtBoxFatherName.Text,
-                    MotherName = TxtBoxMotherName.Text,
-                    MaritalStatus = ComboMaritalStatus.Text,
-                    SpouseName = TxtBoxSpouseName.Text,
-                    BloodGroup = TxtBoxBloodGroup.Text,
-                    Post = TxtBoxPost.Text,
-                    PostStatus = ComboPostStatus.Text,
-                    AppointmentDate = MaskAppointedDate.Text,
-                    ResignationDate = MaskResignationDate.Text,
-                    ImageLocation = _uploadedImagePath,
-                    UpdatedBy = "Test User",
-                    UpdatedDate = DateTime.Now
-                }); ;
+                    string relativeImagePath = null;
+                    string destinationFilePath = null;
+                    if (!string.IsNullOrWhiteSpace(_uploadedImagePath))
+                    {
+                        if (!Directory.Exists(_baseImageFolder))
+                        {
+                            DialogResult errorResult = MessageBox.Show("Base image folder is set correctly. Please check.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else
+                        {
+                            if (!Directory.Exists(Path.Combine(_baseImageFolder, _employeeImageFolder)))
+                            {
+                                UtilityService.CreateFolder(_baseImageFolder, _employeeImageFolder);
+                            }
 
-                DialogResult result = MessageBox.Show(employee.EmployeeId + " has been updated successfully.", "Message", MessageBoxButtons.OK);
-                if (result == DialogResult.OK)
-                {
-                    ClearAll(Action.Update);
-                    EnableControls();
-                    EnableControls(Action.Update);
-                    ErrorProvider.Clear();
+                            relativeImagePath = employeeId + ".jpg";
+                            destinationFilePath = Path.Combine(_baseImageFolder, _employeeImageFolder, relativeImagePath);
+                            File.Copy(_uploadedImagePath, destinationFilePath, true);
+                        }
+                    }
+
+                    var employee = new Employee
+                    {
+                        EmployeeId = employeeId,
+                        EmployeeName = TxtBoxEmployeeName.Text,
+                        ContactNumber = Convert.ToInt64(TxtBoxContactNo.Text),
+                        CitizenshipNumber = TxtBoxCitizenshipNo.Text,
+                        Gender = ComboGender.Text,
+                        Education = TxtBoxEducation.Text,
+                        DateOfBirth = UtilityService.GetDate(MaskDOB.Text.Trim()),
+                        Age = Convert.ToInt32(TxtBoxAge.Text),
+                        Email = TxtBoxEmail.Text,
+                        TempAddress = TxtBoxTempAddress.Text,
+                        PermAddress = TxtBoxPermAddress.Text,
+                        FatherName = TxtBoxFatherName.Text,
+                        MotherName = TxtBoxMotherName.Text,
+                        MaritalStatus = ComboMaritalStatus.Text,
+                        SpouseName = TxtBoxSpouseName.Text,
+                        BloodGroup = TxtBoxBloodGroup.Text,
+                        Post = TxtBoxPost.Text,
+                        PostStatus = ComboPostStatus.Text,
+                        AppointmentDate = UtilityService.GetDate(MaskAppointedDate.Text.Trim()),
+                        ResignationDate = UtilityService.GetDate(MaskResignationDate.Text.Trim()),
+                        ImageLocation = relativeImagePath,
+                        UpdatedBy = Constants.TEST_USER,
+                        UpdatedDate = DateTime.Now
+                    };
+
+                    _employeeService.UpdateEmployee(employeeId, employee);
+                    DialogResult result = MessageBox.Show(employee.EmployeeId + " has been updated successfully.", "Message", MessageBoxButtons.OK);
+                    if (result == DialogResult.OK)
+                    {
+                        ClearAll(Action.Update);
+                        EnableControls();
+                        EnableControls(Action.Update);
+                        ErrorProvider.Clear();
+                        DataGridEmployeeList.DataSource = null;
+                    }
                 }
+            }
+            catch
+            {
+                UtilityService.ShowExceptionMessageBox();
             }
         }
 
         private void BtnDeleteEmployee_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(TxtBoxEmployeeId.Text))
+            var employeeId = TxtBoxEmployeeId.Text;
+            if (!string.IsNullOrEmpty(employeeId))
             {
-                DialogResult confirm = MessageBox.Show("Are you really want to delete this employee record?", "Message", MessageBoxButtons.YesNo);
-                if (confirm == DialogResult.Yes)
+                try
                 {
-                    var employeeId = _employeeService.DeleteEmployee(TxtBoxEmployeeId.Text);
-                    DialogResult result = MessageBox.Show(employeeId + " has been deleted successfully.", "Message", MessageBoxButtons.OK);
-                    if (result == DialogResult.OK)
+                    DialogResult confirm = MessageBox.Show("Are you really want to delete this employee record?", "Message", MessageBoxButtons.YesNo);
+                    if (confirm == DialogResult.Yes)
                     {
-                        ClearAll(Action.Delete);
-                        EnableControls();
-                        EnableControls(Action.Save);
-                        ErrorProvider.Clear();
+                        var relativeImagePath = employeeId + ".jpg";
+                        var absoluteImagePath = Path.Combine(_baseImageFolder, _employeeImageFolder, relativeImagePath);
+                        if (!string.IsNullOrWhiteSpace(absoluteImagePath) && File.Exists(absoluteImagePath))
+                        {
+                            UtilityService.DeleteImage(absoluteImagePath);
+                        }
+
+                        var result = _employeeService.DeleteEmployee(employeeId);
+                        if (result)
+                        {
+                            DialogResult dialogResult = MessageBox.Show(employeeId + " has been deleted successfully.", "Message", MessageBoxButtons.OK);
+                            if (dialogResult == DialogResult.OK)
+                            {
+                                ClearAll(Action.Delete);
+                                EnableControls();
+                                EnableControls(Action.Save);
+                                ErrorProvider.Clear();
+                                DataGridEmployeeList.DataSource = null;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(employeeId + " was not deleted successfully.", "Error", MessageBoxButtons.OK);
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    UtilityService.ShowExceptionMessageBox();
                 }
             }
         }
@@ -213,11 +308,116 @@ namespace InsuranceApplication.Forms
         private void BtnClear_Click(object sender, EventArgs e)
         {
             ClearAll(Action.ClearAll);
+            DataGridEmployeeList.DataSource = null;
         }
 
         private void BtnShowDetails_Click(object sender, EventArgs e)
         {
+            var filterCriteria = ComboFilter.Text;
+            var employees = _employeeService.GetEmployees();
+            var employeesList = new List<Employee>();
+            if (filterCriteria == "Present Employees")
+            {
+                employeesList = employees.OrderBy(x => x.EmployeeId).Where(x => string.IsNullOrEmpty(x.ResignationDate)).ToList();
+            }
+            else if (filterCriteria == "Resigned Employees")
+            {
+                employeesList = employees.ToList().OrderBy(x => x.EmployeeId).Where(x => !string.IsNullOrEmpty(x.ResignationDate)).ToList();
+            }
+            else
+            {
+                employeesList = employees.ToList();
+            }
 
+            var bindingList = new BindingList<Employee>(employeesList);
+            var source = new BindingSource(bindingList, null);
+            DataGridEmployeeList.DataSource = source;
+        }
+        #endregion
+
+        #region Text Box Events
+        private void TxtBoxContactNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtBoxAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
+
+        #region Combo Box Events
+        private void ComboGender_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void ComboMaritalStatus_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void ComboPostStatus_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void ComboFilter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+        #endregion
+
+        #region Data Grid Events
+        private void DataGridEmployeeList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DataGridEmployeeList.Columns["Id"].Visible = false;
+            DataGridEmployeeList.Columns["Counter"].Visible = false;
+            DataGridEmployeeList.Columns["TempAddress"].Visible = false;
+            DataGridEmployeeList.Columns["PermAddress"].Visible = false;
+            DataGridEmployeeList.Columns["ContactNumber"].Visible = false;
+            DataGridEmployeeList.Columns["Email"].Visible = false;
+            DataGridEmployeeList.Columns["CitizenshipNumber"].Visible = false;
+            DataGridEmployeeList.Columns["Education"].Visible = false;
+            DataGridEmployeeList.Columns["DateOfBirth"].Visible = false;
+            DataGridEmployeeList.Columns["Age"].Visible = false;
+            DataGridEmployeeList.Columns["BloodGroup"].Visible = false;
+            DataGridEmployeeList.Columns["AppointmentDate"].Visible = false;
+            DataGridEmployeeList.Columns["FatherName"].Visible = false;
+            DataGridEmployeeList.Columns["MotherName"].Visible = false;
+            DataGridEmployeeList.Columns["Gender"].Visible = false;
+            DataGridEmployeeList.Columns["MaritalStatus"].Visible = false;
+            DataGridEmployeeList.Columns["SpouseName"].Visible = false;
+            DataGridEmployeeList.Columns["Post"].Visible = false;
+            DataGridEmployeeList.Columns["PostStatus"].Visible = false;
+            DataGridEmployeeList.Columns["ResignationDate"].Visible = false;
+            DataGridEmployeeList.Columns["ImageLocation"].Visible = false;
+            DataGridEmployeeList.Columns["AddedBy"].Visible = false;
+            DataGridEmployeeList.Columns["AddedDate"].Visible = false;
+            DataGridEmployeeList.Columns["UpdatedBy"].Visible = false;
+            DataGridEmployeeList.Columns["UpdatedDate"].Visible = false;
+
+            DataGridEmployeeList.Columns["EmployeeId"].HeaderText = "Id";
+            DataGridEmployeeList.Columns["EmployeeId"].Width = 100;
+            DataGridEmployeeList.Columns["EmployeeId"].DisplayIndex = 0;
+
+            DataGridEmployeeList.Columns["EmployeeName"].HeaderText = "Name";
+            DataGridEmployeeList.Columns["EmployeeName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DataGridEmployeeList.Columns["EmployeeName"].DisplayIndex = 1;
+
+            foreach (DataGridViewRow row in DataGridEmployeeList.Rows)
+            {
+                DataGridEmployeeList.Rows[row.Index].HeaderCell.Value = string.Format("{0} ", row.Index + 1).ToString();
+                DataGridEmployeeList.RowHeadersWidth = 50;
+                DataGridEmployeeList.RowHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            }
         }
         #endregion
 
@@ -232,12 +432,18 @@ namespace InsuranceApplication.Forms
         #region OpenFileDialog Events
         private void OpenFileDialog_FileOk(object sender, CancelEventArgs e)
         {
-            this.Activate();
-            string[] files = OpenFileDialog.FileNames;
-            _uploadedImagePath = files[0];
-            PicBoxPhoto.Image = Image.FromFile(_uploadedImagePath);
+            try
+            {
+                Activate();
+                string[] files = OpenFileDialog.FileNames;
+                _uploadedImagePath = files[0];
+                PicBoxPhoto.Image = Image.FromFile(_uploadedImagePath);
+            }
+            catch (Exception ex)
+            {
+                UtilityService.ShowExceptionMessageBox();
+            }
         }
-
         #endregion
 
         #region Helper Functions
@@ -267,9 +473,10 @@ namespace InsuranceApplication.Forms
             MaskAppointedDate.Text = employee.AppointmentDate;
             MaskResignationDate.Text = employee.ResignationDate;
 
-            if (File.Exists(employee.ImageLocation))
+            var absoluteImagePath = Path.Combine(_baseImageFolder, _employeeImageFolder, employee.ImageLocation);
+            if (File.Exists(absoluteImagePath))
             {
-                PicBoxPhoto.Image = Image.FromFile(employee.ImageLocation);
+                PicBoxPhoto.ImageLocation = absoluteImagePath;
             }
             else
             {
@@ -422,21 +629,6 @@ namespace InsuranceApplication.Forms
             }
         }
 
-        private bool IsValidDate(string input)
-        {
-            string format = "yyyy-MM-dd";
-            DateTime dateTime;
-            if (DateTime.TryParseExact(input, format, CultureInfo.InvariantCulture,
-                DateTimeStyles.None, out dateTime))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
         #endregion
 
         #region Validate Fields
@@ -470,7 +662,7 @@ namespace InsuranceApplication.Forms
                 ErrorProvider.SetError(TxtBoxEducation, "Please Enter Education");
                 status = false;
             }
-            if (!IsValidDate(MaskDOB.Text))
+            if (string.IsNullOrEmpty(MaskDOB.Text))
             {
                 ErrorProvider.SetError(MaskDOB, "Please Enter Date Of Birth");
                 status = false;
@@ -530,14 +722,9 @@ namespace InsuranceApplication.Forms
                 ErrorProvider.SetError(ComboPostStatus, "Please Choose Post Status");
                 status = false;
             }
-            if (!IsValidDate(MaskAppointedDate.Text))
+            if (string.IsNullOrEmpty(MaskAppointedDate.Text))
             {
                 ErrorProvider.SetError(MaskAppointedDate, "Please Enter Appointment Date");
-                status = false;
-            }
-            if (!IsValidDate(MaskResignationDate.Text))
-            {
-                ErrorProvider.SetError(MaskResignationDate, "Please Enter Resignation Date");
                 status = false;
             }
 

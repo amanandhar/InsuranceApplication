@@ -1,6 +1,7 @@
 ﻿using InsuranceApplication.DTOs;
 using InsuranceApplication.Entities;
 using InsuranceApplication.Forms.Interfaces;
+using InsuranceApplication.Mapper;
 using InsuranceApplication.Services.Interfaces;
 using InsuranceApplication.Shared;
 using System;
@@ -361,6 +362,14 @@ namespace InsuranceApplication.Forms
         private void MaskStartingDate_KeyUp(object sender, KeyEventArgs e)
         {
             PopulateMaturatedDate();
+        }
+        #endregion
+
+        #region Timer Event
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            LblCurrentNepaliDate.Text = DateMapper.MapEnglishToNepali(DateTime.Now.ToString("yyyy/MM/dd"));
+            LblCurrentTime.Text = DateTime.Now.ToString("hh:mm:ss");
         }
         #endregion
 

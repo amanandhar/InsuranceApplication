@@ -99,7 +99,7 @@ namespace InsuranceApplication.Forms
             this.DataGridEmployeeList.RowTemplate.Height = 25;
             this.DataGridEmployeeList.Size = new System.Drawing.Size(510, 250);
             this.DataGridEmployeeList.TabIndex = 1;
-            this.DataGridEmployeeList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridEmployeeList_CellDoubleClick_1);
+            this.DataGridEmployeeList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridEmployeeList_CellDoubleClick);
             this.DataGridEmployeeList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridEmployeeList_DataBindingComplete);
             // 
             // EmployeeListForm

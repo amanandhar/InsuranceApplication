@@ -71,8 +71,7 @@ namespace InsuranceApplication.Forms
             this.LblCurrentNepaliDate = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.ComboFilter = new System.Windows.Forms.ComboBox();
             this.BtnShowDetails = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -149,6 +148,7 @@ namespace InsuranceApplication.Forms
             this.ComboGender.Name = "ComboGender";
             this.ComboGender.Size = new System.Drawing.Size(175, 26);
             this.ComboGender.TabIndex = 5;
+            this.ComboGender.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboGender_KeyPress);
             // 
             // BtnSearchEmployee
             // 
@@ -208,6 +208,7 @@ namespace InsuranceApplication.Forms
             this.TxtBoxContactNo.Size = new System.Drawing.Size(175, 27);
             this.TxtBoxContactNo.TabIndex = 3;
             this.TxtBoxContactNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtBoxContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxContactNo_KeyPress);
             // 
             // TxtBoxEmployeeName
             // 
@@ -572,8 +573,7 @@ namespace InsuranceApplication.Forms
             this.groupBox4.Controls.Add(this.LblCurrentNepaliDate);
             this.groupBox4.Controls.Add(this.label24);
             this.groupBox4.Controls.Add(this.label23);
-            this.groupBox4.Controls.Add(this.textBox7);
-            this.groupBox4.Controls.Add(this.comboBox3);
+            this.groupBox4.Controls.Add(this.ComboFilter);
             this.groupBox4.Controls.Add(this.BtnShowDetails);
             this.groupBox4.Location = new System.Drawing.Point(12, 630);
             this.groupBox4.Name = "groupBox4";
@@ -629,27 +629,20 @@ namespace InsuranceApplication.Forms
             this.label23.TabIndex = 1000;
             this.label23.Text = "Date :";
             // 
-            // textBox7
+            // ComboFilter
             // 
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox7.Location = new System.Drawing.Point(519, 16);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(140, 27);
-            this.textBox7.TabIndex = 31;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Present",
-            "Resine"});
-            this.comboBox3.Location = new System.Drawing.Point(373, 16);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(143, 26);
-            this.comboBox3.TabIndex = 30;
+            this.ComboFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComboFilter.FormattingEnabled = true;
+            this.ComboFilter.Items.AddRange(new object[] {
+            "All Employees",
+            "Present Employees",
+            "Resigned Employees"});
+            this.ComboFilter.Location = new System.Drawing.Point(467, 17);
+            this.ComboFilter.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboFilter.Name = "ComboFilter";
+            this.ComboFilter.Size = new System.Drawing.Size(186, 26);
+            this.ComboFilter.TabIndex = 30;
+            this.ComboFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboFilter_KeyPress);
             // 
             // BtnShowDetails
             // 
@@ -772,6 +765,7 @@ namespace InsuranceApplication.Forms
             this.TxtBoxAge.Size = new System.Drawing.Size(56, 27);
             this.TxtBoxAge.TabIndex = 8;
             this.TxtBoxAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtBoxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxAge_KeyPress);
             // 
             // TxtBoxTempAddress
             // 
@@ -821,6 +815,7 @@ namespace InsuranceApplication.Forms
             this.ComboMaritalStatus.Name = "ComboMaritalStatus";
             this.ComboMaritalStatus.Size = new System.Drawing.Size(178, 26);
             this.ComboMaritalStatus.TabIndex = 14;
+            this.ComboMaritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboMaritalStatus_KeyPress);
             // 
             // TxtBoxFatherName
             // 
@@ -929,6 +924,7 @@ namespace InsuranceApplication.Forms
             this.ComboPostStatus.Name = "ComboPostStatus";
             this.ComboPostStatus.Size = new System.Drawing.Size(131, 26);
             this.ComboPostStatus.TabIndex = 18;
+            this.ComboPostStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboPostStatus_KeyPress);
             // 
             // TxtBoxPost
             // 
@@ -960,6 +956,7 @@ namespace InsuranceApplication.Forms
             this.DataGridEmployeeList.ReadOnly = true;
             this.DataGridEmployeeList.Size = new System.Drawing.Size(1168, 415);
             this.DataGridEmployeeList.TabIndex = 1000;
+            this.DataGridEmployeeList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridEmployeeList_DataBindingComplete);
             // 
             // BtnAddImage
             // 
@@ -1004,6 +1001,7 @@ namespace InsuranceApplication.Forms
             // OpenFileDialog
             // 
             this.OpenFileDialog.Title = "Browse photos";
+            this.OpenFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialog_FileOk);
             // 
             // Timer
             // 
@@ -1118,8 +1116,7 @@ namespace InsuranceApplication.Forms
         private CustomControls.Button.CustomButton BtnUpdateEmployee;
         private CustomControls.Button.CustomButton BtnShowDetails;
         private System.Windows.Forms.DataGridView DataGridEmployeeList;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox ComboFilter;
         private CustomControls.Button.CustomButton BtnAddImage;
         private CustomControls.Button.CustomButton BtnDeleteImage;
         private System.Windows.Forms.PictureBox PicBoxPhoto;

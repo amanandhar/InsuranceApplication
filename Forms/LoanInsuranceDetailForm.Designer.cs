@@ -29,9 +29,10 @@ namespace InsuranceApplication.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanInsuranceDetailForm));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -96,6 +97,9 @@ namespace InsuranceApplication.Forms
             this.BtnImageAdd = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.PicBoxMemberImage = new System.Windows.Forms.PictureBox();
             this.OpenMemberImageDialog = new System.Windows.Forms.OpenFileDialog();
+            this.LblCurrentNepaliDate = new System.Windows.Forms.Label();
+            this.LblCurrentTime = new System.Windows.Forms.Label();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridLoanDetailList)).BeginInit();
@@ -777,42 +781,44 @@ namespace InsuranceApplication.Forms
             // DataGridLoanDetailList
             // 
             this.DataGridLoanDetailList.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridLoanDetailList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridLoanDetailList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridLoanDetailList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridLoanDetailList.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridLoanDetailList.DefaultCellStyle = dataGridViewCellStyle5;
             this.DataGridLoanDetailList.GridColor = System.Drawing.SystemColors.Control;
             this.DataGridLoanDetailList.Location = new System.Drawing.Point(12, 197);
             this.DataGridLoanDetailList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DataGridLoanDetailList.Name = "DataGridLoanDetailList";
             this.DataGridLoanDetailList.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridLoanDetailList.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridLoanDetailList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DataGridLoanDetailList.Size = new System.Drawing.Size(1170, 415);
             this.DataGridLoanDetailList.TabIndex = 3;
             this.DataGridLoanDetailList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridLoanDetailList_DataBindingComplete);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.LblCurrentTime);
+            this.groupBox3.Controls.Add(this.LblCurrentNepaliDate);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.BtnTransaction);
@@ -839,7 +845,7 @@ namespace InsuranceApplication.Forms
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label19.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label19.Location = new System.Drawing.Point(1001, 25);
+            this.label19.Location = new System.Drawing.Point(1000, 25);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(49, 18);
@@ -885,7 +891,7 @@ namespace InsuranceApplication.Forms
             this.ComboAction.Items.AddRange(new object[] {
             "Matured",
             "Running"});
-            this.ComboAction.Location = new System.Drawing.Point(600, 22);
+            this.ComboAction.Location = new System.Drawing.Point(607, 22);
             this.ComboAction.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboAction.Name = "ComboAction";
             this.ComboAction.Size = new System.Drawing.Size(135, 24);
@@ -896,7 +902,7 @@ namespace InsuranceApplication.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(414, 25);
+            this.label3.Location = new System.Drawing.Point(421, 25);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 18);
@@ -908,7 +914,7 @@ namespace InsuranceApplication.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(211, 25);
+            this.label2.Location = new System.Drawing.Point(218, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 18);
@@ -920,7 +926,7 @@ namespace InsuranceApplication.Forms
             this.TxtAmount.BackColor = System.Drawing.Color.WhiteSmoke;
             this.TxtAmount.Enabled = false;
             this.TxtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtAmount.Location = new System.Drawing.Point(843, 22);
+            this.TxtAmount.Location = new System.Drawing.Point(850, 22);
             this.TxtAmount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtAmount.Name = "TxtAmount";
             this.TxtAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -930,7 +936,7 @@ namespace InsuranceApplication.Forms
             // MaskEndOfDayTo
             // 
             this.MaskEndOfDayTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MaskEndOfDayTo.Location = new System.Drawing.Point(482, 22);
+            this.MaskEndOfDayTo.Location = new System.Drawing.Point(489, 22);
             this.MaskEndOfDayTo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaskEndOfDayTo.Mask = "   0000-00-00";
             this.MaskEndOfDayTo.Name = "MaskEndOfDayTo";
@@ -942,7 +948,7 @@ namespace InsuranceApplication.Forms
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label10.Location = new System.Drawing.Point(740, 26);
+            this.label10.Location = new System.Drawing.Point(747, 26);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 18);
@@ -952,7 +958,7 @@ namespace InsuranceApplication.Forms
             // MaskEndOfDayFrom
             // 
             this.MaskEndOfDayFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MaskEndOfDayFrom.Location = new System.Drawing.Point(297, 22);
+            this.MaskEndOfDayFrom.Location = new System.Drawing.Point(304, 22);
             this.MaskEndOfDayFrom.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaskEndOfDayFrom.Mask = "   0000-00-00";
             this.MaskEndOfDayFrom.Name = "MaskEndOfDayFrom";
@@ -1023,6 +1029,36 @@ namespace InsuranceApplication.Forms
             // OpenMemberImageDialog
             // 
             this.OpenMemberImageDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenMemberImageDialog_FileOk);
+            // 
+            // LblCurrentNepaliDate
+            // 
+            this.LblCurrentNepaliDate.AutoSize = true;
+            this.LblCurrentNepaliDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblCurrentNepaliDate.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.LblCurrentNepaliDate.Location = new System.Drawing.Point(66, 25);
+            this.LblCurrentNepaliDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblCurrentNepaliDate.Name = "LblCurrentNepaliDate";
+            this.LblCurrentNepaliDate.Size = new System.Drawing.Size(148, 18);
+            this.LblCurrentNepaliDate.TabIndex = 1001;
+            this.LblCurrentNepaliDate.Text = "LblCurrentNepaliDate";
+            // 
+            // LblCurrentTime
+            // 
+            this.LblCurrentTime.AutoSize = true;
+            this.LblCurrentTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblCurrentTime.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.LblCurrentTime.Location = new System.Drawing.Point(1047, 25);
+            this.LblCurrentTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblCurrentTime.Name = "LblCurrentTime";
+            this.LblCurrentTime.Size = new System.Drawing.Size(109, 18);
+            this.LblCurrentTime.TabIndex = 1002;
+            this.LblCurrentTime.Text = "LblCurrentTime";
+            // 
+            // Timer
+            // 
+            this.Timer.Enabled = true;
+            this.Timer.Interval = 1000;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // LoanInsuranceDetailForm
             // 
@@ -1120,5 +1156,8 @@ namespace InsuranceApplication.Forms
         private System.Windows.Forms.OpenFileDialog OpenMemberImageDialog;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label LblCurrentNepaliDate;
+        private System.Windows.Forms.Label LblCurrentTime;
+        private System.Windows.Forms.Timer Timer;
     }
 }

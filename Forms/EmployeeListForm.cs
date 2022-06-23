@@ -1,5 +1,4 @@
-﻿using InsuranceApplication.Entities;
-using InsuranceApplication.Forms.Interfaces;
+﻿using InsuranceApplication.Forms.Interfaces;
 using InsuranceApplication.Services.Interfaces;
 using InsuranceApplication.ViewModels;
 using System;
@@ -26,7 +25,7 @@ namespace InsuranceApplication.Forms
 
         #endregion
 
-        #region Form Load Event
+        #region Form Load Events
         private void EmployeeListForm_Load(object sender, EventArgs e)
         {
             var employeeViewList = GetEmployees();
@@ -35,8 +34,9 @@ namespace InsuranceApplication.Forms
         }
         #endregion
 
-        #region Data Grid Event
-        private void DataGridEmployeeList_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        #region Data Grid Events
+
+        private void DataGridEmployeeList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (!(sender is DataGridView dgv))
             {
@@ -79,21 +79,7 @@ namespace InsuranceApplication.Forms
         }
         #endregion
 
-        private void dataGridEmployeeList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridView dgv = sender as DataGridView;
-            if (dgv == null)
-                return;
-            if (dgv.CurrentRow.Selected && dgv.CurrentRow.Cells[0].Value != null)
-            {
-                string employeeId = dgv.CurrentRow.Cells[0].Value.ToString();
-                _employeeListForm.PopulateEmployee(employeeId);
-            }
-
-            this.Close();
-        }
-
-        #region Rich Textbox Event
+        #region Textbox Events
         private void TxtBoxEmployeeName_KeyUp(object sender, KeyEventArgs e)
         {
             SearchEmployees();
@@ -135,6 +121,5 @@ namespace InsuranceApplication.Forms
             LoadEmployees(employees);
         }
         #endregion
-
     }
 }

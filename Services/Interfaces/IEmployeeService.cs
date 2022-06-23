@@ -9,7 +9,7 @@ namespace InsuranceApplication.Services.Interfaces
         Employee GetEmployee(string employeeId);
         Employee AddEmployee(Employee employee);
         Employee UpdateEmployee(string employeeId, Employee employee);
-        string DeleteEmployee(string employeeId);
+        bool DeleteEmployee(string employeeId);
         string GetLastEmployeeId();
     }
 }

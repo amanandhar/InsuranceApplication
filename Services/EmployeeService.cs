@@ -39,7 +39,7 @@ namespace InsuranceApplication.Services
             return _employeeRepository.UpdateEmployee(employeeId, employee);
         }
 
-        public string DeleteEmployee(string employeeId)
+        public bool DeleteEmployee(string employeeId)
         {
             return _employeeRepository.DeleteEmployee(employeeId);
         }

@@ -6,6 +6,9 @@
         public const decimal DEFAULT_DECIMAL_VALUE = 0.00m;
 
         public const string BASE_DOCUMENT_FOLDER = "BaseDocumentFolder";
+
+        //Images
+        public const string BASE_IMAGE_FOLDER = "BaseImageFolder";
         public const string EMPLOYEE_IMAGE_FOLDER = "EmployeeImageFolder";
         public const string MEMBER_IMAGE_FOLDER = "MemberImageFolder";
 
@@ -39,5 +42,8 @@
         // Database
         public const string DB_BACKUP_LOCATION = "DatabaseBackupLocation";
         public const string DB_BACKUP_PREFIX = "DatabaseBackupPrefix";
+
+        // Temporary Variables
+        public const string TEST_USER = "TEST_USER";
     }
 }
