@@ -35,7 +35,7 @@ namespace InsuranceApplication.Forms
             // 
             // DataGridInsuranceCompanyList
             // 
-            this.DataGridInsuranceCompanyList.BackgroundColor = System.Drawing.Color.White;
+            this.DataGridInsuranceCompanyList.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DataGridInsuranceCompanyList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridInsuranceCompanyList.Location = new System.Drawing.Point(12, 10);
             this.DataGridInsuranceCompanyList.Name = "DataGridInsuranceCompanyList";

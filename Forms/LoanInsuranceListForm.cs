@@ -8,18 +8,20 @@ using System.Windows.Forms;
 
 namespace InsuranceApplication.Forms
 {
-    public partial class LoanDetailListForm : Form
+    public partial class LoanInsuranceListForm : Form
     {
         private readonly ILoanDetailService _loanDetailService;
         public ILoanDetailListForm _loanDetailListForm;
 
-        public LoanDetailListForm(ILoanDetailService loanDetailService, ILoanDetailListForm loanDetailListForm)
+        #region Constructor
+        public LoanInsuranceListForm(ILoanDetailService loanDetailService, ILoanDetailListForm loanDetailListForm)
         {
             InitializeComponent();
 
             _loanDetailService = loanDetailService;
             _loanDetailListForm = loanDetailListForm;
         }
+        #endregion
 
         #region Form Load Event
         private void LoanDetailListForm_Load(object sender, EventArgs e)
@@ -28,6 +30,7 @@ namespace InsuranceApplication.Forms
         }
         #endregion
 
+        #region Data Grid Event
         private void DataGridLoanDetailList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (!(sender is DataGridView dgv))
@@ -87,6 +90,7 @@ namespace InsuranceApplication.Forms
                 DataGridLoanDetailList.RowHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             }
         }
+        #endregion
 
         #region Helper Methods
         private void LoadLoanDetails()

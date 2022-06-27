@@ -947,9 +947,8 @@ namespace InsuranceApplication.Forms
             // 
             // DataGridEmployeeList
             // 
-            this.DataGridEmployeeList.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.DataGridEmployeeList.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DataGridEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridEmployeeList.GridColor = System.Drawing.SystemColors.Control;
             this.DataGridEmployeeList.Location = new System.Drawing.Point(11, 212);
             this.DataGridEmployeeList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DataGridEmployeeList.Name = "DataGridEmployeeList";

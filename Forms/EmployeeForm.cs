@@ -1,6 +1,5 @@
 ﻿using InsuranceApplication.Entities;
 using InsuranceApplication.Forms.Interfaces;
-using InsuranceApplication.Mapper;
 using InsuranceApplication.Services.Interfaces;
 using InsuranceApplication.Shared;
 using System;
@@ -31,17 +30,25 @@ namespace InsuranceApplication.Forms
         }
         #endregion
 
+        private readonly IEndOfDayService _endOfDayService;
         private readonly IEmployeeService _employeeService;
+
         private string _baseDocumentFolder;
         private string _baseImageFolder;
         private string _employeeImageFolder;
         private string _uploadedImagePath = string.Empty;
 
-        public EmployeeForm(IEmployeeService employeeService)
+        #region Constructor
+        public EmployeeForm(IEndOfDayService endOfDayService, IEmployeeService employeeService)
         {
-            _employeeService = employeeService;
             InitializeComponent();
+
+            _endOfDayService = endOfDayService;
+            _employeeService = employeeService;
+
+            LblCurrentNepaliDate.Text = _endOfDayService.GetDateInBs(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"))) + " BS";
         }
+        #endregion
 
         #region Form Load Event
         private void EmployeeDetails_Load(object sender, EventArgs e)
@@ -424,8 +431,7 @@ namespace InsuranceApplication.Forms
         #region Timer Events
         private void Timer_Tick(object sender, EventArgs e)
         {
-            LblCurrentNepaliDate.Text = DateMapper.MapEnglishToNepali(DateTime.Now.ToString("yyyy/MM/dd"));
-            LblCurrentTime.Text = DateTime.Now.ToString("hh:mm:ss");
+            LblCurrentTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
         #endregion
 
@@ -629,6 +635,10 @@ namespace InsuranceApplication.Forms
             }
         }
 
+        private bool IsDateInBsValid(string date)
+        {
+            return _endOfDayService.IsDateInBsExist(date);
+        }
         #endregion
 
         #region Validate Fields
@@ -662,7 +672,7 @@ namespace InsuranceApplication.Forms
                 ErrorProvider.SetError(TxtBoxEducation, "Please Enter Education");
                 status = false;
             }
-            if (string.IsNullOrEmpty(MaskDOB.Text))
+            if (string.IsNullOrEmpty(MaskDOB.Text) || !IsDateInBsValid(MaskDOB.Text))
             {
                 ErrorProvider.SetError(MaskDOB, "Please Enter Date Of Birth");
                 status = false;
@@ -722,9 +732,14 @@ namespace InsuranceApplication.Forms
                 ErrorProvider.SetError(ComboPostStatus, "Please Choose Post Status");
                 status = false;
             }
-            if (string.IsNullOrEmpty(MaskAppointedDate.Text))
+            if (string.IsNullOrEmpty(MaskAppointedDate.Text) || !IsDateInBsValid(MaskAppointedDate.Text))
             {
                 ErrorProvider.SetError(MaskAppointedDate, "Please Enter Appointment Date");
+                status = false;
+            }
+            if (!string.IsNullOrEmpty(MaskResignationDate.Text) && !IsDateInBsValid(MaskResignationDate.Text))
+            {
+                ErrorProvider.SetError(MaskResignationDate, "Please Enter Resignation Date");
                 status = false;
             }
 

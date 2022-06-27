@@ -1,11 +1,10 @@
-﻿using InsuranceApplication.Entities;
+﻿using System;
 
 namespace InsuranceApplication.Services.Interfaces
 {
     public interface IEndOfDayService
     {
-        EndOfDay GetEndOfDay(string date);
-        EndOfDay GetNextEndOfDay(long id);
-        bool IsEndOfDayExist(string endOfDay);
+        string GetDateInBs(DateTime date);
+        bool IsDateInBsExist(string date);
     }
 }

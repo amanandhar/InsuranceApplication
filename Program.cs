@@ -28,7 +28,8 @@ namespace InsuranceApplication
                 Application.SetHighDpiMode(HighDpiMode.SystemAware);
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Dashboard(
+                Application.Run(new DashboardForm(
+                    container.Resolve<IEndOfDayService>(),
                     container.Resolve<IInsuranceCompanyService>(),
                     container.Resolve<ILoanDetailService>(),
                     container.Resolve<IEmployeeService>()
@@ -46,10 +47,12 @@ namespace InsuranceApplication
         private static IUnityContainer BuildUnityContainer()
         {
             var container = new UnityContainer();
+            container.RegisterType<IEndOfDayService, EndOfDayService>();
             container.RegisterType<IInsuranceCompanyService, InsuranceCompanyService>();
             container.RegisterType<ILoanDetailService, LoanDetailService>();
             container.RegisterType<IEmployeeService, EmployeeService>();
 
+            container.RegisterType<IEndOfDayRepository, MSSqlEndOfDayRepository>();
             container.RegisterType<IInsuranceCompanyRepository, MSSqlInsuranceCompanyRepository>();
             container.RegisterType<ILoanDetailRepository, MSSqlLoanDetailRepository>();
             container.RegisterType<IEmployeeRepository, MSSqlEmployeeRepository>();

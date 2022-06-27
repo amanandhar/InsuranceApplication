@@ -1,5 +1,4 @@
-﻿using InsuranceApplication.Entities;
-using InsuranceApplication.Repositories.Interfaces;
+﻿using InsuranceApplication.Repositories.Interfaces;
 using InsuranceApplication.Shared;
 using System;
 using System.Data.SqlClient;
@@ -16,14 +15,14 @@ namespace InsuranceApplication.Repositories
             connectionString = UtilityService.GetConnectionString();
         }
 
-        public EndOfDay GetEndOfDay(string date)
+        public string GetDateInBs(DateTime date)
         {
-            var endOfDay = new EndOfDay();
+            var dateInBs = string.Empty;
             var query = @"SELECT " +
-                "[Id], [DateInAd], [DateInBs] " +
+                "[DateInBs] " +
                 "FROM " + Constants.TABLE_END_OF_DAY + " " +
                 "WHERE 1 = 1 " +
-                "AND [DateInBs] = @DateInBs";
+                "AND [DateInAd] = @DateInAd";
 
             try
             {
@@ -32,16 +31,14 @@ namespace InsuranceApplication.Repositories
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@DateInBs", ((object)date) ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@DateInAd", ((object)date) ?? DBNull.Value);
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.HasRows)
                             {
                                 while (reader.Read())
                                 {
-                                    endOfDay.Id = Convert.ToInt64(reader["Id"].ToString());
-                                    endOfDay.DateInAd = Convert.ToDateTime(reader["DateInAd"].ToString());
-                                    endOfDay.DateInBs = reader["DateInBs"].ToString();
+                                    dateInBs = reader["DateInBs"].ToString();
                                 }
                             }
                         }
@@ -54,54 +51,10 @@ namespace InsuranceApplication.Repositories
                 throw ex;
             }
 
-            return endOfDay;
+            return dateInBs;
         }
 
-        public EndOfDay GetNextEndOfDay(long id)
-        {
-            var endOfDay = new EndOfDay();
-            var query = @"SELECT " +
-                "TOP 1 " +
-                "[Id], [DateInAd], [DateInBs] " +
-                "FROM " + Constants.TABLE_END_OF_DAY + " " +
-                "WHERE 1 = 1 " +
-                "AND [Id] > @Id " +
-                "ORDER BY [Id]";
-
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@Id", ((object)id) ?? DBNull.Value);
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.HasRows)
-                            {
-                                while (reader.Read())
-                                {
-                                    endOfDay.Id = Convert.ToInt64(reader["Id"].ToString());
-                                    endOfDay.DateInAd = Convert.ToDateTime(reader["DateInAd"].ToString());
-                                    endOfDay.DateInBs = reader["DateInBs"].ToString();
-                                }
-                            }
-
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.Error(ex);
-                throw ex;
-            }
-
-            return endOfDay;
-        }
-
-        public bool IsEndOfDayExist(string endOfDay)
+        public bool IsDateInBsExist(string date)
         {
             var result = false;
             var query = @"SELECT " +
@@ -118,7 +71,7 @@ namespace InsuranceApplication.Repositories
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@DateInBS", ((object)endOfDay) ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@DateInBS", ((object)date) ?? DBNull.Value);
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.HasRows)

@@ -1,6 +1,6 @@
-﻿using InsuranceApplication.Entities;
-using InsuranceApplication.Repositories.Interfaces;
+﻿using InsuranceApplication.Repositories.Interfaces;
 using InsuranceApplication.Services.Interfaces;
+using System;
 
 namespace InsuranceApplication.Services
 {
@@ -13,19 +13,14 @@ namespace InsuranceApplication.Services
             _endOfDayRepository = endOfDayRepository;
         }
 
-        public EndOfDay GetEndOfDay(string date)
+        public string GetDateInBs(DateTime date)
         {
-            return _endOfDayRepository.GetEndOfDay(date);
+            return _endOfDayRepository.GetDateInBs(date);
         }
 
-        public EndOfDay GetNextEndOfDay(long id)
+        public bool IsDateInBsExist(string endOfDay)
         {
-            return _endOfDayRepository.GetNextEndOfDay(id);
-        }
-
-        public bool IsEndOfDayExist(string endOfDay)
-        {
-            return _endOfDayRepository.IsEndOfDayExist(endOfDay);
+            return _endOfDayRepository.IsDateInBsExist(endOfDay);
         }
     }
 }

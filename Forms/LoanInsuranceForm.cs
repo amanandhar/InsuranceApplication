@@ -1,7 +1,6 @@
 ﻿using InsuranceApplication.DTOs;
 using InsuranceApplication.Entities;
 using InsuranceApplication.Forms.Interfaces;
-using InsuranceApplication.Mapper;
 using InsuranceApplication.Services.Interfaces;
 using InsuranceApplication.Shared;
 using System;
@@ -15,10 +14,11 @@ using System.Windows.Forms;
 
 namespace InsuranceApplication.Forms
 {
-    public partial class LoanInsuranceDetailForm : Form, IInsuranceCompanyListForm, ILoanDetailListForm
+    public partial class LoanInsuranceForm : Form, IInsuranceCompanyListForm, ILoanDetailListForm
     {
         private static readonly log4net.ILog logger = LogHelper.GetLogger();
 
+        private readonly IEndOfDayService _endOfDayService;
         private readonly IInsuranceCompanyService _insuranceCompanyService;
         private readonly ILoanDetailService _loanDetailService;
 
@@ -50,12 +50,16 @@ namespace InsuranceApplication.Forms
         #endregion
 
         #region Constructor
-        public LoanInsuranceDetailForm(IInsuranceCompanyService insuranceCompanyService,
+        public LoanInsuranceForm(IEndOfDayService endOfDayService, IInsuranceCompanyService insuranceCompanyService,
             ILoanDetailService loanDetailService)
         {
             InitializeComponent();
+
+            _endOfDayService = endOfDayService;
             _insuranceCompanyService = insuranceCompanyService;
             _loanDetailService = loanDetailService;
+
+            LblCurrentNepaliDate.Text = _endOfDayService.GetDateInBs(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"))) + " BS";
         }
         #endregion
 
@@ -84,13 +88,13 @@ namespace InsuranceApplication.Forms
 
         private void BtnSearchLoanDetail_Click(object sender, EventArgs e)
         {
-            var loanDetailListForm = new LoanDetailListForm(_loanDetailService, this);
+            var loanDetailListForm = new LoanInsuranceListForm(_loanDetailService, this);
             loanDetailListForm.ShowDialog();
         }
 
         private void BtnAddInsuranceCompany_Click(object sender, EventArgs e)
         {
-            InsuranceCompanyForm insuranceForm = new InsuranceCompanyForm(_insuranceCompanyService);
+            InsuranceCompanyForm insuranceForm = new InsuranceCompanyForm(_endOfDayService, _insuranceCompanyService);
             insuranceForm.ShowDialog();
         }
 
@@ -368,8 +372,7 @@ namespace InsuranceApplication.Forms
         #region Timer Event
         private void Timer_Tick(object sender, EventArgs e)
         {
-            LblCurrentNepaliDate.Text = DateMapper.MapEnglishToNepali(DateTime.Now.ToString("yyyy/MM/dd"));
-            LblCurrentTime.Text = DateTime.Now.ToString("hh:mm:ss");
+            LblCurrentTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
         #endregion
 
@@ -734,6 +737,11 @@ namespace InsuranceApplication.Forms
                 MaskRenewDate.Text = string.Empty;
             }
         }
+
+        private bool IsDateInBsValid(string date)
+        {
+            return _endOfDayService.IsDateInBsExist(date);
+        }
         #endregion
 
         #region Validation
@@ -765,8 +773,10 @@ namespace InsuranceApplication.Forms
                 || string.IsNullOrWhiteSpace(memberRelationship)
                 || string.IsNullOrWhiteSpace(memberGender)
                 || string.IsNullOrWhiteSpace(startingDate)
+                || !IsDateInBsValid(startingDate)
                 || string.IsNullOrWhiteSpace(periodInMonth)
                 || string.IsNullOrWhiteSpace(maturatedDate)
+                || !IsDateInBsValid(maturatedDate)
                 || string.IsNullOrWhiteSpace(loanAmount)
                 || string.IsNullOrWhiteSpace(premium)
                 || string.IsNullOrWhiteSpace(insuranceAmount))

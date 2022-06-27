@@ -1,7 +1,7 @@
 ﻿
 namespace InsuranceApplication.Forms
 {
-    partial class LoanDetailListForm
+    partial class LoanInsuranceListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@ namespace InsuranceApplication.Forms
             // 
             // DataGridLoanDetailList
             // 
-            this.DataGridLoanDetailList.BackgroundColor = System.Drawing.Color.White;
+            this.DataGridLoanDetailList.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DataGridLoanDetailList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridLoanDetailList.Location = new System.Drawing.Point(12, 10);
             this.DataGridLoanDetailList.Name = "DataGridLoanDetailList";
@@ -46,14 +46,14 @@ namespace InsuranceApplication.Forms
             this.DataGridLoanDetailList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridLoanDetailList_CellDoubleClick);
             this.DataGridLoanDetailList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridLoanDetailList_DataBindingComplete);
             // 
-            // LoanDetailListForm
+            // LoanInsuranceListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 261);
             this.Controls.Add(this.DataGridLoanDetailList);
             this.MaximizeBox = false;
-            this.Name = "LoanDetailListForm";
+            this.Name = "LoanInsuranceListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loan Detail List Form";
             this.Load += new System.EventHandler(this.LoanDetailListForm_Load);

@@ -1,7 +1,7 @@
 ﻿
 namespace InsuranceApplication.Forms
 {
-    partial class Dashboard
+    partial class DashboardForm
     {
         /// <summary>
         /// Required designer variable.

@@ -12,6 +12,7 @@ namespace InsuranceApplication.Forms
     {
         private static readonly log4net.ILog logger = LogHelper.GetLogger();
 
+        private readonly IEndOfDayService _endOfDayService;
         private readonly IInsuranceCompanyService _insuranceCompanyService;
         private long _selectedInsuranceCompanyId;
 
@@ -28,20 +29,25 @@ namespace InsuranceApplication.Forms
             PopulateInsuranceCompany,
             None
         }
-        #endregion 
+        #endregion
 
-        public InsuranceCompanyForm(IInsuranceCompanyService insuranceCompanyService)
+        #region Constructor
+        public InsuranceCompanyForm(IEndOfDayService endOfDayService, IInsuranceCompanyService insuranceCompanyService)
         {
             InitializeComponent();
 
+            _endOfDayService = endOfDayService;
             _insuranceCompanyService = insuranceCompanyService;
         }
+        #endregion 
 
+        #region Form Load Event
         private void InsuranceForm_Load(object sender, EventArgs e)
         {
             EnableFields();
             EnableFields(Action.Load);
         }
+        #endregion
 
         #region Button Click Events
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -262,6 +268,11 @@ namespace InsuranceApplication.Forms
             EnableFields();
             EnableFields(Action.PopulateInsuranceCompany);
         }
+
+        private bool IsDateInBsValid(string date)
+        {
+            return _endOfDayService.IsDateInBsExist(date);
+        }
         #endregion
 
         #region Validation
@@ -283,7 +294,8 @@ namespace InsuranceApplication.Forms
                 || string.IsNullOrWhiteSpace(branchOfficeAddress)
                 || string.IsNullOrWhiteSpace(headOfDepartment)
                 || string.IsNullOrWhiteSpace(position)
-                || string.IsNullOrWhiteSpace(agreementDate))
+                || string.IsNullOrWhiteSpace(agreementDate)
+                || !IsDateInBsValid(agreementDate))
             {
                 MessageBox.Show("Please enter following fields: " +
                     "\n * Serial No " +
