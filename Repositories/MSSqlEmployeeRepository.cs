@@ -258,7 +258,7 @@ namespace InsuranceApplication.Repositories
                         command.Parameters.AddWithValue("@Post", employee.Post);
                         command.Parameters.AddWithValue("@PostStatus", employee.PostStatus);
                         command.Parameters.AddWithValue("@ResignationDate", employee.ResignationDate);
-                        command.Parameters.AddWithValue("@ImageLocation", employee.ImageLocation);
+                        command.Parameters.AddWithValue("@ImageLocation", ((object)employee.ImageLocation) ?? DBNull.Value );
                         command.Parameters.AddWithValue("@UpdatedBy", employee.UpdatedBy);
                         command.Parameters.AddWithValue("@UpdatedDate", employee.UpdatedDate);
 
