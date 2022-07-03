@@ -387,38 +387,75 @@ namespace InsuranceApplication.Forms
         {
             DataGridEmployeeList.Columns["Id"].Visible = false;
             DataGridEmployeeList.Columns["Counter"].Visible = false;
-            DataGridEmployeeList.Columns["TempAddress"].Visible = false;
-            DataGridEmployeeList.Columns["PermAddress"].Visible = false;
-            DataGridEmployeeList.Columns["ContactNumber"].Visible = false;
+
+
+
+
+            
             DataGridEmployeeList.Columns["Email"].Visible = false;
-            DataGridEmployeeList.Columns["CitizenshipNumber"].Visible = false;
+            
             DataGridEmployeeList.Columns["Education"].Visible = false;
             DataGridEmployeeList.Columns["DateOfBirth"].Visible = false;
             DataGridEmployeeList.Columns["Age"].Visible = false;
             DataGridEmployeeList.Columns["BloodGroup"].Visible = false;
-            DataGridEmployeeList.Columns["AppointmentDate"].Visible = false;
+           
             DataGridEmployeeList.Columns["FatherName"].Visible = false;
             DataGridEmployeeList.Columns["MotherName"].Visible = false;
             DataGridEmployeeList.Columns["Gender"].Visible = false;
             DataGridEmployeeList.Columns["MaritalStatus"].Visible = false;
             DataGridEmployeeList.Columns["SpouseName"].Visible = false;
-            DataGridEmployeeList.Columns["Post"].Visible = false;
-            DataGridEmployeeList.Columns["PostStatus"].Visible = false;
-            DataGridEmployeeList.Columns["ResignationDate"].Visible = false;
+           
+           
+            
             DataGridEmployeeList.Columns["ImageLocation"].Visible = false;
             DataGridEmployeeList.Columns["AddedBy"].Visible = false;
             DataGridEmployeeList.Columns["AddedDate"].Visible = false;
             DataGridEmployeeList.Columns["UpdatedBy"].Visible = false;
             DataGridEmployeeList.Columns["UpdatedDate"].Visible = false;
 
-            DataGridEmployeeList.Columns["EmployeeId"].HeaderText = "Id";
-            DataGridEmployeeList.Columns["EmployeeId"].Width = 100;
+            DataGridEmployeeList.Columns["EmployeeId"].HeaderText = "ID";
+            DataGridEmployeeList.Columns["EmployeeId"].Width = 50;
             DataGridEmployeeList.Columns["EmployeeId"].DisplayIndex = 0;
 
             DataGridEmployeeList.Columns["EmployeeName"].HeaderText = "Name";
-            DataGridEmployeeList.Columns["EmployeeName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DataGridEmployeeList.Columns["EmployeeName"].Width = 150;
             DataGridEmployeeList.Columns["EmployeeName"].DisplayIndex = 1;
 
+            DataGridEmployeeList.Columns["TempAddress"].HeaderText = "Temporary Address";
+            DataGridEmployeeList.Columns["TempAddress"].Width = 150;
+            DataGridEmployeeList.Columns["TempAddress"].DisplayIndex = 2;
+
+            DataGridEmployeeList.Columns["PermAddress"].HeaderText = "Permanent Address";
+            DataGridEmployeeList.Columns["PermAddress"].Width = 150;
+            DataGridEmployeeList.Columns["PermAddress"].DisplayIndex = 3;
+
+            DataGridEmployeeList.Columns["ContactNumber"].HeaderText = "Contact Number";
+            DataGridEmployeeList.Columns["ContactNumber"].Width = 125;
+            DataGridEmployeeList.Columns["ContactNumber"].DisplayIndex = 4;
+
+            DataGridEmployeeList.Columns["CitizenshipNumber"].HeaderText = "Citizenship No.";
+            DataGridEmployeeList.Columns["CitizenshipNumber"].Width = 110;
+            DataGridEmployeeList.Columns["CitizenshipNumber"].DisplayIndex = 5;
+            foreach (DataGridViewRow row in DataGridEmployeeList.Rows)
+
+            DataGridEmployeeList.Columns["Post"].HeaderText = "Post";
+            DataGridEmployeeList.Columns["Post"].Width = 90;
+            DataGridEmployeeList.Columns["Post"].DisplayIndex = 6;
+            foreach (DataGridViewRow row in DataGridEmployeeList.Rows)
+
+            DataGridEmployeeList.Columns["PostStatus"].HeaderText = "Post Status";
+            DataGridEmployeeList.Columns["PostStatus"].Width = 90;
+            DataGridEmployeeList.Columns["PostStatus"].DisplayIndex = 7;
+            foreach (DataGridViewRow row in DataGridEmployeeList.Rows)
+
+            DataGridEmployeeList.Columns["AppointmentDate"].HeaderText = "Appointed Date";
+            DataGridEmployeeList.Columns["AppointmentDate"].Width = 115;
+            DataGridEmployeeList.Columns["AppointmentDate"].DisplayIndex = 8;
+            foreach (DataGridViewRow row in DataGridEmployeeList.Rows)
+
+            DataGridEmployeeList.Columns["ResignationDate"].HeaderText = "Resign Date";
+            DataGridEmployeeList.Columns["ResignationDate"].Width = 105;
+            DataGridEmployeeList.Columns["ResignationDate"].DisplayIndex = 9;
             foreach (DataGridViewRow row in DataGridEmployeeList.Rows)
             {
                 DataGridEmployeeList.Rows[row.Index].HeaderCell.Value = string.Format("{0} ", row.Index + 1).ToString();
@@ -672,7 +709,7 @@ namespace InsuranceApplication.Forms
                 ErrorProvider.SetError(TxtBoxEducation, "Please Enter Education");
                 status = false;
             }
-            if (string.IsNullOrEmpty(MaskDOB.Text) || !IsDateInBsValid(MaskDOB.Text))
+            if (string.IsNullOrEmpty(MaskDOB.Text))
             {
                 ErrorProvider.SetError(MaskDOB, "Please Enter Date Of Birth");
                 status = false;
@@ -735,11 +772,6 @@ namespace InsuranceApplication.Forms
             if (string.IsNullOrEmpty(MaskAppointedDate.Text) || !IsDateInBsValid(MaskAppointedDate.Text))
             {
                 ErrorProvider.SetError(MaskAppointedDate, "Please Enter Appointment Date");
-                status = false;
-            }
-            if (!string.IsNullOrEmpty(MaskResignationDate.Text) && !IsDateInBsValid(MaskResignationDate.Text))
-            {
-                ErrorProvider.SetError(MaskResignationDate, "Please Enter Resignation Date");
                 status = false;
             }
 

@@ -183,7 +183,7 @@ namespace InsuranceApplication.Repositories
                         command.Parameters.AddWithValue("@Post", employee.Post);
                         command.Parameters.AddWithValue("@PostStatus", employee.PostStatus);
                         command.Parameters.AddWithValue("@ResignationDate", ((object)employee.ResignationDate) ?? DBNull.Value);
-                        command.Parameters.AddWithValue("@ImageLocation", employee.ImageLocation);
+                        command.Parameters.AddWithValue("@ImageLocation", ((object)employee.ImageLocation) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@AddedBy", employee.AddedBy);
                         command.Parameters.AddWithValue("@AddedDate", employee.AddedDate);
 
@@ -257,7 +257,7 @@ namespace InsuranceApplication.Repositories
                         command.Parameters.AddWithValue("@SpouseName", employee.SpouseName);
                         command.Parameters.AddWithValue("@Post", employee.Post);
                         command.Parameters.AddWithValue("@PostStatus", employee.PostStatus);
-                        command.Parameters.AddWithValue("@ResignationDate", employee.ResignationDate);
+                        command.Parameters.AddWithValue("@ResignationDate", ((object)employee.ResignationDate) ?? DBNull.Value);
                         command.Parameters.AddWithValue("@ImageLocation", ((object)employee.ImageLocation) ?? DBNull.Value );
                         command.Parameters.AddWithValue("@UpdatedBy", employee.UpdatedBy);
                         command.Parameters.AddWithValue("@UpdatedDate", employee.UpdatedDate);

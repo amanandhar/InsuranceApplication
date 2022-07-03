@@ -408,7 +408,7 @@ namespace InsuranceApplication.Forms
             DataGridLoanDetailList.Columns["UpdatedBy"].Visible = false;
             DataGridLoanDetailList.Columns["UpdatedDate"].Visible = false;
 
-            DataGridLoanDetailList.Columns["MembershipNo"].HeaderText = "Member No";
+            DataGridLoanDetailList.Columns["MembershipNo"].HeaderText = "Member ID";
             DataGridLoanDetailList.Columns["MembershipNo"].Width = 80;
             DataGridLoanDetailList.Columns["MembershipNo"].DisplayIndex = 0;
 
@@ -436,7 +436,7 @@ namespace InsuranceApplication.Forms
             DataGridLoanDetailList.Columns["MaturedDate"].Width = 95;
             DataGridLoanDetailList.Columns["MaturedDate"].DisplayIndex = 6;
 
-            DataGridLoanDetailList.Columns["LoanAmount"].HeaderText = "Loan";
+            DataGridLoanDetailList.Columns["LoanAmount"].HeaderText = "Loan Amount";
             DataGridLoanDetailList.Columns["LoanAmount"].Width = 80;
             DataGridLoanDetailList.Columns["LoanAmount"].DisplayIndex = 7;
 
@@ -444,7 +444,7 @@ namespace InsuranceApplication.Forms
             DataGridLoanDetailList.Columns["Premium"].Width = 70;
             DataGridLoanDetailList.Columns["Premium"].DisplayIndex = 8;
 
-            DataGridLoanDetailList.Columns["InsuranceAmount"].HeaderText = "Insurance";
+            DataGridLoanDetailList.Columns["InsuranceAmount"].HeaderText = "Insurance Amount";
             DataGridLoanDetailList.Columns["InsuranceAmount"].Width = 80;
             DataGridLoanDetailList.Columns["InsuranceAmount"].DisplayIndex = 9;
 

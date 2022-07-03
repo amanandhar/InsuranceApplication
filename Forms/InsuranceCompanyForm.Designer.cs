@@ -194,8 +194,9 @@ namespace InsuranceApplication.Forms
             this.MaskAgreementDate.Location = new System.Drawing.Point(197, 198);
             this.MaskAgreementDate.Mask = "0000-00-00";
             this.MaskAgreementDate.Name = "MaskAgreementDate";
-            this.MaskAgreementDate.Size = new System.Drawing.Size(151, 26);
+            this.MaskAgreementDate.Size = new System.Drawing.Size(140, 26);
             this.MaskAgreementDate.TabIndex = 7;
+            this.MaskAgreementDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MaskEstablishedDate
             // 
@@ -203,8 +204,9 @@ namespace InsuranceApplication.Forms
             this.MaskEstablishedDate.Location = new System.Drawing.Point(197, 228);
             this.MaskEstablishedDate.Mask = "0000-00-00";
             this.MaskEstablishedDate.Name = "MaskEstablishedDate";
-            this.MaskEstablishedDate.Size = new System.Drawing.Size(151, 26);
+            this.MaskEstablishedDate.Size = new System.Drawing.Size(140, 26);
             this.MaskEstablishedDate.TabIndex = 8;
+            this.MaskEstablishedDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BtnSearch
             // 

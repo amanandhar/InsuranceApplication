@@ -85,8 +85,8 @@ namespace InsuranceApplication.Forms
             this.TxtBoxTempAddress = new System.Windows.Forms.TextBox();
             this.TxtBoxEducation = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.ComboMaritalStatus = new System.Windows.Forms.ComboBox();
             this.TxtBoxFatherName = new System.Windows.Forms.TextBox();
+            this.ComboMaritalStatus = new System.Windows.Forms.ComboBox();
             this.TxtBoxMotherName = new System.Windows.Forms.TextBox();
             this.TxtBoxSpouseName = new System.Windows.Forms.TextBox();
             this.TxtBoxBloodGroup = new System.Windows.Forms.TextBox();
@@ -131,7 +131,7 @@ namespace InsuranceApplication.Forms
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
             this.groupBox1.Location = new System.Drawing.Point(10, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(313, 168);
+            this.groupBox1.Size = new System.Drawing.Size(320, 168);
             this.groupBox1.TabIndex = 1000;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Details";
@@ -146,7 +146,7 @@ namespace InsuranceApplication.Forms
             this.ComboGender.Location = new System.Drawing.Point(112, 135);
             this.ComboGender.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboGender.Name = "ComboGender";
-            this.ComboGender.Size = new System.Drawing.Size(175, 26);
+            this.ComboGender.Size = new System.Drawing.Size(188, 26);
             this.ComboGender.TabIndex = 5;
             this.ComboGender.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboGender_KeyPress);
             // 
@@ -160,7 +160,7 @@ namespace InsuranceApplication.Forms
             this.BtnSearchEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSearchEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnSearchEmployee.ForeColor = System.Drawing.Color.White;
-            this.BtnSearchEmployee.Location = new System.Drawing.Point(217, 15);
+            this.BtnSearchEmployee.Location = new System.Drawing.Point(230, 15);
             this.BtnSearchEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnSearchEmployee.Name = "BtnSearchEmployee";
             this.BtnSearchEmployee.Size = new System.Drawing.Size(70, 27);
@@ -186,7 +186,7 @@ namespace InsuranceApplication.Forms
             this.TxtBoxCitizenshipNo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtBoxCitizenshipNo.Location = new System.Drawing.Point(112, 105);
             this.TxtBoxCitizenshipNo.Name = "TxtBoxCitizenshipNo";
-            this.TxtBoxCitizenshipNo.Size = new System.Drawing.Size(175, 27);
+            this.TxtBoxCitizenshipNo.Size = new System.Drawing.Size(188, 27);
             this.TxtBoxCitizenshipNo.TabIndex = 4;
             // 
             // label17
@@ -205,9 +205,8 @@ namespace InsuranceApplication.Forms
             this.TxtBoxContactNo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtBoxContactNo.Location = new System.Drawing.Point(112, 75);
             this.TxtBoxContactNo.Name = "TxtBoxContactNo";
-            this.TxtBoxContactNo.Size = new System.Drawing.Size(175, 27);
+            this.TxtBoxContactNo.Size = new System.Drawing.Size(188, 27);
             this.TxtBoxContactNo.TabIndex = 3;
-            this.TxtBoxContactNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtBoxContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxContactNo_KeyPress);
             // 
             // TxtBoxEmployeeName
@@ -215,7 +214,7 @@ namespace InsuranceApplication.Forms
             this.TxtBoxEmployeeName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtBoxEmployeeName.Location = new System.Drawing.Point(112, 45);
             this.TxtBoxEmployeeName.Name = "TxtBoxEmployeeName";
-            this.TxtBoxEmployeeName.Size = new System.Drawing.Size(175, 27);
+            this.TxtBoxEmployeeName.Size = new System.Drawing.Size(188, 27);
             this.TxtBoxEmployeeName.TabIndex = 2;
             // 
             // label1
@@ -234,7 +233,7 @@ namespace InsuranceApplication.Forms
             this.TxtBoxEmployeeId.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtBoxEmployeeId.Location = new System.Drawing.Point(112, 15);
             this.TxtBoxEmployeeId.Name = "TxtBoxEmployeeId";
-            this.TxtBoxEmployeeId.Size = new System.Drawing.Size(95, 27);
+            this.TxtBoxEmployeeId.Size = new System.Drawing.Size(115, 27);
             this.TxtBoxEmployeeId.TabIndex = 0;
             // 
             // label3
@@ -269,10 +268,10 @@ namespace InsuranceApplication.Forms
             this.BtnEditEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnEditEmployee.ForeColor = System.Drawing.Color.White;
-            this.BtnEditEmployee.Location = new System.Drawing.Point(12, 101);
+            this.BtnEditEmployee.Location = new System.Drawing.Point(7, 99);
             this.BtnEditEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnEditEmployee.Name = "BtnEditEmployee";
-            this.BtnEditEmployee.Size = new System.Drawing.Size(129, 40);
+            this.BtnEditEmployee.Size = new System.Drawing.Size(129, 37);
             this.BtnEditEmployee.TabIndex = 26;
             this.BtnEditEmployee.Text = "Edit";
             this.BtnEditEmployee.TextColor = System.Drawing.Color.White;
@@ -289,10 +288,10 @@ namespace InsuranceApplication.Forms
             this.BtnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAddEmployee.ForeColor = System.Drawing.Color.White;
-            this.BtnAddEmployee.Location = new System.Drawing.Point(13, 19);
+            this.BtnAddEmployee.Location = new System.Drawing.Point(8, 21);
             this.BtnAddEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnAddEmployee.Name = "BtnAddEmployee";
-            this.BtnAddEmployee.Size = new System.Drawing.Size(129, 40);
+            this.BtnAddEmployee.Size = new System.Drawing.Size(129, 37);
             this.BtnAddEmployee.TabIndex = 24;
             this.BtnAddEmployee.Text = "Add New";
             this.BtnAddEmployee.TextColor = System.Drawing.Color.White;
@@ -312,11 +311,11 @@ namespace InsuranceApplication.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(260, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(569, 23);
+            this.label2.Size = new System.Drawing.Size(595, 25);
             this.label2.TabIndex = 1000;
             this.label2.Text = "                                                              Employee Details Ma" +
     "nagement";
@@ -324,9 +323,9 @@ namespace InsuranceApplication.Forms
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.PicBoxPhoto);
-            this.groupBox2.Location = new System.Drawing.Point(1187, 204);
+            this.groupBox2.Location = new System.Drawing.Point(1198, 204);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(155, 157);
+            this.groupBox2.Size = new System.Drawing.Size(145, 157);
             this.groupBox2.TabIndex = 1000;
             this.groupBox2.TabStop = false;
             // 
@@ -334,9 +333,9 @@ namespace InsuranceApplication.Forms
             // 
             this.PicBoxPhoto.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxPhoto.Image")));
             this.PicBoxPhoto.InitialImage = ((System.Drawing.Image)(resources.GetObject("PicBoxPhoto.InitialImage")));
-            this.PicBoxPhoto.Location = new System.Drawing.Point(6, 11);
+            this.PicBoxPhoto.Location = new System.Drawing.Point(5, 11);
             this.PicBoxPhoto.Name = "PicBoxPhoto";
-            this.PicBoxPhoto.Size = new System.Drawing.Size(141, 140);
+            this.PicBoxPhoto.Size = new System.Drawing.Size(135, 140);
             this.PicBoxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PicBoxPhoto.TabIndex = 0;
             this.PicBoxPhoto.TabStop = false;
@@ -349,9 +348,9 @@ namespace InsuranceApplication.Forms
             this.groupBox3.Controls.Add(this.BtnUpdateEmployee);
             this.groupBox3.Controls.Add(this.BtnEditEmployee);
             this.groupBox3.Controls.Add(this.BtnAddEmployee);
-            this.groupBox3.Location = new System.Drawing.Point(1188, 398);
+            this.groupBox3.Location = new System.Drawing.Point(1198, 398);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(155, 280);
+            this.groupBox3.Size = new System.Drawing.Size(145, 280);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             // 
@@ -365,10 +364,10 @@ namespace InsuranceApplication.Forms
             this.BtnClearAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClearAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnClearAll.ForeColor = System.Drawing.Color.White;
-            this.BtnClearAll.Location = new System.Drawing.Point(12, 223);
+            this.BtnClearAll.Location = new System.Drawing.Point(7, 213);
             this.BtnClearAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnClearAll.Name = "BtnClearAll";
-            this.BtnClearAll.Size = new System.Drawing.Size(129, 40);
+            this.BtnClearAll.Size = new System.Drawing.Size(129, 37);
             this.BtnClearAll.TabIndex = 29;
             this.BtnClearAll.Text = "Clear All";
             this.BtnClearAll.TextColor = System.Drawing.Color.White;
@@ -385,10 +384,10 @@ namespace InsuranceApplication.Forms
             this.BtnSaveEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSaveEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnSaveEmployee.ForeColor = System.Drawing.Color.White;
-            this.BtnSaveEmployee.Location = new System.Drawing.Point(13, 60);
+            this.BtnSaveEmployee.Location = new System.Drawing.Point(8, 60);
             this.BtnSaveEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnSaveEmployee.Name = "BtnSaveEmployee";
-            this.BtnSaveEmployee.Size = new System.Drawing.Size(129, 40);
+            this.BtnSaveEmployee.Size = new System.Drawing.Size(129, 37);
             this.BtnSaveEmployee.TabIndex = 500;
             this.BtnSaveEmployee.Text = "Save";
             this.BtnSaveEmployee.TextColor = System.Drawing.Color.White;
@@ -405,10 +404,10 @@ namespace InsuranceApplication.Forms
             this.BtnDeleteEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDeleteEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDeleteEmployee.ForeColor = System.Drawing.Color.White;
-            this.BtnDeleteEmployee.Location = new System.Drawing.Point(12, 182);
+            this.BtnDeleteEmployee.Location = new System.Drawing.Point(7, 176);
             this.BtnDeleteEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnDeleteEmployee.Name = "BtnDeleteEmployee";
-            this.BtnDeleteEmployee.Size = new System.Drawing.Size(129, 40);
+            this.BtnDeleteEmployee.Size = new System.Drawing.Size(129, 35);
             this.BtnDeleteEmployee.TabIndex = 28;
             this.BtnDeleteEmployee.Text = "Delete";
             this.BtnDeleteEmployee.TextColor = System.Drawing.Color.White;
@@ -425,10 +424,10 @@ namespace InsuranceApplication.Forms
             this.BtnUpdateEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUpdateEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnUpdateEmployee.ForeColor = System.Drawing.Color.White;
-            this.BtnUpdateEmployee.Location = new System.Drawing.Point(13, 142);
+            this.BtnUpdateEmployee.Location = new System.Drawing.Point(8, 138);
             this.BtnUpdateEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnUpdateEmployee.Name = "BtnUpdateEmployee";
-            this.BtnUpdateEmployee.Size = new System.Drawing.Size(129, 40);
+            this.BtnUpdateEmployee.Size = new System.Drawing.Size(129, 35);
             this.BtnUpdateEmployee.TabIndex = 27;
             this.BtnUpdateEmployee.Text = "Update";
             this.BtnUpdateEmployee.TextColor = System.Drawing.Color.White;
@@ -528,7 +527,7 @@ namespace InsuranceApplication.Forms
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label13.Location = new System.Drawing.Point(291, 47);
+            this.label13.Location = new System.Drawing.Point(281, 48);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(33, 18);
             this.label13.TabIndex = 1000;
@@ -577,7 +576,7 @@ namespace InsuranceApplication.Forms
             this.groupBox4.Controls.Add(this.BtnShowDetails);
             this.groupBox4.Location = new System.Drawing.Point(12, 630);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1165, 50);
+            this.groupBox4.Size = new System.Drawing.Size(1174, 50);
             this.groupBox4.TabIndex = 1000;
             this.groupBox4.TabStop = false;
             // 
@@ -713,9 +712,9 @@ namespace InsuranceApplication.Forms
             this.groupBox6.Controls.Add(this.label5);
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.ForeColor = System.Drawing.Color.Red;
-            this.groupBox6.Location = new System.Drawing.Point(331, 37);
+            this.groupBox6.Location = new System.Drawing.Point(336, 37);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(410, 167);
+            this.groupBox6.Size = new System.Drawing.Size(388, 167);
             this.groupBox6.TabIndex = 6;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Other Details";
@@ -727,7 +726,7 @@ namespace InsuranceApplication.Forms
             this.MaskDOB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaskDOB.Mask = "0000-00-00";
             this.MaskDOB.Name = "MaskDOB";
-            this.MaskDOB.Size = new System.Drawing.Size(130, 24);
+            this.MaskDOB.Size = new System.Drawing.Size(120, 24);
             this.MaskDOB.TabIndex = 7;
             this.MaskDOB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -746,7 +745,7 @@ namespace InsuranceApplication.Forms
             this.TxtBoxEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtBoxEmail.Location = new System.Drawing.Point(74, 74);
             this.TxtBoxEmail.Name = "TxtBoxEmail";
-            this.TxtBoxEmail.Size = new System.Drawing.Size(312, 27);
+            this.TxtBoxEmail.Size = new System.Drawing.Size(295, 27);
             this.TxtBoxEmail.TabIndex = 9;
             // 
             // TxtBoxPermAddress
@@ -754,17 +753,17 @@ namespace InsuranceApplication.Forms
             this.TxtBoxPermAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtBoxPermAddress.Location = new System.Drawing.Point(148, 104);
             this.TxtBoxPermAddress.Name = "TxtBoxPermAddress";
-            this.TxtBoxPermAddress.Size = new System.Drawing.Size(238, 27);
+            this.TxtBoxPermAddress.Size = new System.Drawing.Size(221, 27);
             this.TxtBoxPermAddress.TabIndex = 10;
             // 
             // TxtBoxAge
             // 
             this.TxtBoxAge.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxAge.Location = new System.Drawing.Point(330, 44);
+            this.TxtBoxAge.Location = new System.Drawing.Point(319, 44);
             this.TxtBoxAge.Name = "TxtBoxAge";
-            this.TxtBoxAge.Size = new System.Drawing.Size(56, 27);
+            this.TxtBoxAge.Size = new System.Drawing.Size(50, 27);
             this.TxtBoxAge.TabIndex = 8;
-            this.TxtBoxAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtBoxAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtBoxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxAge_KeyPress);
             // 
             // TxtBoxTempAddress
@@ -772,7 +771,7 @@ namespace InsuranceApplication.Forms
             this.TxtBoxTempAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtBoxTempAddress.Location = new System.Drawing.Point(148, 134);
             this.TxtBoxTempAddress.Name = "TxtBoxTempAddress";
-            this.TxtBoxTempAddress.Size = new System.Drawing.Size(238, 27);
+            this.TxtBoxTempAddress.Size = new System.Drawing.Size(221, 27);
             this.TxtBoxTempAddress.TabIndex = 11;
             // 
             // TxtBoxEducation
@@ -780,13 +779,13 @@ namespace InsuranceApplication.Forms
             this.TxtBoxEducation.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtBoxEducation.Location = new System.Drawing.Point(148, 14);
             this.TxtBoxEducation.Name = "TxtBoxEducation";
-            this.TxtBoxEducation.Size = new System.Drawing.Size(238, 27);
+            this.TxtBoxEducation.Size = new System.Drawing.Size(221, 27);
             this.TxtBoxEducation.TabIndex = 6;
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.ComboMaritalStatus);
             this.groupBox7.Controls.Add(this.TxtBoxFatherName);
+            this.groupBox7.Controls.Add(this.ComboMaritalStatus);
             this.groupBox7.Controls.Add(this.TxtBoxMotherName);
             this.groupBox7.Controls.Add(this.TxtBoxSpouseName);
             this.groupBox7.Controls.Add(this.TxtBoxBloodGroup);
@@ -796,12 +795,20 @@ namespace InsuranceApplication.Forms
             this.groupBox7.Controls.Add(this.label10);
             this.groupBox7.Controls.Add(this.label12);
             this.groupBox7.ForeColor = System.Drawing.Color.Red;
-            this.groupBox7.Location = new System.Drawing.Point(747, 37);
+            this.groupBox7.Location = new System.Drawing.Point(731, 37);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(306, 167);
+            this.groupBox7.Size = new System.Drawing.Size(322, 167);
             this.groupBox7.TabIndex = 12;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Family Details";
+            // 
+            // TxtBoxFatherName
+            // 
+            this.TxtBoxFatherName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxtBoxFatherName.Location = new System.Drawing.Point(105, 14);
+            this.TxtBoxFatherName.Name = "TxtBoxFatherName";
+            this.TxtBoxFatherName.Size = new System.Drawing.Size(200, 27);
+            this.TxtBoxFatherName.TabIndex = 1001;
             // 
             // ComboMaritalStatus
             // 
@@ -813,24 +820,16 @@ namespace InsuranceApplication.Forms
             this.ComboMaritalStatus.Location = new System.Drawing.Point(105, 75);
             this.ComboMaritalStatus.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboMaritalStatus.Name = "ComboMaritalStatus";
-            this.ComboMaritalStatus.Size = new System.Drawing.Size(178, 26);
+            this.ComboMaritalStatus.Size = new System.Drawing.Size(200, 26);
             this.ComboMaritalStatus.TabIndex = 14;
             this.ComboMaritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboMaritalStatus_KeyPress);
-            // 
-            // TxtBoxFatherName
-            // 
-            this.TxtBoxFatherName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxFatherName.Location = new System.Drawing.Point(105, 15);
-            this.TxtBoxFatherName.Name = "TxtBoxFatherName";
-            this.TxtBoxFatherName.Size = new System.Drawing.Size(178, 27);
-            this.TxtBoxFatherName.TabIndex = 12;
             // 
             // TxtBoxMotherName
             // 
             this.TxtBoxMotherName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtBoxMotherName.Location = new System.Drawing.Point(105, 45);
             this.TxtBoxMotherName.Name = "TxtBoxMotherName";
-            this.TxtBoxMotherName.Size = new System.Drawing.Size(178, 27);
+            this.TxtBoxMotherName.Size = new System.Drawing.Size(200, 27);
             this.TxtBoxMotherName.TabIndex = 13;
             // 
             // TxtBoxSpouseName
@@ -838,7 +837,7 @@ namespace InsuranceApplication.Forms
             this.TxtBoxSpouseName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtBoxSpouseName.Location = new System.Drawing.Point(105, 104);
             this.TxtBoxSpouseName.Name = "TxtBoxSpouseName";
-            this.TxtBoxSpouseName.Size = new System.Drawing.Size(178, 27);
+            this.TxtBoxSpouseName.Size = new System.Drawing.Size(200, 27);
             this.TxtBoxSpouseName.TabIndex = 15;
             // 
             // TxtBoxBloodGroup
@@ -846,7 +845,7 @@ namespace InsuranceApplication.Forms
             this.TxtBoxBloodGroup.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtBoxBloodGroup.Location = new System.Drawing.Point(105, 134);
             this.TxtBoxBloodGroup.Name = "TxtBoxBloodGroup";
-            this.TxtBoxBloodGroup.Size = new System.Drawing.Size(178, 27);
+            this.TxtBoxBloodGroup.Size = new System.Drawing.Size(200, 27);
             this.TxtBoxBloodGroup.TabIndex = 16;
             // 
             // groupBox8
@@ -872,22 +871,22 @@ namespace InsuranceApplication.Forms
             // MaskResignationDate
             // 
             this.MaskResignationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MaskResignationDate.Location = new System.Drawing.Point(126, 134);
+            this.MaskResignationDate.Location = new System.Drawing.Point(128, 134);
             this.MaskResignationDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaskResignationDate.Mask = "0000-00-00";
             this.MaskResignationDate.Name = "MaskResignationDate";
-            this.MaskResignationDate.Size = new System.Drawing.Size(131, 24);
+            this.MaskResignationDate.Size = new System.Drawing.Size(135, 24);
             this.MaskResignationDate.TabIndex = 21;
             this.MaskResignationDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MaskAppointedDate
             // 
             this.MaskAppointedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MaskAppointedDate.Location = new System.Drawing.Point(126, 106);
+            this.MaskAppointedDate.Location = new System.Drawing.Point(128, 106);
             this.MaskAppointedDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaskAppointedDate.Mask = "0000-00-00";
             this.MaskAppointedDate.Name = "MaskAppointedDate";
-            this.MaskAppointedDate.Size = new System.Drawing.Size(131, 24);
+            this.MaskAppointedDate.Size = new System.Drawing.Size(135, 24);
             this.MaskAppointedDate.TabIndex = 20;
             this.MaskAppointedDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -901,10 +900,10 @@ namespace InsuranceApplication.Forms
             this.BtnSalaryDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSalaryDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnSalaryDetails.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.BtnSalaryDetails.Location = new System.Drawing.Point(125, 74);
+            this.BtnSalaryDetails.Location = new System.Drawing.Point(127, 74);
             this.BtnSalaryDetails.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnSalaryDetails.Name = "BtnSalaryDetails";
-            this.BtnSalaryDetails.Size = new System.Drawing.Size(132, 30);
+            this.BtnSalaryDetails.Size = new System.Drawing.Size(136, 30);
             this.BtnSalaryDetails.TabIndex = 19;
             this.BtnSalaryDetails.Text = "Salary Details";
             this.BtnSalaryDetails.TextColor = System.Drawing.SystemColors.HighlightText;
@@ -916,22 +915,22 @@ namespace InsuranceApplication.Forms
             this.ComboPostStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ComboPostStatus.FormattingEnabled = true;
             this.ComboPostStatus.Items.AddRange(new object[] {
-            "Daily Basis ",
+            "Daily Basis",
             "Temporary",
             "Parmanent"});
-            this.ComboPostStatus.Location = new System.Drawing.Point(126, 45);
+            this.ComboPostStatus.Location = new System.Drawing.Point(128, 45);
             this.ComboPostStatus.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ComboPostStatus.Name = "ComboPostStatus";
-            this.ComboPostStatus.Size = new System.Drawing.Size(131, 26);
+            this.ComboPostStatus.Size = new System.Drawing.Size(135, 26);
             this.ComboPostStatus.TabIndex = 18;
             this.ComboPostStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboPostStatus_KeyPress);
             // 
             // TxtBoxPost
             // 
             this.TxtBoxPost.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxPost.Location = new System.Drawing.Point(126, 15);
+            this.TxtBoxPost.Location = new System.Drawing.Point(128, 15);
             this.TxtBoxPost.Name = "TxtBoxPost";
-            this.TxtBoxPost.Size = new System.Drawing.Size(131, 27);
+            this.TxtBoxPost.Size = new System.Drawing.Size(135, 27);
             this.TxtBoxPost.TabIndex = 17;
             // 
             // label22
@@ -953,7 +952,7 @@ namespace InsuranceApplication.Forms
             this.DataGridEmployeeList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DataGridEmployeeList.Name = "DataGridEmployeeList";
             this.DataGridEmployeeList.ReadOnly = true;
-            this.DataGridEmployeeList.Size = new System.Drawing.Size(1168, 415);
+            this.DataGridEmployeeList.Size = new System.Drawing.Size(1175, 415);
             this.DataGridEmployeeList.TabIndex = 1000;
             this.DataGridEmployeeList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridEmployeeList_DataBindingComplete);
             // 
@@ -962,15 +961,15 @@ namespace InsuranceApplication.Forms
             this.BtnAddImage.BackColor = System.Drawing.Color.DodgerBlue;
             this.BtnAddImage.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.BtnAddImage.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnAddImage.BorderRadius = 15;
+            this.BtnAddImage.BorderRadius = 20;
             this.BtnAddImage.BorderSize = 0;
             this.BtnAddImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAddImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAddImage.ForeColor = System.Drawing.Color.White;
-            this.BtnAddImage.Location = new System.Drawing.Point(1195, 367);
+            this.BtnAddImage.Location = new System.Drawing.Point(1201, 367);
             this.BtnAddImage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnAddImage.Name = "BtnAddImage";
-            this.BtnAddImage.Size = new System.Drawing.Size(70, 27);
+            this.BtnAddImage.Size = new System.Drawing.Size(68, 27);
             this.BtnAddImage.TabIndex = 22;
             this.BtnAddImage.Text = "Add";
             this.BtnAddImage.TextColor = System.Drawing.Color.White;
@@ -982,15 +981,15 @@ namespace InsuranceApplication.Forms
             this.BtnDeleteImage.BackColor = System.Drawing.Color.Red;
             this.BtnDeleteImage.BackgroundColor = System.Drawing.Color.Red;
             this.BtnDeleteImage.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnDeleteImage.BorderRadius = 15;
+            this.BtnDeleteImage.BorderRadius = 20;
             this.BtnDeleteImage.BorderSize = 0;
             this.BtnDeleteImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDeleteImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDeleteImage.ForeColor = System.Drawing.Color.White;
-            this.BtnDeleteImage.Location = new System.Drawing.Point(1266, 367);
+            this.BtnDeleteImage.Location = new System.Drawing.Point(1269, 367);
             this.BtnDeleteImage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnDeleteImage.Name = "BtnDeleteImage";
-            this.BtnDeleteImage.Size = new System.Drawing.Size(70, 27);
+            this.BtnDeleteImage.Size = new System.Drawing.Size(68, 27);
             this.BtnDeleteImage.TabIndex = 23;
             this.BtnDeleteImage.Text = "Delete";
             this.BtnDeleteImage.TextColor = System.Drawing.Color.White;
@@ -1096,7 +1095,6 @@ namespace InsuranceApplication.Forms
         private System.Windows.Forms.TextBox TxtBoxPermAddress;
         private System.Windows.Forms.TextBox TxtBoxAge;
         private System.Windows.Forms.TextBox TxtBoxTempAddress;
-        private System.Windows.Forms.TextBox TxtBoxFatherName;
         private System.Windows.Forms.TextBox TxtBoxMotherName;
         private System.Windows.Forms.TextBox TxtBoxSpouseName;
         private System.Windows.Forms.TextBox TxtBoxBloodGroup;
@@ -1126,5 +1124,6 @@ namespace InsuranceApplication.Forms
         private System.Windows.Forms.ErrorProvider ErrorProvider;
         private System.Windows.Forms.Label LblCurrentTime;
         private System.Windows.Forms.Label LblCurrentNepaliDate;
+        private System.Windows.Forms.TextBox TxtBoxFatherName;
     }
 }
