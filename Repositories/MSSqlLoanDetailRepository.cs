@@ -277,7 +277,7 @@ namespace InsuranceApplication.Repositories
                     "[UpdatedBy] = @UpdatedBy, " +
                     "[UpdatedDate] = @UpdatedDate " +
                     "WHERE 1 = 1 " +
-                    "AND [MaturedAmount] IS NULL " +
+                    "AND [MaturedAmount] <> [InsuranceAmount] " +
                     "AND [MaturedDate] <= @MaturedDate";
             try
             {

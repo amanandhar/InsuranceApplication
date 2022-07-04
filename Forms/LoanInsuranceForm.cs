@@ -423,6 +423,7 @@ namespace InsuranceApplication.Forms
             DataGridLoanDetailList.Columns["StartingDate"].HeaderText = "Starting Date";
             DataGridLoanDetailList.Columns["StartingDate"].Width = 95;
             DataGridLoanDetailList.Columns["StartingDate"].DisplayIndex = 3;
+            DataGridLoanDetailList.Columns["StartingDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
 
             DataGridLoanDetailList.Columns["RenewDate"].HeaderText = "Renew Date";
             DataGridLoanDetailList.Columns["RenewDate"].Width = 95;
