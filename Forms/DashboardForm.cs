@@ -24,6 +24,14 @@ namespace InsuranceApplication.Forms
         }
         #endregion
 
+        #region
+        private void DashboardForm_Load(object sender, EventArgs e)
+        {
+            var dateInBS = _endOfDayService.GetDateInBs(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")));
+            _loanDetailService.UpdateMaturatedDate(dateInBS);
+        }
+        #endregion
+
         #region Button Click Events
         private void BtnInsurance_Click(object sender, EventArgs e)
         {

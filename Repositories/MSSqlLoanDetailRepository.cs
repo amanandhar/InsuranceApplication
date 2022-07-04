@@ -268,6 +268,42 @@ namespace InsuranceApplication.Repositories
             return loanDetail;
         }
 
+        public bool UpdateMaturatedDate(string date)
+        {
+            bool result = false;
+            string query = @"UPDATE " + Constants.TABLE_LOAN_DETAIL + " " +
+                    "SET " +
+                    "[MaturedAmount] = [InsuranceAmount], " +
+                    "[UpdatedBy] = @UpdatedBy, " +
+                    "[UpdatedDate] = @UpdatedDate " +
+                    "WHERE 1 = 1 " +
+                    "AND [MaturedAmount] IS NULL " +
+                    "AND [MaturedDate] <= @MaturedDate";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaturedDate", ((object)date) ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@UpdatedBy", Constants.SYSTEM_USER);
+                        command.Parameters.AddWithValue("@UpdatedDate", DateTime.Now);
+                        command.ExecuteNonQuery();
+                    }
+
+                    result = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                throw ex;
+            }
+
+            return result;
+        }
+
         public bool DeleteLoanDetail(long id)
         {
             bool result = false;

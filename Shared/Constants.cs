@@ -45,5 +45,6 @@
 
         // Temporary Variables
         public const string TEST_USER = "TEST_USER";
+        public const string SYSTEM_USER = "SYSTEM_USER";
     }
 }

@@ -427,6 +427,7 @@ namespace InsuranceApplication.Forms
             DataGridLoanDetailList.Columns["RenewDate"].HeaderText = "Renew Date";
             DataGridLoanDetailList.Columns["RenewDate"].Width = 95;
             DataGridLoanDetailList.Columns["RenewDate"].DisplayIndex = 4;
+            DataGridLoanDetailList.Columns["RenewDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
 
             DataGridLoanDetailList.Columns["PeriodInMonth"].HeaderText = "Period";
             DataGridLoanDetailList.Columns["PeriodInMonth"].Width = 55;
@@ -435,6 +436,7 @@ namespace InsuranceApplication.Forms
             DataGridLoanDetailList.Columns["MaturedDate"].HeaderText = "Matured Date";
             DataGridLoanDetailList.Columns["MaturedDate"].Width = 95;
             DataGridLoanDetailList.Columns["MaturedDate"].DisplayIndex = 6;
+            DataGridLoanDetailList.Columns["MaturedDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
 
             DataGridLoanDetailList.Columns["LoanAmount"].HeaderText = "Loan Amount";
             DataGridLoanDetailList.Columns["LoanAmount"].Width = 80;
@@ -500,6 +502,7 @@ namespace InsuranceApplication.Forms
                 TxtPremium.Text = loanDetail.Premium.ToString();
                 TxtInsuranceAmount.Text = loanDetail.InsuranceAmount.ToString();
                 TxtMaturatedAmount.Text = loanDetail.MaturedAmount.ToString();
+                TxtMaturatedAmount.ForeColor = Color.FromArgb(0, 192, 0);
             }
 
             EnableFields();

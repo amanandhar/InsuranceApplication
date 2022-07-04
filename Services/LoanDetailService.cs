@@ -34,6 +34,11 @@ namespace InsuranceApplication.Services
             return _loadDetailRepository.UpdateLoanDetail(id, loanDetail);
         }
 
+        public bool UpdateMaturatedDate(string date)
+        {
+            return _loadDetailRepository.UpdateMaturatedDate(date);
+        }
+
         public bool DeleteLoanDetail(long id)
         {
             return _loadDetailRepository.DeleteLoanDetail(id);

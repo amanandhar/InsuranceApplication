@@ -387,26 +387,16 @@ namespace InsuranceApplication.Forms
         {
             DataGridEmployeeList.Columns["Id"].Visible = false;
             DataGridEmployeeList.Columns["Counter"].Visible = false;
-
-
-
-
-            
             DataGridEmployeeList.Columns["Email"].Visible = false;
-            
             DataGridEmployeeList.Columns["Education"].Visible = false;
             DataGridEmployeeList.Columns["DateOfBirth"].Visible = false;
             DataGridEmployeeList.Columns["Age"].Visible = false;
             DataGridEmployeeList.Columns["BloodGroup"].Visible = false;
-           
             DataGridEmployeeList.Columns["FatherName"].Visible = false;
             DataGridEmployeeList.Columns["MotherName"].Visible = false;
             DataGridEmployeeList.Columns["Gender"].Visible = false;
             DataGridEmployeeList.Columns["MaritalStatus"].Visible = false;
             DataGridEmployeeList.Columns["SpouseName"].Visible = false;
-           
-           
-            
             DataGridEmployeeList.Columns["ImageLocation"].Visible = false;
             DataGridEmployeeList.Columns["AddedBy"].Visible = false;
             DataGridEmployeeList.Columns["AddedDate"].Visible = false;
@@ -436,26 +426,25 @@ namespace InsuranceApplication.Forms
             DataGridEmployeeList.Columns["CitizenshipNumber"].HeaderText = "Citizenship No.";
             DataGridEmployeeList.Columns["CitizenshipNumber"].Width = 110;
             DataGridEmployeeList.Columns["CitizenshipNumber"].DisplayIndex = 5;
-            foreach (DataGridViewRow row in DataGridEmployeeList.Rows)
 
             DataGridEmployeeList.Columns["Post"].HeaderText = "Post";
             DataGridEmployeeList.Columns["Post"].Width = 90;
             DataGridEmployeeList.Columns["Post"].DisplayIndex = 6;
-            foreach (DataGridViewRow row in DataGridEmployeeList.Rows)
 
             DataGridEmployeeList.Columns["PostStatus"].HeaderText = "Post Status";
             DataGridEmployeeList.Columns["PostStatus"].Width = 90;
             DataGridEmployeeList.Columns["PostStatus"].DisplayIndex = 7;
-            foreach (DataGridViewRow row in DataGridEmployeeList.Rows)
 
             DataGridEmployeeList.Columns["AppointmentDate"].HeaderText = "Appointed Date";
             DataGridEmployeeList.Columns["AppointmentDate"].Width = 115;
             DataGridEmployeeList.Columns["AppointmentDate"].DisplayIndex = 8;
-            foreach (DataGridViewRow row in DataGridEmployeeList.Rows)
+            DataGridEmployeeList.Columns["AppointmentDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
 
             DataGridEmployeeList.Columns["ResignationDate"].HeaderText = "Resign Date";
             DataGridEmployeeList.Columns["ResignationDate"].Width = 105;
             DataGridEmployeeList.Columns["ResignationDate"].DisplayIndex = 9;
+            DataGridEmployeeList.Columns["ResignationDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
+
             foreach (DataGridViewRow row in DataGridEmployeeList.Rows)
             {
                 DataGridEmployeeList.Rows[row.Index].HeaderCell.Value = string.Format("{0} ", row.Index + 1).ToString();
