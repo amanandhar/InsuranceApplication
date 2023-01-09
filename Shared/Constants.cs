@@ -19,6 +19,7 @@
         public const string TABLE_INSURANCE_COMPANY = "InsuranceCompany";
         public const string TABLE_LOAN_DETAIL = "LoanDetail";
         public const string TABLE_SETTING = "Setting";
+        public const string TABLE_USER = "User";
 
         // MessageBox Message
         public const string MESSAGE_BOX_DELETE_MESSAGE = "Do you want to delete?";
@@ -46,5 +47,10 @@
         // Temporary Variables
         public const string TEST_USER = "TEST_USER";
         public const string SYSTEM_USER = "SYSTEM_USER";
+
+        //Users
+        public const string ADMIN = "Admin";
+        public const string STAFF = "Staff";
+        public const string GUEST = "Guest";
     }
 }

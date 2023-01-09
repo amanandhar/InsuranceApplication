@@ -37,6 +37,7 @@ namespace InsuranceApplication.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnUser = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -45,6 +46,7 @@ namespace InsuranceApplication.Forms
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.BtnUser);
             this.groupBox2.Controls.Add(this.BtnExit);
             this.groupBox2.Controls.Add(this.BtnInsurance);
             this.groupBox2.Controls.Add(this.BtnEmployee);
@@ -63,7 +65,7 @@ namespace InsuranceApplication.Forms
             this.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExit.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnExit.ForeColor = System.Drawing.Color.White;
-            this.BtnExit.Location = new System.Drawing.Point(9, 136);
+            this.BtnExit.Location = new System.Drawing.Point(9, 157);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(155, 41);
             this.BtnExit.TabIndex = 5;
@@ -146,6 +148,23 @@ namespace InsuranceApplication.Forms
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // BtnUser
+            // 
+            this.BtnUser.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BtnUser.FlatAppearance.BorderSize = 0;
+            this.BtnUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
+            this.BtnUser.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.BtnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUser.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnUser.ForeColor = System.Drawing.Color.White;
+            this.BtnUser.Location = new System.Drawing.Point(9, 110);
+            this.BtnUser.Name = "BtnUser";
+            this.BtnUser.Size = new System.Drawing.Size(155, 41);
+            this.BtnUser.TabIndex = 6;
+            this.BtnUser.Text = "User";
+            this.BtnUser.UseVisualStyleBackColor = false;
+            this.BtnUser.Click += new System.EventHandler(this.BtnUser_Click);
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -177,5 +196,6 @@ namespace InsuranceApplication.Forms
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BtnExit;
+        private System.Windows.Forms.Button BtnUser;
     }
 }

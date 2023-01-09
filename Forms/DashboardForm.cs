@@ -10,17 +10,25 @@ namespace InsuranceApplication.Forms
         private readonly IInsuranceCompanyService _insuranceCompanyService;
         private readonly ILoanDetailService _loanDetailService;
         private readonly IEmployeeService _employeeService;
+        private readonly IUserService _userService;
+
+        private readonly string _username;
 
         #region Constructor
-        public DashboardForm(IEndOfDayService endOfDayService, IInsuranceCompanyService insuranceCompanyService, 
-            ILoanDetailService loanDetailService, IEmployeeService employeeService)
+        public DashboardForm(string username,
+            IEndOfDayService endOfDayService, IInsuranceCompanyService insuranceCompanyService, 
+            ILoanDetailService loanDetailService, IEmployeeService employeeService,
+            IUserService userService)
         {
             InitializeComponent();
+
+            _username = username;
 
             _endOfDayService = endOfDayService;
             _insuranceCompanyService = insuranceCompanyService;
             _loanDetailService = loanDetailService;
             _employeeService = employeeService;
+            _userService = userService;
         }
         #endregion
 
@@ -44,6 +52,12 @@ namespace InsuranceApplication.Forms
         {
             EmployeeForm employeeDetails = new EmployeeForm(_endOfDayService, _employeeService);
             employeeDetails.ShowDialog();
+        }
+
+        private void BtnUser_Click(object sender, EventArgs e)
+        {
+            UserForm userForm = new UserForm(_username, _userService);
+            userForm.ShowDialog();
         }
 
         private void BtnExit_Click(object sender, EventArgs e)

@@ -28,13 +28,24 @@ namespace InsuranceApplication
                 Application.SetHighDpiMode(HighDpiMode.SystemAware);
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new DashboardForm(
-                    container.Resolve<IEndOfDayService>(),
-                    container.Resolve<IInsuranceCompanyService>(),
-                    container.Resolve<ILoanDetailService>(),
-                    container.Resolve<IEmployeeService>()
-                    )
-                );
+                using (var loginForm = new LoginForm(container.Resolve<IUserService>(), container.Resolve<IDatabaseService>()))
+                {
+                    if (loginForm.ShowDialog() == DialogResult.OK)
+                    {
+                        string username = loginForm.Username;
+                        Application.Run(new DashboardForm(username,
+                            container.Resolve<IEndOfDayService>(),
+                            container.Resolve<IInsuranceCompanyService>(),
+                            container.Resolve<ILoanDetailService>(),
+                            container.Resolve<IEmployeeService>(),
+                            container.Resolve<IUserService>()
+                            ));
+                    }
+                    else
+                    {
+                        Application.Exit();
+                    }
+                }
             }
             catch(Exception ex)
             {
@@ -48,14 +59,18 @@ namespace InsuranceApplication
         {
             var container = new UnityContainer();
             container.RegisterType<IEndOfDayService, EndOfDayService>();
+            container.RegisterType<IDatabaseService, DatabaseService>();
             container.RegisterType<IInsuranceCompanyService, InsuranceCompanyService>();
             container.RegisterType<ILoanDetailService, LoanDetailService>();
             container.RegisterType<IEmployeeService, EmployeeService>();
+            container.RegisterType<IUserService, UserService>();
 
             container.RegisterType<IEndOfDayRepository, MSSqlEndOfDayRepository>();
+            container.RegisterType<IDatabaseRepository, MSSqlDatabaseRepository>();
             container.RegisterType<IInsuranceCompanyRepository, MSSqlInsuranceCompanyRepository>();
             container.RegisterType<ILoanDetailRepository, MSSqlLoanDetailRepository>();
             container.RegisterType<IEmployeeRepository, MSSqlEmployeeRepository>();
+            container.RegisterType<IUserRepository, MSSqlUserRepository>();
 
             return container;
         }
