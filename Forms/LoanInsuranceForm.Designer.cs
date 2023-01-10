@@ -780,6 +780,7 @@ namespace InsuranceApplication.Forms
             // 
             // DataGridLoanDetailList
             // 
+            this.DataGridLoanDetailList.AllowUserToAddRows = false;
             this.DataGridLoanDetailList.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;

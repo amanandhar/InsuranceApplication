@@ -54,7 +54,7 @@ namespace InsuranceApplication.Repositories
                                     Type = reader["Type"].ToString(),
                                     IsReadOnly = Convert.ToBoolean(reader["IsReadOnly"].ToString()),
                                     AddedDate = Convert.ToDateTime(reader["AddedDate"].ToString()),
-                                    UpdatedDate = reader.IsDBNull(18) ? (DateTime?)null : Convert.ToDateTime(reader["UpdatedDate"].ToString())
+                                    UpdatedDate = reader.IsDBNull(6) ? (DateTime?)null : Convert.ToDateTime(reader["UpdatedDate"].ToString())
                                 };
 
                                 users.Add(user);
@@ -102,7 +102,7 @@ namespace InsuranceApplication.Repositories
                                     user.Type = reader["Type"].ToString();
                                     user.IsReadOnly = Convert.ToBoolean(reader["IsReadOnly"].ToString());
                                     user.AddedDate = Convert.ToDateTime(reader["AddedDate"].ToString());
-                                    user.UpdatedDate = reader.IsDBNull(18) ? (DateTime?)null : Convert.ToDateTime(reader["UpdatedDate"].ToString());
+                                    user.UpdatedDate = reader.IsDBNull(6) ? (DateTime?)null : Convert.ToDateTime(reader["UpdatedDate"].ToString());
                                 }
                             }
                         }
@@ -148,7 +148,7 @@ namespace InsuranceApplication.Repositories
                                     user.Type = reader["Type"].ToString();
                                     user.IsReadOnly = Convert.ToBoolean(reader["IsReadOnly"].ToString());
                                     user.AddedDate = Convert.ToDateTime(reader["AddedDate"].ToString());
-                                    user.UpdatedDate = reader.IsDBNull(18) ? (DateTime?)null : Convert.ToDateTime(reader["UpdatedDate"].ToString());
+                                    user.UpdatedDate = reader.IsDBNull(6) ? (DateTime?)null : Convert.ToDateTime(reader["UpdatedDate"].ToString());
                                 }
                             }
                         }

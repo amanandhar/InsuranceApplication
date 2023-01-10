@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -27,6 +28,7 @@ namespace InsuranceApplication.Forms
         private string _baseImageFolder;
         private string _memberImageFolder;
         private string _uploadedImagePath = string.Empty;
+        private string _endOfDay;
 
         #region Enum
         private enum Action
@@ -58,8 +60,8 @@ namespace InsuranceApplication.Forms
             _endOfDayService = endOfDayService;
             _insuranceCompanyService = insuranceCompanyService;
             _loanDetailService = loanDetailService;
-
-            LblCurrentNepaliDate.Text = _endOfDayService.GetDateInBs(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"))) + " BS";
+            _endOfDay = _endOfDayService.GetDateInBs(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")).AddYears(-1));
+            LblCurrentNepaliDate.Text = _endOfDay + " BS";
         }
         #endregion
 
@@ -460,6 +462,12 @@ namespace InsuranceApplication.Forms
                 DataGridLoanDetailList.Rows[row.Index].HeaderCell.Value = string.Format("{0} ", row.Index + 1).ToString();
                 DataGridLoanDetailList.RowHeadersWidth = 50;
                 DataGridLoanDetailList.RowHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+                var maturedDate = Convert.ToDateTime(row.Cells["MaturedDate"]?.Value?.ToString()).ToString("yyyy-MM-dd");
+                if(DateTime.Parse(_endOfDay, CultureInfo.InvariantCulture) >= DateTime.Parse(maturedDate, CultureInfo.InvariantCulture))
+                {
+                    DataGridLoanDetailList.Rows[row.Index].DefaultCellStyle.BackColor = Color.OrangeRed;
+                }
             }
         }
         #endregion 

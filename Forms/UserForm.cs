@@ -1,5 +1,6 @@
 ﻿using InsuranceApplication.DTOs;
 using InsuranceApplication.Entities;
+using InsuranceApplication.Forms.Interfaces;
 using InsuranceApplication.Services.Interfaces;
 using InsuranceApplication.Shared;
 using System;
@@ -7,7 +8,7 @@ using System.Windows.Forms;
 
 namespace InsuranceApplication.Forms
 {
-    public partial class UserForm : Form
+    public partial class UserForm : Form, IUserListForm
     {
         private readonly IUserService _userService;
         private bool _isPasswordChanged;
@@ -22,6 +23,7 @@ namespace InsuranceApplication.Forms
             Update,
             Delete,
             Load,
+            PopulateUser,
             None
         }
         #endregion 
@@ -48,6 +50,12 @@ namespace InsuranceApplication.Forms
         #endregion
 
         #region Button Click Event
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            UserListForm userListForm = new UserListForm(_username, _userService, this);
+            userListForm.ShowDialog();
+        }
+
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             ClearAllFields();
@@ -232,6 +240,7 @@ namespace InsuranceApplication.Forms
             _isPasswordChanged = true;
         }
         #endregion
+
         #region Helper Methods
         private void ClearAllFields()
         {
@@ -239,6 +248,20 @@ namespace InsuranceApplication.Forms
             TxtBoxPassword.Clear();
             TxtBoxConfirmPassword.Clear();
             ComboUserType.Text = string.Empty;
+        }
+
+        public void PopulateUser(long id)
+        {
+            var user = _userService.GetUser(id);
+
+            TxtBoxUsername.Text = user.Username;
+            ComboUserType.Text = user.Type;
+            TxtBoxPassword.Text = user.Password;
+            TxtBoxConfirmPassword.Text = user.Password;
+
+            EnableFields();
+            EnableFields(Action.PopulateUser);
+            _isPasswordChanged = false;
         }
 
         private void EnableFields(Action action = Action.None)
@@ -277,6 +300,12 @@ namespace InsuranceApplication.Forms
             else if (action == Action.Delete)
             {
                 BtnAdd.Enabled = true;
+            }
+            else if (action == Action.PopulateUser)
+            {
+                BtnAdd.Enabled = true;
+                BtnEdit.Enabled = true;
+                BtnDelete.Enabled = true;
             }
             else
             {

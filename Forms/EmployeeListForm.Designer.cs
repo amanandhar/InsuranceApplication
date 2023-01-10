@@ -92,6 +92,7 @@ namespace InsuranceApplication.Forms
             // 
             // DataGridEmployeeList
             // 
+            this.DataGridEmployeeList.AllowUserToAddRows = false;
             this.DataGridEmployeeList.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DataGridEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridEmployeeList.Location = new System.Drawing.Point(12, 49);

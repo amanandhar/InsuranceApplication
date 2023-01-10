@@ -25,7 +25,7 @@ namespace InsuranceApplication.Forms
         #region Form Event
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            TxtBoxUsername.Focus();
+            TxtBoxUsername.Select();
         }
         #endregion
 
@@ -116,7 +116,6 @@ namespace InsuranceApplication.Forms
                 _databaseService.BackupDatabase(dbBackupPrefix, dbBackupLocation);
             }
         }
-
         #endregion
     }
 }

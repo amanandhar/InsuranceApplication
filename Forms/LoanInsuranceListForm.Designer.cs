@@ -35,6 +35,7 @@ namespace InsuranceApplication.Forms
             // 
             // DataGridLoanDetailList
             // 
+            this.DataGridLoanDetailList.AllowUserToAddRows = false;
             this.DataGridLoanDetailList.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DataGridLoanDetailList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridLoanDetailList.Location = new System.Drawing.Point(12, 10);
