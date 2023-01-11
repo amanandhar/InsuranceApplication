@@ -30,6 +30,7 @@ namespace InsuranceApplication.Forms
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnSearch = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.BtnDelete = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.BtnUpdate = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.BtnEdit = new InsuranceApplication.CustomControls.Button.CustomButton();
@@ -43,7 +44,6 @@ namespace InsuranceApplication.Forms
             this.TxtBoxConfirmPassword = new System.Windows.Forms.TextBox();
             this.TxtBoxPassword = new System.Windows.Forms.TextBox();
             this.TxtBoxUsername = new System.Windows.Forms.TextBox();
-            this.BtnSearch = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,27 +63,47 @@ namespace InsuranceApplication.Forms
             this.groupBox1.Controls.Add(this.TxtBoxConfirmPassword);
             this.groupBox1.Controls.Add(this.TxtBoxPassword);
             this.groupBox1.Controls.Add(this.TxtBoxUsername);
-            this.groupBox1.Location = new System.Drawing.Point(26, 26);
+            this.groupBox1.Location = new System.Drawing.Point(22, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(716, 170);
+            this.groupBox1.Size = new System.Drawing.Size(614, 147);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Information";
+            // 
+            // BtnSearch
+            // 
+            this.BtnSearch.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSearch.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSearch.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnSearch.BorderRadius = 26;
+            this.BtnSearch.BorderSize = 0;
+            this.BtnSearch.FlatAppearance.BorderSize = 0;
+            this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.BtnSearch.ForeColor = System.Drawing.Color.White;
+            this.BtnSearch.Location = new System.Drawing.Point(253, 27);
+            this.BtnSearch.Name = "BtnSearch";
+            this.BtnSearch.Size = new System.Drawing.Size(73, 26);
+            this.BtnSearch.TabIndex = 13;
+            this.BtnSearch.Text = "Search";
+            this.BtnSearch.TextColor = System.Drawing.Color.White;
+            this.BtnSearch.UseVisualStyleBackColor = false;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // BtnDelete
             // 
             this.BtnDelete.BackColor = System.Drawing.Color.OrangeRed;
             this.BtnDelete.BackgroundColor = System.Drawing.Color.OrangeRed;
             this.BtnDelete.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnDelete.BorderRadius = 35;
+            this.BtnDelete.BorderRadius = 30;
             this.BtnDelete.BorderSize = 0;
             this.BtnDelete.FlatAppearance.BorderSize = 0;
             this.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.BtnDelete.ForeColor = System.Drawing.Color.White;
-            this.BtnDelete.Location = new System.Drawing.Point(565, 124);
+            this.BtnDelete.Location = new System.Drawing.Point(484, 107);
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(120, 35);
+            this.BtnDelete.Size = new System.Drawing.Size(103, 30);
             this.BtnDelete.TabIndex = 12;
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.TextColor = System.Drawing.Color.White;
@@ -95,15 +115,15 @@ namespace InsuranceApplication.Forms
             this.BtnUpdate.BackColor = System.Drawing.Color.DodgerBlue;
             this.BtnUpdate.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.BtnUpdate.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnUpdate.BorderRadius = 35;
+            this.BtnUpdate.BorderRadius = 30;
             this.BtnUpdate.BorderSize = 0;
             this.BtnUpdate.FlatAppearance.BorderSize = 0;
             this.BtnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.BtnUpdate.ForeColor = System.Drawing.Color.White;
-            this.BtnUpdate.Location = new System.Drawing.Point(435, 124);
+            this.BtnUpdate.Location = new System.Drawing.Point(373, 107);
             this.BtnUpdate.Name = "BtnUpdate";
-            this.BtnUpdate.Size = new System.Drawing.Size(120, 35);
+            this.BtnUpdate.Size = new System.Drawing.Size(103, 30);
             this.BtnUpdate.TabIndex = 11;
             this.BtnUpdate.Text = "Update";
             this.BtnUpdate.TextColor = System.Drawing.Color.White;
@@ -115,15 +135,15 @@ namespace InsuranceApplication.Forms
             this.BtnEdit.BackColor = System.Drawing.Color.OrangeRed;
             this.BtnEdit.BackgroundColor = System.Drawing.Color.OrangeRed;
             this.BtnEdit.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnEdit.BorderRadius = 35;
+            this.BtnEdit.BorderRadius = 30;
             this.BtnEdit.BorderSize = 0;
             this.BtnEdit.FlatAppearance.BorderSize = 0;
             this.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.BtnEdit.ForeColor = System.Drawing.Color.White;
-            this.BtnEdit.Location = new System.Drawing.Point(298, 124);
+            this.BtnEdit.Location = new System.Drawing.Point(255, 107);
             this.BtnEdit.Name = "BtnEdit";
-            this.BtnEdit.Size = new System.Drawing.Size(120, 35);
+            this.BtnEdit.Size = new System.Drawing.Size(103, 30);
             this.BtnEdit.TabIndex = 10;
             this.BtnEdit.Text = "Edit";
             this.BtnEdit.TextColor = System.Drawing.Color.White;
@@ -135,15 +155,15 @@ namespace InsuranceApplication.Forms
             this.BtnSave.BackColor = System.Drawing.Color.DodgerBlue;
             this.BtnSave.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.BtnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnSave.BorderRadius = 35;
+            this.BtnSave.BorderRadius = 30;
             this.BtnSave.BorderSize = 0;
             this.BtnSave.FlatAppearance.BorderSize = 0;
             this.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.BtnSave.ForeColor = System.Drawing.Color.White;
-            this.BtnSave.Location = new System.Drawing.Point(162, 124);
+            this.BtnSave.Location = new System.Drawing.Point(139, 107);
             this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(120, 35);
+            this.BtnSave.Size = new System.Drawing.Size(103, 30);
             this.BtnSave.TabIndex = 9;
             this.BtnSave.Text = "Save";
             this.BtnSave.TextColor = System.Drawing.Color.White;
@@ -155,15 +175,15 @@ namespace InsuranceApplication.Forms
             this.BtnAdd.BackColor = System.Drawing.Color.DodgerBlue;
             this.BtnAdd.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.BtnAdd.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnAdd.BorderRadius = 35;
+            this.BtnAdd.BorderRadius = 30;
             this.BtnAdd.BorderSize = 0;
             this.BtnAdd.FlatAppearance.BorderSize = 0;
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.BtnAdd.ForeColor = System.Drawing.Color.White;
-            this.BtnAdd.Location = new System.Drawing.Point(26, 124);
+            this.BtnAdd.Location = new System.Drawing.Point(22, 107);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(120, 35);
+            this.BtnAdd.Size = new System.Drawing.Size(103, 30);
             this.BtnAdd.TabIndex = 8;
             this.BtnAdd.Text = "Add";
             this.BtnAdd.TextColor = System.Drawing.Color.White;
@@ -172,19 +192,19 @@ namespace InsuranceApplication.Forms
             // 
             // ComboUserType
             // 
-            this.ComboUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComboUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.ComboUserType.FormattingEnabled = true;
-            this.ComboUserType.Location = new System.Drawing.Point(513, 29);
+            this.ComboUserType.Location = new System.Drawing.Point(440, 25);
             this.ComboUserType.Name = "ComboUserType";
-            this.ComboUserType.Size = new System.Drawing.Size(180, 32);
+            this.ComboUserType.Size = new System.Drawing.Size(155, 32);
             this.ComboUserType.TabIndex = 7;
             this.ComboUserType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboUserType_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(358, 85);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Location = new System.Drawing.Point(297, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(137, 20);
             this.label4.TabIndex = 6;
@@ -193,8 +213,8 @@ namespace InsuranceApplication.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(414, 41);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Location = new System.Drawing.Point(355, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 20);
             this.label3.TabIndex = 5;
@@ -203,8 +223,8 @@ namespace InsuranceApplication.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(18, 87);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(8, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 4;
@@ -213,8 +233,8 @@ namespace InsuranceApplication.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(18, 41);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Location = new System.Drawing.Point(6, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 3;
@@ -222,58 +242,38 @@ namespace InsuranceApplication.Forms
             // 
             // TxtBoxConfirmPassword
             // 
-            this.TxtBoxConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxConfirmPassword.Location = new System.Drawing.Point(513, 79);
+            this.TxtBoxConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.TxtBoxConfirmPassword.Location = new System.Drawing.Point(440, 68);
             this.TxtBoxConfirmPassword.Name = "TxtBoxConfirmPassword";
-            this.TxtBoxConfirmPassword.Size = new System.Drawing.Size(180, 29);
+            this.TxtBoxConfirmPassword.Size = new System.Drawing.Size(155, 29);
             this.TxtBoxConfirmPassword.TabIndex = 2;
             this.TxtBoxConfirmPassword.UseSystemPasswordChar = true;
             this.TxtBoxConfirmPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxConfirmPassword_KeyDown);
             // 
             // TxtBoxPassword
             // 
-            this.TxtBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxPassword.Location = new System.Drawing.Point(107, 79);
+            this.TxtBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.TxtBoxPassword.Location = new System.Drawing.Point(92, 68);
             this.TxtBoxPassword.Name = "TxtBoxPassword";
-            this.TxtBoxPassword.Size = new System.Drawing.Size(180, 29);
+            this.TxtBoxPassword.Size = new System.Drawing.Size(155, 29);
             this.TxtBoxPassword.TabIndex = 1;
             this.TxtBoxPassword.UseSystemPasswordChar = true;
             this.TxtBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxPassword_KeyDown);
             // 
             // TxtBoxUsername
             // 
-            this.TxtBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxUsername.Location = new System.Drawing.Point(107, 32);
+            this.TxtBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.TxtBoxUsername.Location = new System.Drawing.Point(92, 28);
             this.TxtBoxUsername.Name = "TxtBoxUsername";
-            this.TxtBoxUsername.Size = new System.Drawing.Size(180, 29);
+            this.TxtBoxUsername.Size = new System.Drawing.Size(155, 29);
             this.TxtBoxUsername.TabIndex = 0;
-            // 
-            // BtnSearch
-            // 
-            this.BtnSearch.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnSearch.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.BtnSearch.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnSearch.BorderRadius = 30;
-            this.BtnSearch.BorderSize = 0;
-            this.BtnSearch.FlatAppearance.BorderSize = 0;
-            this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnSearch.ForeColor = System.Drawing.Color.White;
-            this.BtnSearch.Location = new System.Drawing.Point(295, 31);
-            this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(79, 30);
-            this.BtnSearch.TabIndex = 13;
-            this.BtnSearch.Text = "Search";
-            this.BtnSearch.TextColor = System.Drawing.Color.White;
-            this.BtnSearch.UseVisualStyleBackColor = false;
-            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // UserForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(774, 217);
+            this.ClientSize = new System.Drawing.Size(663, 188);
             this.Controls.Add(this.groupBox1);
             this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

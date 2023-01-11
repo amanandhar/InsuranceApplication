@@ -43,9 +43,9 @@ namespace InsuranceApplication.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Cyan;
-            this.label1.Location = new System.Drawing.Point(88, 13);
+            this.label1.Location = new System.Drawing.Point(53, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(264, 25);
             this.label1.TabIndex = 0;
@@ -54,9 +54,9 @@ namespace InsuranceApplication.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label2.ForeColor = System.Drawing.Color.Cyan;
-            this.label2.Location = new System.Drawing.Point(53, 62);
+            this.label2.Location = new System.Drawing.Point(45, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 18);
             this.label2.TabIndex = 1;
@@ -66,9 +66,9 @@ namespace InsuranceApplication.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label3.ForeColor = System.Drawing.Color.Cyan;
-            this.label3.Location = new System.Drawing.Point(53, 96);
+            this.label3.Location = new System.Drawing.Point(45, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 18);
             this.label3.TabIndex = 2;
@@ -78,9 +78,9 @@ namespace InsuranceApplication.Forms
             // 
             this.ChkBoxShow.AutoSize = true;
             this.ChkBoxShow.BackColor = System.Drawing.Color.Transparent;
-            this.ChkBoxShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ChkBoxShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.ChkBoxShow.ForeColor = System.Drawing.Color.Cyan;
-            this.ChkBoxShow.Location = new System.Drawing.Point(53, 146);
+            this.ChkBoxShow.Location = new System.Drawing.Point(45, 127);
             this.ChkBoxShow.Name = "ChkBoxShow";
             this.ChkBoxShow.Size = new System.Drawing.Size(65, 22);
             this.ChkBoxShow.TabIndex = 3;
@@ -93,15 +93,15 @@ namespace InsuranceApplication.Forms
             this.BtnLogin.BackColor = System.Drawing.Color.Violet;
             this.BtnLogin.BackgroundColor = System.Drawing.Color.Violet;
             this.BtnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnLogin.BorderRadius = 35;
+            this.BtnLogin.BorderRadius = 30;
             this.BtnLogin.BorderSize = 0;
             this.BtnLogin.FlatAppearance.BorderSize = 0;
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.BtnLogin.ForeColor = System.Drawing.Color.White;
-            this.BtnLogin.Location = new System.Drawing.Point(142, 138);
+            this.BtnLogin.Location = new System.Drawing.Point(122, 120);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(110, 35);
+            this.BtnLogin.Size = new System.Drawing.Size(94, 30);
             this.BtnLogin.TabIndex = 4;
             this.BtnLogin.Text = "Login";
             this.BtnLogin.TextColor = System.Drawing.Color.White;
@@ -113,15 +113,15 @@ namespace InsuranceApplication.Forms
             this.BtnCancel.BackColor = System.Drawing.Color.Violet;
             this.BtnCancel.BackgroundColor = System.Drawing.Color.Violet;
             this.BtnCancel.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnCancel.BorderRadius = 35;
+            this.BtnCancel.BorderRadius = 30;
             this.BtnCancel.BorderSize = 0;
             this.BtnCancel.FlatAppearance.BorderSize = 0;
             this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.BtnCancel.ForeColor = System.Drawing.Color.White;
-            this.BtnCancel.Location = new System.Drawing.Point(259, 138);
+            this.BtnCancel.Location = new System.Drawing.Point(222, 120);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(110, 35);
+            this.BtnCancel.Size = new System.Drawing.Size(94, 30);
             this.BtnCancel.TabIndex = 5;
             this.BtnCancel.Text = "Cancel";
             this.BtnCancel.TextColor = System.Drawing.Color.White;
@@ -130,29 +130,29 @@ namespace InsuranceApplication.Forms
             // 
             // TxtBoxUsername
             // 
-            this.TxtBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxUsername.Location = new System.Drawing.Point(142, 59);
+            this.TxtBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            this.TxtBoxUsername.Location = new System.Drawing.Point(122, 51);
             this.TxtBoxUsername.Name = "TxtBoxUsername";
-            this.TxtBoxUsername.Size = new System.Drawing.Size(227, 27);
+            this.TxtBoxUsername.Size = new System.Drawing.Size(195, 27);
             this.TxtBoxUsername.TabIndex = 6;
             // 
             // TxtBoxPassword
             // 
-            this.TxtBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxPassword.Location = new System.Drawing.Point(142, 91);
+            this.TxtBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            this.TxtBoxPassword.Location = new System.Drawing.Point(122, 79);
             this.TxtBoxPassword.Name = "TxtBoxPassword";
-            this.TxtBoxPassword.Size = new System.Drawing.Size(227, 27);
+            this.TxtBoxPassword.Size = new System.Drawing.Size(195, 27);
             this.TxtBoxPassword.TabIndex = 7;
             this.TxtBoxPassword.UseSystemPasswordChar = true;
             this.TxtBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxPassword_KeyDown);
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(434, 197);
+            this.ClientSize = new System.Drawing.Size(372, 171);
             this.Controls.Add(this.TxtBoxPassword);
             this.Controls.Add(this.TxtBoxUsername);
             this.Controls.Add(this.BtnCancel);

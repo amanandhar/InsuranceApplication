@@ -46,26 +46,26 @@ namespace InsuranceApplication.Forms
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.TxtBoxEmployeeName);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, -2);
+            this.groupBox1.Location = new System.Drawing.Point(10, -2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(510, 45);
+            this.groupBox1.Size = new System.Drawing.Size(437, 50);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // TxtBoxEmployeeId
             // 
-            this.TxtBoxEmployeeId.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxEmployeeId.Location = new System.Drawing.Point(382, 12);
+            this.TxtBoxEmployeeId.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxEmployeeId.Location = new System.Drawing.Point(334, 12);
             this.TxtBoxEmployeeId.Name = "TxtBoxEmployeeId";
-            this.TxtBoxEmployeeId.Size = new System.Drawing.Size(114, 27);
+            this.TxtBoxEmployeeId.Size = new System.Drawing.Size(95, 27);
             this.TxtBoxEmployeeId.TabIndex = 3;
             this.TxtBoxEmployeeId.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBoxEmployeeId_KeyUp);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(337, 17);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.label2.Location = new System.Drawing.Point(289, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 20);
             this.label2.TabIndex = 2;
@@ -73,18 +73,18 @@ namespace InsuranceApplication.Forms
             // 
             // TxtBoxEmployeeName
             // 
-            this.TxtBoxEmployeeName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxEmployeeName.Location = new System.Drawing.Point(151, 14);
+            this.TxtBoxEmployeeName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxEmployeeName.Location = new System.Drawing.Point(142, 12);
             this.TxtBoxEmployeeName.Name = "TxtBoxEmployeeName";
-            this.TxtBoxEmployeeName.Size = new System.Drawing.Size(180, 27);
+            this.TxtBoxEmployeeName.Size = new System.Drawing.Size(142, 27);
             this.TxtBoxEmployeeName.TabIndex = 1;
             this.TxtBoxEmployeeName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBoxEmployeeName_KeyUp);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(6, 17);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.label1.Location = new System.Drawing.Point(5, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 20);
             this.label1.TabIndex = 1;
@@ -95,23 +95,22 @@ namespace InsuranceApplication.Forms
             this.DataGridEmployeeList.AllowUserToAddRows = false;
             this.DataGridEmployeeList.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DataGridEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridEmployeeList.Location = new System.Drawing.Point(12, 49);
+            this.DataGridEmployeeList.Location = new System.Drawing.Point(10, 54);
             this.DataGridEmployeeList.Name = "DataGridEmployeeList";
             this.DataGridEmployeeList.RowTemplate.Height = 25;
-            this.DataGridEmployeeList.Size = new System.Drawing.Size(510, 250);
+            this.DataGridEmployeeList.Size = new System.Drawing.Size(437, 205);
             this.DataGridEmployeeList.TabIndex = 1;
             this.DataGridEmployeeList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridEmployeeList_CellDoubleClick);
             this.DataGridEmployeeList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridEmployeeList_DataBindingComplete);
             // 
             // EmployeeListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(534, 311);
+            this.ClientSize = new System.Drawing.Size(458, 270);
             this.Controls.Add(this.DataGridEmployeeList);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EmployeeListForm";

@@ -60,7 +60,7 @@ namespace InsuranceApplication.Forms
             _endOfDayService = endOfDayService;
             _insuranceCompanyService = insuranceCompanyService;
             _loanDetailService = loanDetailService;
-            _endOfDay = _endOfDayService.GetDateInBs(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")).AddYears(-1));
+            _endOfDay = _endOfDayService.GetDateInBs(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")));
             LblCurrentNepaliDate.Text = _endOfDay + " BS";
         }
         #endregion

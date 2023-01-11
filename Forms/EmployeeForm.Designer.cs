@@ -33,7 +33,6 @@ namespace InsuranceApplication.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ComboGender = new System.Windows.Forms.ComboBox();
-            this.BtnSearchEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.label15 = new System.Windows.Forms.Label();
             this.TxtBoxCitizenshipNo = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -43,17 +42,11 @@ namespace InsuranceApplication.Forms
             this.TxtBoxEmployeeId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.BtnEditEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnAddEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.PicBoxPhoto = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.BtnClearAll = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnSaveEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnDeleteEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnUpdateEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -72,7 +65,6 @@ namespace InsuranceApplication.Forms
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.ComboFilter = new System.Windows.Forms.ComboBox();
-            this.BtnShowDetails = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -93,16 +85,24 @@ namespace InsuranceApplication.Forms
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.MaskResignationDate = new System.Windows.Forms.MaskedTextBox();
             this.MaskAppointedDate = new System.Windows.Forms.MaskedTextBox();
-            this.BtnSalaryDetails = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.ComboPostStatus = new System.Windows.Forms.ComboBox();
             this.TxtBoxPost = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.DataGridEmployeeList = new System.Windows.Forms.DataGridView();
-            this.BtnAddImage = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnDeleteImage = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.BtnDeleteImage = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnAddImage = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnSalaryDetails = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnShowDetails = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnClearAll = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnSaveEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnDeleteEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnUpdateEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnEditEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnAddEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnSearchEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxPhoto)).BeginInit();
@@ -129,72 +129,51 @@ namespace InsuranceApplication.Forms
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
-            this.groupBox1.Location = new System.Drawing.Point(10, 36);
+            this.groupBox1.Location = new System.Drawing.Point(9, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(320, 168);
+            this.groupBox1.Size = new System.Drawing.Size(274, 146);
             this.groupBox1.TabIndex = 1000;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Details";
             // 
             // ComboGender
             // 
-            this.ComboGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComboGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.ComboGender.FormattingEnabled = true;
             this.ComboGender.Items.AddRange(new object[] {
             "Male ",
             "Female"});
-            this.ComboGender.Location = new System.Drawing.Point(112, 135);
-            this.ComboGender.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboGender.Location = new System.Drawing.Point(96, 117);
             this.ComboGender.Name = "ComboGender";
-            this.ComboGender.Size = new System.Drawing.Size(188, 26);
+            this.ComboGender.Size = new System.Drawing.Size(162, 26);
             this.ComboGender.TabIndex = 5;
             this.ComboGender.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboGender_KeyPress);
-            // 
-            // BtnSearchEmployee
-            // 
-            this.BtnSearchEmployee.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnSearchEmployee.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.BtnSearchEmployee.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnSearchEmployee.BorderRadius = 15;
-            this.BtnSearchEmployee.BorderSize = 0;
-            this.BtnSearchEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSearchEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnSearchEmployee.ForeColor = System.Drawing.Color.White;
-            this.BtnSearchEmployee.Location = new System.Drawing.Point(230, 15);
-            this.BtnSearchEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnSearchEmployee.Name = "BtnSearchEmployee";
-            this.BtnSearchEmployee.Size = new System.Drawing.Size(70, 27);
-            this.BtnSearchEmployee.TabIndex = 1;
-            this.BtnSearchEmployee.Text = "Search";
-            this.BtnSearchEmployee.TextColor = System.Drawing.Color.White;
-            this.BtnSearchEmployee.UseVisualStyleBackColor = false;
-            this.BtnSearchEmployee.Click += new System.EventHandler(this.BtnSearchEmployee_Click);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label15.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label15.Location = new System.Drawing.Point(4, 109);
+            this.label15.Location = new System.Drawing.Point(3, 94);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(108, 18);
+            this.label15.Size = new System.Drawing.Size(80, 18);
             this.label15.TabIndex = 1000;
-            this.label15.Text = "Citizenship No.";
+            this.label15.Text = "Citizenship";
             // 
             // TxtBoxCitizenshipNo
             // 
-            this.TxtBoxCitizenshipNo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxCitizenshipNo.Location = new System.Drawing.Point(112, 105);
+            this.TxtBoxCitizenshipNo.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxCitizenshipNo.Location = new System.Drawing.Point(96, 91);
             this.TxtBoxCitizenshipNo.Name = "TxtBoxCitizenshipNo";
-            this.TxtBoxCitizenshipNo.Size = new System.Drawing.Size(188, 27);
+            this.TxtBoxCitizenshipNo.Size = new System.Drawing.Size(162, 27);
             this.TxtBoxCitizenshipNo.TabIndex = 4;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label17.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label17.Location = new System.Drawing.Point(6, 139);
+            this.label17.Location = new System.Drawing.Point(5, 120);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(57, 18);
             this.label17.TabIndex = 1000;
@@ -202,27 +181,27 @@ namespace InsuranceApplication.Forms
             // 
             // TxtBoxContactNo
             // 
-            this.TxtBoxContactNo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxContactNo.Location = new System.Drawing.Point(112, 75);
+            this.TxtBoxContactNo.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxContactNo.Location = new System.Drawing.Point(96, 65);
             this.TxtBoxContactNo.Name = "TxtBoxContactNo";
-            this.TxtBoxContactNo.Size = new System.Drawing.Size(188, 27);
+            this.TxtBoxContactNo.Size = new System.Drawing.Size(162, 27);
             this.TxtBoxContactNo.TabIndex = 3;
             this.TxtBoxContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxContactNo_KeyPress);
             // 
             // TxtBoxEmployeeName
             // 
-            this.TxtBoxEmployeeName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxEmployeeName.Location = new System.Drawing.Point(112, 45);
+            this.TxtBoxEmployeeName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxEmployeeName.Location = new System.Drawing.Point(96, 39);
             this.TxtBoxEmployeeName.Name = "TxtBoxEmployeeName";
-            this.TxtBoxEmployeeName.Size = new System.Drawing.Size(188, 27);
+            this.TxtBoxEmployeeName.Size = new System.Drawing.Size(162, 27);
             this.TxtBoxEmployeeName.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(4, 20);
+            this.label1.Location = new System.Drawing.Point(3, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 18);
             this.label1.TabIndex = 1000;
@@ -230,18 +209,18 @@ namespace InsuranceApplication.Forms
             // 
             // TxtBoxEmployeeId
             // 
-            this.TxtBoxEmployeeId.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxEmployeeId.Location = new System.Drawing.Point(112, 15);
+            this.TxtBoxEmployeeId.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxEmployeeId.Location = new System.Drawing.Point(96, 13);
             this.TxtBoxEmployeeId.Name = "TxtBoxEmployeeId";
-            this.TxtBoxEmployeeId.Size = new System.Drawing.Size(115, 27);
+            this.TxtBoxEmployeeId.Size = new System.Drawing.Size(84, 27);
             this.TxtBoxEmployeeId.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(4, 50);
+            this.label3.Location = new System.Drawing.Point(3, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 18);
             this.label3.TabIndex = 1000;
@@ -250,70 +229,30 @@ namespace InsuranceApplication.Forms
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(4, 79);
+            this.label6.Location = new System.Drawing.Point(3, 68);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 18);
             this.label6.TabIndex = 1000;
             this.label6.Text = "Contact No.";
             // 
-            // BtnEditEmployee
-            // 
-            this.BtnEditEmployee.BackColor = System.Drawing.Color.Red;
-            this.BtnEditEmployee.BackgroundColor = System.Drawing.Color.Red;
-            this.BtnEditEmployee.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnEditEmployee.BorderRadius = 35;
-            this.BtnEditEmployee.BorderSize = 0;
-            this.BtnEditEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnEditEmployee.ForeColor = System.Drawing.Color.White;
-            this.BtnEditEmployee.Location = new System.Drawing.Point(7, 99);
-            this.BtnEditEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnEditEmployee.Name = "BtnEditEmployee";
-            this.BtnEditEmployee.Size = new System.Drawing.Size(129, 37);
-            this.BtnEditEmployee.TabIndex = 26;
-            this.BtnEditEmployee.Text = "Edit";
-            this.BtnEditEmployee.TextColor = System.Drawing.Color.White;
-            this.BtnEditEmployee.UseVisualStyleBackColor = false;
-            this.BtnEditEmployee.Click += new System.EventHandler(this.BtnEditEmployee_Click);
-            // 
-            // BtnAddEmployee
-            // 
-            this.BtnAddEmployee.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnAddEmployee.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.BtnAddEmployee.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnAddEmployee.BorderRadius = 35;
-            this.BtnAddEmployee.BorderSize = 0;
-            this.BtnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnAddEmployee.ForeColor = System.Drawing.Color.White;
-            this.BtnAddEmployee.Location = new System.Drawing.Point(8, 21);
-            this.BtnAddEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnAddEmployee.Name = "BtnAddEmployee";
-            this.BtnAddEmployee.Size = new System.Drawing.Size(129, 37);
-            this.BtnAddEmployee.TabIndex = 24;
-            this.BtnAddEmployee.Text = "Add New";
-            this.BtnAddEmployee.TextColor = System.Drawing.Color.White;
-            this.BtnAddEmployee.UseVisualStyleBackColor = false;
-            this.BtnAddEmployee.Click += new System.EventHandler(this.BtnAddEmployee_Click);
-            // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBox2.Location = new System.Drawing.Point(0, 0);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(1362, 35);
+            this.textBox2.Size = new System.Drawing.Size(1172, 35);
             this.textBox2.TabIndex = 1000;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(260, 5);
+            this.label2.Location = new System.Drawing.Point(223, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(595, 25);
             this.label2.TabIndex = 1000;
@@ -323,9 +262,9 @@ namespace InsuranceApplication.Forms
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.PicBoxPhoto);
-            this.groupBox2.Location = new System.Drawing.Point(1198, 204);
+            this.groupBox2.Location = new System.Drawing.Point(1034, 184);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(145, 157);
+            this.groupBox2.Size = new System.Drawing.Size(124, 136);
             this.groupBox2.TabIndex = 1000;
             this.groupBox2.TabStop = false;
             // 
@@ -333,9 +272,9 @@ namespace InsuranceApplication.Forms
             // 
             this.PicBoxPhoto.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxPhoto.Image")));
             this.PicBoxPhoto.InitialImage = ((System.Drawing.Image)(resources.GetObject("PicBoxPhoto.InitialImage")));
-            this.PicBoxPhoto.Location = new System.Drawing.Point(5, 11);
+            this.PicBoxPhoto.Location = new System.Drawing.Point(4, 10);
             this.PicBoxPhoto.Name = "PicBoxPhoto";
-            this.PicBoxPhoto.Size = new System.Drawing.Size(135, 140);
+            this.PicBoxPhoto.Size = new System.Drawing.Size(116, 121);
             this.PicBoxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PicBoxPhoto.TabIndex = 0;
             this.PicBoxPhoto.TabStop = false;
@@ -348,120 +287,40 @@ namespace InsuranceApplication.Forms
             this.groupBox3.Controls.Add(this.BtnUpdateEmployee);
             this.groupBox3.Controls.Add(this.BtnEditEmployee);
             this.groupBox3.Controls.Add(this.BtnAddEmployee);
-            this.groupBox3.Location = new System.Drawing.Point(1198, 398);
+            this.groupBox3.Location = new System.Drawing.Point(1032, 345);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(145, 280);
+            this.groupBox3.Size = new System.Drawing.Size(124, 243);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
-            // 
-            // BtnClearAll
-            // 
-            this.BtnClearAll.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnClearAll.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.BtnClearAll.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnClearAll.BorderRadius = 35;
-            this.BtnClearAll.BorderSize = 0;
-            this.BtnClearAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnClearAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnClearAll.ForeColor = System.Drawing.Color.White;
-            this.BtnClearAll.Location = new System.Drawing.Point(7, 213);
-            this.BtnClearAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnClearAll.Name = "BtnClearAll";
-            this.BtnClearAll.Size = new System.Drawing.Size(129, 37);
-            this.BtnClearAll.TabIndex = 29;
-            this.BtnClearAll.Text = "Clear All";
-            this.BtnClearAll.TextColor = System.Drawing.Color.White;
-            this.BtnClearAll.UseVisualStyleBackColor = false;
-            this.BtnClearAll.Click += new System.EventHandler(this.BtnClear_Click);
-            // 
-            // BtnSaveEmployee
-            // 
-            this.BtnSaveEmployee.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnSaveEmployee.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.BtnSaveEmployee.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnSaveEmployee.BorderRadius = 35;
-            this.BtnSaveEmployee.BorderSize = 0;
-            this.BtnSaveEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSaveEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnSaveEmployee.ForeColor = System.Drawing.Color.White;
-            this.BtnSaveEmployee.Location = new System.Drawing.Point(8, 60);
-            this.BtnSaveEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnSaveEmployee.Name = "BtnSaveEmployee";
-            this.BtnSaveEmployee.Size = new System.Drawing.Size(129, 37);
-            this.BtnSaveEmployee.TabIndex = 500;
-            this.BtnSaveEmployee.Text = "Save";
-            this.BtnSaveEmployee.TextColor = System.Drawing.Color.White;
-            this.BtnSaveEmployee.UseVisualStyleBackColor = false;
-            this.BtnSaveEmployee.Click += new System.EventHandler(this.BtnSaveEmployee_Click);
-            // 
-            // BtnDeleteEmployee
-            // 
-            this.BtnDeleteEmployee.BackColor = System.Drawing.Color.Red;
-            this.BtnDeleteEmployee.BackgroundColor = System.Drawing.Color.Red;
-            this.BtnDeleteEmployee.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnDeleteEmployee.BorderRadius = 35;
-            this.BtnDeleteEmployee.BorderSize = 0;
-            this.BtnDeleteEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDeleteEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnDeleteEmployee.ForeColor = System.Drawing.Color.White;
-            this.BtnDeleteEmployee.Location = new System.Drawing.Point(7, 176);
-            this.BtnDeleteEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnDeleteEmployee.Name = "BtnDeleteEmployee";
-            this.BtnDeleteEmployee.Size = new System.Drawing.Size(129, 35);
-            this.BtnDeleteEmployee.TabIndex = 28;
-            this.BtnDeleteEmployee.Text = "Delete";
-            this.BtnDeleteEmployee.TextColor = System.Drawing.Color.White;
-            this.BtnDeleteEmployee.UseVisualStyleBackColor = false;
-            this.BtnDeleteEmployee.Click += new System.EventHandler(this.BtnDeleteEmployee_Click);
-            // 
-            // BtnUpdateEmployee
-            // 
-            this.BtnUpdateEmployee.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnUpdateEmployee.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.BtnUpdateEmployee.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnUpdateEmployee.BorderRadius = 35;
-            this.BtnUpdateEmployee.BorderSize = 0;
-            this.BtnUpdateEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnUpdateEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnUpdateEmployee.ForeColor = System.Drawing.Color.White;
-            this.BtnUpdateEmployee.Location = new System.Drawing.Point(8, 138);
-            this.BtnUpdateEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnUpdateEmployee.Name = "BtnUpdateEmployee";
-            this.BtnUpdateEmployee.Size = new System.Drawing.Size(129, 35);
-            this.BtnUpdateEmployee.TabIndex = 27;
-            this.BtnUpdateEmployee.Text = "Update";
-            this.BtnUpdateEmployee.TextColor = System.Drawing.Color.White;
-            this.BtnUpdateEmployee.UseVisualStyleBackColor = false;
-            this.BtnUpdateEmployee.Click += new System.EventHandler(this.BtnUpdateEmployee_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(5, 108);
+            this.label4.Location = new System.Drawing.Point(4, 94);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 18);
+            this.label4.Size = new System.Drawing.Size(102, 18);
             this.label4.TabIndex = 1000;
-            this.label4.Text = "Permanent Address";
+            this.label4.Text = "Perm Address";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(4, 138);
+            this.label5.Location = new System.Drawing.Point(3, 120);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 18);
+            this.label5.Size = new System.Drawing.Size(104, 18);
             this.label5.TabIndex = 1000;
-            this.label5.Text = "Temporary Address";
+            this.label5.Text = "Temp Address";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(4, 19);
+            this.label7.Location = new System.Drawing.Point(3, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 18);
             this.label7.TabIndex = 1000;
@@ -470,9 +329,9 @@ namespace InsuranceApplication.Forms
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label8.Location = new System.Drawing.Point(3, 49);
+            this.label8.Location = new System.Drawing.Point(3, 42);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 18);
             this.label8.TabIndex = 1000;
@@ -481,9 +340,9 @@ namespace InsuranceApplication.Forms
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label9.Location = new System.Drawing.Point(3, 20);
+            this.label9.Location = new System.Drawing.Point(3, 17);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(94, 18);
             this.label9.TabIndex = 1000;
@@ -492,9 +351,9 @@ namespace InsuranceApplication.Forms
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label10.Location = new System.Drawing.Point(3, 108);
+            this.label10.Location = new System.Drawing.Point(3, 94);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(103, 18);
             this.label10.TabIndex = 1000;
@@ -503,9 +362,9 @@ namespace InsuranceApplication.Forms
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label11.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label11.Location = new System.Drawing.Point(5, 78);
+            this.label11.Location = new System.Drawing.Point(4, 68);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 18);
             this.label11.TabIndex = 1000;
@@ -514,9 +373,9 @@ namespace InsuranceApplication.Forms
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label12.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label12.Location = new System.Drawing.Point(4, 138);
+            this.label12.Location = new System.Drawing.Point(3, 120);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(93, 18);
             this.label12.TabIndex = 1000;
@@ -525,9 +384,9 @@ namespace InsuranceApplication.Forms
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label13.Location = new System.Drawing.Point(281, 48);
+            this.label13.Location = new System.Drawing.Point(241, 42);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(33, 18);
             this.label13.TabIndex = 1000;
@@ -536,9 +395,9 @@ namespace InsuranceApplication.Forms
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label14.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label14.Location = new System.Drawing.Point(4, 47);
+            this.label14.Location = new System.Drawing.Point(3, 41);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(90, 18);
             this.label14.TabIndex = 1000;
@@ -547,9 +406,9 @@ namespace InsuranceApplication.Forms
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label16.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label16.Location = new System.Drawing.Point(3, 79);
+            this.label16.Location = new System.Drawing.Point(3, 68);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(98, 18);
             this.label16.TabIndex = 1000;
@@ -558,9 +417,9 @@ namespace InsuranceApplication.Forms
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label19.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label19.Location = new System.Drawing.Point(5, 19);
+            this.label19.Location = new System.Drawing.Point(4, 16);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(39, 18);
             this.label19.TabIndex = 1000;
@@ -574,19 +433,18 @@ namespace InsuranceApplication.Forms
             this.groupBox4.Controls.Add(this.label23);
             this.groupBox4.Controls.Add(this.ComboFilter);
             this.groupBox4.Controls.Add(this.BtnShowDetails);
-            this.groupBox4.Location = new System.Drawing.Point(12, 630);
+            this.groupBox4.Location = new System.Drawing.Point(10, 546);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1174, 50);
+            this.groupBox4.Size = new System.Drawing.Size(1006, 43);
             this.groupBox4.TabIndex = 1000;
             this.groupBox4.TabStop = false;
             // 
             // LblCurrentTime
             // 
             this.LblCurrentTime.AutoSize = true;
-            this.LblCurrentTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblCurrentTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.LblCurrentTime.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.LblCurrentTime.Location = new System.Drawing.Point(977, 20);
-            this.LblCurrentTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblCurrentTime.Location = new System.Drawing.Point(837, 17);
             this.LblCurrentTime.Name = "LblCurrentTime";
             this.LblCurrentTime.Size = new System.Drawing.Size(109, 18);
             this.LblCurrentTime.TabIndex = 1000;
@@ -595,10 +453,9 @@ namespace InsuranceApplication.Forms
             // LblCurrentNepaliDate
             // 
             this.LblCurrentNepaliDate.AutoSize = true;
-            this.LblCurrentNepaliDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblCurrentNepaliDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.LblCurrentNepaliDate.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.LblCurrentNepaliDate.Location = new System.Drawing.Point(133, 20);
-            this.LblCurrentNepaliDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblCurrentNepaliDate.Location = new System.Drawing.Point(114, 17);
             this.LblCurrentNepaliDate.Name = "LblCurrentNepaliDate";
             this.LblCurrentNepaliDate.Size = new System.Drawing.Size(148, 18);
             this.LblCurrentNepaliDate.TabIndex = 1000;
@@ -607,10 +464,9 @@ namespace InsuranceApplication.Forms
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label24.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label24.Location = new System.Drawing.Point(921, 20);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Location = new System.Drawing.Point(789, 17);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(49, 18);
             this.label24.TabIndex = 1000;
@@ -619,10 +475,9 @@ namespace InsuranceApplication.Forms
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label23.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label23.Location = new System.Drawing.Point(78, 20);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Location = new System.Drawing.Point(67, 17);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(47, 18);
             this.label23.TabIndex = 1000;
@@ -630,45 +485,24 @@ namespace InsuranceApplication.Forms
             // 
             // ComboFilter
             // 
-            this.ComboFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComboFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.ComboFilter.FormattingEnabled = true;
             this.ComboFilter.Items.AddRange(new object[] {
             "All Employees",
             "Present Employees",
             "Resigned Employees"});
-            this.ComboFilter.Location = new System.Drawing.Point(467, 17);
-            this.ComboFilter.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboFilter.Location = new System.Drawing.Point(400, 15);
             this.ComboFilter.Name = "ComboFilter";
-            this.ComboFilter.Size = new System.Drawing.Size(186, 26);
+            this.ComboFilter.Size = new System.Drawing.Size(160, 26);
             this.ComboFilter.TabIndex = 30;
             this.ComboFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboFilter_KeyPress);
-            // 
-            // BtnShowDetails
-            // 
-            this.BtnShowDetails.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnShowDetails.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.BtnShowDetails.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnShowDetails.BorderRadius = 30;
-            this.BtnShowDetails.BorderSize = 0;
-            this.BtnShowDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnShowDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnShowDetails.ForeColor = System.Drawing.Color.White;
-            this.BtnShowDetails.Location = new System.Drawing.Point(661, 13);
-            this.BtnShowDetails.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnShowDetails.Name = "BtnShowDetails";
-            this.BtnShowDetails.Size = new System.Drawing.Size(155, 32);
-            this.BtnShowDetails.TabIndex = 32;
-            this.BtnShowDetails.Text = "Show Details";
-            this.BtnShowDetails.TextColor = System.Drawing.Color.White;
-            this.BtnShowDetails.UseVisualStyleBackColor = false;
-            this.BtnShowDetails.Click += new System.EventHandler(this.BtnShowDetails_Click);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label18.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label18.Location = new System.Drawing.Point(5, 109);
+            this.label18.Location = new System.Drawing.Point(4, 94);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(108, 18);
             this.label18.TabIndex = 1000;
@@ -677,9 +511,9 @@ namespace InsuranceApplication.Forms
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label20.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label20.Location = new System.Drawing.Point(5, 138);
+            this.label20.Location = new System.Drawing.Point(4, 120);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(121, 18);
             this.label20.TabIndex = 1000;
@@ -688,9 +522,9 @@ namespace InsuranceApplication.Forms
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label21.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label21.Location = new System.Drawing.Point(5, 49);
+            this.label21.Location = new System.Drawing.Point(4, 42);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(85, 18);
             this.label21.TabIndex = 1000;
@@ -712,74 +546,72 @@ namespace InsuranceApplication.Forms
             this.groupBox6.Controls.Add(this.label5);
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.ForeColor = System.Drawing.Color.Red;
-            this.groupBox6.Location = new System.Drawing.Point(336, 37);
+            this.groupBox6.Location = new System.Drawing.Point(288, 41);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(388, 167);
+            this.groupBox6.Size = new System.Drawing.Size(333, 145);
             this.groupBox6.TabIndex = 6;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Other Details";
             // 
             // MaskDOB
             // 
-            this.MaskDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MaskDOB.Location = new System.Drawing.Point(148, 45);
-            this.MaskDOB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaskDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.MaskDOB.Location = new System.Drawing.Point(127, 39);
             this.MaskDOB.Mask = "0000-00-00";
             this.MaskDOB.Name = "MaskDOB";
-            this.MaskDOB.Size = new System.Drawing.Size(120, 24);
+            this.MaskDOB.Size = new System.Drawing.Size(103, 24);
             this.MaskDOB.TabIndex = 7;
             this.MaskDOB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.maskedTextBox2.Location = new System.Drawing.Point(296, 251);
-            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.maskedTextBox2.Location = new System.Drawing.Point(254, 218);
             this.maskedTextBox2.Mask = "   0000-00-00";
             this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(110, 24);
+            this.maskedTextBox2.Size = new System.Drawing.Size(95, 24);
             this.maskedTextBox2.TabIndex = 55;
             // 
             // TxtBoxEmail
             // 
-            this.TxtBoxEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxEmail.Location = new System.Drawing.Point(74, 74);
+            this.TxtBoxEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxEmail.Location = new System.Drawing.Point(63, 64);
             this.TxtBoxEmail.Name = "TxtBoxEmail";
-            this.TxtBoxEmail.Size = new System.Drawing.Size(295, 27);
+            this.TxtBoxEmail.Size = new System.Drawing.Size(253, 27);
             this.TxtBoxEmail.TabIndex = 9;
             // 
             // TxtBoxPermAddress
             // 
-            this.TxtBoxPermAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxPermAddress.Location = new System.Drawing.Point(148, 104);
+            this.TxtBoxPermAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxPermAddress.Location = new System.Drawing.Point(127, 90);
             this.TxtBoxPermAddress.Name = "TxtBoxPermAddress";
-            this.TxtBoxPermAddress.Size = new System.Drawing.Size(221, 27);
+            this.TxtBoxPermAddress.Size = new System.Drawing.Size(190, 27);
             this.TxtBoxPermAddress.TabIndex = 10;
             // 
             // TxtBoxAge
             // 
-            this.TxtBoxAge.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxAge.Location = new System.Drawing.Point(319, 44);
+            this.TxtBoxAge.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxAge.Location = new System.Drawing.Point(273, 38);
             this.TxtBoxAge.Name = "TxtBoxAge";
-            this.TxtBoxAge.Size = new System.Drawing.Size(50, 27);
+            this.TxtBoxAge.Size = new System.Drawing.Size(43, 27);
             this.TxtBoxAge.TabIndex = 8;
             this.TxtBoxAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtBoxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxAge_KeyPress);
             // 
             // TxtBoxTempAddress
             // 
-            this.TxtBoxTempAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxTempAddress.Location = new System.Drawing.Point(148, 134);
+            this.TxtBoxTempAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxTempAddress.Location = new System.Drawing.Point(127, 116);
             this.TxtBoxTempAddress.Name = "TxtBoxTempAddress";
-            this.TxtBoxTempAddress.Size = new System.Drawing.Size(221, 27);
+            this.TxtBoxTempAddress.Size = new System.Drawing.Size(190, 27);
             this.TxtBoxTempAddress.TabIndex = 11;
             // 
             // TxtBoxEducation
             // 
-            this.TxtBoxEducation.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxEducation.Location = new System.Drawing.Point(148, 14);
+            this.TxtBoxEducation.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxEducation.Location = new System.Drawing.Point(127, 12);
             this.TxtBoxEducation.Name = "TxtBoxEducation";
-            this.TxtBoxEducation.Size = new System.Drawing.Size(221, 27);
+            this.TxtBoxEducation.Size = new System.Drawing.Size(190, 27);
             this.TxtBoxEducation.TabIndex = 6;
             // 
             // groupBox7
@@ -795,57 +627,56 @@ namespace InsuranceApplication.Forms
             this.groupBox7.Controls.Add(this.label10);
             this.groupBox7.Controls.Add(this.label12);
             this.groupBox7.ForeColor = System.Drawing.Color.Red;
-            this.groupBox7.Location = new System.Drawing.Point(731, 37);
+            this.groupBox7.Location = new System.Drawing.Point(627, 41);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(322, 167);
+            this.groupBox7.Size = new System.Drawing.Size(276, 145);
             this.groupBox7.TabIndex = 12;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Family Details";
             // 
             // TxtBoxFatherName
             // 
-            this.TxtBoxFatherName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxFatherName.Location = new System.Drawing.Point(105, 14);
+            this.TxtBoxFatherName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxFatherName.Location = new System.Drawing.Point(103, 12);
             this.TxtBoxFatherName.Name = "TxtBoxFatherName";
-            this.TxtBoxFatherName.Size = new System.Drawing.Size(200, 27);
+            this.TxtBoxFatherName.Size = new System.Drawing.Size(159, 27);
             this.TxtBoxFatherName.TabIndex = 1001;
             // 
             // ComboMaritalStatus
             // 
-            this.ComboMaritalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComboMaritalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.ComboMaritalStatus.FormattingEnabled = true;
             this.ComboMaritalStatus.Items.AddRange(new object[] {
             "Single",
             "Married"});
-            this.ComboMaritalStatus.Location = new System.Drawing.Point(105, 75);
-            this.ComboMaritalStatus.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboMaritalStatus.Location = new System.Drawing.Point(103, 65);
             this.ComboMaritalStatus.Name = "ComboMaritalStatus";
-            this.ComboMaritalStatus.Size = new System.Drawing.Size(200, 26);
+            this.ComboMaritalStatus.Size = new System.Drawing.Size(159, 26);
             this.ComboMaritalStatus.TabIndex = 14;
             this.ComboMaritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboMaritalStatus_KeyPress);
             // 
             // TxtBoxMotherName
             // 
-            this.TxtBoxMotherName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxMotherName.Location = new System.Drawing.Point(105, 45);
+            this.TxtBoxMotherName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxMotherName.Location = new System.Drawing.Point(103, 39);
             this.TxtBoxMotherName.Name = "TxtBoxMotherName";
-            this.TxtBoxMotherName.Size = new System.Drawing.Size(200, 27);
+            this.TxtBoxMotherName.Size = new System.Drawing.Size(159, 27);
             this.TxtBoxMotherName.TabIndex = 13;
             // 
             // TxtBoxSpouseName
             // 
-            this.TxtBoxSpouseName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxSpouseName.Location = new System.Drawing.Point(105, 104);
+            this.TxtBoxSpouseName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxSpouseName.Location = new System.Drawing.Point(103, 90);
             this.TxtBoxSpouseName.Name = "TxtBoxSpouseName";
-            this.TxtBoxSpouseName.Size = new System.Drawing.Size(200, 27);
+            this.TxtBoxSpouseName.Size = new System.Drawing.Size(159, 27);
             this.TxtBoxSpouseName.TabIndex = 15;
             // 
             // TxtBoxBloodGroup
             // 
-            this.TxtBoxBloodGroup.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxBloodGroup.Location = new System.Drawing.Point(105, 134);
+            this.TxtBoxBloodGroup.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxBloodGroup.Location = new System.Drawing.Point(103, 116);
             this.TxtBoxBloodGroup.Name = "TxtBoxBloodGroup";
-            this.TxtBoxBloodGroup.Size = new System.Drawing.Size(200, 27);
+            this.TxtBoxBloodGroup.Size = new System.Drawing.Size(159, 27);
             this.TxtBoxBloodGroup.TabIndex = 16;
             // 
             // groupBox8
@@ -861,84 +692,61 @@ namespace InsuranceApplication.Forms
             this.groupBox8.Controls.Add(this.label18);
             this.groupBox8.Controls.Add(this.label20);
             this.groupBox8.ForeColor = System.Drawing.Color.Red;
-            this.groupBox8.Location = new System.Drawing.Point(1060, 37);
+            this.groupBox8.Location = new System.Drawing.Point(909, 40);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(282, 167);
+            this.groupBox8.Size = new System.Drawing.Size(250, 145);
             this.groupBox8.TabIndex = 17;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Job Details";
             // 
             // MaskResignationDate
             // 
-            this.MaskResignationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MaskResignationDate.Location = new System.Drawing.Point(128, 134);
-            this.MaskResignationDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaskResignationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.MaskResignationDate.Location = new System.Drawing.Point(124, 116);
             this.MaskResignationDate.Mask = "0000-00-00";
             this.MaskResignationDate.Name = "MaskResignationDate";
-            this.MaskResignationDate.Size = new System.Drawing.Size(135, 24);
+            this.MaskResignationDate.Size = new System.Drawing.Size(116, 24);
             this.MaskResignationDate.TabIndex = 21;
             this.MaskResignationDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MaskAppointedDate
             // 
-            this.MaskAppointedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MaskAppointedDate.Location = new System.Drawing.Point(128, 106);
-            this.MaskAppointedDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaskAppointedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.MaskAppointedDate.Location = new System.Drawing.Point(124, 92);
             this.MaskAppointedDate.Mask = "0000-00-00";
             this.MaskAppointedDate.Name = "MaskAppointedDate";
-            this.MaskAppointedDate.Size = new System.Drawing.Size(135, 24);
+            this.MaskAppointedDate.Size = new System.Drawing.Size(116, 24);
             this.MaskAppointedDate.TabIndex = 20;
             this.MaskAppointedDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // BtnSalaryDetails
-            // 
-            this.BtnSalaryDetails.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnSalaryDetails.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.BtnSalaryDetails.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnSalaryDetails.BorderRadius = 6;
-            this.BtnSalaryDetails.BorderSize = 0;
-            this.BtnSalaryDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSalaryDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnSalaryDetails.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.BtnSalaryDetails.Location = new System.Drawing.Point(127, 74);
-            this.BtnSalaryDetails.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnSalaryDetails.Name = "BtnSalaryDetails";
-            this.BtnSalaryDetails.Size = new System.Drawing.Size(136, 30);
-            this.BtnSalaryDetails.TabIndex = 19;
-            this.BtnSalaryDetails.Text = "Salary Details";
-            this.BtnSalaryDetails.TextColor = System.Drawing.SystemColors.HighlightText;
-            this.BtnSalaryDetails.UseVisualStyleBackColor = false;
-            this.BtnSalaryDetails.Click += new System.EventHandler(this.BtnSalaryDetails_Click);
-            // 
             // ComboPostStatus
             // 
-            this.ComboPostStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ComboPostStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.ComboPostStatus.FormattingEnabled = true;
             this.ComboPostStatus.Items.AddRange(new object[] {
             "Daily Basis",
             "Temporary",
             "Parmanent"});
-            this.ComboPostStatus.Location = new System.Drawing.Point(128, 45);
-            this.ComboPostStatus.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ComboPostStatus.Location = new System.Drawing.Point(123, 39);
             this.ComboPostStatus.Name = "ComboPostStatus";
-            this.ComboPostStatus.Size = new System.Drawing.Size(135, 26);
+            this.ComboPostStatus.Size = new System.Drawing.Size(116, 26);
             this.ComboPostStatus.TabIndex = 18;
             this.ComboPostStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboPostStatus_KeyPress);
             // 
             // TxtBoxPost
             // 
-            this.TxtBoxPost.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtBoxPost.Location = new System.Drawing.Point(128, 15);
+            this.TxtBoxPost.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxPost.Location = new System.Drawing.Point(123, 13);
             this.TxtBoxPost.Name = "TxtBoxPost";
-            this.TxtBoxPost.Size = new System.Drawing.Size(135, 27);
+            this.TxtBoxPost.Size = new System.Drawing.Size(116, 27);
             this.TxtBoxPost.TabIndex = 17;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label22.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label22.Location = new System.Drawing.Point(5, 80);
+            this.label22.Location = new System.Drawing.Point(4, 69);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(98, 18);
             this.label22.TabIndex = 1000;
@@ -949,53 +757,12 @@ namespace InsuranceApplication.Forms
             this.DataGridEmployeeList.AllowUserToAddRows = false;
             this.DataGridEmployeeList.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DataGridEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridEmployeeList.Location = new System.Drawing.Point(11, 212);
-            this.DataGridEmployeeList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.DataGridEmployeeList.Location = new System.Drawing.Point(9, 200);
             this.DataGridEmployeeList.Name = "DataGridEmployeeList";
             this.DataGridEmployeeList.ReadOnly = true;
-            this.DataGridEmployeeList.Size = new System.Drawing.Size(1175, 415);
+            this.DataGridEmployeeList.Size = new System.Drawing.Size(1014, 344);
             this.DataGridEmployeeList.TabIndex = 1000;
             this.DataGridEmployeeList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridEmployeeList_DataBindingComplete);
-            // 
-            // BtnAddImage
-            // 
-            this.BtnAddImage.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnAddImage.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.BtnAddImage.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnAddImage.BorderRadius = 20;
-            this.BtnAddImage.BorderSize = 0;
-            this.BtnAddImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAddImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnAddImage.ForeColor = System.Drawing.Color.White;
-            this.BtnAddImage.Location = new System.Drawing.Point(1201, 367);
-            this.BtnAddImage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnAddImage.Name = "BtnAddImage";
-            this.BtnAddImage.Size = new System.Drawing.Size(68, 27);
-            this.BtnAddImage.TabIndex = 22;
-            this.BtnAddImage.Text = "Add";
-            this.BtnAddImage.TextColor = System.Drawing.Color.White;
-            this.BtnAddImage.UseVisualStyleBackColor = false;
-            this.BtnAddImage.Click += new System.EventHandler(this.BtnAddImage_Click);
-            // 
-            // BtnDeleteImage
-            // 
-            this.BtnDeleteImage.BackColor = System.Drawing.Color.Red;
-            this.BtnDeleteImage.BackgroundColor = System.Drawing.Color.Red;
-            this.BtnDeleteImage.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnDeleteImage.BorderRadius = 20;
-            this.BtnDeleteImage.BorderSize = 0;
-            this.BtnDeleteImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDeleteImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnDeleteImage.ForeColor = System.Drawing.Color.White;
-            this.BtnDeleteImage.Location = new System.Drawing.Point(1269, 367);
-            this.BtnDeleteImage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BtnDeleteImage.Name = "BtnDeleteImage";
-            this.BtnDeleteImage.Size = new System.Drawing.Size(68, 27);
-            this.BtnDeleteImage.TabIndex = 23;
-            this.BtnDeleteImage.Text = "Delete";
-            this.BtnDeleteImage.TextColor = System.Drawing.Color.White;
-            this.BtnDeleteImage.UseVisualStyleBackColor = false;
-            this.BtnDeleteImage.Click += new System.EventHandler(this.BtnDeleteImage_Click);
             // 
             // OpenFileDialog
             // 
@@ -1012,11 +779,220 @@ namespace InsuranceApplication.Forms
             // 
             this.ErrorProvider.ContainerControl = this;
             // 
+            // BtnDeleteImage
+            // 
+            this.BtnDeleteImage.BackColor = System.Drawing.Color.Red;
+            this.BtnDeleteImage.BackgroundColor = System.Drawing.Color.Red;
+            this.BtnDeleteImage.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnDeleteImage.BorderRadius = 20;
+            this.BtnDeleteImage.BorderSize = 0;
+            this.BtnDeleteImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeleteImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.BtnDeleteImage.ForeColor = System.Drawing.Color.White;
+            this.BtnDeleteImage.Location = new System.Drawing.Point(1091, 323);
+            this.BtnDeleteImage.Name = "BtnDeleteImage";
+            this.BtnDeleteImage.Size = new System.Drawing.Size(66, 23);
+            this.BtnDeleteImage.TabIndex = 23;
+            this.BtnDeleteImage.Text = "Delete";
+            this.BtnDeleteImage.TextColor = System.Drawing.Color.White;
+            this.BtnDeleteImage.UseVisualStyleBackColor = false;
+            this.BtnDeleteImage.Click += new System.EventHandler(this.BtnDeleteImage_Click);
+            // 
+            // BtnAddImage
+            // 
+            this.BtnAddImage.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnAddImage.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnAddImage.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnAddImage.BorderRadius = 20;
+            this.BtnAddImage.BorderSize = 0;
+            this.BtnAddImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.BtnAddImage.ForeColor = System.Drawing.Color.White;
+            this.BtnAddImage.Location = new System.Drawing.Point(1032, 323);
+            this.BtnAddImage.Name = "BtnAddImage";
+            this.BtnAddImage.Size = new System.Drawing.Size(58, 23);
+            this.BtnAddImage.TabIndex = 22;
+            this.BtnAddImage.Text = "Add";
+            this.BtnAddImage.TextColor = System.Drawing.Color.White;
+            this.BtnAddImage.UseVisualStyleBackColor = false;
+            this.BtnAddImage.Click += new System.EventHandler(this.BtnAddImage_Click);
+            // 
+            // BtnSalaryDetails
+            // 
+            this.BtnSalaryDetails.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSalaryDetails.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSalaryDetails.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnSalaryDetails.BorderRadius = 6;
+            this.BtnSalaryDetails.BorderSize = 0;
+            this.BtnSalaryDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSalaryDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.BtnSalaryDetails.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.BtnSalaryDetails.Location = new System.Drawing.Point(122, 64);
+            this.BtnSalaryDetails.Name = "BtnSalaryDetails";
+            this.BtnSalaryDetails.Size = new System.Drawing.Size(117, 26);
+            this.BtnSalaryDetails.TabIndex = 19;
+            this.BtnSalaryDetails.Text = "Salary Details";
+            this.BtnSalaryDetails.TextColor = System.Drawing.SystemColors.HighlightText;
+            this.BtnSalaryDetails.UseVisualStyleBackColor = false;
+            this.BtnSalaryDetails.Click += new System.EventHandler(this.BtnSalaryDetails_Click);
+            // 
+            // BtnShowDetails
+            // 
+            this.BtnShowDetails.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnShowDetails.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnShowDetails.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnShowDetails.BorderRadius = 28;
+            this.BtnShowDetails.BorderSize = 0;
+            this.BtnShowDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnShowDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.BtnShowDetails.ForeColor = System.Drawing.Color.White;
+            this.BtnShowDetails.Location = new System.Drawing.Point(567, 11);
+            this.BtnShowDetails.Name = "BtnShowDetails";
+            this.BtnShowDetails.Size = new System.Drawing.Size(133, 28);
+            this.BtnShowDetails.TabIndex = 32;
+            this.BtnShowDetails.Text = "Show Details";
+            this.BtnShowDetails.TextColor = System.Drawing.Color.White;
+            this.BtnShowDetails.UseVisualStyleBackColor = false;
+            this.BtnShowDetails.Click += new System.EventHandler(this.BtnShowDetails_Click);
+            // 
+            // BtnClearAll
+            // 
+            this.BtnClearAll.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnClearAll.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnClearAll.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnClearAll.BorderRadius = 32;
+            this.BtnClearAll.BorderSize = 0;
+            this.BtnClearAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnClearAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.BtnClearAll.ForeColor = System.Drawing.Color.White;
+            this.BtnClearAll.Location = new System.Drawing.Point(6, 185);
+            this.BtnClearAll.Name = "BtnClearAll";
+            this.BtnClearAll.Size = new System.Drawing.Size(111, 32);
+            this.BtnClearAll.TabIndex = 29;
+            this.BtnClearAll.Text = "Clear All";
+            this.BtnClearAll.TextColor = System.Drawing.Color.White;
+            this.BtnClearAll.UseVisualStyleBackColor = false;
+            this.BtnClearAll.Click += new System.EventHandler(this.BtnClear_Click);
+            // 
+            // BtnSaveEmployee
+            // 
+            this.BtnSaveEmployee.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSaveEmployee.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSaveEmployee.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnSaveEmployee.BorderRadius = 32;
+            this.BtnSaveEmployee.BorderSize = 0;
+            this.BtnSaveEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSaveEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.BtnSaveEmployee.ForeColor = System.Drawing.Color.White;
+            this.BtnSaveEmployee.Location = new System.Drawing.Point(7, 52);
+            this.BtnSaveEmployee.Name = "BtnSaveEmployee";
+            this.BtnSaveEmployee.Size = new System.Drawing.Size(111, 32);
+            this.BtnSaveEmployee.TabIndex = 500;
+            this.BtnSaveEmployee.Text = "Save";
+            this.BtnSaveEmployee.TextColor = System.Drawing.Color.White;
+            this.BtnSaveEmployee.UseVisualStyleBackColor = false;
+            this.BtnSaveEmployee.Click += new System.EventHandler(this.BtnSaveEmployee_Click);
+            // 
+            // BtnDeleteEmployee
+            // 
+            this.BtnDeleteEmployee.BackColor = System.Drawing.Color.Red;
+            this.BtnDeleteEmployee.BackgroundColor = System.Drawing.Color.Red;
+            this.BtnDeleteEmployee.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnDeleteEmployee.BorderRadius = 30;
+            this.BtnDeleteEmployee.BorderSize = 0;
+            this.BtnDeleteEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeleteEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.BtnDeleteEmployee.ForeColor = System.Drawing.Color.White;
+            this.BtnDeleteEmployee.Location = new System.Drawing.Point(6, 153);
+            this.BtnDeleteEmployee.Name = "BtnDeleteEmployee";
+            this.BtnDeleteEmployee.Size = new System.Drawing.Size(111, 30);
+            this.BtnDeleteEmployee.TabIndex = 28;
+            this.BtnDeleteEmployee.Text = "Delete";
+            this.BtnDeleteEmployee.TextColor = System.Drawing.Color.White;
+            this.BtnDeleteEmployee.UseVisualStyleBackColor = false;
+            this.BtnDeleteEmployee.Click += new System.EventHandler(this.BtnDeleteEmployee_Click);
+            // 
+            // BtnUpdateEmployee
+            // 
+            this.BtnUpdateEmployee.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnUpdateEmployee.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnUpdateEmployee.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnUpdateEmployee.BorderRadius = 30;
+            this.BtnUpdateEmployee.BorderSize = 0;
+            this.BtnUpdateEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUpdateEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.BtnUpdateEmployee.ForeColor = System.Drawing.Color.White;
+            this.BtnUpdateEmployee.Location = new System.Drawing.Point(7, 120);
+            this.BtnUpdateEmployee.Name = "BtnUpdateEmployee";
+            this.BtnUpdateEmployee.Size = new System.Drawing.Size(111, 30);
+            this.BtnUpdateEmployee.TabIndex = 27;
+            this.BtnUpdateEmployee.Text = "Update";
+            this.BtnUpdateEmployee.TextColor = System.Drawing.Color.White;
+            this.BtnUpdateEmployee.UseVisualStyleBackColor = false;
+            this.BtnUpdateEmployee.Click += new System.EventHandler(this.BtnUpdateEmployee_Click);
+            // 
+            // BtnEditEmployee
+            // 
+            this.BtnEditEmployee.BackColor = System.Drawing.Color.Red;
+            this.BtnEditEmployee.BackgroundColor = System.Drawing.Color.Red;
+            this.BtnEditEmployee.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnEditEmployee.BorderRadius = 32;
+            this.BtnEditEmployee.BorderSize = 0;
+            this.BtnEditEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEditEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.BtnEditEmployee.ForeColor = System.Drawing.Color.White;
+            this.BtnEditEmployee.Location = new System.Drawing.Point(6, 86);
+            this.BtnEditEmployee.Name = "BtnEditEmployee";
+            this.BtnEditEmployee.Size = new System.Drawing.Size(111, 32);
+            this.BtnEditEmployee.TabIndex = 26;
+            this.BtnEditEmployee.Text = "Edit";
+            this.BtnEditEmployee.TextColor = System.Drawing.Color.White;
+            this.BtnEditEmployee.UseVisualStyleBackColor = false;
+            this.BtnEditEmployee.Click += new System.EventHandler(this.BtnEditEmployee_Click);
+            // 
+            // BtnAddEmployee
+            // 
+            this.BtnAddEmployee.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnAddEmployee.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnAddEmployee.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnAddEmployee.BorderRadius = 32;
+            this.BtnAddEmployee.BorderSize = 0;
+            this.BtnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.BtnAddEmployee.ForeColor = System.Drawing.Color.White;
+            this.BtnAddEmployee.Location = new System.Drawing.Point(7, 18);
+            this.BtnAddEmployee.Name = "BtnAddEmployee";
+            this.BtnAddEmployee.Size = new System.Drawing.Size(111, 32);
+            this.BtnAddEmployee.TabIndex = 24;
+            this.BtnAddEmployee.Text = "Add New";
+            this.BtnAddEmployee.TextColor = System.Drawing.Color.White;
+            this.BtnAddEmployee.UseVisualStyleBackColor = false;
+            this.BtnAddEmployee.Click += new System.EventHandler(this.BtnAddEmployee_Click);
+            // 
+            // BtnSearchEmployee
+            // 
+            this.BtnSearchEmployee.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSearchEmployee.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSearchEmployee.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnSearchEmployee.BorderRadius = 15;
+            this.BtnSearchEmployee.BorderSize = 0;
+            this.BtnSearchEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSearchEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.BtnSearchEmployee.ForeColor = System.Drawing.Color.White;
+            this.BtnSearchEmployee.Location = new System.Drawing.Point(186, 13);
+            this.BtnSearchEmployee.Name = "BtnSearchEmployee";
+            this.BtnSearchEmployee.Size = new System.Drawing.Size(71, 23);
+            this.BtnSearchEmployee.TabIndex = 1;
+            this.BtnSearchEmployee.Text = "Search";
+            this.BtnSearchEmployee.TextColor = System.Drawing.Color.White;
+            this.BtnSearchEmployee.UseVisualStyleBackColor = false;
+            this.BtnSearchEmployee.Click += new System.EventHandler(this.BtnSearchEmployee_Click);
+            // 
             // EmployeeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 688);
+            this.ClientSize = new System.Drawing.Size(1171, 596);
             this.Controls.Add(this.BtnDeleteImage);
             this.Controls.Add(this.BtnAddImage);
             this.Controls.Add(this.DataGridEmployeeList);

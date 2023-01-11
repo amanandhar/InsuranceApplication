@@ -1,4 +1,4 @@
-using InsuranceApplication.Forms;
+﻿using InsuranceApplication.Forms;
 using InsuranceApplication.Repositories;
 using InsuranceApplication.Repositories.Interfaces;
 using InsuranceApplication.Services;
@@ -17,7 +17,7 @@ namespace InsuranceApplication
         private static readonly log4net.ILog logger = LogHelper.GetLogger();
 
         /// <summary>
-        ///  The main entry point for the application.
+        /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
@@ -25,7 +25,6 @@ namespace InsuranceApplication
             try
             {
                 var container = BuildUnityContainer();
-                Application.SetHighDpiMode(HighDpiMode.SystemAware);
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 using (var loginForm = new LoginForm(container.Resolve<IUserService>(), container.Resolve<IDatabaseService>()))
@@ -47,13 +46,12 @@ namespace InsuranceApplication
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 logger.Error(ex);
                 UtilityService.ShowExceptionMessageBox();
             }
         }
-
 
         private static IUnityContainer BuildUnityContainer()
         {

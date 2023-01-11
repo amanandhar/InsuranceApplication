@@ -29,6 +29,7 @@ namespace InsuranceApplication.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnUser = new System.Windows.Forms.Button();
             this.BtnExit = new System.Windows.Forms.Button();
@@ -50,9 +51,9 @@ namespace InsuranceApplication.Forms
             this.groupBox2.Controls.Add(this.BtnExit);
             this.groupBox2.Controls.Add(this.BtnInsurance);
             this.groupBox2.Controls.Add(this.BtnEmployee);
-            this.groupBox2.Location = new System.Drawing.Point(15, 52);
+            this.groupBox2.Location = new System.Drawing.Point(13, 59);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(180, 500);
+            this.groupBox2.Size = new System.Drawing.Size(180, 486);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             // 
@@ -63,11 +64,11 @@ namespace InsuranceApplication.Forms
             this.BtnUser.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnUser.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnUser.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnUser.Font = new System.Drawing.Font("Segoe UI", 12.75F);
             this.BtnUser.ForeColor = System.Drawing.Color.Cyan;
-            this.BtnUser.Location = new System.Drawing.Point(12, 117);
+            this.BtnUser.Location = new System.Drawing.Point(10, 101);
             this.BtnUser.Name = "BtnUser";
-            this.BtnUser.Size = new System.Drawing.Size(155, 41);
+            this.BtnUser.Size = new System.Drawing.Size(133, 36);
             this.BtnUser.TabIndex = 6;
             this.BtnUser.Text = "User";
             this.BtnUser.UseVisualStyleBackColor = false;
@@ -80,11 +81,11 @@ namespace InsuranceApplication.Forms
             this.BtnExit.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnExit.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnExit.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnExit.Font = new System.Drawing.Font("Segoe UI", 12.75F);
             this.BtnExit.ForeColor = System.Drawing.Color.Cyan;
-            this.BtnExit.Location = new System.Drawing.Point(12, 161);
+            this.BtnExit.Location = new System.Drawing.Point(10, 140);
             this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(155, 41);
+            this.BtnExit.Size = new System.Drawing.Size(133, 36);
             this.BtnExit.TabIndex = 5;
             this.BtnExit.Text = "Exit";
             this.BtnExit.UseVisualStyleBackColor = false;
@@ -97,11 +98,11 @@ namespace InsuranceApplication.Forms
             this.BtnInsurance.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnInsurance.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnInsurance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnInsurance.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnInsurance.Font = new System.Drawing.Font("Segoe UI", 12.75F);
             this.BtnInsurance.ForeColor = System.Drawing.Color.Cyan;
-            this.BtnInsurance.Location = new System.Drawing.Point(12, 73);
+            this.BtnInsurance.Location = new System.Drawing.Point(10, 63);
             this.BtnInsurance.Name = "BtnInsurance";
-            this.BtnInsurance.Size = new System.Drawing.Size(155, 41);
+            this.BtnInsurance.Size = new System.Drawing.Size(133, 36);
             this.BtnInsurance.TabIndex = 2;
             this.BtnInsurance.Text = "Insurance";
             this.BtnInsurance.UseVisualStyleBackColor = false;
@@ -113,11 +114,11 @@ namespace InsuranceApplication.Forms
             this.BtnEmployee.FlatAppearance.BorderSize = 0;
             this.BtnEmployee.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEmployee.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnEmployee.Font = new System.Drawing.Font("Segoe UI", 12.75F);
             this.BtnEmployee.ForeColor = System.Drawing.Color.Cyan;
-            this.BtnEmployee.Location = new System.Drawing.Point(12, 29);
+            this.BtnEmployee.Location = new System.Drawing.Point(10, 25);
             this.BtnEmployee.Name = "BtnEmployee";
-            this.BtnEmployee.Size = new System.Drawing.Size(155, 41);
+            this.BtnEmployee.Size = new System.Drawing.Size(133, 36);
             this.BtnEmployee.TabIndex = 1;
             this.BtnEmployee.Text = "Employee";
             this.BtnEmployee.UseVisualStyleBackColor = false;
@@ -127,7 +128,7 @@ namespace InsuranceApplication.Forms
             // 
             this.groupBox3.BackColor = System.Drawing.Color.DodgerBlue;
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(15, 3);
+            this.groupBox3.Location = new System.Drawing.Point(13, 3);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(857, 50);
             this.groupBox3.TabIndex = 35;
@@ -136,9 +137,9 @@ namespace InsuranceApplication.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Cyan;
-            this.label1.Location = new System.Drawing.Point(84, 10);
+            this.label1.Location = new System.Drawing.Point(72, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(688, 37);
             this.label1.TabIndex = 0;
@@ -149,25 +150,25 @@ namespace InsuranceApplication.Forms
             this.groupBox1.BackColor = System.Drawing.Color.DodgerBlue;
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(206, 51);
+            this.groupBox1.Location = new System.Drawing.Point(199, 59);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(666, 500);
+            this.groupBox1.Size = new System.Drawing.Size(671, 485);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::InsuranceApplication.Properties.Resources.viber_image_2021_01_20_16_36_38;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 9);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(6, 10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(665, 492);
+            this.pictureBox1.Size = new System.Drawing.Size(659, 469);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // DashboardForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(884, 561);
