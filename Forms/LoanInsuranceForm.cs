@@ -415,11 +415,11 @@ namespace InsuranceApplication.Forms
             DataGridLoanDetailList.Columns["MembershipNo"].DisplayIndex = 0;
 
             DataGridLoanDetailList.Columns["MemberName"].HeaderText = "Name";
-            DataGridLoanDetailList.Columns["MemberName"].Width = 175;
+            DataGridLoanDetailList.Columns["MemberName"].Width = 120;
             DataGridLoanDetailList.Columns["MemberName"].DisplayIndex = 1;
 
             DataGridLoanDetailList.Columns["MemberAddress"].HeaderText = "Address";
-            DataGridLoanDetailList.Columns["MemberAddress"].Width = 195;
+            DataGridLoanDetailList.Columns["MemberAddress"].Width = 120;
             DataGridLoanDetailList.Columns["MemberAddress"].DisplayIndex = 2;
 
             DataGridLoanDetailList.Columns["StartingDate"].HeaderText = "Starting Date";
@@ -428,7 +428,7 @@ namespace InsuranceApplication.Forms
             DataGridLoanDetailList.Columns["StartingDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
 
             DataGridLoanDetailList.Columns["RenewDate"].HeaderText = "Renew Date";
-            DataGridLoanDetailList.Columns["RenewDate"].Width = 95;
+            DataGridLoanDetailList.Columns["RenewDate"].Width = 90;
             DataGridLoanDetailList.Columns["RenewDate"].DisplayIndex = 4;
             DataGridLoanDetailList.Columns["RenewDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
 
@@ -437,7 +437,7 @@ namespace InsuranceApplication.Forms
             DataGridLoanDetailList.Columns["PeriodInMonth"].DisplayIndex = 5;
 
             DataGridLoanDetailList.Columns["MaturedDate"].HeaderText = "Matured Date";
-            DataGridLoanDetailList.Columns["MaturedDate"].Width = 95;
+            DataGridLoanDetailList.Columns["MaturedDate"].Width = 90;
             DataGridLoanDetailList.Columns["MaturedDate"].DisplayIndex = 6;
             DataGridLoanDetailList.Columns["MaturedDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
 
