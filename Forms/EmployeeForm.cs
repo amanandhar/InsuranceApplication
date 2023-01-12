@@ -408,19 +408,19 @@ namespace InsuranceApplication.Forms
             DataGridEmployeeList.Columns["EmployeeId"].DisplayIndex = 0;
 
             DataGridEmployeeList.Columns["EmployeeName"].HeaderText = "Name";
-            DataGridEmployeeList.Columns["EmployeeName"].Width = 150;
+            DataGridEmployeeList.Columns["EmployeeName"].Width = 160;
             DataGridEmployeeList.Columns["EmployeeName"].DisplayIndex = 1;
 
             DataGridEmployeeList.Columns["TempAddress"].HeaderText = "Temporary Address";
-            DataGridEmployeeList.Columns["TempAddress"].Width = 150;
+            DataGridEmployeeList.Columns["TempAddress"].Width = 160;
             DataGridEmployeeList.Columns["TempAddress"].DisplayIndex = 2;
 
             DataGridEmployeeList.Columns["PermAddress"].HeaderText = "Permanent Address";
-            DataGridEmployeeList.Columns["PermAddress"].Width = 150;
+            DataGridEmployeeList.Columns["PermAddress"].Width = 160;
             DataGridEmployeeList.Columns["PermAddress"].DisplayIndex = 3;
 
-            DataGridEmployeeList.Columns["ContactNumber"].HeaderText = "Contact Number";
-            DataGridEmployeeList.Columns["ContactNumber"].Width = 125;
+            DataGridEmployeeList.Columns["ContactNumber"].HeaderText = "ContactNumber";
+            DataGridEmployeeList.Columns["ContactNumber"].Width = 100;
             DataGridEmployeeList.Columns["ContactNumber"].DisplayIndex = 4;
 
             DataGridEmployeeList.Columns["CitizenshipNumber"].HeaderText = "Citizenship No.";
@@ -435,8 +435,8 @@ namespace InsuranceApplication.Forms
             DataGridEmployeeList.Columns["PostStatus"].Width = 90;
             DataGridEmployeeList.Columns["PostStatus"].DisplayIndex = 7;
 
-            DataGridEmployeeList.Columns["AppointmentDate"].HeaderText = "Appointed Date";
-            DataGridEmployeeList.Columns["AppointmentDate"].Width = 115;
+            DataGridEmployeeList.Columns["AppointmentDate"].HeaderText = "AppointedDate";
+            DataGridEmployeeList.Columns["AppointmentDate"].Width = 105;
             DataGridEmployeeList.Columns["AppointmentDate"].DisplayIndex = 8;
             DataGridEmployeeList.Columns["AppointmentDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
 

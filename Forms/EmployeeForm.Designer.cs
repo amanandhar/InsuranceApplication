@@ -33,6 +33,7 @@ namespace InsuranceApplication.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ComboGender = new System.Windows.Forms.ComboBox();
+            this.BtnSearchEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.label15 = new System.Windows.Forms.Label();
             this.TxtBoxCitizenshipNo = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -47,6 +48,12 @@ namespace InsuranceApplication.Forms
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.PicBoxPhoto = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BtnClearAll = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnSaveEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnDeleteEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnUpdateEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnEditEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
+            this.BtnAddEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,6 +72,7 @@ namespace InsuranceApplication.Forms
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.ComboFilter = new System.Windows.Forms.ComboBox();
+            this.BtnShowDetails = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -85,6 +93,7 @@ namespace InsuranceApplication.Forms
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.MaskResignationDate = new System.Windows.Forms.MaskedTextBox();
             this.MaskAppointedDate = new System.Windows.Forms.MaskedTextBox();
+            this.BtnSalaryDetails = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.ComboPostStatus = new System.Windows.Forms.ComboBox();
             this.TxtBoxPost = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -94,15 +103,6 @@ namespace InsuranceApplication.Forms
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.BtnDeleteImage = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.BtnAddImage = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnSalaryDetails = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnShowDetails = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnClearAll = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnSaveEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnDeleteEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnUpdateEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnEditEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnAddEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
-            this.BtnSearchEmployee = new InsuranceApplication.CustomControls.Button.CustomButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxPhoto)).BeginInit();
@@ -129,9 +129,9 @@ namespace InsuranceApplication.Forms
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
-            this.groupBox1.Location = new System.Drawing.Point(9, 40);
+            this.groupBox1.Location = new System.Drawing.Point(11, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(274, 146);
+            this.groupBox1.Size = new System.Drawing.Size(330, 165);
             this.groupBox1.TabIndex = 1000;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Details";
@@ -143,18 +143,37 @@ namespace InsuranceApplication.Forms
             this.ComboGender.Items.AddRange(new object[] {
             "Male ",
             "Female"});
-            this.ComboGender.Location = new System.Drawing.Point(96, 117);
+            this.ComboGender.Location = new System.Drawing.Point(106, 129);
             this.ComboGender.Name = "ComboGender";
-            this.ComboGender.Size = new System.Drawing.Size(162, 26);
+            this.ComboGender.Size = new System.Drawing.Size(210, 26);
             this.ComboGender.TabIndex = 5;
             this.ComboGender.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboGender_KeyPress);
+            // 
+            // BtnSearchEmployee
+            // 
+            this.BtnSearchEmployee.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSearchEmployee.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSearchEmployee.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnSearchEmployee.BorderRadius = 15;
+            this.BtnSearchEmployee.BorderSize = 0;
+            this.BtnSearchEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSearchEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.BtnSearchEmployee.ForeColor = System.Drawing.Color.White;
+            this.BtnSearchEmployee.Location = new System.Drawing.Point(231, 12);
+            this.BtnSearchEmployee.Name = "BtnSearchEmployee";
+            this.BtnSearchEmployee.Size = new System.Drawing.Size(71, 28);
+            this.BtnSearchEmployee.TabIndex = 1;
+            this.BtnSearchEmployee.Text = "Search";
+            this.BtnSearchEmployee.TextColor = System.Drawing.Color.White;
+            this.BtnSearchEmployee.UseVisualStyleBackColor = false;
+            this.BtnSearchEmployee.Click += new System.EventHandler(this.BtnSearchEmployee_Click);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label15.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label15.Location = new System.Drawing.Point(3, 94);
+            this.label15.Location = new System.Drawing.Point(9, 104);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(80, 18);
             this.label15.TabIndex = 1000;
@@ -163,9 +182,9 @@ namespace InsuranceApplication.Forms
             // TxtBoxCitizenshipNo
             // 
             this.TxtBoxCitizenshipNo.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.TxtBoxCitizenshipNo.Location = new System.Drawing.Point(96, 91);
+            this.TxtBoxCitizenshipNo.Location = new System.Drawing.Point(106, 100);
             this.TxtBoxCitizenshipNo.Name = "TxtBoxCitizenshipNo";
-            this.TxtBoxCitizenshipNo.Size = new System.Drawing.Size(162, 27);
+            this.TxtBoxCitizenshipNo.Size = new System.Drawing.Size(210, 27);
             this.TxtBoxCitizenshipNo.TabIndex = 4;
             // 
             // label17
@@ -173,7 +192,7 @@ namespace InsuranceApplication.Forms
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label17.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label17.Location = new System.Drawing.Point(5, 120);
+            this.label17.Location = new System.Drawing.Point(10, 134);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(57, 18);
             this.label17.TabIndex = 1000;
@@ -182,18 +201,18 @@ namespace InsuranceApplication.Forms
             // TxtBoxContactNo
             // 
             this.TxtBoxContactNo.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.TxtBoxContactNo.Location = new System.Drawing.Point(96, 65);
+            this.TxtBoxContactNo.Location = new System.Drawing.Point(106, 71);
             this.TxtBoxContactNo.Name = "TxtBoxContactNo";
-            this.TxtBoxContactNo.Size = new System.Drawing.Size(162, 27);
+            this.TxtBoxContactNo.Size = new System.Drawing.Size(210, 27);
             this.TxtBoxContactNo.TabIndex = 3;
             this.TxtBoxContactNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxContactNo_KeyPress);
             // 
             // TxtBoxEmployeeName
             // 
             this.TxtBoxEmployeeName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.TxtBoxEmployeeName.Location = new System.Drawing.Point(96, 39);
+            this.TxtBoxEmployeeName.Location = new System.Drawing.Point(106, 42);
             this.TxtBoxEmployeeName.Name = "TxtBoxEmployeeName";
-            this.TxtBoxEmployeeName.Size = new System.Drawing.Size(162, 27);
+            this.TxtBoxEmployeeName.Size = new System.Drawing.Size(210, 27);
             this.TxtBoxEmployeeName.TabIndex = 2;
             // 
             // label1
@@ -201,7 +220,7 @@ namespace InsuranceApplication.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(3, 17);
+            this.label1.Location = new System.Drawing.Point(10, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 18);
             this.label1.TabIndex = 1000;
@@ -210,9 +229,9 @@ namespace InsuranceApplication.Forms
             // TxtBoxEmployeeId
             // 
             this.TxtBoxEmployeeId.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.TxtBoxEmployeeId.Location = new System.Drawing.Point(96, 13);
+            this.TxtBoxEmployeeId.Location = new System.Drawing.Point(106, 13);
             this.TxtBoxEmployeeId.Name = "TxtBoxEmployeeId";
-            this.TxtBoxEmployeeId.Size = new System.Drawing.Size(84, 27);
+            this.TxtBoxEmployeeId.Size = new System.Drawing.Size(122, 27);
             this.TxtBoxEmployeeId.TabIndex = 0;
             // 
             // label3
@@ -220,7 +239,7 @@ namespace InsuranceApplication.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(3, 43);
+            this.label3.Location = new System.Drawing.Point(10, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 18);
             this.label3.TabIndex = 1000;
@@ -231,7 +250,7 @@ namespace InsuranceApplication.Forms
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(3, 68);
+            this.label6.Location = new System.Drawing.Point(9, 75);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 18);
             this.label6.TabIndex = 1000;
@@ -243,7 +262,7 @@ namespace InsuranceApplication.Forms
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBox2.Location = new System.Drawing.Point(0, 0);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(1172, 35);
+            this.textBox2.Size = new System.Drawing.Size(1363, 35);
             this.textBox2.TabIndex = 1000;
             // 
             // label2
@@ -262,7 +281,7 @@ namespace InsuranceApplication.Forms
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.PicBoxPhoto);
-            this.groupBox2.Location = new System.Drawing.Point(1034, 184);
+            this.groupBox2.Location = new System.Drawing.Point(1214, 208);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(124, 136);
             this.groupBox2.TabIndex = 1000;
@@ -287,573 +306,11 @@ namespace InsuranceApplication.Forms
             this.groupBox3.Controls.Add(this.BtnUpdateEmployee);
             this.groupBox3.Controls.Add(this.BtnEditEmployee);
             this.groupBox3.Controls.Add(this.BtnAddEmployee);
-            this.groupBox3.Location = new System.Drawing.Point(1032, 345);
+            this.groupBox3.Location = new System.Drawing.Point(1213, 378);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(124, 243);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(4, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 18);
-            this.label4.TabIndex = 1000;
-            this.label4.Text = "Perm Address";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(3, 120);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 18);
-            this.label5.TabIndex = 1000;
-            this.label5.Text = "Temp Address";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(3, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 18);
-            this.label7.TabIndex = 1000;
-            this.label7.Text = "Education";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label8.Location = new System.Drawing.Point(3, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 18);
-            this.label8.TabIndex = 1000;
-            this.label8.Text = "Mother Name";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label9.Location = new System.Drawing.Point(3, 17);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 18);
-            this.label9.TabIndex = 1000;
-            this.label9.Text = "Father Name";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label10.Location = new System.Drawing.Point(3, 94);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 18);
-            this.label10.TabIndex = 1000;
-            this.label10.Text = "Spouse Name";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label11.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label11.Location = new System.Drawing.Point(4, 68);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 18);
-            this.label11.TabIndex = 1000;
-            this.label11.Text = "Email ID";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label12.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label12.Location = new System.Drawing.Point(3, 120);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 18);
-            this.label12.TabIndex = 1000;
-            this.label12.Text = "Blood Group";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label13.Location = new System.Drawing.Point(241, 42);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(33, 18);
-            this.label13.TabIndex = 1000;
-            this.label13.Text = "Age";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label14.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label14.Location = new System.Drawing.Point(3, 41);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(90, 18);
-            this.label14.TabIndex = 1000;
-            this.label14.Text = "Date of Birth";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label16.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label16.Location = new System.Drawing.Point(3, 68);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(98, 18);
-            this.label16.TabIndex = 1000;
-            this.label16.Text = "Marital Status";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label19.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label19.Location = new System.Drawing.Point(4, 16);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(39, 18);
-            this.label19.TabIndex = 1000;
-            this.label19.Text = "Post";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.LblCurrentTime);
-            this.groupBox4.Controls.Add(this.LblCurrentNepaliDate);
-            this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Controls.Add(this.label23);
-            this.groupBox4.Controls.Add(this.ComboFilter);
-            this.groupBox4.Controls.Add(this.BtnShowDetails);
-            this.groupBox4.Location = new System.Drawing.Point(10, 546);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1006, 43);
-            this.groupBox4.TabIndex = 1000;
-            this.groupBox4.TabStop = false;
-            // 
-            // LblCurrentTime
-            // 
-            this.LblCurrentTime.AutoSize = true;
-            this.LblCurrentTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.LblCurrentTime.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.LblCurrentTime.Location = new System.Drawing.Point(837, 17);
-            this.LblCurrentTime.Name = "LblCurrentTime";
-            this.LblCurrentTime.Size = new System.Drawing.Size(109, 18);
-            this.LblCurrentTime.TabIndex = 1000;
-            this.LblCurrentTime.Text = "LblCurrentTime";
-            // 
-            // LblCurrentNepaliDate
-            // 
-            this.LblCurrentNepaliDate.AutoSize = true;
-            this.LblCurrentNepaliDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.LblCurrentNepaliDate.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.LblCurrentNepaliDate.Location = new System.Drawing.Point(114, 17);
-            this.LblCurrentNepaliDate.Name = "LblCurrentNepaliDate";
-            this.LblCurrentNepaliDate.Size = new System.Drawing.Size(148, 18);
-            this.LblCurrentNepaliDate.TabIndex = 1000;
-            this.LblCurrentNepaliDate.Text = "LblCurrentNepaliDate";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label24.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label24.Location = new System.Drawing.Point(789, 17);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(49, 18);
-            this.label24.TabIndex = 1000;
-            this.label24.Text = "Time :";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label23.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label23.Location = new System.Drawing.Point(67, 17);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(47, 18);
-            this.label23.TabIndex = 1000;
-            this.label23.Text = "Date :";
-            // 
-            // ComboFilter
-            // 
-            this.ComboFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.ComboFilter.FormattingEnabled = true;
-            this.ComboFilter.Items.AddRange(new object[] {
-            "All Employees",
-            "Present Employees",
-            "Resigned Employees"});
-            this.ComboFilter.Location = new System.Drawing.Point(400, 15);
-            this.ComboFilter.Name = "ComboFilter";
-            this.ComboFilter.Size = new System.Drawing.Size(160, 26);
-            this.ComboFilter.TabIndex = 30;
-            this.ComboFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboFilter_KeyPress);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label18.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label18.Location = new System.Drawing.Point(4, 94);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(108, 18);
-            this.label18.TabIndex = 1000;
-            this.label18.Text = "Appointed Date";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label20.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label20.Location = new System.Drawing.Point(4, 120);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(121, 18);
-            this.label20.TabIndex = 1000;
-            this.label20.Text = "Resignation Date";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label21.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label21.Location = new System.Drawing.Point(4, 42);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(85, 18);
-            this.label21.TabIndex = 1000;
-            this.label21.Text = "Post Status";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.MaskDOB);
-            this.groupBox6.Controls.Add(this.maskedTextBox2);
-            this.groupBox6.Controls.Add(this.TxtBoxEmail);
-            this.groupBox6.Controls.Add(this.TxtBoxPermAddress);
-            this.groupBox6.Controls.Add(this.TxtBoxAge);
-            this.groupBox6.Controls.Add(this.TxtBoxTempAddress);
-            this.groupBox6.Controls.Add(this.label7);
-            this.groupBox6.Controls.Add(this.TxtBoxEducation);
-            this.groupBox6.Controls.Add(this.label14);
-            this.groupBox6.Controls.Add(this.label4);
-            this.groupBox6.Controls.Add(this.label13);
-            this.groupBox6.Controls.Add(this.label5);
-            this.groupBox6.Controls.Add(this.label11);
-            this.groupBox6.ForeColor = System.Drawing.Color.Red;
-            this.groupBox6.Location = new System.Drawing.Point(288, 41);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(333, 145);
-            this.groupBox6.TabIndex = 6;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Other Details";
-            // 
-            // MaskDOB
-            // 
-            this.MaskDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.MaskDOB.Location = new System.Drawing.Point(127, 39);
-            this.MaskDOB.Mask = "0000-00-00";
-            this.MaskDOB.Name = "MaskDOB";
-            this.MaskDOB.Size = new System.Drawing.Size(103, 24);
-            this.MaskDOB.TabIndex = 7;
-            this.MaskDOB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.maskedTextBox2.Location = new System.Drawing.Point(254, 218);
-            this.maskedTextBox2.Mask = "   0000-00-00";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(95, 24);
-            this.maskedTextBox2.TabIndex = 55;
-            // 
-            // TxtBoxEmail
-            // 
-            this.TxtBoxEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.TxtBoxEmail.Location = new System.Drawing.Point(63, 64);
-            this.TxtBoxEmail.Name = "TxtBoxEmail";
-            this.TxtBoxEmail.Size = new System.Drawing.Size(253, 27);
-            this.TxtBoxEmail.TabIndex = 9;
-            // 
-            // TxtBoxPermAddress
-            // 
-            this.TxtBoxPermAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.TxtBoxPermAddress.Location = new System.Drawing.Point(127, 90);
-            this.TxtBoxPermAddress.Name = "TxtBoxPermAddress";
-            this.TxtBoxPermAddress.Size = new System.Drawing.Size(190, 27);
-            this.TxtBoxPermAddress.TabIndex = 10;
-            // 
-            // TxtBoxAge
-            // 
-            this.TxtBoxAge.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.TxtBoxAge.Location = new System.Drawing.Point(273, 38);
-            this.TxtBoxAge.Name = "TxtBoxAge";
-            this.TxtBoxAge.Size = new System.Drawing.Size(43, 27);
-            this.TxtBoxAge.TabIndex = 8;
-            this.TxtBoxAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TxtBoxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxAge_KeyPress);
-            // 
-            // TxtBoxTempAddress
-            // 
-            this.TxtBoxTempAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.TxtBoxTempAddress.Location = new System.Drawing.Point(127, 116);
-            this.TxtBoxTempAddress.Name = "TxtBoxTempAddress";
-            this.TxtBoxTempAddress.Size = new System.Drawing.Size(190, 27);
-            this.TxtBoxTempAddress.TabIndex = 11;
-            // 
-            // TxtBoxEducation
-            // 
-            this.TxtBoxEducation.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.TxtBoxEducation.Location = new System.Drawing.Point(127, 12);
-            this.TxtBoxEducation.Name = "TxtBoxEducation";
-            this.TxtBoxEducation.Size = new System.Drawing.Size(190, 27);
-            this.TxtBoxEducation.TabIndex = 6;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.TxtBoxFatherName);
-            this.groupBox7.Controls.Add(this.ComboMaritalStatus);
-            this.groupBox7.Controls.Add(this.TxtBoxMotherName);
-            this.groupBox7.Controls.Add(this.TxtBoxSpouseName);
-            this.groupBox7.Controls.Add(this.TxtBoxBloodGroup);
-            this.groupBox7.Controls.Add(this.label9);
-            this.groupBox7.Controls.Add(this.label8);
-            this.groupBox7.Controls.Add(this.label16);
-            this.groupBox7.Controls.Add(this.label10);
-            this.groupBox7.Controls.Add(this.label12);
-            this.groupBox7.ForeColor = System.Drawing.Color.Red;
-            this.groupBox7.Location = new System.Drawing.Point(627, 41);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(276, 145);
-            this.groupBox7.TabIndex = 12;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Family Details";
-            // 
-            // TxtBoxFatherName
-            // 
-            this.TxtBoxFatherName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.TxtBoxFatherName.Location = new System.Drawing.Point(103, 12);
-            this.TxtBoxFatherName.Name = "TxtBoxFatherName";
-            this.TxtBoxFatherName.Size = new System.Drawing.Size(159, 27);
-            this.TxtBoxFatherName.TabIndex = 1001;
-            // 
-            // ComboMaritalStatus
-            // 
-            this.ComboMaritalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.ComboMaritalStatus.FormattingEnabled = true;
-            this.ComboMaritalStatus.Items.AddRange(new object[] {
-            "Single",
-            "Married"});
-            this.ComboMaritalStatus.Location = new System.Drawing.Point(103, 65);
-            this.ComboMaritalStatus.Name = "ComboMaritalStatus";
-            this.ComboMaritalStatus.Size = new System.Drawing.Size(159, 26);
-            this.ComboMaritalStatus.TabIndex = 14;
-            this.ComboMaritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboMaritalStatus_KeyPress);
-            // 
-            // TxtBoxMotherName
-            // 
-            this.TxtBoxMotherName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.TxtBoxMotherName.Location = new System.Drawing.Point(103, 39);
-            this.TxtBoxMotherName.Name = "TxtBoxMotherName";
-            this.TxtBoxMotherName.Size = new System.Drawing.Size(159, 27);
-            this.TxtBoxMotherName.TabIndex = 13;
-            // 
-            // TxtBoxSpouseName
-            // 
-            this.TxtBoxSpouseName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.TxtBoxSpouseName.Location = new System.Drawing.Point(103, 90);
-            this.TxtBoxSpouseName.Name = "TxtBoxSpouseName";
-            this.TxtBoxSpouseName.Size = new System.Drawing.Size(159, 27);
-            this.TxtBoxSpouseName.TabIndex = 15;
-            // 
-            // TxtBoxBloodGroup
-            // 
-            this.TxtBoxBloodGroup.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.TxtBoxBloodGroup.Location = new System.Drawing.Point(103, 116);
-            this.TxtBoxBloodGroup.Name = "TxtBoxBloodGroup";
-            this.TxtBoxBloodGroup.Size = new System.Drawing.Size(159, 27);
-            this.TxtBoxBloodGroup.TabIndex = 16;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.MaskResignationDate);
-            this.groupBox8.Controls.Add(this.MaskAppointedDate);
-            this.groupBox8.Controls.Add(this.BtnSalaryDetails);
-            this.groupBox8.Controls.Add(this.ComboPostStatus);
-            this.groupBox8.Controls.Add(this.TxtBoxPost);
-            this.groupBox8.Controls.Add(this.label22);
-            this.groupBox8.Controls.Add(this.label19);
-            this.groupBox8.Controls.Add(this.label21);
-            this.groupBox8.Controls.Add(this.label18);
-            this.groupBox8.Controls.Add(this.label20);
-            this.groupBox8.ForeColor = System.Drawing.Color.Red;
-            this.groupBox8.Location = new System.Drawing.Point(909, 40);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(250, 145);
-            this.groupBox8.TabIndex = 17;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Job Details";
-            // 
-            // MaskResignationDate
-            // 
-            this.MaskResignationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.MaskResignationDate.Location = new System.Drawing.Point(124, 116);
-            this.MaskResignationDate.Mask = "0000-00-00";
-            this.MaskResignationDate.Name = "MaskResignationDate";
-            this.MaskResignationDate.Size = new System.Drawing.Size(116, 24);
-            this.MaskResignationDate.TabIndex = 21;
-            this.MaskResignationDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // MaskAppointedDate
-            // 
-            this.MaskAppointedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.MaskAppointedDate.Location = new System.Drawing.Point(124, 92);
-            this.MaskAppointedDate.Mask = "0000-00-00";
-            this.MaskAppointedDate.Name = "MaskAppointedDate";
-            this.MaskAppointedDate.Size = new System.Drawing.Size(116, 24);
-            this.MaskAppointedDate.TabIndex = 20;
-            this.MaskAppointedDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ComboPostStatus
-            // 
-            this.ComboPostStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.ComboPostStatus.FormattingEnabled = true;
-            this.ComboPostStatus.Items.AddRange(new object[] {
-            "Daily Basis",
-            "Temporary",
-            "Parmanent"});
-            this.ComboPostStatus.Location = new System.Drawing.Point(123, 39);
-            this.ComboPostStatus.Name = "ComboPostStatus";
-            this.ComboPostStatus.Size = new System.Drawing.Size(116, 26);
-            this.ComboPostStatus.TabIndex = 18;
-            this.ComboPostStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboPostStatus_KeyPress);
-            // 
-            // TxtBoxPost
-            // 
-            this.TxtBoxPost.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.TxtBoxPost.Location = new System.Drawing.Point(123, 13);
-            this.TxtBoxPost.Name = "TxtBoxPost";
-            this.TxtBoxPost.Size = new System.Drawing.Size(116, 27);
-            this.TxtBoxPost.TabIndex = 17;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label22.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label22.Location = new System.Drawing.Point(4, 69);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(98, 18);
-            this.label22.TabIndex = 1000;
-            this.label22.Text = "Salary Details";
-            // 
-            // DataGridEmployeeList
-            // 
-            this.DataGridEmployeeList.AllowUserToAddRows = false;
-            this.DataGridEmployeeList.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.DataGridEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridEmployeeList.Location = new System.Drawing.Point(9, 200);
-            this.DataGridEmployeeList.Name = "DataGridEmployeeList";
-            this.DataGridEmployeeList.ReadOnly = true;
-            this.DataGridEmployeeList.Size = new System.Drawing.Size(1014, 344);
-            this.DataGridEmployeeList.TabIndex = 1000;
-            this.DataGridEmployeeList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridEmployeeList_DataBindingComplete);
-            // 
-            // OpenFileDialog
-            // 
-            this.OpenFileDialog.Title = "Browse photos";
-            this.OpenFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialog_FileOk);
-            // 
-            // Timer
-            // 
-            this.Timer.Enabled = true;
-            this.Timer.Interval = 1000;
-            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
-            // 
-            // ErrorProvider
-            // 
-            this.ErrorProvider.ContainerControl = this;
-            // 
-            // BtnDeleteImage
-            // 
-            this.BtnDeleteImage.BackColor = System.Drawing.Color.Red;
-            this.BtnDeleteImage.BackgroundColor = System.Drawing.Color.Red;
-            this.BtnDeleteImage.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnDeleteImage.BorderRadius = 20;
-            this.BtnDeleteImage.BorderSize = 0;
-            this.BtnDeleteImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDeleteImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.BtnDeleteImage.ForeColor = System.Drawing.Color.White;
-            this.BtnDeleteImage.Location = new System.Drawing.Point(1091, 323);
-            this.BtnDeleteImage.Name = "BtnDeleteImage";
-            this.BtnDeleteImage.Size = new System.Drawing.Size(66, 23);
-            this.BtnDeleteImage.TabIndex = 23;
-            this.BtnDeleteImage.Text = "Delete";
-            this.BtnDeleteImage.TextColor = System.Drawing.Color.White;
-            this.BtnDeleteImage.UseVisualStyleBackColor = false;
-            this.BtnDeleteImage.Click += new System.EventHandler(this.BtnDeleteImage_Click);
-            // 
-            // BtnAddImage
-            // 
-            this.BtnAddImage.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnAddImage.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.BtnAddImage.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnAddImage.BorderRadius = 20;
-            this.BtnAddImage.BorderSize = 0;
-            this.BtnAddImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAddImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.BtnAddImage.ForeColor = System.Drawing.Color.White;
-            this.BtnAddImage.Location = new System.Drawing.Point(1032, 323);
-            this.BtnAddImage.Name = "BtnAddImage";
-            this.BtnAddImage.Size = new System.Drawing.Size(58, 23);
-            this.BtnAddImage.TabIndex = 22;
-            this.BtnAddImage.Text = "Add";
-            this.BtnAddImage.TextColor = System.Drawing.Color.White;
-            this.BtnAddImage.UseVisualStyleBackColor = false;
-            this.BtnAddImage.Click += new System.EventHandler(this.BtnAddImage_Click);
-            // 
-            // BtnSalaryDetails
-            // 
-            this.BtnSalaryDetails.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnSalaryDetails.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.BtnSalaryDetails.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnSalaryDetails.BorderRadius = 6;
-            this.BtnSalaryDetails.BorderSize = 0;
-            this.BtnSalaryDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSalaryDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.BtnSalaryDetails.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.BtnSalaryDetails.Location = new System.Drawing.Point(122, 64);
-            this.BtnSalaryDetails.Name = "BtnSalaryDetails";
-            this.BtnSalaryDetails.Size = new System.Drawing.Size(117, 26);
-            this.BtnSalaryDetails.TabIndex = 19;
-            this.BtnSalaryDetails.Text = "Salary Details";
-            this.BtnSalaryDetails.TextColor = System.Drawing.SystemColors.HighlightText;
-            this.BtnSalaryDetails.UseVisualStyleBackColor = false;
-            this.BtnSalaryDetails.Click += new System.EventHandler(this.BtnSalaryDetails_Click);
-            // 
-            // BtnShowDetails
-            // 
-            this.BtnShowDetails.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnShowDetails.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.BtnShowDetails.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnShowDetails.BorderRadius = 28;
-            this.BtnShowDetails.BorderSize = 0;
-            this.BtnShowDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnShowDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.BtnShowDetails.ForeColor = System.Drawing.Color.White;
-            this.BtnShowDetails.Location = new System.Drawing.Point(567, 11);
-            this.BtnShowDetails.Name = "BtnShowDetails";
-            this.BtnShowDetails.Size = new System.Drawing.Size(133, 28);
-            this.BtnShowDetails.TabIndex = 32;
-            this.BtnShowDetails.Text = "Show Details";
-            this.BtnShowDetails.TextColor = System.Drawing.Color.White;
-            this.BtnShowDetails.UseVisualStyleBackColor = false;
-            this.BtnShowDetails.Click += new System.EventHandler(this.BtnShowDetails_Click);
             // 
             // BtnClearAll
             // 
@@ -969,30 +426,578 @@ namespace InsuranceApplication.Forms
             this.BtnAddEmployee.UseVisualStyleBackColor = false;
             this.BtnAddEmployee.Click += new System.EventHandler(this.BtnAddEmployee_Click);
             // 
-            // BtnSearchEmployee
+            // label4
             // 
-            this.BtnSearchEmployee.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BtnSearchEmployee.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.BtnSearchEmployee.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnSearchEmployee.BorderRadius = 15;
-            this.BtnSearchEmployee.BorderSize = 0;
-            this.BtnSearchEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSearchEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.BtnSearchEmployee.ForeColor = System.Drawing.Color.White;
-            this.BtnSearchEmployee.Location = new System.Drawing.Point(186, 13);
-            this.BtnSearchEmployee.Name = "BtnSearchEmployee";
-            this.BtnSearchEmployee.Size = new System.Drawing.Size(71, 23);
-            this.BtnSearchEmployee.TabIndex = 1;
-            this.BtnSearchEmployee.Text = "Search";
-            this.BtnSearchEmployee.TextColor = System.Drawing.Color.White;
-            this.BtnSearchEmployee.UseVisualStyleBackColor = false;
-            this.BtnSearchEmployee.Click += new System.EventHandler(this.BtnSearchEmployee_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label4.Location = new System.Drawing.Point(19, 104);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 18);
+            this.label4.TabIndex = 1000;
+            this.label4.Text = "Perm Address";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label5.Location = new System.Drawing.Point(18, 132);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 18);
+            this.label5.TabIndex = 1000;
+            this.label5.Text = "Temp Address";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label7.Location = new System.Drawing.Point(19, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 18);
+            this.label7.TabIndex = 1000;
+            this.label7.Text = "Education";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label8.Location = new System.Drawing.Point(13, 47);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 18);
+            this.label8.TabIndex = 1000;
+            this.label8.Text = "Mother Name";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label9.Location = new System.Drawing.Point(14, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(94, 18);
+            this.label9.TabIndex = 1000;
+            this.label9.Text = "Father Name";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label10.Location = new System.Drawing.Point(13, 105);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(103, 18);
+            this.label10.TabIndex = 1000;
+            this.label10.Text = "Spouse Name";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label11.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label11.Location = new System.Drawing.Point(19, 75);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(63, 18);
+            this.label11.TabIndex = 1000;
+            this.label11.Text = "Email ID";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label12.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label12.Location = new System.Drawing.Point(13, 132);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(93, 18);
+            this.label12.TabIndex = 1000;
+            this.label12.Text = "Blood Group";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label13.Location = new System.Drawing.Point(258, 46);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(33, 18);
+            this.label13.TabIndex = 1000;
+            this.label13.Text = "Age";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label14.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label14.Location = new System.Drawing.Point(18, 46);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(90, 18);
+            this.label14.TabIndex = 1000;
+            this.label14.Text = "Date of Birth";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label16.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label16.Location = new System.Drawing.Point(13, 76);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(98, 18);
+            this.label16.TabIndex = 1000;
+            this.label16.Text = "Marital Status";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label19.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label19.Location = new System.Drawing.Point(13, 20);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(39, 18);
+            this.label19.TabIndex = 1000;
+            this.label19.Text = "Post";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.LblCurrentTime);
+            this.groupBox4.Controls.Add(this.LblCurrentNepaliDate);
+            this.groupBox4.Controls.Add(this.label24);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Controls.Add(this.ComboFilter);
+            this.groupBox4.Controls.Add(this.BtnShowDetails);
+            this.groupBox4.Location = new System.Drawing.Point(10, 631);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1191, 43);
+            this.groupBox4.TabIndex = 1000;
+            this.groupBox4.TabStop = false;
+            // 
+            // LblCurrentTime
+            // 
+            this.LblCurrentTime.AutoSize = true;
+            this.LblCurrentTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.LblCurrentTime.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.LblCurrentTime.Location = new System.Drawing.Point(978, 17);
+            this.LblCurrentTime.Name = "LblCurrentTime";
+            this.LblCurrentTime.Size = new System.Drawing.Size(109, 18);
+            this.LblCurrentTime.TabIndex = 1000;
+            this.LblCurrentTime.Text = "LblCurrentTime";
+            // 
+            // LblCurrentNepaliDate
+            // 
+            this.LblCurrentNepaliDate.AutoSize = true;
+            this.LblCurrentNepaliDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.LblCurrentNepaliDate.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.LblCurrentNepaliDate.Location = new System.Drawing.Point(216, 17);
+            this.LblCurrentNepaliDate.Name = "LblCurrentNepaliDate";
+            this.LblCurrentNepaliDate.Size = new System.Drawing.Size(148, 18);
+            this.LblCurrentNepaliDate.TabIndex = 1000;
+            this.LblCurrentNepaliDate.Text = "LblCurrentNepaliDate";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label24.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label24.Location = new System.Drawing.Point(931, 17);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(49, 18);
+            this.label24.TabIndex = 1000;
+            this.label24.Text = "Time :";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label23.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label23.Location = new System.Drawing.Point(170, 17);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(47, 18);
+            this.label23.TabIndex = 1000;
+            this.label23.Text = "Date :";
+            // 
+            // ComboFilter
+            // 
+            this.ComboFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.ComboFilter.FormattingEnabled = true;
+            this.ComboFilter.Items.AddRange(new object[] {
+            "All Employees",
+            "Present Employees",
+            "Resigned Employees"});
+            this.ComboFilter.Location = new System.Drawing.Point(484, 12);
+            this.ComboFilter.Name = "ComboFilter";
+            this.ComboFilter.Size = new System.Drawing.Size(160, 26);
+            this.ComboFilter.TabIndex = 30;
+            this.ComboFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboFilter_KeyPress);
+            // 
+            // BtnShowDetails
+            // 
+            this.BtnShowDetails.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnShowDetails.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnShowDetails.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnShowDetails.BorderRadius = 28;
+            this.BtnShowDetails.BorderSize = 0;
+            this.BtnShowDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnShowDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.BtnShowDetails.ForeColor = System.Drawing.Color.White;
+            this.BtnShowDetails.Location = new System.Drawing.Point(651, 10);
+            this.BtnShowDetails.Name = "BtnShowDetails";
+            this.BtnShowDetails.Size = new System.Drawing.Size(133, 28);
+            this.BtnShowDetails.TabIndex = 32;
+            this.BtnShowDetails.Text = "Show Details";
+            this.BtnShowDetails.TextColor = System.Drawing.Color.White;
+            this.BtnShowDetails.UseVisualStyleBackColor = false;
+            this.BtnShowDetails.Click += new System.EventHandler(this.BtnShowDetails_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label18.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label18.Location = new System.Drawing.Point(10, 107);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(108, 18);
+            this.label18.TabIndex = 1000;
+            this.label18.Text = "Appointed Date";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label20.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label20.Location = new System.Drawing.Point(9, 134);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(121, 18);
+            this.label20.TabIndex = 1000;
+            this.label20.Text = "Resignation Date";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label21.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label21.Location = new System.Drawing.Point(12, 49);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(85, 18);
+            this.label21.TabIndex = 1000;
+            this.label21.Text = "Post Status";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.MaskDOB);
+            this.groupBox6.Controls.Add(this.maskedTextBox2);
+            this.groupBox6.Controls.Add(this.TxtBoxEmail);
+            this.groupBox6.Controls.Add(this.TxtBoxPermAddress);
+            this.groupBox6.Controls.Add(this.TxtBoxAge);
+            this.groupBox6.Controls.Add(this.TxtBoxTempAddress);
+            this.groupBox6.Controls.Add(this.label7);
+            this.groupBox6.Controls.Add(this.TxtBoxEducation);
+            this.groupBox6.Controls.Add(this.label14);
+            this.groupBox6.Controls.Add(this.label4);
+            this.groupBox6.Controls.Add(this.label13);
+            this.groupBox6.Controls.Add(this.label5);
+            this.groupBox6.Controls.Add(this.label11);
+            this.groupBox6.ForeColor = System.Drawing.Color.Red;
+            this.groupBox6.Location = new System.Drawing.Point(350, 41);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(362, 165);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Other Details";
+            // 
+            // MaskDOB
+            // 
+            this.MaskDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.MaskDOB.Location = new System.Drawing.Point(138, 43);
+            this.MaskDOB.Mask = "0000-00-00";
+            this.MaskDOB.Name = "MaskDOB";
+            this.MaskDOB.Size = new System.Drawing.Size(103, 24);
+            this.MaskDOB.TabIndex = 7;
+            this.MaskDOB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.maskedTextBox2.Location = new System.Drawing.Point(254, 218);
+            this.maskedTextBox2.Mask = "   0000-00-00";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(95, 24);
+            this.maskedTextBox2.TabIndex = 55;
+            // 
+            // TxtBoxEmail
+            // 
+            this.TxtBoxEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxEmail.Location = new System.Drawing.Point(85, 71);
+            this.TxtBoxEmail.Name = "TxtBoxEmail";
+            this.TxtBoxEmail.Size = new System.Drawing.Size(263, 27);
+            this.TxtBoxEmail.TabIndex = 9;
+            // 
+            // TxtBoxPermAddress
+            // 
+            this.TxtBoxPermAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxPermAddress.Location = new System.Drawing.Point(138, 100);
+            this.TxtBoxPermAddress.Name = "TxtBoxPermAddress";
+            this.TxtBoxPermAddress.Size = new System.Drawing.Size(210, 27);
+            this.TxtBoxPermAddress.TabIndex = 10;
+            // 
+            // TxtBoxAge
+            // 
+            this.TxtBoxAge.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxAge.Location = new System.Drawing.Point(294, 42);
+            this.TxtBoxAge.Name = "TxtBoxAge";
+            this.TxtBoxAge.Size = new System.Drawing.Size(54, 27);
+            this.TxtBoxAge.TabIndex = 8;
+            this.TxtBoxAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtBoxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBoxAge_KeyPress);
+            // 
+            // TxtBoxTempAddress
+            // 
+            this.TxtBoxTempAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxTempAddress.Location = new System.Drawing.Point(138, 129);
+            this.TxtBoxTempAddress.Name = "TxtBoxTempAddress";
+            this.TxtBoxTempAddress.Size = new System.Drawing.Size(210, 27);
+            this.TxtBoxTempAddress.TabIndex = 11;
+            // 
+            // TxtBoxEducation
+            // 
+            this.TxtBoxEducation.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxEducation.Location = new System.Drawing.Point(138, 13);
+            this.TxtBoxEducation.Name = "TxtBoxEducation";
+            this.TxtBoxEducation.Size = new System.Drawing.Size(210, 27);
+            this.TxtBoxEducation.TabIndex = 6;
+            this.TxtBoxEducation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.TxtBoxFatherName);
+            this.groupBox7.Controls.Add(this.ComboMaritalStatus);
+            this.groupBox7.Controls.Add(this.TxtBoxMotherName);
+            this.groupBox7.Controls.Add(this.TxtBoxSpouseName);
+            this.groupBox7.Controls.Add(this.TxtBoxBloodGroup);
+            this.groupBox7.Controls.Add(this.label9);
+            this.groupBox7.Controls.Add(this.label8);
+            this.groupBox7.Controls.Add(this.label16);
+            this.groupBox7.Controls.Add(this.label10);
+            this.groupBox7.Controls.Add(this.label12);
+            this.groupBox7.ForeColor = System.Drawing.Color.Red;
+            this.groupBox7.Location = new System.Drawing.Point(721, 41);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(338, 165);
+            this.groupBox7.TabIndex = 12;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Family Details";
+            // 
+            // TxtBoxFatherName
+            // 
+            this.TxtBoxFatherName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxFatherName.Location = new System.Drawing.Point(118, 13);
+            this.TxtBoxFatherName.Name = "TxtBoxFatherName";
+            this.TxtBoxFatherName.Size = new System.Drawing.Size(205, 27);
+            this.TxtBoxFatherName.TabIndex = 1001;
+            // 
+            // ComboMaritalStatus
+            // 
+            this.ComboMaritalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.ComboMaritalStatus.FormattingEnabled = true;
+            this.ComboMaritalStatus.Items.AddRange(new object[] {
+            "Single",
+            "Married"});
+            this.ComboMaritalStatus.Location = new System.Drawing.Point(118, 71);
+            this.ComboMaritalStatus.Name = "ComboMaritalStatus";
+            this.ComboMaritalStatus.Size = new System.Drawing.Size(205, 26);
+            this.ComboMaritalStatus.TabIndex = 14;
+            this.ComboMaritalStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboMaritalStatus_KeyPress);
+            // 
+            // TxtBoxMotherName
+            // 
+            this.TxtBoxMotherName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxMotherName.Location = new System.Drawing.Point(118, 42);
+            this.TxtBoxMotherName.Name = "TxtBoxMotherName";
+            this.TxtBoxMotherName.Size = new System.Drawing.Size(205, 27);
+            this.TxtBoxMotherName.TabIndex = 13;
+            // 
+            // TxtBoxSpouseName
+            // 
+            this.TxtBoxSpouseName.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxSpouseName.Location = new System.Drawing.Point(118, 99);
+            this.TxtBoxSpouseName.Name = "TxtBoxSpouseName";
+            this.TxtBoxSpouseName.Size = new System.Drawing.Size(205, 27);
+            this.TxtBoxSpouseName.TabIndex = 15;
+            // 
+            // TxtBoxBloodGroup
+            // 
+            this.TxtBoxBloodGroup.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxBloodGroup.Location = new System.Drawing.Point(118, 128);
+            this.TxtBoxBloodGroup.Name = "TxtBoxBloodGroup";
+            this.TxtBoxBloodGroup.Size = new System.Drawing.Size(205, 27);
+            this.TxtBoxBloodGroup.TabIndex = 16;
+            this.TxtBoxBloodGroup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.MaskResignationDate);
+            this.groupBox8.Controls.Add(this.MaskAppointedDate);
+            this.groupBox8.Controls.Add(this.BtnSalaryDetails);
+            this.groupBox8.Controls.Add(this.ComboPostStatus);
+            this.groupBox8.Controls.Add(this.TxtBoxPost);
+            this.groupBox8.Controls.Add(this.label22);
+            this.groupBox8.Controls.Add(this.label19);
+            this.groupBox8.Controls.Add(this.label21);
+            this.groupBox8.Controls.Add(this.label18);
+            this.groupBox8.Controls.Add(this.label20);
+            this.groupBox8.ForeColor = System.Drawing.Color.Red;
+            this.groupBox8.Location = new System.Drawing.Point(1071, 41);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(266, 165);
+            this.groupBox8.TabIndex = 17;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Job Details";
+            // 
+            // MaskResignationDate
+            // 
+            this.MaskResignationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.MaskResignationDate.Location = new System.Drawing.Point(129, 130);
+            this.MaskResignationDate.Mask = "0000-00-00";
+            this.MaskResignationDate.Name = "MaskResignationDate";
+            this.MaskResignationDate.Size = new System.Drawing.Size(120, 24);
+            this.MaskResignationDate.TabIndex = 21;
+            this.MaskResignationDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // MaskAppointedDate
+            // 
+            this.MaskAppointedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.MaskAppointedDate.Location = new System.Drawing.Point(129, 103);
+            this.MaskAppointedDate.Mask = "0000-00-00";
+            this.MaskAppointedDate.Name = "MaskAppointedDate";
+            this.MaskAppointedDate.Size = new System.Drawing.Size(120, 24);
+            this.MaskAppointedDate.TabIndex = 20;
+            this.MaskAppointedDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BtnSalaryDetails
+            // 
+            this.BtnSalaryDetails.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSalaryDetails.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSalaryDetails.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnSalaryDetails.BorderRadius = 6;
+            this.BtnSalaryDetails.BorderSize = 0;
+            this.BtnSalaryDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSalaryDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSalaryDetails.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.BtnSalaryDetails.Location = new System.Drawing.Point(129, 71);
+            this.BtnSalaryDetails.Name = "BtnSalaryDetails";
+            this.BtnSalaryDetails.Size = new System.Drawing.Size(120, 30);
+            this.BtnSalaryDetails.TabIndex = 19;
+            this.BtnSalaryDetails.Text = "Salary Details";
+            this.BtnSalaryDetails.TextColor = System.Drawing.SystemColors.HighlightText;
+            this.BtnSalaryDetails.UseVisualStyleBackColor = false;
+            this.BtnSalaryDetails.Click += new System.EventHandler(this.BtnSalaryDetails_Click);
+            // 
+            // ComboPostStatus
+            // 
+            this.ComboPostStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.ComboPostStatus.FormattingEnabled = true;
+            this.ComboPostStatus.Items.AddRange(new object[] {
+            "Daily Basis",
+            "Temporary",
+            "Parmanent"});
+            this.ComboPostStatus.Location = new System.Drawing.Point(129, 43);
+            this.ComboPostStatus.Name = "ComboPostStatus";
+            this.ComboPostStatus.Size = new System.Drawing.Size(120, 26);
+            this.ComboPostStatus.TabIndex = 18;
+            this.ComboPostStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboPostStatus_KeyPress);
+            // 
+            // TxtBoxPost
+            // 
+            this.TxtBoxPost.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.TxtBoxPost.Location = new System.Drawing.Point(129, 14);
+            this.TxtBoxPost.Name = "TxtBoxPost";
+            this.TxtBoxPost.Size = new System.Drawing.Size(120, 27);
+            this.TxtBoxPost.TabIndex = 17;
+            this.TxtBoxPost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label22.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label22.Location = new System.Drawing.Point(10, 79);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(98, 18);
+            this.label22.TabIndex = 1000;
+            this.label22.Text = "Salary Details";
+            // 
+            // DataGridEmployeeList
+            // 
+            this.DataGridEmployeeList.AllowUserToAddRows = false;
+            this.DataGridEmployeeList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.DataGridEmployeeList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DataGridEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridEmployeeList.Location = new System.Drawing.Point(11, 215);
+            this.DataGridEmployeeList.Name = "DataGridEmployeeList";
+            this.DataGridEmployeeList.ReadOnly = true;
+            this.DataGridEmployeeList.Size = new System.Drawing.Size(1188, 411);
+            this.DataGridEmployeeList.TabIndex = 1000;
+            this.DataGridEmployeeList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridEmployeeList_DataBindingComplete);
+            // 
+            // OpenFileDialog
+            // 
+            this.OpenFileDialog.Title = "Browse photos";
+            this.OpenFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialog_FileOk);
+            // 
+            // Timer
+            // 
+            this.Timer.Enabled = true;
+            this.Timer.Interval = 1000;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
+            // ErrorProvider
+            // 
+            this.ErrorProvider.ContainerControl = this;
+            // 
+            // BtnDeleteImage
+            // 
+            this.BtnDeleteImage.BackColor = System.Drawing.Color.Red;
+            this.BtnDeleteImage.BackgroundColor = System.Drawing.Color.Red;
+            this.BtnDeleteImage.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnDeleteImage.BorderRadius = 20;
+            this.BtnDeleteImage.BorderSize = 0;
+            this.BtnDeleteImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeleteImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDeleteImage.ForeColor = System.Drawing.Color.White;
+            this.BtnDeleteImage.Location = new System.Drawing.Point(1278, 350);
+            this.BtnDeleteImage.Name = "BtnDeleteImage";
+            this.BtnDeleteImage.Size = new System.Drawing.Size(60, 25);
+            this.BtnDeleteImage.TabIndex = 23;
+            this.BtnDeleteImage.Text = "Delete";
+            this.BtnDeleteImage.TextColor = System.Drawing.Color.White;
+            this.BtnDeleteImage.UseVisualStyleBackColor = false;
+            this.BtnDeleteImage.Click += new System.EventHandler(this.BtnDeleteImage_Click);
+            // 
+            // BtnAddImage
+            // 
+            this.BtnAddImage.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnAddImage.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.BtnAddImage.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnAddImage.BorderRadius = 20;
+            this.BtnAddImage.BorderSize = 0;
+            this.BtnAddImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAddImage.ForeColor = System.Drawing.Color.White;
+            this.BtnAddImage.Location = new System.Drawing.Point(1217, 350);
+            this.BtnAddImage.Name = "BtnAddImage";
+            this.BtnAddImage.Size = new System.Drawing.Size(60, 25);
+            this.BtnAddImage.TabIndex = 22;
+            this.BtnAddImage.Text = "Add";
+            this.BtnAddImage.TextColor = System.Drawing.Color.White;
+            this.BtnAddImage.UseVisualStyleBackColor = false;
+            this.BtnAddImage.Click += new System.EventHandler(this.BtnAddImage_Click);
             // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1171, 596);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(1354, 688);
             this.Controls.Add(this.BtnDeleteImage);
             this.Controls.Add(this.BtnAddImage);
             this.Controls.Add(this.DataGridEmployeeList);
@@ -1007,6 +1012,7 @@ namespace InsuranceApplication.Forms
             this.Controls.Add(this.groupBox1);
             this.Name = "EmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Samyukta Manab Saving & Credit Co-operative Ltd.";
             this.Load += new System.EventHandler(this.EmployeeDetails_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
