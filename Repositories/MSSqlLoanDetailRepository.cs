@@ -28,7 +28,7 @@ namespace InsuranceApplication.Repositories
                 "[ImagePath], " +
                 "[AddedBy], [AddedDate], [UpdatedBy], [UpdatedDate] " +
                 "FROM " + Constants.TABLE_LOAN_DETAIL + " " +
-                "ORDER BY [MemberName] ";
+                "ORDER BY [StartingDate] ";
 
             try
             {
